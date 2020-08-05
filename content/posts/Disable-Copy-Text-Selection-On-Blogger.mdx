@@ -1,0 +1,96 @@
+---
+title: 'Disable Copy Function On Blogger With CSS or JavaScript'
+date: 2019-08-31
+excerpt: A lot of copycats simply copy and share your works without permission and credit. Disable copy function in your blogger with a small script or through CSS codes.
+slug: disable-copy-function-blogger
+featured: false
+published: true
+image: Disable Copy Function on blogger.jpg
+author: Invictus
+tags : [Blog Customize, Blogging Tips, Blog Widgets]
+---
+
+Most of the genuine bloggers on BlogSpot platform face the problem of their blogs' content being copied or duplicated by newbies who are just entering in the blogosphere with the goal of making money without making real efforts and understanding the value of original/unique content. Sometimes the content copied by them gets higher rankings in search engines than your original content and this is unfair which lowers the motivation of genuine bloggers. So it is important to protect your blog content from these content thieves and this is the agenda of this post. 
+
+We will disable the copy function by disabling the mouse right click and CTRL+A. We have two options for doing this i.e., via a JavaScript Code if you want to disable whole text area of blog or via CSS code if you share some codes/text on your blog posts and your readers need to copy them.  
+  
+ 
+  
+**Recommended Article:** [Change Scrollbar color and Text Selection Color in Blogger](https://www.twistblogg.com/2015/03/how-to-customize-blogger-scrollbar-and.html)  
+  
+
+
+## Disable Text Selection On Blogger With JavaScript Code
+
+
+Go to **Blogger→ Template→ Edit Template→ Backup Your Template Code First**. Now search for `<head>` and paste the JavaScript Code below.  
+
+```js title=copycat.js
+<!--Disable Copy Paste--- TwistBlogg.com--> 
+<script language='JavaScript1.2'>  
+function disableselect(e){  
+return false  
+}  
+function reEnable(){  
+return true  
+}  
+document.onselectstart=new Function (&quot;return false&quot;)  
+if (window.sidebar){  
+document.onmousedown=disableselect  
+document.onclick=reEnable  
+}  
+</script>  
+```
+
+Now save your template and view your blog to check the results.  
+  
+
+## Disable Text Selection Except Specified Codes/Text With CSS
+
+
+This is the magic code we are using on this blog because we are sharing tutorials where readers need to copy some codes we share like CSS/JavaScript/Html etc. So on the same time we do not let readers copy our posts' text area other than codes/Text we want to share. This is possible with this simple CSS code where we enabled the copy paste of text/code we post in **"blockquotes"** only. Go to **Blogger→ Template→ Edit Template→ Backup**. Now search for `]]></b:skin>` and paste the CSS code before it.  
+
+```css title=copycat.css
+/*----- Disable Text Selection with CSS Code--- TwistBlogg.com----*/  
+.post blockquote {  
+-webkit-user-select: text !important;  
+-moz-user-select: text !important;  
+-ms-user-select: text !important;  
+user-select: text !important;  
+}  
+body {  
+-webkit-user-select: none !important;  
+-moz-user-select: -moz-none !important;  
+-ms-user-select: none !important;  
+user-select: none !important;  
+}
+```  
+
+**Important Note:-** In the above CSS code, we have enabled the copy/selection of text/code we post using blockquotes by enabling `.post blockquote` but it may not work for you if your template is using different CSS class for blockquote for e.g., Our template using `.post blockquote` where your template may be using `.post-body blockquote` or `blockquote`. So in that case you need to replace .post blockquote with .post-body blockquote or blockquote in above CSS code.  If you do not share any codes or content than just copy paste this little piece of CSS code to disable all text area on your blog.  
+
+
+```css title=disable_all.css
+/*----- Disable Text Selection with CSS Code--- TB----*/ 
+body {  
+-webkit-user-select: none !important;  
+-moz-user-select: -moz-none !important;  
+-ms-user-select: none !important;  
+user-select: none !important;  
+}
+```  
+
+**Note:**  You can add CSS codes by simply going to **Template Designer** >> **Add custom CSS** and paste your code then save.  
+
+
+### Benefit of using CSS Code rather than JavaScript ?
+
+
+**1)** When we use JavaScript code, do you know what does a **copy cat** do? Simply disables JavaScript code inside browser and reload the page. Then everything goes into normal and anyone can copy the whole content.  
+  
+Using CSS code we eliminate this factor as user usually can not disable the CSS. However, an experienced user can do it simply by inspecting elements and finding our CSS code snippet then delete it in browser but this task is far away from newbies. Experienced users rarely do that.  
+  
+
+**2)** CSS codes are far better than JavaScripts as they do not lower the speed of your blog/website where JavaScript codes consume much time to load and make your blog load speed very low and overall you lose Visitors=Money. Avoid using JavaScripts.  
+  
+
+Let us know where these codes worked for you or you are having problems with these codes? We will serve you our best. Thank You.

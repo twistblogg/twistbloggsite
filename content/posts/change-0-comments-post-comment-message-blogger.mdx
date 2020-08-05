@@ -1,0 +1,137 @@
+---
+title: 'Change "0 Comment" or "Post a Comment" Message in Blogger'
+date: 2015-03-14
+excerpt: Blogger allows you to customize default comment message text with simple css. This article will guide you through that.
+slug: customize-comment-message-blogger
+featured: false
+published: true
+image: Changing Comment Messages in Blogger.png
+author: Invictus
+tags : [Blog Customize]
+---
+
+
+
+We all love the feeling of having new comments below our blog posts and to increase the chances of having more comments, we install many other third party commenting systems like as Facebook comment system, Google+ comment system, and Disqus comment system .   
+  
+But still the majority of bloggers who blog on Blogger platform prefer using blogger's default system of commenting. Even this blog also uses only blogger's default commenting system. Although we have changed a few things to make it look better and meet the theme design.  
+
+  
+
+The most annoying thing we need to change is those text strings appear before the comment box like as "0 Comments" when there is no comment, "2+ comments:" and "Post your comment". This is what we are going to deal with thoroughly in this post. We will change them to whatever Message we want to appear in whatever style using CSS. We can use the images too.
+
+  
+  
+
+## How You Can Change These Default Text Strings
+
+
+First of all be ready and just login to your blogger account >> select your blog >> go to Template section >> click on Edit HTML >> . Now click anywhere inside the template code box and save a backup of your template in your desktop. Now press Ctr+F on Windows OS or Cmd+F on Mac OS to open up a search box inside the template code box (Click inside code box first to open search box inside it).  
+  
+**Note:** Please, have patience and read carefully, otherwise you'll face problems of not working. I am providing a solution for both templates. I mean third party custom template or blogger's default template.  
+  
+
+### Demo of the Final Result we will achieve with this Twist
+
+
+You can change these messages to your own, this is just a demo to show you as a proof. Scroll down to the end of the post and see ours' too :)
+
+  
+<Image src="Comments Box Messages Demo.png" alt="Comments Box Messages Demo" />
+
+  
+
+### Disabling "0 Comments" Message When There is No Comment
+
+
+This message appears along with another message "Post a Comment" so first of all we will disable "0 Comments" text string when there is no comment. Then the only left message is "Post a Comment" and it disappears when there are some comments. Will change it too, just take baby steps :)  
+  
+Find this HTML code in your blog template given below:  
+
+(**Tip:** type `<h4>` in search box, hit enter until you find this code) 
+
+```html
+<h4>  
+        <b:if cond='data:post.numComments == 1'>  
+          1 <data:commentLabel/>:  
+        <b:else/>  
+          <data:post.numComments/> <data:commentLabelPlural/>:  
+        </b:if>  
+      </h4>
+```  
+
+This above code is liable to generate 0 Comments message. **You will find this whole code two times** so you have to take care of it that you **do change as given below to both codes**. Now we will wrap it up with a **conditional tag** so that this message only appears if there is one comment or two and disappears when there is no comment. Please read editing step carefully given just below the code.
+
+```html
+<b:if cond='data:post.numComments != 0'>  
+    <h4><span>  
+    <b:if cond='data:post.numComments == 1'>  
+    1 Reply so far - Add your comment  
+    <b:else/>  
+    <data:post.numComments/> Replies so far - Add your comment  
+    </b:if>  
+    </span></h4>  
+    </b:if>  
+```
+  
+
+### Wait, Did you find the code above or Not?
+
+If you're using a third party template code then you must find out this code. Just type `<h4>` in search box and hit enter. Did you find this code now? If not then just **search for another code** given below and replace it with the code given above. This time you can't really miss it.  
+
+`<h4><data:post.commentLabelFull/>:</h4>`
+
+Replace this whole code if found with the code given above it. You may find this code twice so do the same for two times.  
+  
+
+## Changing "Post a Comment" Message in Blogger
+
+Now this message will appear when there is no comment to your blog post, right? You can change it too with whatever text you like or even you can use an image instead. You need to find out the HTML code given below.  
+
+**Tip:** Press Ctrl+F and paste this code `<h4 id='comment-post-message'>` in search box to find this long piece of code easily.  
+
+```html
+<h4 id='comment-post-message'>  
+        <a expr:id='data:widget.instanceId + &quot;_comment-editor-toggle-link&quot;' href='javascript:void(0)'><data:postCommentMsg/></a></h4>  
+      <p><data:blogCommentMessage/></p>  
+      <data:blogTeamBlogMessage/>  
+      <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>  
+      <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410' id='comment-editor' name='comment-editor' src='' style='display: none' width='100%'/>  
+    <b:else/>  
+      <h4 id='comment-post-message'><data:postCommentMsg/></h4>  
+      <p><data:blogCommentMessage/></p>  
+      <data:blogTeamBlogMessage/>  
+      <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>  
+      <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410' id='comment-editor' name='comment-editor' src='' width='100%'/>  
+
+```  
+
+**Editing:** Now just delete `<data:postCommentMsg/>` and write your message in normal text like as "**Leave a comment**", excluding quotes. Did you get it? Cool, so now we are almost done with it and you just move on to next step which is adding CSS style to make these messages appear in eye catchy way rather boring and dull. Do you like it? Else-wise you're done if you like to read boring messages :)  
+  
+
+### Add These CSS Styles to Comment Messages
+
+
+This is simple step compared to above steps. You need to find this class of CSS in your template's CSS code `.comments h4` , then delete it and paste the code given below or just replace it. Make sure that this class is alone/separate before deleting it or replacing it. There may be the case that this class is used with other classes together to apply a common style to them. If this is the case then just remove this class from other class and then paste the code separately. If you did not get it then I am waiting in the comment section. :)  
+
+```css
+/*---Comment Box Message CSS Style by TwistBlogg.com---*/  
+.comments h4 {  
+  background-color: #05A0FF; /*--- Change Background color Code ---*/  
+  font-weight: normal;  
+  color: #ffffff; /*--- Change Text Color Code ---*/  
+  padding: 0px;  
+  text-align: center;  
+  line-height: 2em;  
+  border-radius: 2px;  
+  font-size: 17px; /*--- Change Font Size ---*/ 
+  font-family: sans-serif; /*--- Change Font Family ---*/  
+  width: 100%;  
+  position: relative;  
+}  
+
+```  
+
+**Editing:** To make changes, just follow the comments I have added to CSS style code in front of every line which says itself what you can change there.  
+  
+**Final Step:** Do not forget to save the template :) and please **Do Reply** whether it worked for you or not. I wait eagerly to help you as soon as you post in comments. If you want to use images instead of these texts messages, then let me know. I will surely come up with another twist for you. Stay blessed.

@@ -1,0 +1,108 @@
+---
+title: 'Customize Default Label Cloud Gadget in Blogger'
+date: 2018-09-04
+excerpt: Blogger allows you to add a label cloud widget from Gadget Library. However, the design is obsolete. In this tutorial, we will customize and make default label cloud stylish.
+slug: customize-label-cloud-blogger
+featured: false
+published: true
+image: Customize Default Label Gadget In Blogger - Cloud.png
+author: Invictus
+tags : [Blog Customize, Label Style]
+---
+
+Blogger Label Gadget provides two styles - List and Cloud. Last time I had shared tutorial on [how to customize default label gadget in Blogger - List option](https://twistblogg.blogspot.com/2018/08/customize-default-label-in-blogger.html) and now its time for tutorial on **how to make default label gadget stylish in Blogger - cloud option**. Default label gadget - cloud style doesn't meet our expectations. So, it a must to edit it into something really cool. The design I'm going to share is worth trying and named as: Flat UI Labels Cloud Style. Let's get started.  
+  
+
+
+_Note: The reference code is shared by BloggerYard, which is currently offline. I personally loved the design and thought to share among all my fellow bloggers._  
+
+<Div textAlign="center">
+<ButtonLink href="https://hdmoviesyard.blogspot.com" target="_blank" rel="nofollow noopener noreferrer external" variant="primary"><Icon name="link" size="6" mr="2"/>Live Demo</ButtonLink>
+</Div>  
+
+
+#### Features of Customized Beautiful Label Gadget Blogger
+
+By now you might have seen the demo. That's cool right? Let's see the features of customized default label gadget.  
+
+*   100% Killer Design.
+*   No images are used.
+*   Pure CSS Design.
+*   Easily fits in Sidebar.
+*   Easy to Customize.
+*   Select/Deselect the Labels.
+*   Different colors for labels based on number of articles.
+*   Premium Design.
+
+  
+[Recommended: Setup Creative Custom 404 Error Page for Blogger](https://twistblogg.blogspot.com/2014/03/creative-404-error-page-setup-for-blogger-blog.html)  
+  
+
+## How to customize default label Gadget In Blogger - Cloud?
+
+I've divided the section into two parts: Adding of Label Gadget and Installation of Code.  
+  
+
+#### Step 1: Add Default Label Gadget to Blogger
+
+Go to **Blogger Dashboard** → **Layout** → **Add a Gadget** → **Select Label Gadget**.  Now a Label Gadget will pop up. Edit it as,  
+
+> Title: Give your title  
+> Show: All Labels/Selected Labels \[Any one option\]  
+> Sorting: Alphabetically/By Frequency \[Any one option\]  
+> Display: Cloud
+
+_Note: You must select the CLOUD option else this trick won't work._  
+  
+
+#### Step 2: Adding CSS Code to Blogger
+
+Before adding the codes,a good habit is to [Backup the blog](http://twistblogg.blogspot.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html). Once done, Go to **Theme** → **Edit HTML**. Search for `]]></b:skin>` and paste the code just above it. Check editing section on how you can customize label gadget. Once everything is done, click on Save Template.  
+
+```css title=main.css
+/* Customize Default Label Cloud Gadget in Blogger By TwistBlogg.com */ 
+/* Flat UI Labels Cloud By TwistBlogg.com ---------------- */ 
+.sidebar .label-size {  
+position:relative;
+text-transform: uppercase;  
+text-decoration:none;  
+font-size:13px;  
+font-family:Open Sans;  
+color:#fff!important;  
+}  
+   
+.sidebar .label-size a {  
+color:#fff!important;  
+font-weight:bold;  
+padding:8px 10px;  
+margin:0 6px 6px 0;  
+float:left;  
+display:block;  
+-moz-transition: all 0.4s ;  
+-o-transition: all 0.4s;  
+-webkit-transition: all 0.4s ;  
+-ms-transition: all 0.4s ;  
+transition: all 0.4s ;  
+}  
+   
+.sidebar .label-size-1 a {background:#1abc9c;border-bottom:3px solid #127F69;}  
+.sidebar .label-size-1 a:hover {background:#16a085;}  
+.sidebar .label-size-2 a {background:#3498db;border-bottom:3px solid #226693;}  
+.sidebar .label-size-2 a:hover {background:#2980b9;}  
+.sidebar .label-size-3 a {background:#2ecc71;border-bottom:3px solid #1F8C4C;}  
+.sidebar .label-size-3 a:hover {background:#27ae60}  
+.sidebar .label-size-4 a {background:#9b59b6;border-bottom:3px solid #74398E;}  
+.sidebar .label-size-4 a:hover {background:#8e44ad}  
+.sidebar .label-size-5 a {background:#e74c3c;border-bottom:3px solid #922C20;}  
+.sidebar .label-size-5 a:hover {background:#c0392b}
+```
+  
+**Editing Section,**  
+
+➤ Its pretty simple to edit the CSS code. To change the background color, modify `background:#hex_value`.   
+  
+➤ To change font size, modify `font-size:13px` and for font family, modify `font-family:Open Sans`. I personally feel like `font-family: inherit` will look pretty cool as it make use of default template font family.  
+  
+_*Bonus : You might have noticed we have disabled the copy text selection option in our whole blog except coding section. Let me tell you its completely CSS based technique. You can also add it in your blogger blog: [Learn how to disable copy text selection in Blogger](https://www.twistblogg.com/2014/01/Disable-Copy-Text-Selection-On-Blogger.html)_  
+  
+That's all folks ! That was easy right? I hope this tutorial on how to customize blogger default label cloud widget into colorful Flat UI label cloud widget will help you improve the navigation and design of your blog. If you face any problem in the process, ping me a message or comment down below. We're cooking some other blogger widgets in our kitchen so feel free to stay tuned with us for more customized blogger widgets. Happy Blogging pals ! 💪 **\[Tschüss - Bye Bye in German\]**

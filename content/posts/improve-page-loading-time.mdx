@@ -1,0 +1,863 @@
+---
+title: '21 Tested Ways To Improve Page Loading Time'
+date: 2020-08-03
+excerpt: Page speed is an important factor of SEO. Faster a page loads, higher the change of getting ranked by Google. In this tutorial, I will be sharing 21 tested ways I implemented in my blog to improve page loading time.
+slug: improve-page-loading-time
+featured: false
+published: true
+image: Tested Ways To Improve Page Loading Time.jpg
+author: Invictus
+tags : [Page Speed]
+---
+
+Page loading time or simply Page speed is an important factor considered by Google to rank a page. A fast loading page improves user experience and reduces bounce rate.  
+  
+In this article, I'll be sharing 21 tested ways I implemented in my blog to speed up blog loading time. _Note: This article is going to be lengthy, so please grab a coffee before starting._  
+    
+
+
+### Why page speed is important?  
+
+
+There is no deny that a quick and fast loading page trumps a slower one. _According to various studies conducted on website loading time,_ it was found that if an average page load time exceeds 3 seconds, users abandonment rate increases. This consequently rises bounce rate. A high bounce rate telegraphs search engine that a website is not useful for that specific keyword and hence reducing ranking. Therefore, it is important to have a fast page speed.  
+  
+Moreover, On April 2010, <a rel="nofollow noopener noreferrer" target="_blank" href="https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html">Google had announced</a> that they are considering page speed time as a key factor for ranking. The faster a page loads, better it is. Also for eCommerce websites, page speed is very crucial. Below are some quick facts :  
+  
+
+*   A study by Walmart showed that every second of improvement in their website loading time would increase conversion by 2%.
+*   One second delay in loading cost for Amazon is $1.6B sales each year!
+*   In an average every second of delay in page loading time can result in 7% decrease in online sales.
+
+  
+The impact of a second delay for eCommerce websites can be seen, but what about small website like ours? Does one second have huge impact for smaller websites? How precious is 1 second online exactly? Below are some most remarkable one second stats taken from [Hostingtribunal.](https://hostingtribunal.com/blog/how-speed-affects-website/)  
+  
+
+*   1 second delay reduces page views by 11%.
+*   1-3 seconds in loading time see a very low bounce rate probability – only 32%. Add 1 second more to that and the chance for users to bounce triples, reaching 90%.
+*   1 second delay decreases customer satisfaction by 16%.
+
+  
+Therefore, a reduction even in a millisecond have huge huge benefits to any websites.  
+
+
+  
+
+### How to test my page speed?  
+
+
+Now, you know the importance of page speed in ranking, its time to find out how fast your blogger blog loads. Below are my all time favorite page loading time testing tools.  
+  
+
+#### 1) GTMetrix  
+
+
+<a rel="nofollow noopener noreferrer" target="_blank" href="https://www.gtmetrix.com/">GTMetrix</a> is a page speed testing tool that provides a detail overview of how fast a page loads. This tool consider many factors like optimization of code, position of CSS & Javascript, number of requests, redirections, use of CDN etc., and append PageSpeed and YSlow Score based on those factors.  
+  
+Moreover, GTMetrix also keeps a record of past history scores and it helps a lot to keep track of historical data of website. I just love it !  
+  
+Unlike other tools, GTMetrix not only shows factors like compression of images needed, but it also provides optimized images that are easily _downloadable_. Normally, I download those images and replace with the previous ones.  
+  
+  
+
+#### 2) Google PageSpeed Insight  
+
+
+<a rel="nofollow noopener noreferrer" target="_blank" href="https://developers.google.com/speed/pagespeed/insights/">Pagespeed insight</a> is a free tool provided by Google. I prefer this because ultimately Google is the one who ranks my website based on their algorithms.  
+  
+It shows my page score for mobile and desktop version, along with different suggestions like Defer OffScreen Images, Remove unused CSS, Eliminate rendering resources and many more.  
+  
+  
+
+#### 3) Web Page Test   
+
+
+<a rel="nofollow noopener noreferrer" target="_blank" href="https://www.webpagetest.org/">Web Page Test</a> is probably the best tool to figure out what's wrong with your website. It gives you details on First View and Repeat View. This is important because when a visitor visits your site for the first time, all required resources need to be downloaded, taking more time to load compared to repeating visitors.  
+  
+Therefore, a site must be optimized for new visitors so as to convert them into repeating ones. Have you heard of first impression? That very much applies to website as well.  
+  
+
+#### 4) Web Page Test - Light House Testing   
+
+
+<a rel="nofollow noopener noreferrer" target="_blank" href="https://www.webpagetest.org/lighthouse">LightHouse Testing</a> is a powerful tool packed with factors like Performance, Accessibility, Best Practices and SEO. I rely heavily on this tool to make my site accessible to every single person and to guarantee that I'm using latest SEO trends.  
+  
+
+  
+  
+
+### How to speed up my blog loading time?
+
+
+Now that you have tested your blog loading time, see if you need optimization. If yes, this article is going to be a big gift. Stick with me, and I promise to deliberate something new that will surely help you speed up page loading time.  
+  
+
+## 1] Leverage Browser Caching  
+
+
+If someone asked me how to speed up page easily, my answer would be to enable caching. If you want a fast loading page, caching would probably be the first step.  
+  
+While caching may sound too technical for some, the underlying principles of caching are pretty simple to understand. So, what is caching?  
+  
+Caching is a small memory browsers use to store website contents files locally. Let me give you a scenario:  
+
+
+>  Let's say, you have visited this article for the first time. The browser needs to download HTML, CSS, JS, images and other contents of this article causing a delay in loading. Now, refresh this page and notice the loading time. It must be less than the first visit (ignoring other factors). So, how come the same page is loading faster than before?  
+
+
+This is because browser stores files temporarily in a cache (given that you have provided caching time) and the second request is served without connecting to server, directly from a cache memory. This is like loading static HTML page.  
+
+
+<Image src="inspecting caching in blogger.png" alt="inspecting caching in blogger" />
+
+
+##### So, how to set caching time in blogger?  
+
+Caching time is a duration about how long the page should be cached by browser. While browsers cache files by themselves and set a day (in most cases) as caching duration, sometimes you may need to manually set caching time. So, how do you achieve that in blogger? Well, I've already written an article on [how to overcome favicon leverage browser caching issue in blogger](https://www.twistblogg.com/2019/11/overcome-leverage-browser-caching-blogger-favicon.html), go check that out. Hope that helps. _I recommend not to cache Google Analytics._  
+
+
+
+
+## 2] Use of Content Distribution Network (CDN)  
+
+
+Content Distribution Network delivers contents through a server that is close to the end users. In other words, users' request is served via a closest server in corresponding to that user.  
+  
+For instance, Google uses server located in Japan in response to the request made by a Japanese user.  
+
+
+<Image src="how cdn works.png" alt="how cdn works" />
+
+
+
+##### So, how CDN helps in speeding up the loading time?  
+
+The number of requests are reduced when using a CDN. Let's say, in above scenario, if a Japanese user's request is served via Brazilian server, then that request has to be transmitted from Japan to Brazil (at minimum) whereas if it was served directly from Japan, no connection has to be made from Japan to Brazil.  
+  
+CloudFlare is probably the most popular free CDN right now, and it is easy to use.  <a rel="nofollow noopener noreferrer" target="_blank" href="https://support.cloudflare.com/hc/en-us/articles/201720164-Step-2-Create-a-Cloudflare-account-and-add-a-website">You can learn more on how to setup Cloudflare account here...</a>  
+
+
+
+
+## 3] Minimize HTTP Requests   
+
+
+Every request a webpage makes will add a considerable amount of time in establishing a connection and retrieving data. 
+
+_More request = More loading time and vice versa._ 
+
+We can use different techniques to minimize HTTP Requests. Some are explained below: 
+
+  
+##### a) Use Data-URI for small images    
+
+Images are loaded in a website via HTTP Request. In order to avoid this, images should be converted to base64 codes, which looks something like this: 
+
+```js
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABwElEQVQ4T53TQSjfYRzH8dfvj0lJiaVc7KClJGpODru4jOTg6Miy5DKHf3LjIrnYAcsobi5KLqyEzE1hOagtShxcHOSirfit5/f7G1OrzXN6ns/zfN/f5/N9vk/k0YhjDehBM17ktk+wjk9R5OvDkOhuEceK8AFvkXkMzq1vMYv3UeQ6aAkgF/wZr/8S+Fj+gjcBcgeYzl37H+OTY8HOuyh4vrmxm83KxPGf8ZkM3d3MzNzrJSV0dFBfL9h5FQBT19d619dZXmZ2lvx8FhcpKuLwkP5+CgpYWqK9ncJCTk8pL/cxAL7hZcjR1cXcHA0N7O+nWTs7WVigsZG1NcrKUv3sjMpK3wPgB54FsbY2zdjTw3SoCqqrOT6mpoaKCra2mJigry/Z/vkbcHVFaSm3t6mN4P3igufPU9DICNvbrK7S0sLKyj0gsbCxQXNoHRwcUFeXHm5tTbWjIyYnGR+nqoqT0FpSC1PoHR1lcJDiYi4vyctjeJihIULlNzdpa+P8nLExstkEkBQxtO7u/LzMzk5KHxhIswYre3vpPIpSi+FGTU2JlD5jmMWxpzdSDhD+wdNb+QHkaZ8pdZmO//3OvwAaHqExdfK/7gAAAABJRU5ErkJggg==
+```
+
+The above code is an image file in base64 format. If you copy and enter the above code in browser, you'll see a favicon.  
+  
+  
+<ins>When the browser encounters a Data-URI in your code, it is able to decode the data and construct the file.</ins> 
+
+Be careful not to remove any single character from base64 code.  
+  
+And, **use Data-URI for small images only** because large-sized images will have more size when converted to Data-URI formats.  
+  
+Currently, I have replaced all small images with Data-URI codes and saved some requests. Use it and let me know if it helped your website to load faster.  
+
+
+##### b) Combine external Scripts and CSS files
+
+It is a good practice to combine small files into one. For every external file, an request is to be made. Try to reduce such requests.  
+  
+Be careful to append scripts that need to be called earlier at the top. Doing so won't hamper page features and improves user experiences.   
+
+  
+##### c) Use CSS Sprites   
+
+This is another cool technique to reduce no. of requests. CSS Sprites combine many images into a single sprite sheet. Then, CSS is used to show any specific image from the sheet using `background-position` property.  
+  
+CSS Sprite works best for small images like social media icons. Do not combine large images into one as the product image will have larger size.  
+  
+A tool like <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.toptal.com/developers/css/sprite-generator">CSS Sprites Generator</a> can be used to create sprite sheet.  
+
+
+  
+
+## 4] Reduce Redirections   
+
+
+Redirections are calls or methods that take a user from one location to another. There are <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.searchenginepeople.com/blog/redirects.html">5 types of redirections</a> and each type hampers your web performance because it is a waste to go one place just to be redirected to another.  
+  
+_Let us consider a scenario:_ 
+
+> You ask someone where to find eggs and when you go there, you're told that there are no more eggs and you need to go another shop. It is just like that.  
+
+
+##### So, how to find out your website redirections?  
+  
+A simple way to figure out redirections is to use a tool like <a rel="nofollow noopener noreferrer" target="_blank" href="https://varvy.com/tools/redirects/">Redirect Mapper by Varvy</a> which detects and displays 301 and 302 redirects.   
+  
+Type in your page address and hit enter. You'll be provided with a result something like this :  
+  
+
+<Image src="redirection checking blogger.png" alt="redirection checking blogger" />
+
+  
+The above redirection is common among bloggers. Firstly a non-www is redirected to www and later to https. This results in a 2 redirection chain and it significantly impact loading speed.  
+  
+The solution for this can be to redirect all non-www to https www in a single redirection. It is important to know that even if we remove a single redirection, it helps in faster loading of page.  
+  
+_Google recommends eliminating redirects by never linking to a page with a redirection in it._ This happens when you had once entered an address, and that address is now redirected and you have not updated. Therefore, it is important to know whether your pointing addresses are valid or are 404 errors or are simply redirects.  
+  
+You can use free tools like <a rel="nofollow noopener noreferrer" target="_blank" href="https://brokenlinkcheck.com/">broken link checker</a> or screaming frog to find 404 errors and redirections.  
+  
+It is not that redirections are totally bad. There are many good and legitimate reasons to have redirections. Maybe you have changed your domain or maybe you've removed old article and written a similar one recently. The only thing to be aware is that they significantly increase page speed and performance issues.   
+
+
+   
+
+## 5] Use DNS prefetch  
+
+
+DNS prefetching is another way to improve page performance of a website. With this, we can inform browser to resolve a DNS lookup for future usage. 
+
+<a rel="nofollow noopener noreferrer" target="_blank" href="https://www.w3.org/TR/resource-hints/#dns-prefetch">According to W3C documentation</a>,  
+
+> The dns-prefetch link relation type is used to indicate an origin that will be used to fetch required resources, and that the user agent SHOULD resolve as early as possible.
+
+When a web page contains assets that need to be loaded from external domains, DNS prefetching notifies that there are web resources like scripts, CSS etc. that will be required from specific domains. As a result, a browser resolves DNS lookup asynchronously while loading other contents.  
+  
+An easy way to achieve DNS prefetch is to add a `<link>` tag with `rel="dns-prefetch"` attribute within `<head></head>` section. The code looks like this:  
+  
+```html
+<link rel="dns-prefetch" href="//www.example.com"/> 
+``` 
+
+The above link tag is saying "I want to resolve _www.example.com_ domain before it is called."  
+  
+
+> _Note: Don't add `http://` or `https://` use `//` instead. That way, browser will resolve DNS no matter what the protocol is._
+
+  
+Below is a list of some domains with prefetching. Don't forget to remove the domains you won't be using.   
+
+```html
+<!-- Google CDN -->  
+<link rel="dns-prefetch" href="//ajax.googleapis.com">  
+  
+<!-- Google API -->  
+<link rel="dns-prefetch" href="//apis.google.com">  
+  
+<!-- Google Fonts -->  
+<link rel="dns-prefetch" href="//fonts.googleapis.com">  
+<link rel="dns-prefetch" href="//fonts.gstatic.com">  
+  
+<!-- Google Analytics -->  
+<link rel="dns-prefetch" href="//www.google-analytics.com">  
+  
+<!-- Google Tag Manager -->  
+<link rel="dns-prefetch" href="//www.googletagmanager.com">  
+  
+<!-- Google Publisher Tag -->  
+<link rel="dns-prefetch" href="//www.googletagservices.com">  
+  
+<!-- Google AdSense -->  
+<link rel="dns-prefetch" href="//adservice.google.com">  
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">  
+<link rel="dns-prefetch" href="//tpc.googlesyndication.com">  
+  
+<!-- Google Blogger -->  
+<link rel="dns-prefetch" href="//bp.blogspot.com">  
+<link rel="dns-prefetch" href="//1.bp.blogspot.com">  
+<link rel="dns-prefetch" href="//2.bp.blogspot.com">  
+<link rel="dns-prefetch" href="//3.bp.blogspot.com">  
+<link rel="dns-prefetch" href="//4.bp.blogspot.com">  
+  
+<!-- Microsoft CDN -->  
+<link rel="dns-prefetch" href="//ajax.microsoft.com">  
+<link rel="dns-prefetch" href="//ajax.aspnetcdn.com">  
+  
+<!-- Amazon S3 -->  
+<link rel="dns-prefetch" href="//s3.amazonaws.com">  
+  
+<!-- Cloudflare CDN -->  
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">  
+  
+<!-- jQuery CDN -->  
+<link rel="dns-prefetch" href="//code.jquery.com">  
+  
+<!-- Bootstrap CDN -->  
+<link rel="dns-prefetch" href="//stackpath.bootstrapcdn.com">  
+  
+<!-- Font Awesome CDN -->  
+<link rel="dns-prefetch" href="//use.fontawesome.com">  
+  
+<!-- Facebook -->  
+<link rel="dns-prefetch" href="//connect.facebook.net">  
+  
+<!-- Twitter -->  
+<link rel="dns-prefetch" href="//platform.twitter.com">  
+  
+<!-- Linkedin -->  
+<link rel="dns-prefetch" href="//platform.linkedin.com">  
+  
+<!-- Vimeo -->  
+<link rel="dns-prefetch" href="//player.vimeo.com">  
+  
+<!-- GitHub -->  
+<link rel="dns-prefetch" href="//github.githubassets.com">  
+  
+<!-- Disqus -->  
+<link rel="dns-prefetch" href="//referrer.disqus.com">  
+<link rel="dns-prefetch" href="//c.disquscdn.com">  
+  
+<!-- Gravatar -->  
+<link rel="dns-prefetch" href="//0.gravatar.com">  
+<link rel="dns-prefetch" href="//2.gravatar.com">  
+<link rel="dns-prefetch" href="//1.gravatar.com">  
+  
+<!-- BuySellads -->  
+<link rel="dns-prefetch" href="//stats.buysellads.com">  
+<link rel="dns-prefetch" href="//s3.buysellads.com">  
+  
+<!-- DoubleClick -->  
+<link rel="dns-prefetch" href="//ad.doubleclick.net">  
+<link rel="dns-prefetch" href="//googleads.g.doubleclick.net">  
+<link rel="dns-prefetch" href="//stats.g.doubleclick.net">  
+<link rel="dns-prefetch" href="//cm.g.doubleclick.net">  
+
+```  
+
+
+
+## 6] Request only required fonts  
+
+
+Fonts are integral part of web designing. A good font can enthrall visitors into going  through contents. There are many ways to add a font in your website. A common practice is to install Google Fonts which are free and easy to use.  
+  
+You just need to select fonts you want from Google Fonts and click on embed option. 
+
+```html
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' id='google-fonts-css' media='all' rel='stylesheet' type='text/css'/>
+```  
+
+The above is Open Sans Google Font. It looks amazing when you set height and size. However, have you bothered to open that file ?  
+  
+
+<Image src="Open Sans google fonts optimization.png" alt="Open Sans google fonts optimization" />
+
+  
+The file loads Cryptic, Latin, Vietnamese and other versions of fonts. Do you even need them? 
+
+A recent studied showed that adding a `.woff` version will be more than enough because all browsers support it. `Woff2` is new version and most modern browsers support them too.   
+  
+You can do the compatibility test from <a rel="nofollow noopener noreferrer" target="_blank" href="https://caniuse.com/#search=woff2">caniuse.com</a>.  
+  
+
+<Image src="caniuse font testing.png" alt="caniuse font testing" />
+
+  
+What if browser or system doesn't support the font you have added? In that case, you can use a property `font-display:swap` to swap the font with default system font incase browser can't load it. Pretty simple, right?  
+  
+<ins>Here is the code to add Open Sans Google Font:</ins>
+
+```css
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https: //fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-UFVZ0b.woff2) format('woff2'); 
+    font-display: swap;  // highlight-line
+ }
+```  
+
+
+
+
+## 7] Optimize Images   
+
+
+Most of the time in order to improve page speed, we focus on different aspects of website like CSS, HTML, Script, Requests etc. that we forget to focus on one of its integral part : Images. Images add value to a site. So, how do you optimize images to help in faster loading of page?  
+  
+The very first option is to choose right image format. There are various image formats such as PNG, JPEG, GIF and so on. All of them have their respective properties and features.  
+  
+
+> The rule of thumb is to save images in PNG format if the number of colors used are less, choose JPEG if multiple colors are used and GIF if you're creating a short animated video. [I've shared a detailed article comparing different image formats.](https://www.twistblogg.com/2019/11/introduction-to-svg.html) Check that out too.
+
+  
+Now, you know which image format to choose, the very next step is to compress those images. Here is a normal pattern I used to follow : 
+
+
+<Span bg="primary">PEW- I use Gatsby Now :P</Span>
+
+  
+a) Compress PNG images at <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.tinypng.com">TinyPNG</a> and JPEG at <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.tinyjpg.com">TinyJPEG</a>  
+  
+
+<Image src="compress images with tinypng.png" alt="compress images with tinypng" />
+
+
+  
+b) Save and upload them in article. Check for article's Page Score in GTMetrix.com and download new optimized images. Replace previous images with the new downloaded ones in the same article.  
+  
+
+<Image src="download optimized image to improve page performance.png" alt="download optimized image to improve page performance" />
+  
+
+
+## 8] Specify Image Dimensions  
+
+
+Now that we know how to optimize images, it is equally important to specify image dimensions. Image dimension in 2D defines the width and height attributes of an image. According to Google,  
+
+> When the browser lays out the page, it needs to be able to flow around replaceable elements such as images. It can begin to render a page even before images are downloaded, provided that it knows the dimensions to wrap non-replaceable elements around. If no dimensions are specified in the containing document, or if the dimensions specified don't match those of the actual images, the browser will require a reflow and repaint once the images are downloaded. To prevent reflows, specify the width and height of all images, either in the HTML `<img>` tag, or in CSS.
+
+  
+In short, specifying image dimensions prevent browser from redrawing already downloaded images. This helps load a website faster.  
+  
+You can easily specify image dimenions within `<img>` tag as below:  
+
+```html
+<img src="#" width="300px" height="300px"/>
+```
+
+Or, you can use CSS:  
+
+```css
+img{width:300px; height:300px}
+```  
+
+Another important thing we do not pay attention to is the actual image dimensions. I used to upload high dimension images and re-size them by specifying width and height attributes in `<img>` tag. 
+
+When I checked sizes, they were around 60kb or more which was not practical for speed optimization.  
+  
+So, a good practice is to crop or re-size the images to needed dimensions via an image editor before uploading in the articles. Later, we can specify same width and height attributes.  
+  
+Below I have used an online photo resizer to check the filesize for same image. You can notice the difference in file sizes.  
+  
+
+<Image src="crop images to needed dimensions before inserting.png" alt="crop images to needed dimensions before inserting" />
+  
+
+  
+
+## 9] Lazy Load Images  
+
+
+You might have noticed I have used many images in this article (Gatsby does it for me :P), and they are not loaded all at once. Once the image is in viewport, it is getting loaded. That way I'm minimizing loading time initially and upgrading page speed. The mechanism I have used is commonly known as Lazy Loading Of Images or Deferring Off-screen images.  
+  
+Lazy Load, as the name suggests, is loading files or images in a lazy pattern. That means they won't be loaded initially, but once they are in the fold region. As the user scrolls, the images are loaded.  
+  
+The main advantage of lazy loading is page speed. Since HTTP requests are also minimized initially, the website loads fast. Saving even a second is precious which I've discussed at the beginning.  
+  
+In lazy loading, we specify a very small sized image (probably in bytes) in src attribute of `<img>` tag. That image is loaded at the beginning. As the user scrolls down, the image is loaded and replaces the previous small image. The image to be lazy loaded is specified in data-src attribute of image tag.  
+  
+So, how do you achieve lazy loading of images ? For that, I've written an article on [how you can defer offscreen images in blogger](https://www.twistblogg.com/2019/11/lazy-load-images-in-blogger.html). Read that out.   
+
+
+  
+
+## 10] Optimize Web Icon Fonts : Font Awesome  
+
+
+[Font awesome icons](https://www.twistblogg.com/2014/01/How-To-Use-FontAwesome-Icons-In-Blogger.html) make the task of web designing easier and faster as they are a package with more than 2000 in-built free icons set. However, most of us rarely use more than 20 icons.  
+  
+Do you accept adding a whole package for just a percentage usage? Definitely, No. It is not only case with font awesome, but other web font icons like icomoon also bear same drawback. Therefore, it is important to optimize them.  
+  
+Below are some merits of optimizing font awesome icons:  
+
+*   Improved pagespeed.
+*   Less DNS Look-up.
+*   Less HTTP Requests.
+
+Check out this article to learn [how to optimize font awesome icons](https://www.twistblogg.com/2019/11/optimize-font-awesome-icons-for-better-web-performance.html).
+
+  
+
+
+## 11] Shift To SVG Icons/Files
+
+
+Scalable Vector Graphics (SVG) files are nothing more than simple documents that describes shapes, lines, curves, colors, texts and points. Each attribute describes its own property and it can be modified individually, hence providing higher range of editing flexibility. You can learn more about the [advantages of SVG icons over traditional image formats like PNG, JPEG from this linked page.](https://www.twistblogg.com/2019/11/introduction-to-svg.html)  
+  
+In fact, most of the developers do not rely on font awesome or icomoon for inserting icons in their website. They simply create a SVG icon using application softwares like Inkspace, Photoshop, Sketch and insert it in the website. Not necessary to [install Font Awesome](https://www.twistblogg.com/2014/01/How-To-Use-FontAwesome-Icons-In-Blogger.html) and call, hence improving webpage loading time.  
+  
+Moreover, you can use SVG format as logo, icons and website backgrounds instead of traditional image formats. This will reduce page size (given SVG files are optimized) and boost page speed.  
+  
+
+##### How to find SVG Icons for my website? 
+
+
+Creating a SVG icon on your own can be hectic if you are not good with vector application softwares, hence using already available icon sets is an easy approach. 
+
+Here is what I normally follow when I'm in need of SVG Icons :  
+
+
+**Let's say I need a simple facebook icon.**  
+
+
+*   I'll go to <a rel="nofollow noopener noreferrer" target="_blank" href="https://iconmonstr.com/">iconmonstr.com</a> (you can choose any website that provides SVG Icons, but this is my first choice).
+*   Search for facebook icon and choose one of the available icon.
+*   Click on SVG format and accept license agreement.
+*   Finally, hit Embed option. Done.
+
+  
+<Image src="find SVG Icons for my website.png" alt="find SVG Icons for my website" />
+
+    
+I have my SVG code for facebook icon. Now, I'll paste the code in desired location and tweak some properties to fit with my site.  
+
+
+
+##### How to find SVG images for using as website backgrounds? 
+
+
+In our previous template ([TwistBlogg v2](https://www.twistblogg.com/2020/04/twistblogg-v2-blogger-template.html)), in order to improve page speed we replaced header and footer images with SVG pattern files. They were less size compared to images and there was no need to establish a connection, which was a must in case of normal images. So, how did I find cool SVG images to use as backgrounds?  
+  
+Below are some websites which provide free SVG background files:  
+
+
+\# <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.heropatterns.com/">HeroPatterns.com</a>  
+This website provides free repeatable SVG background patterns. Click on the one you like, customize the foreground and background color and you're ready with the code.  
+  
+\# <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.svgbackgrounds.com/">SVGBackgrounds.com</a>  
+This website provides colorful SVG background patterns for free. Change color, opacity and scaling factor to fit with your website design.  
+  
+\# <a rel="nofollow noopener noreferrer" target="_blank" href="https://philiprogers.com/svgpatterns/">Philiprogers.com</a>  
+This website provides beautiful and eye catching SVG patterns. To match the design, you might need to change values from coding section provided in demo site.  
+  
+\# <a rel="nofollow noopener noreferrer" target="_blank" href="https://svgeez.com/">Svgeez.com</a>  
+This website provides unique and stylish SVG background patterns. You can even order a custom SVG images based on requirements.  
+  
+
+##### When not to use SVG?  
+
+1#  OpenGraph does not support SVG images, thereby it is not worth replacing post images with SVG files.  
+2#  Greater points in a file == increased file size. Therefore, it is not worth creating detailed images with SVG.  
+
+
+   
+
+## 12] Optimize CSS
+
+
+CSS defines how HTML elements are to be displayed in a screen. A website can access this information in three ways : In an external file, which loads before page is rendered and is called using `<link>` tag, or internally, which is embedded somewhere within site, or inline, meaning along with HTML tags.  
+  
+If you're not sure how your CSS is currently loaded, you can use <a rel="nofollow noopener noreferrer" target="_blank" href="https://varvy.com/tools/css-delivery/">this CSS delivery tool</a>. Enter your web address and you'll get complete information along with sizes. Here's a screenshot of this blog.  
+  
+
+<Image src="finding css files of my website.png" alt="finding css files of my website" />
+
+
+
+##### Good Practices to be followed for optimizing CSS  
+
+
+If your website is using multiple external CSS files, each one adds delay in page loading time. It is always best to combine them into a single file. That way with a single connection established, everything can be loaded at once, hence [improving page speed](https://www.twistblogg.com/2019/11/overcome-leverage-browser-caching-blogger-favicon.html).  
+  
+This is actually a simple process. Simply copy the contents of each CSS files and combine them into a main CSS file.  
+  
+
+
+<Image src="optimize css for fast page loading.jpg" alt="optimize css for fast page loading" />
+
+
+  
+Then, remove all the references for old files and update code reference with this new main CSS file.   
+  
+Now, analyze the site in Pagespeed Insight to make sure you're not getting any render blocking CSS issues. If you're facing this issue, make sure to follow <a rel="nofollow noopener noreferrer" target="_blank" href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery">Google Recommendation for Optimizing CSS delivery.</a>  
+  
+For optimizing internal CSS attributes, start removing unnecessary spacing and comments. We will discuss more on this in a moment.  
+  
+For optimizing inline CSS attributes, try avoiding them when possible. This will make the code lot cleaner and duplication of codes can be minimized. Inline code looks like this and there is also optimized code. Take it as a reference.  
+  
+
+
+<Image src="optimizing css inline codes for faster page loading.jpg" alt="optimizing css inline codes for faster page loading" />
+
+  
+
+## 13] Lazy Loading CSS Files
+
+
+Google recommends that you load critical CSS internally (eg: page-layout,main-container) and non-critical externally. It also recommends to avoid inline styling of CSS.  
+  
+When it comes to non-critical CSS like font-awesome, animation libraries, syntax highlighter styling or anything that is not responsible in the styling of webpage structure, you can asynchronously load them.  
+  
+Lazy loading of CSS ensures that content is loaded first before loading CSS and Javascript. This is important for users with slow connections. In this method, even if CSS fails to load, users can still read the text content.   
+  
+In the following code, I'm trying to lazy load Font awesome, simply copy and paste before closing head tag.  
+
+
+```html
+<!-- If browser doesn't support JavaScript, then use normal link tags to load CSS -->  
+<noscript>  
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css' rel='stylesheet'/>  
+<!-- Eg: <link href='/sample/main.css' rel='stylesheet'/> -->
+<!-- Add More external stylesheets --> 
+</noscript>  
+  
+<!--Lazy Loading of Font Awesome Begins-->  
+<script type='text/javascript'>  
+//<![CDATA[  
+function loadCSS(e, t, n) {  
+    "use strict";  
+    var i = window.document.createElement("link");  
+    var o = t || window.document.getElementsByTagName("script")[0];  
+    i.rel = "stylesheet";  
+    i.href = e;  
+    i.media = "only x";  
+    o.parentNode.insertBefore(i, o);  
+    setTimeout(function() {  
+    i.media = n || "all"  
+    })  
+}  
+loadCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css");  
+//loadCSS("/sample/main.css"); --> 
+//Add More external stylesheets  
+//]]>  
+</script>  
+
+```  
+
+It is important to use `<noscript>` tag, since it loads CSS when browser does not allow to load any scripts.  
+
+
+
+
+## 14] Run a compression audit
+
+
+Smaller the page size, faster it loads. Every byte we can reduce, it will benefit by reducing load time. A simple way to decrease page size is by enabling Gzip compression.  
+  
+Gzip stands for Gnu Zip and it is a form of data compression i.e it takes a large chunk of data and make it smaller.  
+  
+To run a compression audit, go to <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.gidnetwork.com/tools/gzip-test.php">GIDNetwork</a> and enter your web address. Click Check and if your page is compressed, you'll see something like this:  
+  
+
+
+<Image src="run a compression audit.png" alt="run a compression audit" />
+
+
+  
+For blogger users, there's a good news. **Google enables GZIP compression by default** and you do not need to worry it. Just in case, you're getting a negative result, add this php code above `<!DOCTYPE html>` .
+
+```php
+<?php if (substr_ count($_SERVER['HTTP_ACCEPT_ENCODING'],'gzip')) ob_start("ob_gzhandler");else ob_ start();?> 
+```  
+
+
+
+## 15] Enable HTML/CSS/JS Compression
+
+
+Another way to reduce page size is by minifying HTML,CSS and Javascript files. Your code might contain whitespaces, comments and indentions. These can be safely removed without affecting the core functionality of HTML, CSS and JS.  
+  
+However, minifying of code reduces code readability. This might bring problems while editing back the code. But there is a solution: You can use formatter tools (I'll be sharing links along with minifier tools) to add whitespaces and re-structure the codes.  
+  
+Let's take a sample CSS code from one of our widget to check how compression reduces size.  
+  
+
+<Image src="compressing css to improve page speed.png" alt="compressing css to improve page speed" />
+
+  
+You can see I saved around 551 bytes in a small CSS file which might not be huge but repeating the same process for all available codes can make a huge difference. Small small differences bring big changes (Butterfly Effect :P).  
+  
+
+##### Minifying HTML  
+
+
+Because HTML codes rarely contain comments and extra whitespaces, minifying them is not a trend followed by many designers. However, you can always work on improving every aspect of your code. Use any of the following links to automate minification process :  
+
+*   <a rel="nofollow noopener noreferrer" target="_blank" href="https://kangax.github.io/html-minifier/">Kangax HTML Minifier</a>
+*   <a rel="nofollow noopener noreferrer" target="_blank" href="https://htmlcompressor.com/compressor/">HTML Compressor</a> 
+*   <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.willpeavy.com/tools/minifier/">Will Peavy's HTML Minifier</a>
+*   <a rel="nofollow noopener noreferrer" target="_blank" href="https://minifycode.com/html-minifier/">HTML Minifier by Minifycode</a>
+
+You can reverse the process by using any of the formatter too. 
+
+_Note: These tools re-structure HTML, CSS and Javascript as well, so you can use them for all._  
+
+*   <a rel="nofollow noopener noreferrer" target="_blank" href="https://unminify.com/">Unminify</a>
+*   <a rel="nofollow noopener noreferrer" target="_blank" href="https://webformatter.com/html">HTML Formatter</a>
+*   <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.10bestdesign.com/dirtymarkup/">Dirty Markup : HTML Beautifier</a>
+
+
+##### Minifying CSS
+
+
+*   <a rel="nofollow noopener noreferrer" target="_blank" href="https://cssminifier.com/">CSS Minifier</a> 
+*   <a rel="nofollow noopener noreferrer" target="_blank" href="https://csscompressor.net/">CSS Compressor</a>
+*   <a rel="nofollow noopener noreferrer" target="_blank" href="https://minifier.org/">Minifier.org</a>
+
+
+##### Minifying Javascript
+
+
+*   <a rel="nofollow noopener noreferrer" target="_blank" href="https://closure-compiler.appspot.com/home">Closure Compiler By Google</a>
+*   <a rel="nofollow noopener noreferrer" target="_blank" href="https://minifier.org/">Minifier.org</a>
+*   <a rel="nofollow noopener noreferrer" target="_blank" href="https://jscompress.com/">JSCompress</a>
+
+
+
+
+## 16] Keep Javascript files at the bottom of page
+
+
+One thing we all bloggers do wrong is keeping `<script>` tag in the head section. This results in showing a blank page till the browser downloads the complete script.  
+  
+If any of the script takes longer time for downloading, the website won't load, hence increasing Time to First Byte (TTFB) and loading time significantly.  
+  
+A good practice is to keep Javascript files at the bottom of page. Doing so won't block rendering of HTML and scripts are loaded at the end after HTML and CSS files.  Alternatively, you can defer or asynchronously load scripts which will be discussed below.  
+
+
+
+
+## 17] Defer or Asynchronously load Javascript Files
+
+
+There is a small difference between deferring and asynchronously loading JS files.  
+  
+
+**With asynchronous loading,**
+
+* scripts are downloaded in parallel and then executed as soon as downloads are complete. 
+* Not necessary that execution order follows calling order.
+
+
+**With defer loading,**
+
+* scripts are also downloaded in parallel, but executed only when the document parsing is completed.  
+* Execution order always follows calling order.
+
+  
+For deferring scripts, use defer attribute in the script tag. Note: It only works with external scripts with src attribute defined.  
+
+```js
+<script defer src="/script.js"></script>
+```
+
+For asynchronous loading of scripts, use asyn attribute in the script tag. Note: It also won't work for inline scripts.  
+
+```js
+<script async src="/script.js"></script>
+```  
+
+
+
+## 18] Reduce external scripts
+----------------------------
+
+It is inevitable that increased DNS lookup adds significant loading time. Though we focus on reducing external CSS and JS, sometimes we forget about third party external scripts that are being loaded without even knowing.  
+  
+You can identify all the scripts loading along with page using Network section in Chrome Inspect Elements tool.  
+  
+
+<Image sc="reduce external scripts for fast loading-inspecting in chrome.png" alt="reduce external scripts for fast loading-inspecting in chrome" />
+
+
+In the above image, we can identify that disqus files are loaded along with initial page loading. This increases page loading time. [Lazy loading of disqus](https://www.twistblogg.com/2019/09/fix-disqus-commenting-system-issues.html) can boost page speed drastically.  
+  
+Figure out what all scripts are important and remove unnecessary scripts. For instance, calling twitter API script for a simple Tweet button can increase DNS lookup. You can replace that script with simple anchor tag.   
+  
+
+
+
+
+## 19] Remove default CSS and JS Blogger Files
+
+
+By default, blogger loads its own version of CSS and JS in blogspot sites. These files help blogger's widgets and gadgets run smoothly. You can view them in Chrome Dev tools under "Sources" tab. They are of large size and hampers page speed. So, removing them can decrease loading time significantly. In fact, most of the available custom themes do not depend on them.  
+  
+
+<Image src="Remove default CSS and JS Blogger Files.png" alt="Remove default CSS and JS Blogger Files" />
+
+
+  
+Before proceeding, make sure to take a backup and confirm your theme is independent of blogger's available widgets.  
+  
+
+##### Remove Dyn CSS authorization.css file   
+
+
+To remove authorization.css file, replace `</head>` with `&lt;!--</head>--&gt;&lt;/head&gt;`.  
+  
+
+##### Remove Blogger's Default widget_css_bundle.css file  
+
+
+To remove default css file, add this attribute `b:css='false'` to `<html>` tag. Your code will look something like this: 
+
+```html
+<html b:css='false' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+```  
+
+
+##### Remove Blogger's Default widgets.js Javascript file  
+
+
+To remove widgets.js file, replace `</body>` with `&lt;!--</body>--&gt;&lt;/body&gt;` .  
+  
+
+
+##### Remove default blogger's CSS and JS file from View Page Source  
+
+
+When you use above method, javascript and css files will not be loaded but they will still appear in comment tags in your source code. This is an optional step.  
+  
+To remove them permanently from source code as well, add `b:css='false'` and `b:js='false'` to `<html>` tag. Your code will look like this:  
+
+```html
+<html b:css='false' b:js='false' b:version='2' >
+```  
+
+Important: When you use `b:js='false'`, it will disable the feature to edit widgets via layout section. So, when you're editing, remove it and vice versa.  
+
+
+
+
+
+## 20] Choose a Minimal Theme
+
+
+Theme selection directly affects website loading time. [A minimal theme](https://www.twistblogg.com/2019/09/best-premium-blogger-templates.html) loads faster than the one with lots of plugins embedded. Go for some simple light weight theme and your half work is done.  
+  
+There are a lot of themes/templates available throughout the internet. So, how do you select the best one for your website? Here's my recommendation:  
+  
+
+*   Check Page Speed on GTMetrix and Pagespeed Insight (anything above 90 score is a good choice). Also, make sure the load time is below 3/4 seconds.
+*   SEO optimization is a must factor. Make sure that theme is following latest SEO trends. You can use tools like <a rel="nofollow noopener noreferrer" target="_blank" href="https://neilpatel.com/seo-analyzer/">SEO analyzer by Neil Patel</a>, <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.woorank.com/">woorank</a> or <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.seoptimer.com/">Seoptimer</a>.
+*   Responsiveness is a key factor for improving page traffic. Check whether the theme is responsive or not. You can use <a rel="nofollow noopener noreferrer" target="_blank" href="https://responsivedesignchecker.com/">Responsive Design Checker</a>.
+*   Make sure it passes <a rel="nofollow noopener noreferrer" target="_blank" href="https://search.google.com/structured-data/testing-tool">Google Structured data test</a>. 
+
+
+You can start with [BlogLog template](https://www.twistblogg.com/2020/04/twistblogg-v2-blogger-template.html) which was released by us and it passes all tests and loads super fast.  You'll be amazed for sure :)  
+  
+
+
+
+## 21] Monitor your Page Speed Over Time 
+
+
+Page speed depends on various factors and is changing frequently based on geo location, file accessibility, DNS fetching and many more. The page speed you obtained today might not be same tomorrow.  
+  
+Maybe your file crashed and site is not able to access it or maybe your server is not responding, hence increasing loading time . Maybe you have updated codes and that is slowing down your page. Images you have added could be of large sizes. Therefore, it is important to monitor it over time.  
+  
+Keep track of how your site performs frequently at least within every 3 days. Make changes, see how that affects page speed.  
+  
+In addition to monitoring your page loading time in desktop version, it is equally important to monitor it for mobile devices because most readers prefer their phones for surfing. You can start testing your site with <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.thinkwithgoogle.com/feature/testmysite/">thinkwithgoogle</a>.  
+
+
+
+
+#### Conclusion  
+
+
+Obtaining a desired page speed for your site is a challenging task and it takes lot of effort, patience and consistency, but the result will improve page performance.  
+  
+Also, it is important to know that while all above tips and solutions listed can help you achieve a better pagespeed score, it is not necessary to implement all of them.  
+  
+Analyze your site, make a note of what all factors are slowing down, start working on improving those factors for decreasing page loading time. Good Luck :)

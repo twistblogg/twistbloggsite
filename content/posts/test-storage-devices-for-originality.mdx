@@ -1,0 +1,197 @@
+---
+title: 'Test PenDrive / Memory Card For Originality - Windows & Linux'
+date: 2019-11-29
+excerpt: Do you own a pendrive or flash drive or memory card? If yes, test and verify whether your storage device is original or duplicate with this simple trick.
+slug: test-storage-device-originality
+featured: false
+published: true
+image: test if a storage device is fake or not.jpg
+author: Invictus
+tags : [Tips and Tricks]
+---
+
+Last week, my friend bought a 32GB San Disk Pendrive and he told me the pendrive won't allow him to copy files once the device space is filled to 18GB. I suggested him to run chkdsk command and repair the device. However, all the efforts were wasted. I started searching if others are facing the same issue, and there were many. At first, I thought it was a fault for only San Disk Pendrives, but other manufacturers' devices were also showing same issue.  
+  
+Later, I read <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.winusb.net/fake-flash-test/">this article</a> that solved my query "why the pendrive won't allow me to copy beyond some limit even if free space is available". I'll try to explain it in a short way.  
+  
+Basically, a pendrive/memory card/flash drive or any other usb devices that won't allow you to copy beyond a certain limit are fake devices. Yes, fake devices. There are two types of fake devices:  
+
+  
+**Type 1 Fake Device** : Allows you to copy files to full memory space, but the files after some certain space will get corrupted and non-existant on viewing via File Manager.  
+  
+**Type 2 Fake Device** : Shows Fake storage capabilities, and won't allow you to copy beyond real available memory space.  
+  
+
+Concluding, my friend's pendrive falls under Type 2 Fake Device.  
+
+
+
+But what if you have a 2TB flash drive? It might take a lot of effort to figure out whether it is a fake device or not. For that reason, we can make use of available tools such as h2testw, f3read, f3write and so on to verify whether a USB device live upto claimed specifications. This article will focus on Windows and Linux users only.  
+  
+
+## Windows Edition : Test if a USB device is original or not
+
+
+This is the Windows edition of the trick to figure out whether you have bought original pendrive/memory card or flash drives.  
+  
+In this tutorial, I'm using following environment:  
+**OS** : Windows 10 (64-bit)  
+**FlashDrive** : 32GB Flash Drive (San Disk)  
+**Application Used for Testing** : h2testw  
+  
+
+### What is h2testw?
+
+H2testw is a simple, free and portable tool used to verify if a USB device is as per the specs. It is super easy to use and supports almost all types of storage devices including SDD, microSD and hard drives. You can even choose the amount of data you want to scan. Here is the layout of h2testw v1.4. <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.filehorse.com/download-h2testw/">You can download it from here</a>. 
+
+
+<Image src="h2testw on 32GB flashdrive.png" alt="h2testw on 32GB flashdrive"/>
+
+  
+H2testw performs Write operation in the device and **returns "Test Finished without Errors" on success**. If your device is not original, you will get a message like "**The media is likely to be defective**."  
+  
+
+*   Step 1: Open h2testw and Click on **Select Target** to specify the the device/folder you want to scan.
+*   Step 2: **Set Data volume** i.e how much space you want to write or scan for. If you want to scan whole device (in most cases), **leave the Data Volume tab intact.**
+*   Step 3: In order to check, hit the "**Write and Verify**" button.
+
+_PS: Take a nap and come back to see if your pendrive/memory card is original or not._  
+
+
+<Image src="test is a pendrive is original or not.png" alt="test is a pendrive is original or not" />
+  
+
+
+## Linux Edition : Identify if a Pendrive/Memory Card I bought is original or not
+
+
+
+This is the Linux edition of the trick to find whether you have bought Original Flashdrive/pendrive/memory card or any other USB devices.  
+  
+
+In this tutorial, I'm using following environment:  
+**OS** : Deepin 15.11 Linux  
+**FlashDrive** : 32GB Flash Drive (San Disk)  
+**Application Used for Testing** : f3 (Fight Flash Fraud)  
+  
+
+### What is f3 (Fight Flash Fraud)?
+
+f3 is a simple open source tool that lets you examine flash cards capacity and performance to see if they live upto the claimed specifications. This tool performs two operation : Write and Read operation.  
+  
+**In Write operation**, f3 writes data to all available locations in a pendrive and outputs the result in terms of Free Space. A result with Free space of 0.00 Byte is what you will be expecting for originality.  
+  
+**In Read Operation**, f3 reads all available data in a pendrive and outputs the result in terms of Data Lost. A result with Data Lost of 0.00 Byte is what you will be expecting for originality.  
+  
+_Note : Perform Write operation before Read Operation for full testing purpose._  
+  
+<a href="https://github.com/AltraMayor/f3/releases" rel="nofollow noopener noreferrer" target="_blank">Download the f3 tool from here</a> and get started with the tutorial for testing if a flash drive is original or not.  
+  
+  
+
+#### 1) Extracting the compressed files to a folder.  
+
+
+This is a very simple step. You already have a zip or a tar.gz downloaded, extract that file to a folder. Either extract it with below command or many Linux Distros have in-built file extractor.  
+
+
+**_Note:_**  
+
+*   You need to be in the same directory where the compressed file is located. 
+*   The command depends on the type of file you have downloaded earlier. Choose the respective line of code.
+*   The filename needs to be modified accordingly.
+
+  
+For Zip File: `unzip filename.zip`  ( Eg:  **unzip f3-7.2.zip** )  
+
+For Tar File: `tar -xvf filename.tar.gz`  ( Eg:  **tar -xvf f3-7.2.tar.gz** )  
+
+
+
+
+
+#### 2) Changing the directory to folder file (Or Opening Terminal on the folder)
+
+
+In step 1, we have extracted all files in a folder. Now, we will open a terminal and change our directory to that folder. This can be achieved in two ways.  
+
+*   Open a normal terminal and **use cd command**.
+*   Or, open that folder and right click and select Open in Terminal.
+
+
+<Image src="test pendrive for originality- open a new terminal.png" alt="test pendrive for originality- open a new terminal" />
+
+
+
+#### 3) Building the File to test the USB originality
+
+
+Type the following command and hit enter:  `make`
+
+  
+
+<Image src="is my usb original or not - building the file.png" alt="is my usb original or not - building the file" />
+
+
+
+#### 4) Installing f3read and f3write files,
+
+
+Enter the following piece of command in your terminal to install the required files. You may need to type your password:  `sudo make install`
+
+  
+<Image src="test my usb for duplicacy - installing .png" alt="test my usb for duplicacy - installing" />
+
+
+
+#### 5) Performing Write Test in USB drive
+
+
+Next step is testing USB drive for write operation. Follow the below steps.  
+
+*   Insert your USB drive.
+*   Find its location (Open the drive and right click, select open in terminal, you will find the location, just copy the location and exit from that terminal: it will look something like **/media/your\_username/drive\_name** )
+*   Enter the following code in the terminal ( The terminal with folder location, opened in step 2. Check images for help) 
+    
+    `./f3write /media/amanbhattarai/INVICTUS`
+
+
+The above command will write files in your pendrive/memory card to all available locations.  
+  
+If your pendrive/memory card is original, you will receive Free Space: 0.00 Byte  
+If not, there will be free space remaining.   
+  
+_PS: Be ready to grab a coffee, the task will take significant time to perform write operation depending upon your device._  
+
+
+<Image src="test pendrive for write operation.png" alt="test pendrive for write operation" />
+
+
+
+#### 6) Performing Read Test in USB drive
+
+
+Enter the following code to test for read operation :  
+
+`./f3read /media/amanbhattarai/INVICTUS`
+
+  
+  
+If your pendrive/memory card is original, you will receive DATA LOST: 0.00 Byte  
+If not, there will be some data loss.   
+
+
+<Image src="test pendrive for read operation.png" alt="test pendrive for read operation" />
+
+
+That's all. A simple trick to **test pendrive/memory card for originality in Windows and Linux**. In case, you're not able to follow the tutorial, leave a comment.  How did the test go? Share your result. Have a wonderful day.  
+  
+_So, what's next?_  
+
+Following are some amazing handpicked tutorials for you to read next :  
+
+*   [Must know Facebook Tips & Tricks To Impress Your friends](https://www.twistblogg.com/2016/01/best-facebook-tips-and-tricks.html)
+*   [Truth about Google Revealed - Is Google Hacking you?](https://www.twistblogg.com/2017/09/is-google-really-hacking-you.html)
+*   [A Simple Trick To Identify if a website is on WordPress or not.](https://www.twistblogg.com/2018/09/know-if-website-is-using-wordpress.html)
+*   [Embedding PDFs and other documents in Blogger Posts made easy](https://www.twistblogg.com/2015/03/how-to-embed-pdf-and-other-documents-in-blogger-posts.html)
+*   [Generate a $1 million Payment Proof in Paypal (Of course, to impress)](https://www.twistblogg.com/2018/07/generate-fake-paypal-payment-proof.html)

@@ -1,0 +1,60 @@
+---
+title: 'How To Add Google Analytics On Blogger Blog'
+date: 2014-04-24
+excerpt: Google analytics allows to trace traffic details of a website precisely. Learn how to properly add google analytics to your blogger blog.
+slug: add-analytics-blogger
+featured: false
+published: true
+image: How To Add Google Analytics On Blogger Blog.png
+author: Invictus
+tags : [Blogging Tips]
+---
+
+Google Analytics or GA, in short, is a free (basic) service by Google for webmasters for detailed tracking of traffic to one's website/blog. It is also available in premium. It shows us everything we need to know about our site. It shows us a number of useful stats which are crucial to succeed in our online business. Beside the number of pageviews, unique visitors or bounce rate, it also shows the keywords data, page load time, from where visitor landed, which browser they used, what error they encountered, real-time reporting, event tracking, campaign tracking, flow visualization and much more. 
+
+Do you have any reason not to **use Google Analytics on your blogger blog**? Every other individual blogger or big companies use Google Analytics on their web pages so that they can do better in their market and provide maximum user-friendly experience to their visitors.
+  
+  
+
+## Steps To Add Google Analytics On Blogger Blog
+
+
+### 1)Setting Up your account with Google Analytics
+
+*   Go to <a rel="nofollow noopener noreferrer" href="https://www.google.com/analytics">Google Analytics</a> Page and click on **Sign in** Link (Top Left Side). Your existing Gmail account to sign into Google analytics account.
+*   After Sign in, click on **Sign Up** button (in left side corner) to begin with setup process of your account.
+*   Now you will have to fill up the necessary data required to set up your account like as; Account Name, Website Name, Website URL, Category, Time Zone etc. (see image below). Fill up all the required data and proceed.
+
+
+<Image src="create analytics account.png" alt="create analytics account" />
+  
+
+*   After that scroll down to the end of the page and click on the blue button "**Create Account**", then a pop dialog box of  "**Terms and Conditions**" will appear. Accept their terms and conditions to proceed with the account setup.
+*   As soon as you will accept the terms and conditions, you will be redirected to the page where you will get the **Tracking id** starts with **UA** and a JavaScript code. We need the tracking id only because blogger has its own feature which allow us enter our ID. Avoid JavaScript code.
+
+
+<Image src="Copy-Your-Tracking-Id.png" alt="Copy-Your-Tracking-Id" />
+  
+
+### 2) Adding Google Analytics To Your Blogger Blog  
+
+
+This process is of just two steps. First we need to add the Tracking Id we have recently copied and secondly we need to add the code to our template but instead of adding the JavaScript code, we will add a `<include>` Tag which will do the magic of importing Google Analytics Code into our template  automatically on every page of our blog.
+
+*   Go to **Blogger → Settings → Other** and then scroll down to the end.
+*   You will see there is an option to add our UA id in "**Analytics Web Property ID**" box so paste your UA tracking id you had copied from Google Analytics account (See image below). Then save these settings and move on to next step.
+*   Now go to **Template → Edit HTML** then wait to load the template code box.
+*   Click anywhere inside the template code box, press Ctrl+F or Cmd+F so that a search box will appear.
+*   Enter `</body>` code line to search box and hit enter. 
+*   Just before it, paste this little code line 
+    
+    ```html
+    <b:include name='google-analytics' data='blog'/>
+    ```
+
+*   Now save your template code because we are done with the installation process.
+
+
+**Easy Enough?**
+
+Everything is setup by now, but it might take few hours for Google Analytics to show the data in your account so do not worry about that, just simply give it at least 24 hours of time. Next day login back and check the stats and start playing around :). You can also link your Google webmasters account and Google Adsense account with your Google Analytics account so that you can get the more out of it. You can do much more with your Analytics account so just keep exploring its new features to learn more and get the more detailed analysis of your blog traffic, keywords etc. In case you face any problem in installing then just ask in the comment below. I will get back to help you. Always there :)

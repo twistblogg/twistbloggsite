@@ -1,0 +1,96 @@
+---
+title: 'How To Customize Blogger Scrollbar and Text Selection Color'
+date: 2015-03-06
+excerpt: Blogger allows you to customize default scrollbar color and text selection color with simple css. This article will guide you through that.
+slug: customize-scrollbar-and-text-selection-blogger
+featured: false
+published: true
+image: How To Customize Blogger Scrollbar and Text Selection Color.jpg
+author: Invictus
+tags : [Blog Customize, Blogging Tips, Blog Widgets]
+---
+
+Ever thought about if you could customize the text selection color and browser scrollbar color/width on your blogger blog? You can see the live examples on our blog itself. We have changed its text selection color and scrollbars color & width too. Isn't it nice? :) 
+
+Follow this simple step by step tutorial and do the same on your blog. Make your [blog look more professional](https://www.twistblogg.com/2019/09/display-estimated-post-reading-time-in-blogger-posts.html), eye catchy, user friendly and of course, colorful too.
+
+  
+
+  
+## Customization of Scrollbar in Blogger
+
+Default color of scroll bar in every browser is grey which can be customized thoroughly. We can customize our blogger's default scroll-bar by customizing its width, height, scrollbar track color, thumb color, thumb hover color and thumb color when scroll-bar is active. To do so, all we need to do is add these styles to our [blogger template's](https://www.twistblogg.com/2019/09/best-premium-blogger-templates.html) CSS style-sheet. Without further delay, let us do the job.  
+  
+**Step 1)** Login to your blogger account >> go to Template >> Edit HTML.  
+**Step 2)** Click anywhere inside the template code box then press **Ctrl+F** on windows and **Cmd+F** on mac.  
+**Step 3)** Find out this little piece of code line `]]></b:skin>` and just before that, paste the whole CSS code given below. You can customize its color codes as you wish.  
+
+```css title=scrollbar.css
+/*--------- Scrollbar Customization by TwistBlogg.Com--------- */  
+ ::-webkit-scrollbar {  
+width:8px;  
+height:8px;  
+}  
+::-webkit-scrollbar-track {  
+background:#FFF;  /*------This is background color of scrollbar track ------*/  
+-webkit-box-shadow:inset 1px 1px 2px #E0E0E0;  
+border:1px solid #D8D8D8;  
+}  
+::-webkit-scrollbar-thumb {  
+background:#c0392b;  /*------Thumb color ------*/  
+-webkit-box-shadow:inset 1px 1px 2px rgba(155,155,155,0.4);  
+}  
+::-webkit-scrollbar-thumb:hover {  
+-webkit-box-shadow:inset 1px 1px 10px rgba(0,0,0,0.4); /*------Shadow on hover------*/  
+}  
+::-webkit-scrollbar-thumb:active {  
+background:#333;   /*------Thumb color when it is active------*/  
+-webkit-box-shadow:inset 1px 1px 2px rgba(0,0,0,0.4);  
+}  
+```
+
+**Step 4)** Hit save button :). In the above CSS code, I have added proper comments to change the color codes to make it easy for every one. If you have further questions, follow the comment route, am eagerly waiting to help you do the job :).  
+  
+**Note:** Please do share your blog URL in comments and I'll personally visit every one's blog to check which colors you have chosen. I'll leave a comment too. Fair enough? huh?  
+  
+
+## Customization of Text Selection Color in Blogger
+
+
+
+By text selection color, what do I mean is whenever someone selects the text with mouse on your blog post then by default its color. Got it? Default background color is always blue and text color is white. Ready to add some more colors to your blog ?  
+  
+
+**Step 1)** Just repeat the previous steps first and find out this `]]></b:skin>` code again.   
+
+**Step 2)** As always, paste the code given below after changing the color codes to match with your blog's theme and hit save button.
+
+  
+```css title=text-selection.css
+/*--------- Text selection Customization by Twistblogg.Com------------- */  
+::selection {  
+background:#e67e22; /*------This is the background color on selection-----*/  
+color:#fff; /*------This is text color on selection-----*/  
+}  
+::-moz-selection {  
+background:#e67e22;  
+color:#fff  
+}  
+::-webkit-selection {  
+background:#e67e22;  
+color:#fff  
+}
+```  
+
+**Final Step:**  Do not forget to visit your blog after adding these styles. How can you forget? Right? lol  
+  
+There is it. These things are of little importance compared to your blog content so do not waste your time on the things like adding every other widget to your blog. [Bear with your great content](https://www.twistblogg.com/2014/03/Best-Tools-For-Bloggers-To-Correct-Grammatical-Mistakes.html) and serve your audience with your best of best. Always give them royal treatment because? They deserve it same as you do. :)  
+  
+**PP:** Did you face any problem with your [blog template](https://www.twistblogg.com/2016/01/premium-seo-optimized-blogger-template.html) while adding these styles? Just ask me in comments and I'll join you there soon. Now do share, subscribe and like our page buddy, you can do it. :)  
+  
+Here are a few hand-picked tutorials for you to read next:  
+
+*   [How to display estimated post reading time in blogger posts?](https://www.twistblogg.com/2019/09/display-estimated-post-reading-time-in-blogger-posts.html)
+*   [Show last updated date and published date in blogger blog](https://www.twistblogg.com/2019/09/show-published-and-last-updated-date-in-blogger-post.html)
+*   [Add Stylish Popular Posts Widget with star ratings in blogger](https://www.twistblogg.com/2019/09/popular-posts-widget-with-rating-for-blogger.html)
+*   [Add Floating Social Media Share Buttons widget for blogger ](https://www.twistblogg.com/2015/05/floating-social-share-bar-widget-for.html)

@@ -1,0 +1,449 @@
+---
+title: 'Add Professional Multi-Author Box With Social Icons In Blogger'
+date: 2019-10-19
+excerpt: An author box widget contains information about the writer.Today we are releasing a professional multi-author box widget with social icons for blogger.
+slug: pro-multi-author-widget-blogger
+featured: false
+published: true
+image: multi author box widget for blogger.jpg
+author: Invictus
+tags : [Blog Widgets]
+---
+
+Are you an author of a blog? Do you want to show credentials at the end of blogger posts for articles you publish? If yes, I have shared this _professional multi-author box with social icons_ for you.  
+
+
+**An author box widget** is a descriptive box that displays information about the content owner. Nowadays, many [premium blogger templates](https://www.twistblogg.com/2019/09/best-premium-blogger-templates.html) have in-built responsive multi-author box because it is a feature that most bloggers want to have.  
+
+
+So, why bloggers want to display author box below blogger posts? Two simple reasons:  
+
+
+*   **To get exposed:** Readers who enjoy reading articles are keen to know about the writer. And adding author box helps them to learn more about you.
+
+*   **To attract content writers:** Guest bloggers are seeking for getting exposed and building backlinks, and having an author box makes the job done.
+
+  
+Blogger.com has an embedded feature that shows author name. However, it only displays the name, no extra information or social links. Therefore, it is necessary to add external multi-author box in blogger.  
+
+
+
+### Features of Multi-author box with social icons for blogger  
+
+
+1.  Clean Layout.
+2.  Social Icons Included.
+3.  Font Awesome 5.8.2 Icons used.
+4.  Responsive Design.
+5.  Multi-authors supported.
+6.  Easy to customize.
+7.  Super-light weight.
+  
+
+Other versions available:  
+
+*   [Responsive Author Box Widget With Social Buttons for blogger](https://www.twistblogg.com/2015/03/responsive-author-box-with-social.html)
+*   [Add Simple Author Box Below Posts in Blogger](https://www.twistblogg.com/2014/02/add-author-box-below-posts-in-blogger.html)
+
+
+
+**Here is a live demo of multi-author box**  
+
+
+<Image src="professional multi-author box for blogger with social icons.jpg" alt="professional multi-author box for blogger with social icons" />
+
+  
+**Responsive View Of multi-author box**  
+
+
+<Image src="responsive multi author box with social icons for blogger.jpg" alt="responsive multi author box with social icons for blogger" />
+
+
+
+## How to add author box with social icons in blogger?
+
+
+Loved the design? Now, let's follow some easy steps to have it installed in your [blogger template](https://www.twistblogg.com/2016/01/premium-seo-optimized-blogger-template.html).To be in safe side, take a [backup of your blogger template](https://www.twistblogg.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html) and enable "**Show Author Profile Widget**" From layout section.  
+  
+
+#### Step 1: Adding Font Awesome Icons To Blogger  
+
+
+We have implemented font awesome 5.8.2 icons for this design. Most of you might have this code installed. If yes, skip this step and make proper modifications to the code. [Learn here on how to use font awesome icons in your blogger design](https://www.twistblogg.com/2014/01/How-To-Use-FontAwesome-Icons-In-Blogger.html).  
+  
+If not, add following piece of code just above `</head>`.
+
+ 
+```html
+<!--Load CSS Starts : TwistBlogg.com --> 
+<script type='text/javascript'>  
+//<![CDATA[  
+function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet"; i.href = e; i.media = "only x"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }  
+loadCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css");  
+//]]>  
+</script>  
+<noscript>  
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css' rel='stylesheet'/></noscript>
+```  
+
+
+#### Step 2: Adding CSS Code For Multi-author box  
+
+
+Go to Theme > Edit HTML > Search for `</head>` again & paste the below code just above it.  
+
+```css
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<style type="text/css">
+/* -------------Copyright: www.TwistBlogg.com----------------*/
+/* -------------Multi-author box For Blogger----------------*/
+.admininfo {
+ background: #F4F5F6;
+ margin: 30px auto 20px;
+ display: block;
+ position: relative;
+ padding: 15px 25px 15px;
+ overflow: hidden
+}
+.admininfo::before {
+ content: &#39;&#39;;
+ display: block;
+ width: 100%;
+ height: 75px;
+ background: #34495E!important;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ z-index: 0
+}
+.author {
+ font-size: 20px;
+ font-weight: 700!important;
+ padding: 0!important;
+ display: block;
+ margin: 17px 0 32px!important;
+ text-transform: uppercase;
+ color: #fff!important
+}
+.author-photo {
+ display: inline-block;
+ float: left;
+ position: relative;
+ z-index: 1
+}
+.author-photo img {
+ width: 90px;
+ height: 90px;
+ border-radius: 99em;
+ z-index: 1;
+ border: 7px solid #F4F5F6
+}
+.author-photo img:hover {
+ animation: rotate-btn .5s linear infinite;
+ -webkit-animation: rotate-btn .5s linear infinite
+}
+@keyframes rotate-btn {
+ 0% {
+  transform: rotate(0)
+ }
+ 100% {
+  transform: rotate(-360deg)
+ }
+}
+.about-author {
+ z-index: 1;
+ position: relative;
+ display: inline-block;
+ float: right;
+ width: calc(100% - 125px)
+}
+.author-desc {
+ font-size: 15px;
+ font-weight: 400;
+ line-height: 1.6em;
+ color: #777
+}
+ul.sosmed-saya {
+ display: block;
+ overflow: hidden;
+ margin: 20px auto 10px;
+ padding: 0
+}
+ul.sosmed-saya li a,
+ul.sosmed-saya li.site a {
+ display: inline-block;
+ margin-right: 7px;
+ margin-bottom: 5px;
+ font-size: 15px;
+ padding: 0;
+ width: 45px;
+ height: 30px;
+ line-height: 30px;
+ color: #fff;
+ text-align: center;
+ border-radius: 2px
+}
+ul.sosmed-saya li {
+ display: inline-block
+}
+.author a,
+.author a:hover {
+ color: #fff!important
+}
+ul.sosmed-saya li a.fb {
+ background-color: #4a7fbb
+}
+ul.sosmed-saya li a.tw {
+ background-color: #00aced
+}
+ul.sosmed-saya li a.ig {
+ background-color: #c4906e
+}
+ul.sosmed-saya li a.lin {
+ background-color: #0e76a8
+}
+ul.sosmed-saya li a.pin {
+ background-color: #c8232c
+}
+ul.sosmed-saya li.site a {
+ font-family: Consolas, Monaco;
+ width: auto;
+ background-color: #fff;
+ border: 1px solid #bdc3c7;
+ padding: 0 15px;
+ font-style: italic;
+ font-size: 14px;
+ color: #999
+}
+</style></b:if>
+
+```
+
+
+#### Step 3: Making it Responsive [Optional]
+
+Lol, _this is not an optional step_. I am not sure why I liked to keep the optional part intact. Anyway, I have used **CSS3 @media** to make this author box widget responsive.  
+
+
+```css
+@media screen and (max-width: 672px) {
+	.admininfo {
+		margin: 30px auto 10px;
+		text-align: center
+	}
+	.author {
+		color: #777!important;
+	}
+	.author a,
+	.author a:hover {
+		color: #777!important;
+	}
+	.author-photo {
+		display: block;
+		float: none
+	}
+	.about-author {
+		display: block;
+		float: none;
+		width: 100%;
+		text-align: center
+	}
+	.author {
+		text-align: center;
+		display: block;
+		margin: 15px 0 25px!important
+	}
+	.author-desc {
+		text-align: center
+	}
+	ul.sosmed-saya {
+		display: block;
+		text-align: center
+	}
+	ul.sosmed-saya li {
+		display: inline-block;
+		text-align: center
+	}
+}
+
+```
+  
+Some of you might be wondering where to insert @media code. Well, you can append it along with the main CSS code or lets make the task easier. **Here is the whole CSS code along with @media tag**. _Replace CSS code from step 2 with this._  
+
+```css
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<style type="text/css">
+/* -------------Copyright: www.TwistBlogg.com----------------*/
+/* -------------Multi-author box For Blogger----------------*/
+.admininfo {
+ background: #F4F5F6;
+ margin: 30px auto 20px;
+ display: block;
+ position: relative;
+ padding: 15px 25px 15px;
+ overflow: hidden
+}
+.admininfo::before {
+ content: &#39;&#39;;
+ display: block;
+ width: 100%;
+ height: 75px;
+ background: #34495E!important;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ z-index: 0
+}
+.author {
+ font-size: 20px;
+ font-weight: 700!important;
+ padding: 0!important;
+ display: block;
+ margin: 17px 0 32px!important;
+ text-transform: uppercase;
+ color: #fff!important
+}
+.author-photo {
+ display: inline-block;
+ float: left;
+ position: relative;
+ z-index: 1
+}
+.author-photo img {
+ width: 90px;
+ height: 90px;
+ border-radius: 99em;
+ z-index: 1;
+ border: 7px solid #F4F5F6
+}
+.author-photo img:hover {
+ animation: rotate-btn .5s linear infinite;
+ -webkit-animation: rotate-btn .5s linear infinite
+}
+@keyframes rotate-btn {
+ 0% {
+  transform: rotate(0)
+ }
+ 100% {
+  transform: rotate(-360deg)
+ }
+}
+.about-author {
+ z-index: 1;
+ position: relative;
+ display: inline-block;
+ float: right;
+ width: calc(100% - 125px)
+}
+.author-desc {
+ font-size: 15px;
+ font-weight: 400;
+ line-height: 1.6em;
+ color: #777
+}
+ul.sosmed-saya {
+ display: block;
+ overflow: hidden;
+ margin: 20px auto 10px;
+ padding: 0
+}
+ul.sosmed-saya li a,
+ul.sosmed-saya li.site a {
+ display: inline-block;
+ margin-right: 7px;
+ margin-bottom: 5px;
+ font-size: 15px;
+ padding: 0;
+ width: 45px;
+ height: 30px;
+ line-height: 30px;
+ color: #fff;
+ text-align: center;
+ border-radius: 2px
+}
+ul.sosmed-saya li {
+ display: inline-block
+}
+.author a,
+.author a:hover {
+ color: #fff!important
+}
+ul.sosmed-saya li a.fb {
+ background-color: #4a7fbb
+}
+ul.sosmed-saya li a.tw {
+ background-color: #00aced
+}
+ul.sosmed-saya li a.ig {
+ background-color: #c4906e
+}
+ul.sosmed-saya li a.lin {
+ background-color: #0e76a8
+}
+ul.sosmed-saya li a.pin {
+ background-color: #c8232c
+}
+ul.sosmed-saya li.site a {
+ font-family: Consolas, Monaco;
+ width: auto;
+ background-color: #fff;
+ border: 1px solid #bdc3c7;
+ padding: 0 15px;
+ font-style: italic;
+ font-size: 14px;
+ color: #999
+}
+
+@media screen and (max-width:672px){
+.admininfo{margin:30px auto 10px;text-align:center}
+.author{color:#777!important;}
+.author a, .author a:hover {color: #777!important;}
+.author-photo{display:block;float:none}
+.about-author{display:block;float:none;width:100%;text-align:center}
+.author{text-align:center;display:block;margin:15px 0 25px!important}
+.author-desc{text-align:center}
+ul.sosmed-saya{display:block;text-align:center}
+ul.sosmed-saya li{display:inline-block;text-align:center}}
+
+</style></b:if>
+
+```  
+
+#### Step 4: Adding HTML Part for Author box  
+
+
+Now it is time to add HTML part and get the job done. Paste the following code above any of the following place: `<div class='post-footer-line post-footer-line-3'>` or `<data:post.body/>` or `<div class='post-footer'>`. It is not easy to point out the exact location. Hit and trial, the author box should be displayed in at least one of the location.  
+
+```html
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<b:if cond='data:post.author == &quot;YOUR_NAME&quot;'>
+<div class='admininfo'>
+<span itemprop='author' itemscope='itemscope' itemtype='http://schema.org/SiteNavigationElement'>
+<span class='author-photo'>
+<img alt='Author' height='78px' src='https://1.bp.blogspot.com/-qFTadagNzPI/XWEDD2Mc1tI/AAAAAAAAL3Y/KptA0uNsBmoS4QPqD3caRqzbCqp7caVkACLcBGAs/s1600/aman-bhattarai.jpg' title='Author' width='78px'/></span> 
+<span class='about-author vcard'><span class='author'><span class='fn'>Article By: <a class='g-profile' href='https://www.twistblogg.com/about' itemprop='url' rel='author' title='author profile'><span itemprop='name'>Aman Bhattarai</span></a></span></span>
+<span class='author-desc'>I manage this blog and post tutorials related to Blogger, SEO, Plugins, Widgets, Software Tools, CSS/HTML and Social Media. Did you find this blog helpful? Would You Please Socialize? Thanks for Your Support Pal :)</span>
+<ul class='sosmed-saya'>
+<li><a class='fb' href='https://www.facebook.com/invictusaman' itemprop='sameAs' rel='nofollow' title='add me on facebook'><i aria-hidden='true' class='fab fa-facebook-f'/></a></li>
+<li><a class='tw' href='https://twitter.com/twistblogg' itemprop='sameAs' rel='nofollow' title='follow me on twitter'><i aria-hidden='true' class='fab fa-twitter'/></a></li>
+<li><a class='lin' href='https://www.linkedin.com/in/amanbhattarai' itemprop='sameAs' rel='nofollow' title='Follow me on Linkedin'><i aria-hidden='lin' class='fab fa-linkedin-in'/></a></li>
+<li><a class='ig' href='https://www.pinterest.com/twistblogg/' itemprop='sameAs' rel='nofollow' title='Add me on pinterest'><i aria-hidden='true' class='fab fa-pinterest-p'/></a></li>
+<li class='site'><a href='https://www.twistblogg.com/about' rel='nofollow' target='_blank'>https://www.twistblogg.com</a></li>
+</ul>
+</span></span></div></b:if></b:if>
+```  
+
+_Change the given values with your information._  
+
+
+Done. Now you have a **professional multi-author box widget with social icons** for blogger. Hit save button and enjoy live action. Also, re-size your browser to check for responsiveness. In case, the author box is not fitting with screen size, change the value `max-width:672px`. Or leave a comment below with your blog address, I'll strive to rectify the issue.  
+
+  
+Here are a few must read articles from TwistBlogg:  
+
+[Add Custom Social Media Responsive Share buttons below blogger posts.](https://www.twistblogg.com/2015/08/add-custom-social-media-share-buttons-to-blogger-posts.html)  
+[Display Sticky Notification bar below blogger posts with no watermark.](https://www.twistblogg.com/2015/05/add-notification-bar-to-blogger.html)  
+[Insert Estimated Post Reading Time in blogger posts with simple jquery.](https://www.twistblogg.com/2019/09/display-estimated-post-reading-time-in-blogger-posts.html)  
+[How to add beautiful HTML Sitemap Page For Blogger blog?](https://www.twistblogg.com/2019/09/add-beautiful-html-sitemap-page-in-blogger.html)

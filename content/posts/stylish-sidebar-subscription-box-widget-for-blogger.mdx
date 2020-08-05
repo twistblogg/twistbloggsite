@@ -1,0 +1,255 @@
+---
+title: 'Stylish - Sidebar Subscription Box Widget For Blogger'
+date: 2015-03-17
+excerpt: Email subscription box allows readers to get contents from your blog into their inbox. Today, I'll share stylish sidebar box widget for blogger.
+slug: stylish-email-subscription-box-blogger
+featured: false
+published: true
+image: attractive and stylish sidebar email box for blogger.png
+author: Invictus
+tags : [Subscription Widgets, Blog Widgets]
+---
+
+
+A subscription box widget helps blog owners to grow their mailing list and blog readers to get free email updates straight into their inbox. More email subscribers mean more power to you because you don't have to wait or promote the hell out of your new epic blog content to get targeted visitors who are in need of it. They are already there waiting for your email. You get free traffic, social shares, comments, followers and readers for free. So this is how important it is to have a subscription box just below the posts and in your blog's sidebar so that people who are interested in your blog niche, can subscribe with one click.  
+  
+Although a subscription box is of no use if it is not eye catchy which attracts visitors like a magnet and lures them enough that they can't help but just put their email address and sign up. Overall this is why we use this widget, right?  
+  
+This widget I am going to share is really unique and I put several hours to design it & make it perfect. A lot of trial and error made it possible for me to come up with this stylish widget working perfectly on every template.  
+  
+_Note:-_  
+
+**New Version 2 Released:- [New Stylish Sidebar Subscription Box Widget For Blogger](https://www.twistblogg.com/2015/07/new-stylish-sidebar-subscription-box-widget-for-blogger.html)**  
+  
+  
+Previously you may have installed so many other sidebar subscription box widgets and I bet most of **them were not in alignment** with your template when installed. Because of poor CSS styling and Sidebar Widgets' settings of one's template make these things problematic.  
+  
+This widget will definitely work with every template as it is shown in the screenshot because I have taken care of everything. I tested it on different templates and made changes accordingly to everything that was preventing it from appearing as I wanted it to be.  
+  
+Although, it is little different but basic theme is same. Older sidebar widgets provided on this blog might not have worked on your blog just because of the same problem but this time I learned it. Let us begin with the process.  
+  
+**Note:**  What You Can and What You Can't?
+
+**1)** You **do not have permission to share my code** on your blog or making minor changes to CSS class/id names and saying you did it.  
+**2)** You can use this widget on your any (personal or commercial blog) without asking for permission.  
+**3)** You can **Remove** the footer credit link. You heard it right. You do not have to keep intact the footer credit link which is a link back to this post. This is your choice. If you want you can show your gratitude or else just remove it and enjoy as it is. You came to my blog for a reason and if that reason is fulfilled, I got my reward :)  
+**4)** You **can Not Remove the comments added to CSS style code**. Remain them intact, they do not harm in any case.  
+  
+**Recommended:** [Feedburner Email Subscription Popup Blogger Plugin](https://www.twistblogg.com/2015/04/email-subscription-popup-blogger-plugin.html)  
+
+
+## Here is How To Get This Widget Working Step by Step
+
+
+See screenshot at the top and understand a few things so that you can change them later easily without frustration.
+  
+
+First of all you must make a habit of [taking the backup of your blog's](https://www.twistblogg.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html) template code before proceeding with the installation of any widget because you may end up doing things wrong and screw it. So it is always better to have a backup so that if in any case you did things wrong or just you did not like your new widget, you can go back quickly.
+
+  
+**Important Note:** Font family I used in this widget is "Oswald" which is a Google font. You can use this font family on your blog easily. Just follow the steps below.
+
+  
+
+### Installing CSS code and Font Family "Oswald" into Your Blog
+
+
+**Step 1)** What it could be other than logging back to your blogger account. :) Select your blog >> Choose Template >> Click Edit HTML and let the template code box load
+
+**Step 2)** Save your template code into notepad as a backup.
+
+**Step 3)** Open a search box by clicking inside the code box and pressing Ctrl+F on Windows or Cmd+F on Mac.
+
+**Step 4)** Find this opening tag `<head>` and just below that paste the Google font family URL given below.
+
+```html
+<link href='http://fonts.googleapis.com/css?family=Oswald%3A400&subset%3Dlatin%2Clatin-ext&ver%3D4.1' rel='stylesheet' type='text/css'/>
+```
+
+Now Google font family, "Oswald" is installed on your blog :)  
+
+  
+**Note:** In-case you do not want to use the Oswald font family then please replace every appearance of the font-family Oswald from the CSS code below and add your own font-family.  
+
+  
+If you want to use the default font of your blog then just replace every appearance of _font-family: "Oswald",sans-serif;_ with _font-family: inherit;_ and you good to go with it. Otherwise sans-serif fonts will be applied and it will look awkward to you.
+
+  
+
+**Step 5)** Find this code `]]:</b:skin>` and just before that, paste the CSS code given below
+
+(**Note:** To understand how to make changes like colors or font size then just follow the 6th step below the code)
+
+  
+```css
+/*------- Stylish Sidebar Subscription Box Widget by TwistBlogg.com------*/  
+#twist-blogger-sbox {  
+  padding: 0;  
+  margin: 0;  
+  width: 100%; /*---- Change width here - You can use pixels or in percentage -----*/  
+  height: 355px;  
+  border-radius: 1px;  
+  border: 0;  
+  background: #3A3939; /*------ Change background color of widget here--------*/  
+}  
+#twist-blogger-sbox .tagline {  
+  padding: 5px 0px 0px 0px;  
+  line-height: 35px;  
+  height: 45px;  
+  font-size: 25px; /*----- Change the Font Size of Main Tagline here -----*/  
+  font-weight: normal;  
+  font-family: "Oswald",sans-serif;  
+  text-shadow: 0px -1px 0px #999;  
+  color: #FFF;  
+  text-align: center;  
+  background: #FF7400; /*---- Change background color of Tagline here -----*/  
+  border: 5px solid #FD6A00;  
+  border-bottom: 7px solid transparent;  
+  border-bottom-left-radius: 50px;  
+}  
+#twist-blogger-sbox .sub-tagline {  
+  font-family: "Oswald", sans-serif;  
+  font-size: 19px;      /*--Sub Tagline Font Size - Change here ---*/  
+  color: #FFF;  
+  text-shadow: 0px -1px 0px #000;  
+  line-height: 30px;  
+  padding: 0px 10px 0px 10px;  
+  text-align: center;  
+  margin: 0;  
+}  
+#twist-blogger-sbox .item-list {  
+  margin: 10px 0px 0px 0px !important;  
+}  
+#twist-blogger-sbox .item-list > ul {  
+  padding: 0px 0px 0px 50px !Important;  
+  margin: 0 !important;  
+}  
+#twist-blogger-sbox .item-list > ul > li {  
+  font-family: "Oswald", sans-serif;  
+  font-size: 15px;  /*----- Change Font Size of List here ------*/  
+  margin-left: 10px;  
+  color: #E8E8E8;  /*------ Change font color of List here ----*/  
+  line-height: 24px;  
+  text-align: left;  
+  text-shadow: 0px -1px 0px #000;  
+  list-style: none !important;  
+  list-style-type: none !important;  
+  margin: 0px !important;  
+  padding: 0px !important;  
+  border: 0 !important;  
+}  
+#twist-blogger-sbox .rssform {  
+  padding: 0px 20px;  
+  margin: 16px 0px 16px 0px;  
+}  
+#twist-blogger-sbox .rssform input {  
+  padding: 8px;  
+  font-size: 13px;  
+  font-family: "Oswald", sans-serif;  
+  font-weight: normal;  
+  width: 100%;  
+  text-transform: uppercase;  
+  outline: none !important;  
+  border: none;  
+  border-radius: 1px;  
+  box-sizing: border-box !important;  
+  -moz-box-sizing:border-box;  
+}  
+#twist-blogger-sbox .rssform .button:hover {  
+  background: #ED6D00; /*----- Change Subscribe button hover color here -----*/  
+}  
+#twist-blogger-sbox .rssform .button {  
+  background: #FF7400; /*----- Change Subscribe button background color here -----*/  
+  color: #FFF!important; /*------ Change Font color here ------*/  
+  border: 0;  
+  margin-top: 15px;  
+  outline: none !important;  
+  transition: all .3s ease-in-out;  
+  width: 100%;  
+  padding: 6px !important;  
+  float: none;  
+  text-transform: uppercase;  
+  font-family: "Oswald", sans-serif;  
+  font-size: 18px;  
+  font-weight: normal;  
+  cursor: pointer;  
+}  
+#twist-blogger-sbox .lock-policy a {  
+  color:#818181;  
+  text-decoration:none !Important;  
+}  
+#twist-blogger-sbox .lock-policy {  
+  font-family: "Oswald",sans-serif;  
+  background: url(http://4.bp.blogspot.com/-kYVqV9JYDHY/VPMC8jPKTGI/AAAAAAAAA28/zxv0TYRIZe4/s1600/Lock-twistblogger.png) no-repeat 10px -2px; /*--- image URL of Lock appears in footer ---*/  
+  color: #818181;  
+  text-align: center;  
+  font-size: 12px; /*--- Font size of footer line ----*/  
+  margin-left: 10px;  
+  padding: 0px;  
+  line-height: 30px;  
+  margin-top: -5px;  
+}  
+
+```  
+
+**Step 6)** So you want some changes to this widget? In the above code, I have added proper comments in front of CSS code line where you can change what comment says. Read the comments and change what you can do for font family, color, size, width etc.  
+  
+Save you template code now because HTML part will be added to the sidebar via template Layout Section.  
+  
+
+
+### Installing HTML Part of Widget - In Template Layout Section
+
+Now we are done with CSS code so now it's time to add HTML part of this widget through Template Layout section.
+
+  
+
+**Step 1)** Go to **Layout** area of your blog then on the sidebar just add a new HTML/JavaScript widget.
+
+**Step 2)** Now paste the HTML code after making compulsory Changes to it.
+
+
+```html
+<div id='twist-blogger-sbox'>  
+    <div class='tagline'>  
+        Wait! Did You Know?  
+    </div>  
+    <div class='sub-tagline'>Why should you subscribe?</div>  
+    <div class="item-list">  
+        <ul>  
+            <li>  
+                <div style='color: #FF5700; display: inline-block; font-size:17px; letter-spacing: 4px;'>&#10004;</div> Free Photoshop .PSD Templates</li>  
+            <li>  
+                <div style='color: #FFE800; display: inline-block; font-size:18px; letter-spacing: 4px;'>&#10004;</div> Adobe Illustrator Tutorials</li>  
+            <li>  
+                <div style='color: #FF5700; display: inline-block; font-size:19px; letter-spacing: 4px;'>&#10004;</div> 3D Animation Tutorials</li>  
+            <li>  
+                <div style='color: #FFE800; display: inline-block; font-size:20px; letter-spacing: 4px; letter-spacing: 4px;'>&#10004;</div> Straight into your &#8594; INBOX</li>  
+        </ul>  
+    </div>  
+    <div class='rssform'>  
+        <form action='https://feedburner.google.com/fb/a/mailverify' method='post' target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TwistBlogg', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">  
+            <input type='text' name='email' placeholder='Enter your email address...' />  
+            <input type="hidden" value="TwistBlogg" name="uri" />  
+            <input type="hidden" name="loc" value="en_US" />  
+            <input value="Subscribe Now" class="button" type="submit" />  
+        </form>  
+    </div>  
+    <div class="lock-policy">  
+        Safe With Us | <a href="https://www.twistblogg.com/privacy-policy">Privacy Policy</a> | <a href="https://www.twistblogg.com/2015/03/stylish-sidebar-subscription-box-widget-for-blogger.html">Get This Widget</a>  
+    </div>  
+</div>  
+
+```
+
+**Step 3)** Tired? Now just change the highlighted things accordingly. Most important step to change is my Feedburner address **TwistBlogg** to yours otherwise you will be giving free subscribers to me :p  
+  
+In the footer of the widget, I have used a Privacy Policy link so please change it to your blog's privacy policy page URL. and there is a link back to this post as a Credit, but I have allowed you to remove this link if you want.  
+  
+Save this HTML/JavaScript widget and check out your blog for the changes. It must be working perfectly.  
+  
+Wait, You might be thinking that why the heck did not I tell you to put the whole CSS+HTML to sidebar HTML/JavaScript widget, right? Well, there is no good reason or bad but I like to put the whole CSS code inside the template code altogether. We had installed the Google font too :)  
+  
+So did this widget work for you? Was it as clean as shown in the Screenshots? Did you face any problem? Need help on template customization? Just ask me in comments and I'll do my best. Thanks for reading and using my widget for free. :p
+
+Share this post, do comment and Stay blessed!!

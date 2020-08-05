@@ -1,0 +1,414 @@
+---
+title: 'How to Add Attractive Custom Error Page (404) in Blogger?'
+date: 2019-10-25
+excerpt: Blogger default error page design is obsolete. Today, we will customize and add attractive custom designed error page in blogspot. 
+slug: attractive-error-page-blogger
+featured: false
+published: true
+image: custom error page design for blogger.jpg
+author: Invictus
+tags : [Blog Customize]
+---
+
+When an user visits a page in your domain that is no longer available, either because the page no longer exists or the address mismatched, then he/she is redirected to a page named an Error Page or simply a 404 page.  
+  
+For bloggers' default [templates](https://www.twistblogg.com/2019/09/best-premium-blogger-templates.html), there is a generic message "S_orry, the page you were looking for in this blog does not exist_" for error pages. The error page design is lame, a grey box with above message, that definitely do not [encourage users to navigate other areas of your site](https://www.twistblogg.com/2014/03/Best-Tools-For-Bloggers-To-Correct-Grammatical-Mistakes.html) or help them to find what they are looking for.  
+  
+In this tutorial, I'll be guiding you on **how to customize bloggers' error pages or 404 pages** and make them attractive. Let's check some cool features of our customized error pages.   
+
+  
+
+### Features of attractive custom error page for blogger
+
+*   Highly animated.
+*   Stylish Design.
+*   Surprised Animated Cartoon with Pure CSS.
+*   404 animated counter with javascript.
+*   A button that redirects users to homepage.
+*   Full-width Error page.
+*   Catchy Page Title
+
+
+#### So, what motivated me to share this amazing error page?
+
+
+I already mentioned error pages for blogger are lame, so I was searching for some [light-weight animation](https://www.twistblogg.com/2019/10/stylish-demo-and-download-buttons-for-blogger.html) effects to implement in error pages for my blog to give it a fresh look. Luck me, I found [a cool error page](https://nubiefastdua.blogspot.com/404) with animation. I used the available code and played with CSS.  
+
+  
+Later on, I implemented that design in my blog, and I feel in love with it. There was a thought going through my neurons that you guys will be more than happy to implement in your blog too. Therefore, I shared it with you all.   
+
+
+  
+_An information on what you should include in your custom error pages:_  
+
+  
+At minimum, you should include navigation links that redirect to homepage or some static page or any popular article or even contact page.  
+  
+An embedded search box can help users to find the targeted article. [Social Profile Links](https://www.twistblogg.com/2015/04/add-social-media-share-buttons-to-blogger.html) can help them reach to you and inform about the error page.  Also, a greeting message or image can add value. Here are <a href="https://support.google.com/webmasters/answer/93641" rel="nofollow noopener noreferrer">some Google webmaster guidelines and suggestions on custom 404 error pages</a>.   
+  
+
+## How to add custom error page or a 404 page in blogger?
+
+
+I will make the task of installing custom error page in blogger with ease by breaking it into smaller ones. All the steps are straight-forward: stay firmly. Make a habit of taking [blogger complete backup](https://www.twistblogg.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html).  
+  
+
+### Step 1: Adding a catchy title for error page.
+
+In this step, we will be adding a title tag for error pages. By default, Page Not Found title tag is appended with these pages. Let's modify it.  
+  
+Go to **Blogger** > **Edit HTML** > Search for `<head>` and add following code below it. Don't forget to hit the save button.  
+
+```html
+<b:if cond='data:blog.pageType == &quot;error_page&quot;'>  
+<title>You've ripped a hole in the fabric of the internet.</title>  
+</b:if>
+```  
+
+### Step 2: Adding CSS Code for custom Error Page.
+
+I've divided the task of adding CSS, HTML and Javascript code into two steps. Let's play safe and keep CSS code in the top and calling functions in the bottom.  
+  
+Go to **Blogger** > **Edit HTML** > Search for `</head>` and paste following code above it. Hit the save button.  
+
+```css
+<b:if cond='data:blog.pageType == &quot;error_page&quot;'>  
+<style type='text/css'>  
+/* Error 404 Page By TwistBlogg.com*/ 
+body {  
+  background: #2e2e2e  
+ }  
+ #footer-wrapper,  
+ #header-wrapper,  
+ #email-wrapper,  
+ .menu,  
+ .back-to-top {  
+  display: none  
+ } .error .clip .shadow {  
+  height: 180px  
+ }  
+ .error .clip:nth-of-type(1) .shadow,  
+ .error .clip:nth-of-type(3) .shadow {  
+  width: 250px  
+ }  
+ .error .container-error-404 {  
+  margin: 20px auto;  
+  position: relative;  
+  height: 250px;  
+  padding-top: 40px;  
+  text-align: center;  
+  animation: fadeInDown 1s  
+ }  
+ .error .container-error-404 .clip {  
+  display: inline-block  
+ }  
+ .error .clip .shadow {  
+  overflow: hidden  
+ }  
+ .error .digit {  
+  background: #F36753;  
+  color: #FFf;  
+  width: 150px;  
+  height: 150px;  
+  line-height: 150px;  
+  font-size: 5rem;  
+  font-weight: 500;  
+  position: relative;  
+  top: 8%;  
+  border-radius: 50%;  
+  display: inline-block;  
+  text-align: center;  
+  transition: all .2s;  
+ }  
+ .error .clip:nth-of-type(1) .digit {  
+  right: -10%  
+ }  
+ .error .clip:nth-of-type(3) .digit {  
+  left: -10%  
+ }  
+ .error h2 {  
+  margin: 60px auto;  
+  position: relative;  
+  overflow: hidden;  
+  display: table;  
+  cursor: pointer;  
+  letter-spacing: 0;  
+  text-align: center;  
+  background: #F36753;  
+  color: #fff;  
+  font-size: 14px;  
+  font-weight: 400;  
+  padding: 8px 18px;  
+  border-radius: 3px;  
+  border: 1px solid #F36753;  
+  transition: all .3s;  
+  animation: rubberBand 1s  
+ }  
+ .error h2 a {  
+  color: #fff  
+ }  
+ .error h2:hover {  
+  background: #fff;  
+  color: #F36753  
+ }  
+ .error h2:hover a {  
+  color: #F36753  
+ }  
+ .error .msg {  
+  position: absolute;  
+  display: block;  
+  background: #f39c12;  
+  color: #fff;  
+  border-radius: 99em;  
+  top: 0;  
+  left: 7%;  
+  width: 50px;  
+  height: 50px;  
+  line-height: 50px;  
+  animation: rubberBand infinite 1s  
+ }  
+ .error .triangle {  
+  position: absolute;  
+  z-index: 999;  
+  transform: rotate(45deg);  
+  content: &quot;&quot;;  
+  width: 0;  
+  height: 0;  
+  top: 80%;  
+  right: 0%;  
+  border-left: 10px solid #f39c12;  
+  border-top: 5px solid transparent;  
+  border-bottom: 5px solid transparent  
+ }  
+ .emoji {  
+  width: 120px;  
+  height: 120px;  
+  margin: 20px auto;  
+  background: #FFDA6A;  
+  display: table;  
+  border-radius: 99em;  
+  position: relative;  
+  text-align: center;  
+  animation: fadeInDown 1s  
+ }  
+ .emoji__face,  
+ .emoji__eyebrows,  
+ .emoji__eyes,  
+ .emoji__mouth,  
+ .emoji__tongue,  
+ .emoji__heart,  
+ .emoji__hand,  
+ .emoji__thumb {  
+  position: absolute  
+ }  
+ .emoji__face:before,  
+ .emoji__face:after,  
+ .emoji__eyebrows:before,  
+ .emoji__eyebrows:after,  
+ .emoji__eyes:before,  
+ .emoji__eyes:after,  
+ .emoji__mouth:before,  
+ .emoji__mouth:after,  
+ .emoji__tongue:before,  
+ .emoji__tongue:after,  
+ .emoji__heart:before,  
+ .emoji__heart:after,  
+ .emoji__hand:before,  
+ .emoji__hand:after,  
+ .emoji__thumb:before,  
+ .emoji__thumb:after {  
+  content: &#39;&#39;;  
+  position: absolute  
+ }  
+ .emoji__face {  
+  width: inherit;  
+  height: inherit  
+ }  
+ .emoji--wow .emoji__face {  
+  animation: wow-face 3s linear infinite  
+ }  
+ .emoji--wow .emoji__eyebrows {  
+  left: calc(50% - 3px);  
+  height: 6px;  
+  width: 6px;  
+  border-radius: 50%;  
+  background: transparent;  
+  box-shadow: -18px 0 0 0 #000000, -33px 0 0 0 #000000, 18px 0 0 0 #000000, 33px 0 0 0 #000000;  
+  animation: wow-brow 3s linear infinite  
+ }  
+ .emoji--wow .emoji__eyebrows:before,  
+ .emoji--wow .emoji__eyebrows:after {  
+  width: 24px;  
+  height: 20px;  
+  border: 6px solid #000000;  
+  box-sizing: border-box;  
+  border-radius: 50%;  
+  border-bottom-color: transparent;  
+  border-left-color: transparent;  
+  border-right-color: transparent;  
+  top: -3px;  
+  left: calc(50% - 12px)  
+ }  
+ .emoji--wow .emoji__eyebrows:before {  
+  margin-left: -25px  
+ }  
+ .emoji--wow .emoji__eyebrows:after {  
+  margin-left: 25px  
+ }  
+ .emoji--wow .emoji__eyes {  
+  width: 16px;  
+  height: 24px;  
+  left: calc(50% - 8px);  
+  top: 35px;  
+  border-radius: 50%;  
+  background: transparent;  
+  box-shadow: 25px 0 0 0 #000000, -25px 0 0 0 #000000  
+ }  
+ .emoji--wow .emoji__mouth {  
+  width: 30px;  
+  height: 45px;  
+  left: calc(50% - 15px);  
+  top: 50%;  
+  border-radius: 50%;  
+  background: #000000;  
+  animation: wow-mouth 3s linear infinite  
+ }  
+ .text {  
+  text-align: center;  
+  text-transform: uppercase;  
+  color: #fff;  
+  font-weight: bold;  
+  line-height: 1.4em;  
+  font-size: 50px;  
+  margin-top: -55px!important;  
+ }  
+ @keyframes wow-face {  
+  15%, 25% {  
+   transform: rotate(20deg) translateX(-25px)  
+  }  
+  45%,  
+  65% {  
+   transform: rotate(-20deg) translateX(25px)  
+  }  
+  75%,  
+  100% {  
+   transform: rotate(0deg) translateX(0)  
+  }  
+ }  
+ @keyframes wow-brow {  
+  15%, 65% {  
+   top: 25px  
+  }  
+  75%,  
+  100%,  
+  0% {  
+   top: 15px  
+  }  
+ }  
+ @keyframes wow-mouth {  
+  10%, 30% {  
+   width: 20px;  
+   height: 20px;  
+   left: calc(50% - 10px)  
+  }  
+  50%,  
+  70% {  
+   width: 30px;  
+   height: 40px;  
+   left: calc(50% - 15px)  
+  }  
+  75%,  
+  100% {  
+   height: 50px  
+  }  
+ }  
+ @media(max-width:768px){.error .clip:nth-of-type(1) .shadow,  
+ .error .clip:nth-of-type(3) .shadow {  
+  width: auto  
+ }  
+ .error .clip:nth-of-type(1) .digit {  
+  right: initial  
+ }  
+ .error .clip:nth-of-type(3) .digit {  
+  left: initial  
+ }  
+ .error .clip .shadow {  
+  height: 100px  
+ }  
+ .error .digit {  
+  width: 80px;  
+  height: 80px;  
+  line-height: 80px;  
+  font-size: 2rem  
+ }  
+ .error h2 {  
+  font-size: 24px  
+ }  
+ .error .container-error-404 {  
+  height: 150px  
+ }  
+}  
+</style>  
+  </b:if>
+```  
+
+_Change the white highlighted part with your blogger wrapper. In case, you are having issues figuring out wrapper codes for your blog, leave a comment or contact us._  
+  
+
+### Step 3: Adding HTML and JavaScript code for custom 404 page.
+
+
+Panic with the javascript part? Do not worry, it is super light weight and we added `<b:if>` conditions, so they won't impact on your web performance.  
+  
+Go to **Blogger** > **Edit HTML** > Search for `<footer` or `</body>` and paste following code above it. Hit the save button once done.  
+
+```html
+<b:if cond='data:blog.pageType == &quot;error_page&quot;'>  
+<div class='error'>  
+<div class='container-floud'>  
+<div class='container-error-404'>  
+<div class='clip'>  
+<div class='shadow'><span class='digit thirdDigit'/></div>  
+</div>  
+<div class='clip'>  
+<div class='shadow'><span class='digit secondDigit'/></div>  
+</div>  
+<div class='clip'>  
+<div class='shadow'><span class='digit firstDigit'/></div>  
+</div>  
+</div>  
+  <div class='text'>Page Not Found :(</div>  
+<div class='emoji  emoji--wow'>  
+<div class='emoji__face'>  
+<div class='emoji__eyebrows'/>  
+<div class='emoji__eyes'/>  
+<div class='emoji__mouth'/>  
+</div>  
+</div>  
+<h2 class='h1'><a href='https://www.twistblogg.com/' title='Back to Home page'>Go to Homepage</a></h2>  
+</div>  
+</div>  
+  
+<script type='text/javascript'>  
+//<![CDATA[  
+// Error 404  
+function randomNum(){"use strict";return Math.floor(9*Math.random())+1}  
+var loop1,loop2,loop3,number,time=30,i=0,selector3=document.querySelector(".thirdDigit"),  
+selector2=document.querySelector(".secondDigit"),selector1=document.querySelector(".firstDigit");loop3=setInterval(function(){"use strict";i>40?(clearInterval(loop3),selector3.textContent=4):(selector3.textContent=randomNum(),i++)},time),loop2=setInterval(function(){"use strict";i>80?(clearInterval(loop2),selector2.textContent=0):(selector2.textContent=randomNum(),i++)},time),loop1=setInterval(function(){"use strict";i>100?(clearInterval(loop1),selector1.textContent=4):(selector1.textContent=randomNum(),i++)},time);  
+//]]>  
+</script>  
+  </b:if>
+```  
+
+Change https://www.twistblogg.com/ with your web address.  
+  
+**What's next?**  
+
+TwistBlogg aims to make blogging easier and ignite premium feeling with blogger. Stay tuned for **more custom error pages designs in near future.** Happy Blogging 🙌😎  
+  
+Here are a few hand-picked articles for you to navigate later.  
+
+*   [How to display post estimation reading time in blogger?](https://www.twistblogg.com/2019/09/display-estimated-post-reading-time-in-blogger-posts.html)
+*   [Add Custom Social Share Buttons Below Blogger Posts.](https://www.twistblogg.com/2015/08/add-custom-social-media-share-buttons-to-blogger-posts.html)
+*   [How to Customize Blogger Scrollbar and Text Selection Color?](https://www.twistblogg.com/2015/03/how-to-customize-blogger-scrollbar-and.html)
+*   [Add Sticky Notification Bar in Blogger with no watermark ](https://www.twistblogg.com/2015/05/add-notification-bar-to-blogger.html)

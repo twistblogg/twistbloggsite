@@ -1,0 +1,465 @@
+---
+title: 'Add Custom Social Media Share Buttons to Blogger Posts'
+date: 2015-08-14
+excerpt: Social Media Buttons allow readers to share your content with ease. Grab our premium customized social media buttons for free and add them in your blogger posts.
+slug: premium-social-share-plugin-blogger
+featured: false
+published: true
+image: Responsive Horizontal Social Media Share Buttons for Blogger.png
+author: Invictus
+tags : [Blog Widgets]
+---
+
+Social Media Platforms (sites) play a major role in overall success of our content because SEO takes time to drive targeted traffic from search engines.  
+  
+Not to mention, social signals (how many times your content has been shared on different social media sites) has an impact on your overall SEO in many ways.  
+  
+So I am not going to write an essay on Social Media strategy but, today I am going to share another version of **Custom Horizontal Social Media Share Buttons for Blogger** along with total shares count. You can add these buttons below the post titles or in footer to increase the social shares of your well written content.  
+  
+These social media buttons are made purely with the help of HTML and CSS so they don't affect the Page load time speed at all.  
+Even by removing the Official Social Media Share Buttons from your blog, you can decrease your page load time by half of the total time.  
+
+
+**Features:-**
+
+* Fully Responsive Design  
+* Made with Pure CSS and HTML  
+* Shares Counter  
+* Integration of FontAwesome Icons  
+* 5 Social Media Share Buttons Included  
+* Super Easy to Install (Copy and Paste)  
+  
+  
+**Responsiveness:** Check out the image at top which shows the Responsiveness of these social media share buttons on different screen resolutions in one go.  
+  
+  
+  
+**Note: New version available**  - [Super Light Weight Social Sharing buttons](https://www.twistblogg.com/2020/05/social-sharing-buttons-blogger.html)  
+
+
+**Important Update and read Carefully:-**  
+
+I use Free hosting provided by OpenShift.com for hosting PHP scripts which are liable to get the shares count of all the social media sites. There is monthly bandwidth limit and shares count script will stop working if limit is crossed.  
+  
+You can upload these PHP scripts yourself if you have premium hosting or else you can use OpenShift.com to get free hosting. Free hosting is enough for one blog.  
+  
+If you can't manage it yourself then you can hire me. I'll upload these scripts for you and make it working without any issue.  
+  
+Get PHP Scripts Here = <a href="https://github.com/abeMedia/shareCount" rel="nofollow noopener noreferrer">https://github.com/abeMedia/shareCount</a>  
+
+
+## How to Add Custom Social Media Buttons to Blogger Posts
+
+
+**Step 1)** As usual, login to your blogger account > **Select your blog** > go to **Template section** > click on **Edit HTML** and let the Template Editor load. Do not forget to save template backup before altering anything, be safe.
+
+  
+
+**Step 2)** We are using FontAwesome icons for it so you need to install them in your blog first otherwise icons would not appear. So find out this opening `<head>` tag (click inside template editor and press Ctrl+F on windows or Cmd+F on Mac to open up a search box inside template editor) and just below that, paste the FontAwesome icons link given below (only if you're already not using them on your blog, avoid adding same codes twice).
+
+```html  
+<link href='https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css' rel='stylesheet'/>
+```
+  
+
+You also need to add Google JavaScript Libraries link to make the shares count API work. So add the link given below if you're already not using (rare case, please check before adding).
+
+```js  
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'/>
+```
+  
+
+  
+**Step 3)** So now you need to add the CSS code to your template so just find out this closing `</head>` tag and just before this tag, paste the whole CSS code given below as it is.
+
+  
+
+**CSS code:-**
+
+```css main.css
+<b:if cond='data:blog.pageType == &quot;item&quot;'> <style type='text/css'>  
+/*------------------------------------------------------------  
+Horizontal Social Media Share Buttons for Blogger  
+Designed by:: https://TwistBlogg.com  
+Shares Count Code by:: https://donreach.com/social-share-count  
+issued under GNU GPL Licence  
+Icons:: FontAwesome  
+_******** Do Not Remove These Credits ********_  
+------------------------------------------------------------*/  
+  
+.tbn_horizontal_sharebar {  
+    position: relative;  
+    background: none;  
+    z-index: 2;  
+    width: 100%;  
+    padding: 10px 0;  
+    display: inline-block;  
+    font-family: sans-serif;  
+    margin: 5px 0px;  
+    border-top: 1px dotted rgba(0, 0, 0, 0.05);  
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.05);  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons {  
+    display: block;  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons .wrap {  
+    text-align: center;  
+    margin: 0 auto;  
+    display: inline-block;  
+    min-width: 41px;  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons .wrap1 {  
+    display: inline-block;  
+    width: 31px;  
+    float: left;  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons ul {  
+    margin: 0;  
+    padding: 0;  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons ul li a,  
+.tbn_horizontal_sharebar .Share_buttons ul li a:hover {  
+    color: #FFF !important;  
+    cursor: pointer;  
+    line-height: 25px;  
+    height: 100%;  
+    display: block;  
+    text-decoration: none;  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons ul li {  
+    list-style: none;  
+    list-style-type: none;  
+    padding: 0;  
+    margin: 1px;  
+    float: left;  
+    width: 16%;  
+    max-width: 115px;  
+    display: inline-block;  
+    font-size: 13px;  
+    overflow: hidden;  
+    text-align: left;  
+    height: 25px;  
+    line-height: 25px;  
+    color: #fff;  
+    border: 1px solid rgba(0, 0, 0, 0.04);  
+    -webkit-transition: all 0.4s ease-in-out;  
+    -moz-transition: all 0.4s ease-in-out;  
+    -ms-transition: all 0.4s ease-in-out;  
+    -o-transition: all 0.4s ease-in-out;  
+    transition: all 0.4s ease-in-out;  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons ul li .fa {  
+    color: #fff;  
+    font-size: 17px;  
+    font-weight: normal;  
+    font-family: FontAwesome;  
+    display: inline-block;  
+    text-align: center;  
+    padding: 0;  
+    height: 25px;  
+    line-height: inherit;  
+    width: 30px;  
+    background-color: rgba(0, 0, 0, 0.1);  
+    border-right: 1px solid rgba(0, 0, 0, 0.05);  
+}  
+  
+  
+/*--Facebook---*/   
+  
+.tbn_horizontal_sharebar .Share_buttons .btn_fb {  
+    background: #3a579a;  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons .btn_fb:hover {  
+    background: #314a83;  
+}  
+  
+  
+/*--Tweeter---*/  
+  
+.tbn_horizontal_sharebar .Share_buttons .btn_twtr {  
+    background: #00abf0;  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons .btn_twtr:hover {  
+    background: #0092cc;  
+}  
+  
+  
+/*--Google Plus---*/ 
+  
+.tbn_horizontal_sharebar .Share_buttons .btn_gplus {  
+    background: #df4a32;  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons .btn_gplus:hover {  
+    background: #be3f2b;  
+}  
+  
+  
+/*--Pinterest---*/  
+  
+.tbn_horizontal_sharebar .Share_buttons .btn_pntrst {  
+    background: #cd1c1f;  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons .btn_pntrst:hover {  
+    background: #ae181a;  
+}  
+  
+  
+/*--linkedin---*/  
+  
+.tbn_horizontal_sharebar .Share_buttons .btn_linkdin {  
+    background: #2554BF;  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons .btn_linkdin:hover {  
+    background: #224EB4;  
+}  
+  
+  
+/*---Total Share----*/  
+  
+.tbn_horizontal_sharebar .Share_buttons .share.h6 {  
+    font-size: 10px;  
+    font-weight: bold;  
+    text-shadow: none!important;  
+    text-decoration: none;  
+    text-align: center;  
+    color: #000000;  
+    border-top: 3px solid #FFF600 !important;  
+    border-bottom: 0;  
+    padding: 0px !important;  
+    padding-top: 5px!important;  
+    margin: 0 !important;  
+    line-height: 8px;  
+    border-radius: 75% 0;  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons .share {  
+    border: none;  
+    margin: 0px 5px 0px 1px;  
+    overflow: visible !important;  
+    width: 95px !important;  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons .share .count.h4 {  
+    font-size: 18px;  
+    font-weight: bold;  
+    text-shadow: none;  
+    text-decoration: none;  
+    font-family: sans-serif;  
+    text-align: center;  
+    color: #FF0000;  
+    line-height: 15px;  
+    margin-top: 0px;  
+    margin: -4px 0px 2px 0;  
+    min-height: 15px;  
+    padding: 0px;  
+    border: none;  
+}  
+  
+.tbn_horizontal_sharebar .Share_buttons .btn_fb .share-btn,  
+.tbn_horizontal_sharebar .Share_buttons .btn_twtr .share-btn,  
+.tbn_horizontal_sharebar .Share_buttons .btn_gplus .share-btn,  
+.tbn_horizontal_sharebar .Share_buttons .btn_pntrst .share-btn,  
+.tbn_horizontal_sharebar .Share_buttons .btn_linkdin .share-btn {  
+    position: relative;  
+    color: #C3C3C3;  
+    display: inline-block;  
+    text-align: center;  
+    font-weight: bold;  
+    font-size: 11px;  
+    float: right;  
+    min-width: 12px;  
+    font-family: sans-serif;  
+    padding: 0px 5px;  
+    background-color: rgba(0, 0, 0, 0.28);  
+    border-radius: 0px 0px 0px 15px;  
+}  
+  
+@media only screen and (max-width: 979px) {  
+    .tbn_horizontal_sharebar .Share_buttons .btn_linkdin {  
+        width: 34px;  
+    }  
+    .tbn_horizontal_sharebar .Share_buttons .btn_fb .share-btn,  
+    .tbn_horizontal_sharebar .Share_buttons .btn_twtr .share-btn,  
+    .tbn_horizontal_sharebar .Share_buttons .btn_linkdin .share-btn,  
+    .tbn_horizontal_sharebar .Share_buttons .btn_gplus .share-btn,  
+    .tbn_horizontal_sharebar .Share_buttons .btn_pntrst .share-btn {  
+        display: none !important;  
+    }  
+}  
+  
+@media only screen and (max-width:768px) {  
+    .tbn_horizontal_sharebar .Share_buttons ul li a,  
+    .tbn_horizontal_sharebar .Share_buttons ul li a:hover {  
+        color: #FFF !important;  
+        cursor: pointer;  
+        line-height: 25px;  
+        font-size: 11px;  
+        height: 100%;  
+        display: block;  
+        text-decoration: none;  
+    }  
+    .tbn_horizontal_sharebar .Share_buttons .wrap {  
+        min-width: 34px;  
+    }  
+    .tbn_horizontal_sharebar .Share_buttons .btn_linkdin,  
+    .tbn_horizontal_sharebar .Share_buttons .btn_pntrst {  
+        width: 30px;  
+    }  
+    .tbn_horizontal_sharebar .Share_buttons ul li {  
+        margin: 1px 3px;  
+    }  
+    @media only screen and (max-width:479px) {  
+        .tbn_horizontal_sharebar .Share_buttons .share {  
+            border: none;  
+            margin: 0px 5px 0px 1px;  
+            overflow: visible!important;  
+            width: 80px!important;  
+        }  
+        .tbn_horizontal_sharebar .Share_buttons ul li {  
+            width: 25px !important;  
+            margin: 2px;  
+            border-radius: 50px;  
+            border: 2px solid rgba(0, 0, 0, 0.14);  
+        }  
+        .tbn_horizontal_sharebar .Share_buttons .wrap {  
+            display: none !important;  
+        }  
+        .tbn_horizontal_sharebar .Share_buttons ul li .fa {  
+            width: 25px !important;  
+        }  
+    }  
+    </style> </b:if>  
+
+```
+
+  
+Now you are done with adding CSS part so moving on to next step.  
+
+  
+**Step 4)**  Now you need to add the HTML part to your template. Below I am going to provide both the ways to **add these buttons either below posts titles or in the post footer** so please carefully read the steps and follow accordingly (needs not to mention, I am always there to help your out if anything goes wrong).  
+
+
+**Add Social Media Buttons Below Post Titles**  
+
+Find out this HTML code line  `<div class='post-header-line-1'/>` in your template and just below that, paste the whole HTML part as it is. You may find the above code line twice so in that case, just paste the code after the second appearance of the above code line.  
+
+
+**Add Social Media Buttons to Post Footer**  
+
+Find out this HTML code line `<div class='post-footer'>` and just below that code line, paste the whole HTML code as it is.  
+
+If you did not find the above code line then try finding `<div class='post-footer-line post-footer-line-1'>` and paste the HTML just below it. Again if the code line appears more than one time then paste the HTML after second appearance.  
+
+
+**Important Note:-** 
+
+If you're using my previous [**Floating Social Media Share Buttons Bar For Blogger**](https://www.twistblogg.com/2015/05/floating-social-share-bar-widget-for.html) then please it is **my humble request not to use the same JavaScript code of Shares Count API**.  
+
+Just delete the JavaScript API code and only use the HTML part because the previous JavaScript code will work fine with it. If you did not get it then please let me know.  
+  
+  
+**HTML code:-**  
+
+```html
+<b:if cond='data:blog.pageType == &quot;item&quot;'>  
+    <b:if cond='data:blog.pageType != &quot;static_page&quot;'>  
+        <script type='text/javascript'>  
+            //<![CDATA[  
+            $(document).ready(function() {  
+                var shareUrl = $("link[rel=canonical]").attr("href");  
+                $.getJSON('https://count.donreach.com/?url=' + encodeURIComponent(shareUrl) + "&callback=?", function(data) {  
+                    shares = data.shares;  
+                    $(".count").each(function(index, el) {  
+                        service = $(el).parents(".share-btn").attr("data-service");  
+                        count = shares[service];  
+                        if (count > 1000) {  
+                            count = (count / 1000).toFixed(1);  
+                            if (count > 1000) count = (count / 1000).toFixed(1) + "M";  
+                            else count = count + "k";  
+                        }  
+                        $(el).html(count);  
+                    });  
+                });  
+            });  
+            //]]>  
+        </script>  
+        <div class='tbn_horizontal_sharebar'>  
+            <div class='Share_buttons'>  
+                <ul>  
+                    <li class='share'>  
+                        <div class='share-btn' data-service='total'>  
+                            <div class='count h4'></div>  
+                            <div class='share h6'>SHARES</div>  
+                        </div>  
+                    </li>  
+                    <li class='btn_fb'>  
+                        <a expr:href='&quot;https://www.facebook.com/share.php?v=4&amp;   src=bm&amp;   u=&quot; + data:post.url + &quot;   &amp;   t=&quot; + data:post.title' onclick='window.open(this.href,&quot;   sharer&quot;   ,&quot;   toolbar=0,status=0,width=626,height=436&quot;   );   return false;' rel='nofollow'>  
+                            <div class="wrap1"><i class="fa fa-facebook"></i> </div>  
+                            <div class="wrap">Share</div>  
+                            <div class='share-btn' data-service='facebook'>  
+                                <div class='count' /></div>  
+                        </a>  
+                    </li>  
+                    <li class='btn_twtr'>  
+                        <a expr:href='&quot;https://twitter.com/intent/tweet?url=&quot; + data:blog.url + &quot;&amp;text=&quot; + data:post.title + &quot; via @TwistBlogg - &quot;' onclick='window.open(this.href,&quot;   sharer&quot;   ,&quot;   toolbar=0,status=0,width=626,height=436&quot;   );   return false;' rel='nofollow'>  
+                            <div class="wrap1"><i class='fa fa-twitter'></i></div>  
+                            <div class="wrap">Tweet</div>  
+                            <div class='share-btn' data-service='twitter'>  
+                                <div class='count' /></div>  
+                        </a>  
+                    </li>  
+                    <li class='btn_gplus'>  
+                        <a expr:href='&quot;https://plus.google.com/share?url=&quot; + data:blog.url' onclick='javascript:window.open(this.href,&quot;   &quot;   ,&quot;   menubar=no,toolbar=no,resizbutton_le=yes,scrollbars=yes,height=600,width=600&quot;   );   return false;   ' rel='nofollow'>  
+                            <div class="wrap1"><i class='fa fa-google-plus'></i></div>  
+                            <div class="wrap">Share</div>  
+                            <div class='share-btn' data-service='google'>  
+                                <div class='count' /></div>  
+                        </a>  
+                    </li>  
+                    <li class='btn_pntrst'>  
+                        <a data-pin-config='beside' expr:href='&quot;https://pinterest.com/pin/create/button/?url=&quot; + data:post.url + &quot;   &amp;media=&quot; + data:blog.postImageUrl + &quot;&amp;description=&quot; + data:post.title' onclick='window.open(this.href,&quot;   sharer&quot;   ,&quot;   toolbar=0,status=0,width=626,height=500&quot;   );   return false;' rel='nofollow'>  
+                            <div class="wrap1"><i class='fa fa-pinterest'></i></div>  
+                            <div class="wrap">Pin</div>  
+                            <div class='share-btn' data-service='pinterest'>  
+                                <div class='count' /></div>  
+                        </a>  
+                    </li>  
+                    <li class='btn_linkdin'>  
+                        <a expr:href='&quot;https://www.linkedin.com/shareArticle?mini=true&amp;   url=&quot; + data:post.url + &quot;   &amp;   title=&quot; + data:post.title + &quot;   &amp;   summary=&amp;   source=&quot;   ' onclick='window.open(this.href,&quot;   sharer&quot;   ,&quot;   toolbar=0,status=0,width=626,height=500&quot;   );   return false;' rel='nofollow'>  
+                            <div class="wrap1"><i class='fa fa-linkedin'></i></div>  
+                            <div class="wrap">Share</div>  
+                            <div class='share-btn' data-service='linkedin'>  
+                                <div class='count' /></div>  
+                        </a>  
+                    </li>  
+                </ul>  
+            </div>  
+        </div>  
+    </b:if>  
+</b:if>  
+
+```  
+
+**Editing Part:-** 
+
+All you need to edit in the above HTML part is my twitter username  _@TwistBlogg_ so just replace it with your own Twitter username and you're good to go. Now just save your template code and visit any of your blog post to see it live.  
+  
+If it did not appear on your blog even after following all the steps correctly then please let me know, I'll personally help you out for sure.  
+  
+Also please let me know your feedback on the design and responsiveness. Does it work correctly? Appearing same as on this blog? Your feedback will help me to make it better if there are any bugs.  
+  
+So this is all in this article and I hope you guys have liked it. If you liked it then surely your buddies would also like it if they using blogger platform. Let them know by sharing it on at least one social site you actively use. :)  
+  
+Thanks and stay blessed!

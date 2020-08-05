@@ -1,0 +1,117 @@
+---
+title: 'Fix Blogger Contact Form (Send Button) Not Working'
+date: 2019-08-28
+excerpt: Blogger comes with a default contact form gadget. But sometimes there occurs a problem with blogger contact form not sending any mails on clicking send button. This article is a complete guide to fix this error and get back the mails to your gmail address.
+slug: blogger-contact-form-not-sending-fix
+featured: false
+published: true
+image: fix blogger contact form not working.png
+author: Invictus
+tags : [Blog Customize, Blogging Tips]
+---
+
+Blogger comes with a contact form gadget that can be imported through the layout section. This gadget runs smoothly in most of the old templates; however, it may not function in some new ones. Whenever users' press the send button, there is no response and also no mails are received in gmail via <a href="https://www.twistblogg.com/blog/tags/contact-page-design" rel="nofollow noopener noreferrer" target="_blank">Blogger Contact form</a>. I received a tons of messages on how to fix blogger contact form gadget not working or send button not functioning properly.  
+
+  
+I had also faced the same issue. Everything was working just fine except when I press the send button, there was no response. After doing some research and cracking my head, I managed to fix this issue and my blogger contact form was working as normal. But before revealing the solution, let us know why the problem arises.  
+  
+
+#### Why the blogger contact form does not work?  
+
+
+The reason is pretty simple. This is because contact form calls functions present in blogger's default javascript package, and most of the new themes come in handy with all the default css and javascript files removed so as to reduce the page size and improve web performance. Since such files are removed, the calls could not be made resulting in not working of send or submit button.  
+  
+  
+
+## How to fix send button not working or Blogger contact form not working?
+
+
+If you have already added Contact form, then you may skip this step, else follow me. I'm assuming you're already logged into your google account and have blogger.com opened.  
+  
+
+*   Go to **Layout** >> Click on **Add A Gadget** > Press **"+"** located in the right of Contact Form.
+
+
+<Image src="Blogger-Template-Layout-sidebar.png" alt="Blogger-Template-Layout-sidebar" />
+
+
+  
+Also, have a static page named "Contact Page" because I'm assuming you want contact form in a static page. At the end I've also written on how to make it work in the sidebar or footer too.  
+
+*   Go to **Pages** > **New Page** and follow the images:
+
+
+<Image src="create a new page on blogger.png" alt="create a new page on blogger" />
+
+  
+
+*   Go to **Template** > **Edit HTML** and Press _CTRL + F_. 
+*   Search for `]]></b:skin>` and paste the following code above it. This hides the contact form from sidebar or footer.
+
+```css
+div#ContactForm1 {  
+  display: none !important;  
+} 
+```
+
+*   Again, search for `</body>` or `/body` and paste the code above it.
+
+
+```js
+<b:if cond='data:blog.url == &quot;**https://twistblogg.blogspot.com/p/contact-us.html**&quot;'>  
+<script src="https://www.blogger.com/static/v1/widgets/2575128383-widgets.js" type="text/javascript"></script>  
+<script type="text/javascript">  
+_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d4927280794763956660','//**twistblogg.blogspot.com**','4927280794763956660');  
+_WidgetManager._RegisterWidget('_ContactFormView', new _WidgetInfo('ContactForm1', 'sidebar', document.getElementById('ContactForm1'), {'contactFormMessageSendingMsg': 'Sending...', 'contactFormMessageSentMsg': 'Your message has been sent.', 'contactFormMessageNotSentMsg': 'Message could not be sent. Please try again later.', 'contactFormInvalidEmailMsg': 'A valid email address is required.', 'contactFormEmptyMessageMsg': 'Message field cannot be empty.', 'title': 'Contact Form', 'blogId': '4927280794763956660', 'contactFormNameMsg': 'Name', 'contactFormEmailMsg': 'Email', 'contactFormMessageMsg': 'Message', 'contactFormSendMsg': 'Send', 'submitUrl': 'https://www.blogger.com/contact-form.do'}, 'displayModeFull'));  
+</script>  
+</b:if>  
+
+```  
+\* Replace **https://twistblogg.blogspot.com/p/contact-us.html** with your blog post address.  
+\*\* Replace **4927280794763956660** with your blog ID (Check below to find out your BLOG ID).  
+\*\*\* Replace **twistblogg.blogspot.com** with your website address. No need to add https or http.  
+
+
+[Recommended : How to disable Copy Function in Blogger with CSS](https://www.twistblogg.com/2014/01/Disable-Copy-Text-Selection-On-Blogger.html)  
+  
+
+### How to make Contact Form work in sidebar or footer?
+
+
+Remove the following code, if present, from HTML code.  
+  
+```css
+div#ContactForm1 {  
+  display: none !important;  
+}
+```
+  
+And search for `</body>` or `/body` and paste the code above it. Here, we are just removing `<b:if>` condition.  
+
+
+```js
+<script src="https://www.blogger.com/static/v1/widgets/2575128383-widgets.js" type="text/javascript"></script>  
+<script type="text/javascript">  
+_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d4927280794763956660','//**twistblogg.blogspot.com**','4927280794763956660');  
+_WidgetManager._RegisterWidget('_ContactFormView', new _WidgetInfo('ContactForm1', 'sidebar', document.getElementById('ContactForm1'), {'contactFormMessageSendingMsg': 'Sending...', 'contactFormMessageSentMsg': 'Your message has been sent.', 'contactFormMessageNotSentMsg': 'Message could not be sent. Please try again later.', 'contactFormInvalidEmailMsg': 'A valid email address is required.', 'contactFormEmptyMessageMsg': 'Message field cannot be empty.', 'title': 'Contact Form', 'blogId': '4927280794763956660', 'contactFormNameMsg': 'Name', 'contactFormEmailMsg': 'Email', 'contactFormMessageMsg': 'Message', 'contactFormSendMsg': 'Send', 'submitUrl': 'https://www.blogger.com/contact-form.do'}, 'displayModeFull'));  
+</script>  
+</b:if>  
+
+```
+
+\*\* Modify the highlighted parts as described earlier. \*\*  
+  
+
+#### How to know your BLOG ID?
+
+
+*   Go to **Blogger.com** and click on the blog where you want to fix blogger contact form issue.
+*   Check blog address on the top of browser. The highlighted code will be your blog ID.
+
+> https://draft.blogger.com/blogger.g?blogID=4927280794763956660#allposts
+
+  
+[Recommended: Get Google To Index New Blog Articles Quickly](https://www.twistblogg.com/2014/01/how-to-get-google-to-index-new-blog-site-articles-quickly.html)  
+
+
+That's all folks. It was easy right? A simple fix for contact form not working in blogger. Also, the send or submit button will work. I've tested it in my blog and it is working impeccably. I was able to receive messages from the Blogger contact form. Do not forget to leave a thank you message. Have a great weekend. 💪😀

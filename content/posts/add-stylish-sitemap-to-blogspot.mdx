@@ -1,0 +1,132 @@
+---
+title: 'Add Stylish Sitemap Page To Blogger [Pro Version]'
+date: 2018-08-13
+excerpt: Sitemap page lists all published posts of a blogger. In this article, we will share a customized and stylish pro version of sitemap page design.
+slug: stylish-pro-sitemap-blogger
+featured: false
+published: true
+image: Add stylish Sitemap page to blogger blog.png
+author: Invictus
+tags : [Blog Widgets]
+---
+
+**Stylish Sitemap page for blogger** has always been an interesting topic. There's a lot of sitemap versions' available on Internet that claims to be professional, attractive and eye catching. But I assure you, the sitemap I'm going to distribute is the one that has all above amazing features. Before that,let's see what a sitemap is.  
+  
+
+
+  
+
+#### What is a Sitemap?
+
+
+Sitemap is a map of a site that includes all published posts in a single page. In other words, it is a navigation page that helps visitors to navigate via all articles. Sitemap categorizes the posts based on the label. Same label articles are listed together. Sitemap is important for SEO. Yes,you heard it right. It helps to showcase your posts to visitors and reduces the bounce rate,which in turn boosts traffic.  
+  
+One bad news: **Blogger doesn't have in-built sitemap page**. Hence for a blogspot blogger, it is a must to externally add a stylish and pro-looking sitemap to blogspot.  
+  
+
+#### Features of this Stylish Sitemap Page
+
+*   Eye Catching Looks.
+*   All Labels are separated neatly.
+*   Easy for users to navigate via the posts.
+*   Numbered System is added.
+*   New labels are added automatically.
+*   Labels are categorized alphabetically.
+*   Professional and Stylish color combination used. 
+
+  
+[**Recommended : Add Stylish Contact Page For Blogger Blog**](https://www.twistblogg.com/2015/08/add-contact-form-to-blogger-pages.html)  
+  
+
+## How to add stylish sitemap to blogger?
+
+  
+
+#### Step 1: Create a New Page On Your Blog
+
+First of all, create a **new page** and Enter the Title as **Sitemap**. Click on **Page Settings**,modify the page settings as shown below and **switch to HTML Mode**.  
+  
+_Note: Once the title is given, a permalink will be automatically generated. So give the title as soon as you create a new page._  
+    
+  
+
+#### Step 2: Copy and Paste The Whole Code
+
+
+Once you've switched to HTML Mode, you can see few lines of HTML coding in post editor by default. Select those lines,remove them and paste the below CSS and javascript code . For further customization of the code,see the Editing section.  
+     
+```css
+<!-- Sitemap page for blogger by TwistBlogg.Com -->  
+<style type="text/css">  
+#twistblogg{  
+width:99%;    
+margin:5px auto;  
+border:1px solid #05a0ff;    
+-webkit-box-shadow:4px 4px 8px 2px rgba(0,0,0, 0.2);  
+-moz-box-shadow:4px 4px 8px 2px rgba(0,0,0, 0.2);  
+box-shadow:4px 4px 8px 2px rgba(0,0,0, 0.2);  
+}  
+.labl{  
+color:#FF5F00;  
+font-weight:bold;  
+margin:0 -5px;  
+padding:1px 0 2px 11px;  
+background:-moz-linear-gradient(right,#c2eafe 0%,#05a0ff 40%);  
+background:-webkit-gradient(linear,left 10,right 80,color-stop(0.20,#05a0ff),color-stop(1,#c2eafe));  
+border:1px solid #37c2dd;  
+border-radius:4px;-moz-border-radius:4px;  
+-webkit-border-radius:4px;box-shadow:3px 3px 1px #a0a0a0;  
+-moz-box-shadow:3px 3px 1px #a0a0a0;-webkit-box-shadow:3px 3px 1px #a0a0a0;display:block;  
+}  
+.labl a{color:#fff;  
+}  
+.labl:first-letter{text-transform:uppercase;  
+}  
+.new{color:#FF5F00;  
+font-weight:bold;  
+font-style:italic;  
+}  
+.postname{font-weight:normal;  
+background:-moz-linear-gradient(right,#C2EAFE 0%,#fff 40%);  
+background:-webkit-gradient(linear,left 80,right 10,color-stop(0.50,#fff),color-stop(1,#C2EAFE));  
+}  
+.postname li{border-bottom: #ddd 1px dotted;  
+margin-right:5px  
+}  
+_/*This is optional - For full width Sitemap*/_  
+.sidebar, #bottom, #blog-pager, h2.post-title, .comments {  
+display: none !important;  
+}  
+#content { width: 100% !Important; }  
+@media only screen and (max-width: 1089px) and (min-width: 980px) { #content { width: 100% !Important; } }  @media only screen and (max-width: 979px) and (min-width: 768px) { #content { width: 100% !Important; } } @media only screen and (max-width: 767px) and (min-width: 480px) { #content { width: 100% !Important; } }  @media only screen and (max-width: 479px) { #content { width: 100% !Important; } }  
+</style>  
+  
+<div id="twistblogg">  
+<script src="https://amanbhattarai4400.github.io/csshosting/sitemap.js" type="text/javascript"></script>  
+<script src="https://www.twistblogg.com/feeds/posts/default?max-results=9999&amp;alt=json-in-script&amp;callback=loadtoc">  
+</script></div>  
+```  
+
+_**Note:** I didn't write the whole code. I got the reference code from Internet and I played with CSS to modify it. I don't know who is the creator of the reference code. If you are the one, please let me know, I'll give  proper credits._  
+
+
+[**Recommended: Add an Elegant HTML Sitemap Page to Blogger Blog **](https://www.twistblogg.com/2015/06/add-html-sitemap-page-to-blogger.html)  
+  
+
+
+**Editing Section:**  
+
+
+➜ Change **https://www.twistblogg.com** with your site url.  
+  
+➜/\*This is optional - For full width Sitemap\*/ Part is for making the sitemap full width. You may need to modify the `.sidebar, #bottom, #blog-pager, h2.post-title, .comments`  according to the tags given in your blogger template. If you need help to figure that out, let me know below.  
+  
+➜I've hosted the javascript coding on github.`https://amanbhattarai4400.github.io/csshosting/sitemap.js` You can host it by yourself. Check this article on [how to host CSS,JS and HTML in GitHub](https://www.twistblogg.com/2020/06/use-github-for-hosting-files.html)  
+  
+**Bonus Tip:** I personally love to link Sitemap on 404 Error Pages or simply redirect error pages to sitemap page.
+
+
+#### Final Words On Stylish Sitemap for Blogspot
+
+
+That's all folks. I've shared the code for stylish and pro looking sitemap for blogger blog. Hope it was as per expectations.I'll definitely provide more attractive sitemaps in near future. Stay tuned and subscribe twistblogg, Feel free to ask me for help. Happy Blogging 😃 ADIOS \[Bye Bye in Spanish\]

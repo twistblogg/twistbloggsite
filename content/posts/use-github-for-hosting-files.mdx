@@ -1,0 +1,203 @@
+---
+title: 'How to use GitHub for Hosting CSS, Javascript and other Files'
+date: 2020-06-07
+excerpt: Github allows users to upload and share their projects and codes with others. You can even host your blogger CSS codes, Javascripts, templates and other files with Github. Learn how you can do it.
+slug: use-github-for-hosting-files
+featured: false
+published: true
+image: How to use GitHub for Hosting CSS, Javascript and other Files.png
+author: Invictus
+tags : [Tips and Tricks, Blog Customize]
+---
+
+
+  
+GitHub, in simple words, is a website that provides free cloud based hosting service. It allows you to upload and share codes and projects.  
+  
+At the heart of GitHub is **Git**, an open source project started by Linus Torvalds, that makes it easier to track changes made to a file. For example, when you edit your file, git helps to determine exactly what changed, who changed it and why.  
+  
+In short, Git is a Version Control System(VCS) and GitHub is a hosting service for git repositories.  
+  
+GitHub is like a second nature for developers, whereas for non-coders, it can be pain in the neck. They won't even know where and how to start.  
+  
+In this article, I'll be showing you how to create an account and use GitHub for hosting your css, javascripts or other files.  
+  
+
+
+### How to create GitHub account and a repository?   
+
+
+Signing up for GitHub account is similar to opening an [facebook account](https://www.twistblogg.com/2016/01/best-facebook-tips-and-tricks.html). You'll need to enter your details as simple as that.  
+  
+Go to <a href="https://github.com/" rel="nofollow noopener noreferrer" target="_blank">GitHub Sign up Page</a> and fill all the details. Verify your account and you'll be forwarded to a page. Choose Create a Repository. (Remember Repository as a folder in your computer.)  
+  
+
+<Image src="Setting a Github account to host files.png" alt="Setting a Github account to host files" />
+
+  
+Fill in the Repository name and make it **public** to host your files. Select Initialize this Repository with a README option.  
+  
+
+<Image src="Creating a repository in Github to host files.png" alt="Creating a repository in Github to host files" />
+
+  
+Now you are all ready with an account and a repo (shorthand for repository) -- in our case, testrepo is the name.  
+  
+
+## How can I use GitHub to host my Javascripts, CSS and other files?
+
+
+We will now start uploading our files in testrepo. For simplicity, I'll use the javascript code used in the [sitemap design](https://www.twistblogg.com/2018/08/add-stylish-sitemap-to-blogspot.html) we already shared.  
+  
+Open your GitHub repository and Select "Create A File" option. Enter a name (eg: sitemap.js) and paste the code. Hit Commit New File once done.  
+  
+
+<Image src="uploading codes in Github for hosting it in blog.png" alt="uploading codes in Github for hosting it in blog" />
+
+  
+You have successfully uploaded your code in GitHub. Now, your repo will show that file.  
+
+
+<Image src="github repository page - hosting my js code .png" alt="github repository page - hosting my js code " />
+
+
+Open it and you can view view the code. You can even view the Raw code by selecting "Raw" option. Raw Link for our above code looks like this :
+
+
+`https://raw.githubusercontent.com/twistblogg/testrepo/master/sitemap.js`
+  
+  
+We are done with uploading our simple javascript into GitHub repo.  
+  
+
+#### So, Why can't I just load files directly from GitHub repositories?
+
+
+You might be wondering --  
+I can directly view my code when I press Raw option, but why can't I use that link to embed codes in my blogs. Why do I even need other options?  
+  
+Here's why:  
+  
+
+> When you request a file (CSS, Javascripts, HTML and some other files) via Raw link, they are usually served with a Content-Type Header `"text/plain"` and most modern browsers won't interpret that file as a CSS, Javascript or HTML. So, basically you are just serving a plain text file through that raw link.
+
+  
+GitHub does this in purpose because its relatively inefficient to serve raw files from a git repo directly, so they want to discourage people from using their repos for just static file hosting.   
+
+  
+To overcome this, there are two solutions :  
+
+1) Turning GitHub repos into CDN and fetch proper Content-Type Header to browsers  
+2) Using GitHub pages  
+  
+
+## 1) Turning Github repos into CDN
+
+
+CDN stands for Content Distribution Network and its main purpose is to allow users download files faster by placing data centers all over the globe. So, when a file is requested by user, it is fetched from the closest data center available.  
+    
+With the below web apps, you can easily convert any file from a Github repo into an externally hosted CDN.  
+  
+And that CDN file can be embedded in your projects or websites, without having to download and store them locally.  
+  
+_Reminder: Rawgit was one of the popular CDN service for hosting Github files, but it shut down because some users misused it to perform crypto mining attacks. You can <a href="https://www.getastra.com/blog/cms/rampant-rawgit-cdn-abuse-by-cryptominers/" rel="nofollow noopener noreferrer" target="_blank">read details here</a>. Please be aware, not all CDNs are safe. From the following list, I prefer JSDelivr._  
+  
+
+#### 1a) Using JSdelivr.net
+
+JSDelivr is a fast, reliable and free Open Source CDN service for github and npm. Millions of requests are fetched via it everyday. You can use JSDelivr to convert your files from Github repos into externally hosted CDNs. This is considered the best alternative to Rawgit.  
+  
+Here's how it works:  
+  
+
+The base URL is `https://cdn.jsdelivr.net/gh/{username}/{repo}/`, where you replace
+
+`{username}` with the GitHub username and
+
+`{repo}` with the repository name for the project.
+
+  
+For instance, `https://github.com/twistblogg/testrepo/blob/master/sitemap.js` is our original link for sitemap file. We will modify it accordingly, 
+
+```
+https://cdn.jsdelivr.net/gh/twistblogg/testrepo/sitemap.js
+```
+
+The above is a newly created CDN link and now we can use it directly in our blogger blogs. Append them in src attribute of script tag.  
+
+```js
+<script src="https://cdn.jsdelivr.net/gh/twistblogg/testrepo/sitemap.js" type="text/javascript"></script>
+```  
+
+
+#### 1b) Using raw.githack.com  
+
+
+Raw.githack.com is another web app service to help you embed CSS, javascripts and other files into your website. It serves raw files directly from Github with proper Content-Type Headers.  
+  
+It is based on **Free Cloudfare CDN service**.  
+  
+Go to <a href="https://raw.githack.com" rel="nofollow noopener noreferrer" target="_blank">raw.githack.com</a> and paste your github file address _(you can serve either a raw address or a normal address)_. It will generate a CDN link that can be used in your blogs.  
+  
+
+<Image src="hosting github files using githack.png" alt="hosting github files using githack" />
+
+  
+You can use either a production or development option. For small traffics, use development option and vice versa.  
+  
+
+#### 1c) Using combinatronics.com  
+
+
+This website offers similar service as that of raw.githack.com. Go to <a href="https://combinatronics.com/" rel="nofollow noopener noreferrer" target="_blank">combinatronics.com</a> and paste your github file address _(make sure to serve "raw address", not the normal one)_. It will offer with a new CDN link for that file.  
+  
+
+
+<Image src="hosting github files using combinatorics.png" alt="hosting github files using combinatorics" />
+  
+  
+
+## 2) Using GitHub Pages
+
+
+This is another way of hosting your raw files(HTML,Javascript and CSS) in GitHub. All you need is to setup a github page address.  
+  
+Go to <a href="https://github.com/" rel="nofollow noopener noreferrer" target="_blank">Github.com</a> and open your repository that consists of file to be hosted. Click on "Setting" option located in right corner.  
+  
+
+<Image src="setting up Github pages for hosting my files.png" alt="setting up Github pages for hosting my files" />
+
+  
+Scroll Down till you reach GitHub Pages Option. Click on "None" and select master branch.  
+  
+
+<Image src="hosting my files in github pages.png" alt="hosting my files in github pages" />
+
+  
+The page will reload and you're now ready with a GitHub Page.  
+  
+
+<Image src="create github page to host scripts and css.png" alt="create github page to host scripts and css" />
+
+  
+Page setup is now complete. Here's how to modify the address to be able to use directly in websites.  
+  
+
+The base URL is `https://{username}.github.io/{repo}/{filename}` , where you replace
+
+`{username}` with the GitHub username,
+
+`{repo}` with the repository name for the project and
+
+`{filename}` with file name along with proper directory.
+
+  
+For instance, `https://github.com/twistblogg/testrepo/blob/master/sitemap.js` is our original link for sitemap file. We will modify it accordingly,
+
+```
+https://twistblogg.github.io/testrepo/sitemap.js
+```
+
+Keep in mind, proper addressing of directories is necessary in case you've multiple hierarchy.  
+  
+That's all. You've successfully learnt how to setup Github account and pages and how to use it for hosting your JS,CSS and HTML files for bloggers or other websites. Leave a comment and share to keep me motivating :)

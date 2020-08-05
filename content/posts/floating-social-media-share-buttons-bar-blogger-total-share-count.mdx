@@ -1,0 +1,434 @@
+---
+title: 'Floating Social Media Buttons with Shares Count - Blogger'
+date: 2015-04-24
+excerpt: Add Floating Social Media Share Buttons bar to blogger with Total Shares Count Box, Flip animation effect and Show Hide button.
+slug: floating-share-button-with-count-blogger
+featured: false
+published: true
+image: floating social buttons for blogger with counter.jpg
+author: Invictus
+tags : [Blog Widgets]
+---
+
+Last time I had shared [Social media share buttons bar to add below post titles for blogger](https://www.twistblogg.com/2015/04/add-social-media-share-buttons-to-blogger.html) and right now I am sharing floating social media share buttons bar with cool total shares count box, flip animation effect  and a tiny show hide button in bottom of it.  
+  
+Social media platforms play a vital role in the success of our content to go viral and generate massive traffic in very short span of time than to start getting organic traffic from search engines because they take time and you need to [generate some quality backlinks to hold rankings on first page](https://www.twistblogg.com/2014/03/seo-top-5-link-building-methods.html) and outrank your competitors.  
+
+
+So there is no reason for not to use friendly social media share buttons on our blogs.  
+  
+You can see the hell lot of plugins like this available for _WordPress_ on **Codecanyon.net** selling like crazy which inspired me to make one for blogger and that is for free. :)  
+  
+It took me almost 4 days to design my floating social media share buttons bar with a bunch of powerful features and cool animation effects with CSS3.  
+  
+  
+**Important Note:** 
+
+Respect copyrights. You **_do Not have Permission_** to copy and share my code on your blog. There is no credit backlink included, just what you need, but you **can Not Remove the Comments added to CSS code, keep them intact.** You can use it on any number of your blogs or websites for both, personal & commercial.  
+
+
+**Total Share Count Box Credit:** 
+
+<a rel="nofollow noopener noreferrer" href="https://donreach.com/social-share-count">donReach.com</a> code issued under <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/GNU_General_Public_License">GNU General Public License</a>.  
+
+
+**Icons credit:** 
+
+[FontAwesome 4.0.3](http://www.twistblogg.com/2014/01/How-To-Use-FontAwesome-Icons-In-Blogger.html)  
+
+
+<ins>Quick Note:-</ins>  
+
+**New Version Available:** [Add Floating Social Media Share Buttons Widget For Blogger With Custom Buttons](https://www.twistblogg.com/2015/05/floating-social-share-bar-widget-for.html) and Shares Count Option.  
+  
+**Note: Newer version available**  - [Super Light Weight Social Sharing buttons](https://www.twistblogg.com/2020/05/social-sharing-buttons-blogger.html) 
+
+
+
+### Features of Floating Social Media Share Buttons Bar
+
+
+It is full of powerful features and you need to know them to understand how it works so I have made a little Infographic, see below.  
+  
+
+<Image src="Floating-Social-Media-Share-Bar-For-Blogger-With-Show-Hide-Button.png" alt="Floating-Social-Media-Share-Bar-For-Blogger-With-Show-Hide-Button" />
+
+  
+**1) Total Shares Count Box:** It counts all the shares of URL on different social media platforms and shows them in the total count box.  
+
+
+**2) FontAwesome Icons:** I have used font Awesome icons on button overlay with cool CSS effects.  
+
+
+**3) Flip Animation effect:** On mouse hover, button's overlay flips to the right side and the hovered social media button becomes visible.    
+
+
+**4) Show Hide Button:** There is little "**hide button**" in the bottom of social media bar which allows users to hide the social media buttons on click and then "**Show button**" becomes visible.  
+
+
+**5) Less JavaScript More HTML and CSS3**: I have tried by best and used HTML and CSS3 to make the most of its design. Show hide button is purely made with HTML and CSS3.  
+  
+
+So did it impress you? Let's move on to installation.  
+
+
+**Update 1:-**
+
+
+<ins>Problem:</ins> Total Shares API uses cache and they are cleared after 24 hrs so total shares count box may take maximum up to 24 hrs to update total shares.   
+
+<ins>Solution:</ins> You can download the PHP scripts from the Github project page (links are given above in credits) and upload them on a Free hosting service like as OpenShift and change cache time inside configuration.php file in seconds to minimum time you want to request update of total shares (correct me if I am wrong).  
+  
+I don't know how to make it work and you can find the information on the respected website or at Github project.  
+
+
+**Update 2:-** 
+
+
+<ins>I found the solution:</ins> Now there is no problem of not updating the total shares count live because I have downloaded these scripts and uploaded them to my OpenShift account. I did not use any cache file so your total count of shares will fetch live counts from all major social media platforms.  
+  
+Although the task was really daunting for me to upload these scripts as _OpenShift_ does not allow to upload anything to our applications directly from their server. Instead, they allow it offline from two software programs called Git and Ruby. These both software work from the command prompt and then connect to your OpenShift account.  
+  
+Ultimately I made it and now I learned to use Git and Ruby too. :)  
+  
+
+
+## Add Floating Social Media Share Buttons Bar to Blogger
+
+
+Adding it to your blogger blog is super easy and will not take much of your time so follow some boring steps and get your stylish floating social media buttons bar ready.  
+
+
+**Step 1)** Login to your **Blogger account** - **Select your blog** - go to **Template section** - click on **Edit HTML** - now click anywhere inside your template code box - press **Ctrl+a** and save a backup of your template code first.  
+  
+You can also download your template code backup in .xml format by going to **Template** - click on **Top Right Side** link **Backup/Restore** and download it from there.  
+
+
+**Step 2)** Add Font Awesome icons to your blogger blog - Find this opening tag `<head>` and paste the font awesome icons CSS link just below this opening tag.  
+  
+```html
+<link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'/>
+```
+  
+Add **Google JavaScript Library** link too if not already added.  
+  
+```html
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'/>
+```
+  
+
+**Step 3)** Now add the CSS code - Find out  `]]></b:skin>` this code line and paste the whole CSS code just before it as it is.  
+
+
+```css
+/*----------------------------------------------------------------------------
+Floating Social Media Share Buttons bar With Total Share Count
+ and Show Hide Button
+Designed by:: https://www.twistblogg.com
+Shares Count Code by:: http://donreach.com/social-share-count
+ issued under GNU GPL Licence
+Icons:: FontAwesome 4.0.3
+************** Do Not Remove These Credits *************
+-----------------------------------------------------------------------------*/
+.twistMe {
+  position: fixed;
+  bottom: 25%;
+  padding: 0;
+  background: none;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 99999999;
+}
+.twistMe label:hover {
+  cursor: pointer;
+}
+.twistMe label {
+  text-align: center;
+  width: 62px;
+  background: #3A3939;
+  color: #FFF;
+  border: 0;
+  font-family: fontawesome;
+  display: block;
+  font-size: 12px;
+  padding: 1px 0px;
+  border-radius: 0;
+  transition: all .4s ease-in-out;
+  position: absolute;
+  margin-top: 305px;
+}
+input.ShowHideButton:checked + label {
+  transform-origin: 50% 0%!important;
+  -webkit-transform-origin: 50% 0%!important;
+  -ms-transform-origin: 50% 0%!important;
+  -moz-transform-origin: 50% 0%!important;
+  -o-transform-origin: 50% 0%!important;
+  opacity: 1;
+  transform: translateX(0px) rotateY(-180deg);
+  -webkit-transform: translateX(0px) rotateY(-180deg);
+  -ms-transform: translateX(0px) rotateY(-180deg);
+  -moz-transform: translateX(0px) rotateY(-180deg);
+  -o-transform: translateX(0px) rotateY(-180deg);
+  transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+  -ms-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  border: 1px solid #3A3939;
+  border-radius: 50px 0px 0px 50px;
+  width: 30px;
+}
+input.ShowHideButton ~ .ShowHideMe {
+  transition: .6s all cubic-bezier(0.730, -0.485, 0.145, 1.620);
+  -webkit-transition: .6s all cubic-bezier(0.730, -0.485, 0.145, 1.620);
+  -ms-transition: .6s all cubic-bezier(0.730, -0.485, 0.145, 1.620);
+  -moz-transition: .6s all cubic-bezier(0.730, -0.485, 0.145, 1.620);
+  -o-transition: .6s all cubic-bezier(0.730, -0.485, 0.145, 1.620);
+}
+input.ShowHideButton:checked ~ .ShowHideMe {
+  margin-left: -75px;
+}
+input.ShowHideButton {
+display: none;
+}
+.twistBlogger-Floating-SocialBar {
+  display: inline-block;
+  margin: 0px;
+  float: left;
+  background: #DFDFDF;
+  padding: 0;
+  z-index: 9999!important;
+  border-radius: 1px;
+}
+.twistBlogger-Floating-SocialBar > ul {
+  padding: 0;
+  margin:0;
+}
+.twistBlogger-Floating-SocialBar > ul > li {
+  margin: 0px 0px 1px -1px;
+  position: relative;
+  text-align: center;
+  list-style: none;
+  list-style-type: none;
+  padding: 5px 0px 0px 0px;
+  height: 70px;
+  width: 63px;
+  overflow: hidden;
+  display: block;
+  box-sizing: border-box;
+  background: #000000;
+}
+.twistBlogger-Floating-SocialBar .tab-overlay .fa {
+  font-size: 25px;
+  text-align: center;
+  text-shadow: 0px 0px 20px #FFFFFF;
+  color: #FFFFFF;
+  padding: 9px 9px;
+  line-height: 1.7em;
+}
+.twistBlogger-Floating-SocialBar .tab-warp {
+  perspective: 500px;
+  perspective-origin: 0% 50%;
+  -webkit-perspective: 500px;
+  -webkit-perspective-origin: 0% 50%;
+  -moz-perspective: 500px;
+  -moz-perspective-origin: 0% 50%;
+}
+.twistBlogger-Floating-SocialBar .facebook-button-tab .tab-overlay {
+  background: #4965B4;
+}
+.twistBlogger-Floating-SocialBar .googleplus-button-tab .tab-overlay {
+  background: #E06352;
+}
+.twistBlogger-Floating-SocialBar .tweeter-button-tab .tab-overlay {
+  background: #00A8E8;
+}
+.twistBlogger-Floating-SocialBar .linkedin-button-tab .tab-overlay {
+  background: #0077B5;
+}
+.twistBlogger-Floating-SocialBar .tab-overlay {
+  margin-top: -5px !important;
+  height: 70px;
+  width: 63px;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 99999;
+}
+.twistBlogger-Floating-SocialBar .tab-wrap {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.twistBlogger-Floating-SocialBar .tab-flip .tab-overlay {
+  display: block;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+.twistBlogger-Floating-SocialBar .tab-flip:hover .tab-overlay {
+  display: block!important;
+  width: 0px;
+  opacity: 0.5;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transform: translateX(-5px) rotateY(-95deg);
+  -webkit-transform: translateX(-5px) rotateY(-95deg);
+  -moz-transform: translateX(5px) rotateY(-95deg);
+  transform-origin: 0% 100%;
+}
+.twistBlogger-Floating-SocialBar .count {
+  padding-top: 4px;
+  height: 25px;
+  position: absolute;
+  background: #3A3939!important;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  bottom: 100%;
+  font-family: sans-serif;
+  font-weight: bold;
+  left: 0;
+  right: 0;
+  font-size: 15px;
+  z-index: 1!important;
+}
+.twistBlogger-Floating-SocialBar .count.h4:after {
+  content: "\f064";
+  top: 5px;
+  border-radius: 50px;
+  font-family: fontawesome;
+  font-size: 15px;
+  left: 4px;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.twistBlogger-Floating-SocialBar .share-btn {
+  margin: 0px 0px 1px 0;
+  background: #3A3939;
+  position: relative;
+  text-align: center;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 0px 0px 1px 0px;
+  border: 0;
+  color: #FFFFFF;
+}
+```  
+
+**Step 4)** Add HTML code - Find out this closing  `</body>` tag and just before this tag, paste the whole HTML and JavaScript codes given below.  
+  
+```html
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+<div class='twistMe'>
+  <input class='ShowHideButton' id='twiSter' type='checkbox'/>
+  <label for='twiSter'><i class='fa fa-backward'/></label>
+  <div class='ShowHideMe'>
+<div class='twistBlogger-Floating-SocialBar'>
+<div class='share'>
+    <div class='share-btn' data-service='total'>
+        <div class='count h4'/>
+        <div class='h6'>SHARES</div>
+    </div>
+    </div>
+<ul>
+<li>
+<div class='facebook-button-tab tab-flip'>
+<div class='tab-wrap'>
+<div class='tab-overlay'>
+<i class='fa fa-facebook'/>
+</div>
+</div>
+<div class='fb-like' data-action='like' data-layout='box_count' data-share='false' data-show-faces='false'/>
+</div>
+</li>
+<li>
+<div class='googleplus-button-tab tab-flip'>
+<div class='tab-wrap'>
+<div class='tab-overlay'>
+<i class='fa fa-google-plus'/>
+</div>
+</div>
+<div class='g-plusone' data-size='tall'/>
+</div>
+</li>
+<li>
+<div class='tweeter-button-tab tab-flip'>
+<div class='tab-wrap'>
+<div class='tab-overlay'>
+<i class='fa fa-twitter'/>
+</div>
+</div>
+<a class='twitter-share-button' data-count='vertical' data-via='TwistBlogg' href='https://twitter.com/share'>Tweet</a>
+</div>
+</li>
+<li>
+<div class='linkedin-button-tab tab-flip'>
+<div class='tab-wrap'>
+<div class='tab-overlay'>
+<i class='fa fa-linkedin'/>
+</div>
+</div>
+<script data-counter='top' type='IN/Share'></script>
+</div>
+</li>
+</ul>
+  </div>
+  </div>
+</div>
+<script type='text/javascript'>//<![CDATA[
+$(document).ready(function () {
+  var shareUrl = document.location.href.toLowerCase();
+    $.getJSON('http://sharecount.twistblogger.com/?url=' + encodeURIComponent(shareUrl) + "&callback=?", function (data) {
+        shares = data.shares;
+        $(".count").each(function (index, el) {
+            service = $(el).parents(".share-btn").attr("data-service");
+            count = shares[service];
+            if (count > 1000) {
+                count = (count / 1000).toFixed(1);
+                if (count > 1000) count = (count / 1000).toFixed(1) + "M";
+                else count = count + "k";
+            }
+            $(el).html(count);
+        });
+    });
+});
+//]]></script>
+<script src='//platform.linkedin.com/in.js' type='text/javascript'> lang: en_US</script>
+<script type='text/javascript'>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src=&quot;https://platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,&quot;script&quot;,&quot;twitter-wjs&quot;));
+</script>
+<div id="fb-root"></div>
+<script src='http://connect.facebook.net/en_US/all.js#xfbml=1'/>
+</b:if>
+</b:if>
+```  
+
+**Editing:** 
+
+You need to edit the above code where you have to replace Twitter USERNAME. It will be added to your tweets whenever someone do share your web page URL on tweeter. This way you will get the notifications about who shared them.  
+
+
+**Step 5)** Remaining step is to SAVE your template code and you're done. Visit any of your blog post and see the floating social media share buttons bar hanging to the left side of your blog.  
+  
+Was it a smooth installation? Did it work for you? Please report if you found any bug or you could not make it possible to work for you.  
+  
+I need your favor, please do share at least on one social media platform you love and spread the word about it. :)  
+  
+I'll do my best to assist you as soon as you ask for any help. Stay blessed!  
+
+
+**Update:- New Version Available**  
+
+[Add Floating Social Media Share Buttons to Blogger Posts - Version 2](https://www.twistblogg.com/2015/05/floating-social-share-bar-widget-for.html) 

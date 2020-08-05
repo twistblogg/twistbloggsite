@@ -1,0 +1,159 @@
+---
+title: '[Solved] Godaddy Domain not working without www In Blogger'
+date: 2019-09-30
+excerpt: There are a lot of tutorials online that shows how to set up custom domain names from Godaddy in bloggers. However, most of them do not talk about a common issue - Domain https non-www to www redirection fail. In other words, godaddy domain name do not work without www in blogger.  
+slug: solve-godaddy-redirection-in-blogger
+featured: false
+published: true
+image: Solved Godaddy Domain not working without www Blogger.jpg
+author: Invictus
+tags : [Tips and Tricks]
+---
+
+<a href="https://www.godaddy.com/" rel="nofollow noopener noreferrer" target="_blank">Godaddy</a> is one of the best domain registrar companies and web hosting service providers. They lure millions of customers every year because of a cheap domain rate and simple layout. One can find a lot of tutorials online that guides on how to set up custom domain names in bloggers. However, most of them do not talk about a common issue: **Domain https non-www to www redirection fail**. In other words, godaddy domain name not working without www in blogger.  
+
+
+**Recommended Read:** [Top 10 Things To know before buying a domain name](https://www.twistblogg.com/2014/03/things-to-know-before-you-buy-domain.html)  
+
+
+I faced this problem, along with a lot of customers who bought domain from GoDaddy. The problem is: I bought my custom domain name from GoDaddy and followed all steps from Google — Added CNAME and A records in Godaddy DNS Management and Redirected naked domain (example.com) to the non-naked domain (www.example.com). 
+
+My custom blogspot address `(twistblogg.blogspot.com)` was redirected successfully to `(www.twistblogg.com)`. All Redirection were working except `(https://twistblogg.com)`. The following table will help summarize my whole point.  
+
+<table cellpadding="0" cellspacing="0">
+    <tbody>
+<tr>
+            <th>Domain Name</th>
+            <th>Domain Redirection</th>
+            <th>WORKING STATUS</th>
+        </tr>
+<tr>
+            <td>http://www.twistblogg.com</td>
+            <td>https://www.twistblogg.com</td>
+            <td>SUCCESS</td>
+        </tr>
+<tr>
+            <td>http://twistblogg.com</td>
+            <td>https://www.twistblogg.com</td>
+<td>SUCCESS</td>
+        </tr>
+<tr>
+            <td>https://twistblogg.com</td>
+<td>Does not load </td>
+            <td>FAILED<span style="color: red;">*</span></td>
+        </tr>
+<tr>
+            <td>https://www.twistblogg.com</td>
+            <td>https://www.twistblogg.com</td>
+<td>SUCCESS</td>
+        </tr>
+</tbody>
+</table>
+
+
+I searched a lot on how to **fix domain name redirection fail** in blogger or godaddy domain does not work without www, but there was not a concrete answer, even from Godaddy team. After a long process of researches and sleepless nights, I was successful to redirect all http non-www & http www to https www and https non www to https www. In this article, I’ll share this simple trick to fix domain redirection fail in blogger. Let’s get started.  
+
+
+**Recommended Read:** [Best Premium SEO Optimized Blogger Templates of 2019 - A Complete List](https://www.twistblogg.com/2019/09/best-premium-blogger-templates.html)  
+  
+
+  
+
+## How to fix GoDaddy domain name not working without www in blogger?
+
+
+Follow three steps to fix the domain redirection problem in a blogger.  
+  
+
+### Step 1: Add CNAME and A Records in GoDaddy  
+
+
+I’m sure most of you have already added CNAME and A RECORD in the DNS Management page in GoDaddy. If not, <a rel="nofollow noopener noreferrer" target="_blank" href="https://support.google.com/blogger/answer/1233387">follow this simple tutorial from Google</a>. You should have something like below:  
+
+
+<Image src="godaddy domain redirection fix blogger.jpg" alt="godaddy domain redirection fix blogger" />
+
+
+
+### Step 2: Redirect Naked Domain to Non-naked domain in Blogger Dashboard  
+
+
+Naked domain names are domains without www. Make sure you have clicked the redirection option. Go to **Blogger** > **Settings** > **Basic** > **Publishing** > **Edit**.  
+
+
+<Image src="fix godaddy domain redirection problem in blogger.jpg" alt="fix godaddy domain redirection problem in blogger" />
+
+
+
+### Step 3: Domain Forwarding Service Available in GoDaddy  
+
+
+~This is an important step wherein we make use of Domain Forwarding Service available in GoDaddy Dashboard. Let me explain how this step will help you solve the problem.~  
+  
+  
+I had <a href="https://in.godaddy.com/community/Managing-Domains/Domain-Name-Not-working-without-www-in-blogger/m-p/147452#M28381" rel="nofollow noopener noreferrer" target="_blank">circulated my solution in the godaddy community</a>, and was notified **this issue is handled from server side**, as explained by Nate. You do not need to worry, I have updated this article.  
+
+<Span color="red">
+**Update 2 - Oct 4,2019**  
+</Span>
+
+Since blogspot websites are hosted on Blogger.com (A service offered by Alphabet/Google), there is no need to waste bandwidth searching for solution. Google handles this from their side. Previously, I had explained Domain Forwarding is the solution, but enabling this service from Godaddy adds extra "A Records" and the website is loaded randomly either from Godaddy server or Google server.  
+
+
+**Here is an answer by Nate:**  
+
+
+> If you have multiple records for the same address, one would be selected randomly each time, so some of your visitors would get one of the Google IP addresses and others would get the GoDaddy forwarding server.  If you are getting a valid SSL it is likely using one of the Google IP addresses, there's about 1/5 chance of getting forwarding instead...
+
+
+
+#### So, how to solve domain redirection issue in Godaddy for Blogger?  
+
+
+_Remove "A" Records and add them again. It will refresh the addresses. Wait for some hours (in most cases, few minutes) and it should solve the redirection problem._  
+  
+  
+**\*\*\*\* Update 1 - Oct 2,2019 \*\*\*\***  
+  
+
+~~#### How to solve the domain redirection issue (non www to www) in Godaddy?~~
+
+
+*   ~~Login to Godaddy dashboard.~~
+*   ~~Click on DNS option right to your domain name.~~
+
+
+<Image src="godaddy domain not working fix.jpg" alt="godaddy domain not working fix" />
+  
+
+*   ~~A page will open with all records, scroll till you find a Forwarding option. Click on Domain forwarding and add as below:~~
+
+> ~~Forward to: (https) www.example.com~~  
+> ~~Forward type: Permanent (301)~~  
+> ~~Settings: Forward only~~
+
+
+<Image src="godaddy domain forwarding blogger.jpg" alt="godaddy domain forwarding blogger" />
+
+  
+Hit Save Button. Done!!! You have successfully **forwarded all domain versions** to a specific one and solved GoDaddy domain non www to www redirection fail in blogger. Wait for some time, and open your domain (https://example.com) and it should be forwarded to (https://www.example.com). You can also check it on the <a rel="nofollow noopener noreferrer" href="https://www.woorank.com/" target="_blank">following link</a>.  
+
+
+<Image src="solve godaddy domain redirection.jpg" alt="solve godaddy domain redirection" />
+
+  
+~~In case you are getting `ERR_TLS_CERT_ALTNAME_INVALID`, add all four "A Records" again one by one. That should resolve the domain certificate error.~~
+  
+
+> Type: A  
+> Host: @  
+> Points to: 216.239.32.21 , 216.239.34.21 , 216.239.36.21, 216.239.38.21  
+> TTL: 1 hour
+
+  
+Here are a few hand picked tutorials for you to read next:  
+
+*   [How to display estimated post reading time in blogger?](https://www.twistblogg.com/2019/09/display-estimated-post-reading-time-in-blogger-posts.html)
+*   [Nofollow Vs Dofollow tags - A complete Guide](https://www.twistblogg.com/2014/03/understanding-nofollow-and-dofollow-tag.html)
+*   [Killer SEO Guides To Implement for ranking high in search engines](https://www.twistblogg.com/2015/10/killer-seo-guides-for-newbie-blogger.html)
+*   [Show Last Updated Post date in blogger post](https://www.twistblogg.com/2019/09/show-published-and-last-updated-date-in-blogger-post.html)

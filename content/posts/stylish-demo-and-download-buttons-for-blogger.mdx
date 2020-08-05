@@ -1,0 +1,220 @@
+---
+title: 'Stylish CSS Demo and Download Buttons for Blogger'
+date: 2019-10-15
+excerpt: Showcase your links with our stylish CSS demo and download buttons with cool hover effects and icon shifting to your blogger posts.
+slug: css-demo-download-buttons
+featured: false
+published: true
+image: add css based demo and download button in blogger.jpg
+author: Invictus
+tags : [Blog Customize]
+---
+
+Sometimes bloggers need to provide external download links or demo links and they use an anchor tag for that, however, to [attract readers in clicking links](https://www.twistblogg.com/2014/04/7-tips-to-improve-your-writing.html), demo and download buttons can be beneficial.  
+  
+It is easy to create a button in blogger by calling `<button>` tag or using CSS features like padding, border and so on.  
+  
+In this tutorial, I'll be sharing a **Pure CSS based simple yet effective CSS Demo and Download Buttons for blogger** that look stunning and fit perfectly with the design. Let's check out some cool features.  
+  
+
+### Features of Stylish CSS Demo and Download Buttons for Blogger
+
+*   Pure CSS.
+*   Light Weight.
+*   Font Awesome icons used.
+*   A simple combo of HTML and CSS.
+*   Cool Hover Effect.
+*   Text also changes on hover.
+*   Easy to customize.
+
+  
+
+  
+
+### Demo Of CSS Buttons
+
+This is a static version of buttons. Implement in your blog to check hover effects.
+
+
+<Image src="live demo of css demo and download buttons blogger.png" alt="live demo of css demo and download buttons blogger" />
+  
+  
+
+## How to add CSS based demo and download buttons in blogger?  
+
+
+
+<a href="https://en.wikipedia.org/wiki/Content_management_system" rel="nofollow noopener noreferre">Compared to other CMS</a>, blogger needs more customization as it doesn’t support addition of external plugins. Therefore, we will have to add stylish demo and download button in our blogger blog by customizing our current [blogger template](https://www.twistblogg.com/2019/09/best-premium-blogger-templates.html).   
+
+
+**Recommended:** [How to know if a website is on Wordpress or not?](https://www.twistblogg.com/2018/09/know-if-website-is-using-wordpress.html)  
+  
+
+#### Step 1: Adding Font Awesome To Blogger
+
+
+This is an optional step if you have already [installed font awesome in your blogger blog](https://www.twistblogg.com/2014/01/How-To-Use-FontAwesome-Icons-In-Blogger.html). If not, go to **Template** > **Edit HTML** > Search for `</head>` and paste the following code above it.  
+
+
+_Note: [Backup your template](https://www.twistblogg.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html) before proceeding._  
+
+
+```js
+<script type='text/javascript'>  
+//<![CDATA[  
+function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet"; i.href = e; i.media = "only x"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }  
+loadCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css");  
+//]]>  
+</script>  
+<noscript>  
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css' rel='stylesheet'/>  
+</noscript>
+```  
+
+#### Step 2: Adding CSS Code Of Demo And Download Buttons
+
+
+Now, we will add CSS code to the template. Search for `]]></b:skin>` and add following CSS code above it.  
+
+```css
+/* CSS Demo & Download Buttons By (www.TwistBlogg.com) */ 
+.bie-slide,  
+ .bie-slide2 {  
+  position: relative;  
+  display: inline-block;  
+  height: 40px;  
+  width: 170px;  
+  line-height: 40px;  
+  padding: 0;  
+  border-radius: 50px;  
+  background: #fdfdfd;  
+  border: 2px solid #f84f4f;  
+  margin: 10px;  
+  transition: all 0.5s ease-in-out;  
+ }  
+ .bie-slide2 {  
+  border: 2px solid #36D7B7;  
+ }  
+ .bie-slide:hover {  
+  background-color: #f84f4f;  
+ }  
+ .bie-slide2:hover {  
+  background-color: #36D7B7;  
+ }  
+ .bie-slide:hover span.circle,  
+ .bie-slide2:hover span.circle2 {  
+  left: 100%;  
+  margin-left: -45px;  
+  background-color: #fdfdfd;  
+  color: #f84f4f;  
+ }  
+ .bie-slide2:hover span.circle2 {  
+  color: #36D7B7;  
+ }  
+ .bie-slide:hover span.title,  
+ .bie-slide2:hover span.title2 {  
+  left: 40px;  
+  opacity: 0;  
+ }  
+ .bie-slide:hover span.title-hover,  
+ .bie-slide2:hover span.title-hover2 {  
+  opacity: 1;  
+  left: 28px;  
+ }  
+ .bie-slide span.circle,  
+ .bie-slide2 span.circle2 {  
+  display: block;  
+  background-color: #f84f4f;  
+  color: #fff;  
+  position: absolute;  
+  float: left;  
+  margin: 5px;  
+  line-height: 30px;  
+  height: 30px;  
+  width: 30px;  
+  top: 0;  
+  left: 0;  
+  transition: .5s;  
+  border-radius: 50%;  
+ }  
+ .bie-slide2 span.circle2 {  
+  background-color: #36D7B7;  
+ }  
+ .bie-slide span.title,  
+ .bie-slide span.title-hover,  
+ .bie-slide2 span.title2,  
+ .bie-slide2 span.title-hover2 {  
+  position: absolute;  
+  left: 65px;  
+  text-align: center;  
+  margin: 0 auto;  
+  font-size: 16px;  
+  font-weight: bold;  
+  color: #f84f4f;  
+  transition: .5s;  
+ }  
+ .bie-slide2 span.title2,  
+ .bie-slide2 span.title-hover2 {  
+  color: #36D7B7;  
+ }  
+ .bie-slide span.title-hover,  
+ .bie-slide2 span.title-hover2 {  
+  left: 80px;  
+  opacity: 0;  
+ }  
+ .bie-slide span.title-hover,  
+ .bie-slide2 span.title-hover2 {  
+  color: #fff;  
+ }
+```  
+  
+
+#### Step 3: Adding HTML portion to blogger posts
+
+Paste following HTML code to the posts where you want to display download and demo buttons.  
+
+```html
+<div id="wrap" style="text-align:center">  
+<a class="bie-slide" href="#" rel="no-follow" target="_blank">  
+  <span class="circle"><i class="fa fa-laptop"></i></span>  
+  <span class="title">Live Demo</span>  
+  <span class="title-hover">Click here</span>  
+</a>  
+<a class="bie-slide2" href="#" rel="nofollow" target="_blank">  
+  <span class="circle2"><i class="fa fa-download"></i></span>  
+  <span class="title2">Download</span>  
+  <span class="title-hover2">Click here</span>  
+</a>  
+</div>
+```  
+
+Or, you can use them separately.  
+  
+For Demo Button:  
+
+```html
+<div id="wrap" style="text-align:center">  
+<a class="bie-slide" href="#" rel="no-follow" target="_blank">  
+  <span class="circle"><i class="fa fa-laptop"></i></span>  
+  <span class="title">Demo</span>  
+  <span class="title-hover">Click here</span>  
+</a>  
+</div>
+```  
+
+For Download Button:  
+
+```html
+<div id="wrap" style="text-align:center">  
+<a class="bie-slide2" href="#" rel="nofollow" target="_blank">  
+  <span class="circle2"><i class="fa fa-download"></i></span>  
+  <span class="title2">Download</span>  
+  <span class="title-hover2">Click here</span>  
+</a>  
+</div>
+```  
+
+You can easily change the icons by changing `<i class="fa fa-laptop"></i>` and `<i class="fa fa-download"></i>`. <a href="https://fontawesome.com/icons/" rel="nofollow noopener noreferrer" target="_blank">Browse more font awesome icons from here</a>.  
+
+
+Done. You have successfully installed **stylish demo buttons and download buttons in blogger**. Since we made them with pure CSS, they won't impact pagespeed. Stay tuned and good luck with blogging.

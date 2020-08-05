@@ -1,0 +1,114 @@
+---
+title: 'How To Setup A Custom 404 Error Page For Blogger Blog'
+date: 2014-03-27
+excerpt: Error pages notify readers that a page does not exist and setting up it can give professional look to a website. In this article, we will learn how to create a custom 404 page.  
+slug: setup-error-page-blogger
+featured: false
+published: true
+image: How To Setup A Custom 404 Error Page For Blogger Blog.jpg
+author: Invictus
+tags : [SEO, Blog Customize, Blogging Tips]
+---
+
+Having a custom 404 error page on your blog will give it a professional touch and users will not get annoyed or bad impression when they will land on your 404 error page. A 404 error is an HTTP standard code for an error when the client was able to connect with the server, but the server could not find/respond what was requested by the client. Here on blogger, by default it displays a message line, "Sorry, the page you were looking for in this blog does not exist" which looks very odd. So here we have designed a **nice looking 404 error page for blogger** blogs.  
+  
+
+Recently, we shared <a href="https://www.twistblogg.com/blog/attractive-error-page-blogger">Animated attractive error page design for blogger</a>.
+  
+    
+
+## Steps To Setup Custom 404 Error Page For Blogger
+
+
+Step 1) Read Thoroughly and carefully follow the steps. First of all go to **Blogger → [Template](https://www.twistblogg.com/2019/08/adsense-ready-premium-blogger-templates.html) → Edit HTML**
+
+  
+Step 2) Now click anywhere inside template code box and press Cmd+f or Ctrl+f and search for code `]]></b:skin>` and just below that code line, paste the CSS code given below **after making required changes** as shown below in Step 3:
+
+```css
+<b:if cond='data:blog.pageType == &quot;error_page&quot;'> <style>   
+#main-wrapper {  
+    width: 100%;  
+}  
+#sidebar-wrapper,  
+.blog-pager {  
+    display: none !important;  
+}  
+#content-wrapper {  
+    width: 99%!important;  
+}  
+  
+.status-msg-wrap {  
+    font-size: 100%;  
+    margin: none;  
+    position: static;  
+    width: 100%;  
+}  
+  
+.status-msg-border {  
+    display: none  
+}  
+  
+.status-msg-body {  
+    padding: none;  
+    position: static;  
+    text-align: inherit;  
+    width: 100%;  
+    z-index: auto;  
+}  
+  
+.status-msg-wrap a {  
+    padding: none;  
+    text-decoration: inherit;  
+}  
+  
+#TB-404-error-box {  
+    background: #FFFFF url(&quot;http://3.bp.blogspot.com/-OoWk39NfJtY/UzKtryqfMVI/AAAAAAAAAhw/M8_7W0m2ly8/s1600/TB-Error-Page.png&quot;) no-repeat scroll 0% 95% rgb(255, 255, 255);  
+    width: 97%;  
+    margin: 0px 0px;  
+    padding: 15px 20px 50px 20px;  
+    border: 1px solid #E7E7E7;  
+    -moz-border-radius: 6px;  
+    -webkit-border-radius: 6px;  
+    border-radius: 2px;  
+    height: 470px;  
+}  
+  
+</style></b:if>  
+
+```  
+
+**Recommended:** [Show last updated and published date in blogger post](https://www.twistblogg.com/2019/09/show-published-and-last-updated-date-in-blogger-post.html)  
+  
+
+**Step 3)**
+
+(**Note:** Please note that this STATIC code may not work if your template is not using the same ID or Class names for sidebar wrapper in your [template](https://www.twistblogg.com/2016/01/premium-seo-optimized-blogger-template.html) so make sure you use the same Class or ID name as used in your template code e.g., `#sidebar` or may be `.sidebar` or Anything else)
+
+  
+
+**Background Image:** You can use an image in footer area between "**400 Page Not Found**" message. If you want to change that image, find out image URL in above code and just make your own image in 990x140 pixels size and replace our image URL given belowwith your's and use 95% to fit the image in proper way by increasing or decreasing the %age value.  
+  
+
+> http://3.bp.blogspot.com/-OoWk39NfJtY/UzKtryqfMVI/AAAAAAAAAhw/M8\_7W0m2ly8/s1600/TB-Error-Page.png
+
+  
+
+**Background Color:** To change the background color of page, just change #FFFFFF color code with the desired one and **Hit Save Button!!**
+
+  
+
+**Step 4)** This time we need to go to **Settings → [Search and Preferences Settings](https://www.twistblogg.com/2014/03/blogger-search-preferences-settings-seo.html) →** Then **Custom Page Not Found** under **"Errors and redirections".** Click edit and paste the HTML code given below inside box after making required changes given in Step 5. 
+
+```html
+<div id='TB-404-error-box'>  
+<p align="center"><font color="#ff0000" style="font-size: 57px;"><strong>Oops!</strong></font></p>  
+</br><p><center><font color="#000">Seems like you either clicked a <div style="color: #0089D6; font-size: 27px;">Broken Link</div> <b>or a Page that no longer exist. Kindly do one of the followings:</b></font></center></p><div style="line-height: 25px; font-weight:normal;"><center><b>&#10004;</b> <a href='javascript:history.go(-1)'>&#171; Go Back</a>!</br><b>&#10004;</b> Help us to Serve you better by <a href='https://www.twistblogg.com'>Reporting This Problem</a> to us!</br><b>&#10004;</b> Go to <a href='http://twistblogg.blogspot.com'>Homepage Address</a>!<br/></center></div><p><br/></p><p align="center"><font color="#08C500" style="font-size: 100px;"><strong>404</strong></font></p><p align='center'><font color="#EB0F0F" style="font-size: 20px;">Page Not Found!</font></p> </div>
+```
+
+
+**Step 5)** In the above HTML code, just replace our **Contact Us** link and **Homepage Address** Link with your links. You can play with the Text like as changing colors, size, weight etc. as they all are highlighted. Then hit save button and now visit your blog address with any link which does not exist and see the magic!!
+
+  
+
+**Final Words:** If you are unable to setup your 404 error page, then ask in comments below and let me analyze your blog template. I will help you to setup your custom 404 error page. You can subscribe to further updates via email for free. Share this post to show your love. :) Stay safe and Happy Blogging!

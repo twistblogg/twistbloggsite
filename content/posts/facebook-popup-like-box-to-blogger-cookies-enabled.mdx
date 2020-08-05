@@ -1,0 +1,273 @@
+---
+title: 'Add Facebook Page Plugin Popup Like Box to Blogger'
+date: 2015-03-29
+excerpt: Add Facebook Page Popup Like  box to blogger with cookies enabled, responsive, center screen on window and with twitter follow button at bottom.
+slug: facebook-popup-page-plugin
+featured: false
+published: true
+image: facebook popup page like box for blogger.jpg
+author: Invictus
+tags : [Blog Widgets]
+---
+
+
+Adding a Facebook page popup like box plugin to your blogger blog will definitely increase the likes of your Facebook fan page insanely if it is nicely presented and well designed for your readers. Visitors of any blog become readers only when they are impressed with the content of your blog and its quality over quantity compared to other blogs in your niche.  
+
+If you gave your visitors more than for what they landed on your blog, they will definitely subscribe, share, follow or like your Facebook fan page but **a call to action trigger is needed** otherwise you will skip this chance of having more Facebook fans, more subscribers, shares or followers.  
+  
+That is where these plugins like as **Facebook page popup like box plugin** or **[stylish subscription box](https://www.twistblogg.com/2015/03/stylish-sidebar-subscription-box-widget-for-blogger.html)** come handy. Most of the visitors of any blog never read any article thoroughly and only scan a page so chances are more that they might miss your "Facebook fan page like badge" widget on your sidebar.  
+  
+Looking for an example of not using this plugin? Then you must see TwistBlogger fan page likes, lol. But when a popup box appears in the center of the screen while they are scanning your epic content, they can't really miss it. I started using it from today and I hope it will work nicely for what it is intended. By the way, you can do me a favor, am counting on you :)  
+  
+But that does not guarantee of more likes because it depends on many things like as quality of your content, design of your blog, timing of the popup box and finally the mood of your visitors. If they are already logged into Facebook then you are lucky enough. :)  
+  
+
+### Design & Features of our Facebook Page Popup Like Box Plugin
+
+
+Design is first so have a look at the screenshot given below (you can customize it the way you want but you need to have fair knowledge of CSS)  
+  
+
+<Image src="demo of facebook popup page box design.png" alt="demo of facebook popup page box design" />
+
+  
+
+**Cookies enabled:** This "Facebook popup like box" is Cookies enabled so it will not irritate your visitors by loading every time they reload or visit any other blog post on your blog. Once they click on exit button, popup box fades away and sets a cookie in their browser for the time you have specified (as long as they do not clear their browser cookies, it will not appear till the date of its expiry for same user).
+
+  
+**Responsive design:** It always remains my first priority for any widget for blogger platform to make it responsive. This plugin is one of those and works perfectly on every device. Maximum width is 450px and when screen size goes down to it, it reduces its maximum width accordingly.  
+
+
+Recommended: [Responsive Author Box Widget For Blogger](https://www.twistblogg.com/2015/03/responsive-author-box-with-social.html)
+
+
+**Center Screen:** It always pops up in the center of the window screen and remains in the center despite the screen resolution.
+
+
+**Twitter Follow Button:**  I have also added the twitter follow button in the bottom of "Facebook like box" so hopefully it will help you gain more followers too. :)
+
+
+_(Tip- Always follow back those who followed you and who retweeted your tweets and gain more followers in less time)_
+
+  
+
+So these are main features and I hope it impressed you and if it really did, let's add this beautiful Facebook popup like box plugin to your blogger blog.
+
+  
+
+## Steps To Add Facebook Popup Plugin to Your Blogger Blog
+
+
+**Step 1)** If you're not logged into blogger account then do it ;) and **select your blog** > go to **Template** area > click on **Edit HTML** (backup your template first).
+
+
+
+**Step 2)** Now search for `</head>` tag and just before it, paste the JavaScript Codes given below.  
+
+
+_(Note: If your template is already using Google JavaScript libraries link then please do not add it again.)_ 
+  
+```js
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js' type='text/javascript'></script>
+```  
+
+**Step 3)** Add CSS code now so search for `]]:</b:skin>` and just before that code line, paste the whole CSS code given below.  
+
+
+```css
+/*----Coded by TwistBlogg.Com----*/ 
+#twist-blogger-fan-page {
+  display: none;
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  height:100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index:99999999;
+}
+#twist-blogger-fan-page .popup-box {
+  padding: 5px;
+  position: relative;
+  margin: 0 auto;
+  max-width: 280px;
+  min-height: 272px;
+  z-index: 0;
+  top: 25%;
+  border: 10px solid #EFF408;
+  background: #F9FF00;
+}
+#twist-blogger-fan-page .popup-box .exit-button {
+  float: right;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin-top: -26px;
+  margin-right: -20px;
+}
+#twist-blogger-fan-page .popup-box .exit-button:before {
+  content: "X";
+  padding: 5px 8px;
+  background: #FFFFFF;
+  color: #000000;
+  font-weight: normal;
+  font-size: 12px;
+  text-shadow: 0px -1px #000;
+  font-family: sans-serif;
+  border: 4px solid #EBF000;
+  border-radius: 50px;
+  box-shadow: inset 0px 1px #F9FF00;
+}
+#twist-blogger-fan-page .popup-box .tweetbox {
+  background: #EFF408;
+  font-size: 12px !important;
+  width: auto;
+  padding: 12px 0px 12px 12px;
+  overflow: hidden !important;
+  position: relative;
+}
+```
+
+
+**Step 4)** Final step is to add HTML and little JavaScript code altogether so just find out closing `</body>` tag and just before it, paste the HTML and JavaScript given below after making required changes.  
+
+
+```js
+< script type = 'text/javascript' >
+    //<![CDATA[
+    jQuery.cookie = function(key, value, options) {
+       // key and at least value given, set cookie...
+        if (arguments.length > 1 && String(value) !== "[object Object]") {
+            options = jQuery.extend({}, options);
+            if (value === null || value === undefined) {
+                options.expires = -1;
+            }
+            if (typeof options.expires === 'number') {
+                var days = options.expires,
+                    t = options.expires = new Date();
+                t.setDate(t.getDate() + days);
+            }
+            value = String(value);
+            return (document.cookie = [
+                encodeURIComponent(key), '=',
+                options.raw ? value : encodeURIComponent(value),
+                options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+                options.path ? '; path=' + options.path : '',
+                options.domain ? '; domain=' + options.domain : '',
+                options.secure ? '; secure' : ''
+            ].join(''));
+        }
+        // key and possibly options given, get cookie...
+        options = value || {};
+        var result, decode = options.raw ? function(s) {
+            return s;
+        } : decodeURIComponent;
+        return (result = new RegExp('(?:^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? decode(result[1]) : null;
+    };
+//]]>
+< /script> < script type = 'text/javascript' >
+    jQuery(document).ready(function($) {
+        if ($.cookie('popup_facebook_box') != 'yes') {
+            $('#twist-blogger-fan-page').delay(10000).fadeIn('medium');
+            $('.exit-button').click(function() {
+                $('#twist-blogger-fan-page').stop().fadeOut('slow');
+            });
+        }
+        $.cookie('popup_facebook_box', 'yes', {
+            path: '/',
+            expires: 15
+        });
+    }); < /script> < div id = "fb-root" > < /div> < script > (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk')); < /script> < div id = 'twist-blogger-fan-page' >
+    < div class = 'popup-box' >
+    < div class = 'exit-button' > < /div> < div style = 'overflow: hidden !important;' > < div class = "fb-page"
+data - href = "https://www.facebook.com/twistblogg"
+rel = "nofollow"
+data - width = "280"
+data - height = "250"
+data - adapt - container - width = "false"
+data - hide - cover = "false"
+data - show - facepile = "true"
+data - show - posts = "false" > < /div></div >
+    < div class = "tweetbox" >
+    < a class = "twitter-follow-button"
+href = "https://twitter.com/TwistBlogg"
+rel = "nofollow"
+data - show - count = "true"
+data - lang = "en" > Follow @TwistBlogg < /a> < script > window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+    return t;
+}(document, "script", "twitter-wjs")); < /script> < /div> < /div> < /div>
+
+```  
+
+
+### Customization of Facebook Page Plugin Popup Like Box  
+
+
+**Time Delay:** 
+
+You can change the timing of popup box appearance by changing the value **10000** to higher or lowers. 1000 value = 1-second delay so 10000 value means popup box will appear after the 10 seconds of loading your blog. Find this code line given below and change the value.
+
+```js 
+$('#twist-blogger-fan-page').delay(10000).fadeIn('medium');
+```
+  
+
+**Set Cookies Expiry Days:** 
+
+You can set any number of days to expire the cookie so after those days, the popup box will reappear for the same user again. This way you can make it "**one time Facebook popup like box**" for your blogger readers by setting the higher number of days.  Find out code line given below and change the default number of days which is 15  to any number you want.
+
+```js  
+$.cookie('popup\_facebook\_box', 'yes', { path: '/', expires: 15 });
+```
+
+In case you do not want to use the cookies then just delete the above code line, but it is highly **not recommended** because it will certainly irritate your visitors and make them go away.  
+  
+
+**Facebook Fan Page URL:** 
+
+Add your Facebook fan page URL by replacing our blog URL.
+
+  
+
+**Twitter Username:** 
+
+Add your Twitter username in place of TwistBlogg.
+
+  
+Also, you can host the script in your GitHub account. Learn [how to host CSS, Javascripts and other files in GitHub](https://www.twistblogg.com/2020/06/use-github-for-hosting-files.html).  
+  
+
+
+Did you complete every step of customization? So now save your Gadget then visit your blog and be the first visitor of your blog to see your **Facebook page popup like box appearing in the center of window screen** beautifully :)
+ 
+
+If you want to see it again then you need to clear the browser cookies first.
+
+  
+
+I have tested it on my other test blogs and it worked fine on everyone so it will work for you too. But in case you could not make it work for you then let me know via comments or shoot me an email. I'll help you out. Do you want some changes? More features? Customization? Just ask me in comments. Till then, stay blessed.  
+  
+**Update:** This tutorial is updated as suggested by a friend in comments that Facebook like box will stop working after June 2015 and is being replaced by Page Box so I updated it right now and used Page Box code instead of old like box.  
+  
+Thanks for letting me know and we are good to go with it now. :)

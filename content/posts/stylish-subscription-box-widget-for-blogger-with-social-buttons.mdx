@@ -1,0 +1,137 @@
+---
+title: 'Simple Subscription Box For Blogger With Social Buttons'
+date: 2018-07-30
+excerpt: Add a simple email subscription box with social buttons to your blogger.
+slug: email-box-with-social-buttons-blogger
+featured: false
+published: true
+image: Sidebar Subscription Box With Social Buttons For Blogger.JPG
+author: Invictus
+tags : [Subscription Widgets, Blog Widgets]
+---
+
+Here we are presenting you the v.2 of **"simple sidebar subscription box widget with social buttons"** ever on this blog. Actually we wanted to design a different style of [subscription box](https://www.twistblogg.com/2014/02/stylish-horizontal-subscription-box-widget-for-blogger-v2.html) widget for this blog with all the major [social profile buttons](https://www.twistblogg.com/2014/02/add-stylish-subscription-box-wiidget-to-blogger-sidebar.html) in it and here we began the process of designing it. We are willing to share this widget with you guys and we hope you like it. Let us begin the installation process which will take no more than 5 to 10 minutes.  
+
+  
+  
+  
+**Major Update:**  I have designed new modern and Stylish Widgets, so Please Follow the links below.  
+  
+
+**1)** [Stylish Sidebar Subscription Box Widget For Blogger](https://www.twistblogg.com/2015/03/stylish-sidebar-subscription-box-widget-for-blogger.html)  
+**2)** [Stylish Sidebar Subscription Box For Blogger v2.0](https://www.twistblogg.com/2015/07/new-stylish-sidebar-subscription-box-widget-for-blogger.html)  
+**3)** [WordPress Like Email Subscription Box For Blogspot](https://www.twistblogg.com/2018/08/wordpress-like-email-subscription-box-for-blogger.html)  
+**4)** [FeedBurner Popup Email Subscription Plugin For Blogger with feature to set cookies](https://www.twistblogg.com/2015/04/email-subscription-popup-blogger-plugin.html)
+**5)** [Responsive Author Box Widget For Blogger](https://www.twistblogg.com/2015/03/responsive-author-box-with-social.html)  
+  
+
+## Steps To Install Sidebar Subscription Box With Social Buttons For Blogger
+
+
+**Step 1)** As usual :) Go to Blogger → Layout → And Add a New HTML widget.
+
+**Step 2)** Now copy the CSS and HTML code given below and paste it inside newly added HTML box  after Completing Step 3) and hit save.
+
+
+```css
+/*---------Widget By www.TwistBlogg.com --------*/
+<style>
+#BonGi {
+width: 285px;
+background: #000000;
+height: 344px;
+}
+.PBButton:hover{
+background: #F8F806;
+color: #000;
+}
+.PBButton {
+background: #47FF00 url('');
+float: left;
+width: 108px;
+color: #FFFFFF;
+font-weight: bold;
+cursor: pointer;
+border: 1px solid rgba(255, 255, 255, 0.83);
+box-shadow: inset 0px 0px 30px #BF14D6;
+height: 31px;
+display: inline-block;
+margin-top: -1px;
+}
+.PBEnter-mail {
+border: 1px solid #000000;
+margin-left: 5px !important;
+float: left;
+display: inline-block;
+border-radius: 3px;
+background: #F8F8F8;
+box-shadow: inset 0px 0px 7px #AEB4AC;
+color: #696868;
+font: 9px "Lucida", sans-serif;
+padding: 4px 5px;
+margin-right: -3px;
+width: 158px;
+}
+.p {
+font-family: Lucida, Grande;
+Font-size: 20px;
+margin-top: 0px !important;
+background: #414040;
+box-shadow: inset 0px 0px 100px #1326B1;
+text-shadow: -3px 2px 3px #000;
+color: #FFF;
+border-bottom: solid 4px #FFFFFF;
+font-weight: bold;
+text-align: center;
+padding: 4px 4px;
+margin-bottom: 10px;
+}
+#Twitter {
+Float: left;
+display: inline-block;
+width: 277px;
+font-weight: bold;
+font-size: 15px;
+margin-top: 10px;
+text-shadow: 1px 1px 0px #F1F1F1;
+color: #050077;
+font-variant: small-caps;
+box-shadow: inset 0px 0px 30px #E0E900;
+padding: 4px 2px;
+background: #F5FF00;
+border: 2px solid #CED605;
+}
+#Facebook {
+Float: left;
+display: inline-block;
+width: 277px;
+margin-top: 1px;
+font-size: 15px;
+font-weight: bold;
+text-shadow: 1px 1px 0px #F1F1F1;
+color: #0E5A00;
+padding: 4px 2px;
+box-shadow: inset 0px 0px 30px #FFA41B;
+font-variant: small-caps;
+background: #FFC200;
+border: 2px solid #F79E00;
+}
+</style>
+<div id='BonGi'><div class='p'>
+Subscribe For Free Future Updates Via Email</div>
+<div class="emailbox"><form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=TwistBlogg', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><input class="PBEnter-mail" size="35" type="text" style="font-size: 15px;" id="email" name="email" value="Enter Your Email..." onfocus="if(this.value==this.defaultValue)this.value=&#39;&#39;;" onblur="if(this.value==&#39;&#39;)this.value=this.defaultValue;" /> <input type="hidden" value="TwistBlogg" name="uri" /> <input type="hidden" name="loc" value="en_US" /> <input class="PBButton" name="commit" type="submit" value="Subscribe &#x2661" /></form></div>
+<div id='Twitter'> <a href="https://twitter.com/twistblogg" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @TwistBlogg</a> </div><div id='Facebook'>Like Us On FaceBook <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FTwistBloggercom%2F740638259280667&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=124246297655999" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;position: absolute;margin-left: 35px;" allowtransparency="true"></iframe></div><div id='GoOgle'><span style="margin-right: 15px;">Join Us On Google Plus</span> <div class="g-plusone" data-size="medium"></div></div><div class="g-person" data-width="285" data-href="//plus.google.com/u/0/+invictushaxor" data-layout="landscape" data-rel="author"></div></div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+```
+  
+
+**Step 3)** **Modification Required** : You Need To Change/Replace Some things highlighted in above Code like as Social Links and Feedburner Feed Address etc. with your own links so follow the steps as given below:
+
+*   **FeedBurner Address:** Change our blog's Feed address with your blog's by replacing TwistBlogg highlighted text.
+*   **Tweeter Address:** To change the twitter address just replace our Twitter username TwistBlogg with your's.
+*   **FaceBook Address:** We got a weird facebook page address because we need to get more likes to change it to desired one so would you help us by liking? :) Anyway just replace 2Fpages%2FTwistBloggercom%2F740638259280667 with your facebook page address. (If you have the same kind of weird address then you need to change the "/" into % and you are fine to go).
+*   **JavaScripts:** We have used two JavaScript codes in our code at the end of whole CODE  above where first highlighted in yellow text color is of Twitter and second one is for Google+ button. You need not to copy paste them if you are already using these codes in your template.
+
+  
+
+**Final Words:** We have explained each and every step above for the complete neat and clean installation but in case you are experiencing some problems, let us know via comments and sort them out for you. You can also play with CSS codes to change the colors, width, height, fonts etc. to make this widget more personal. Help us to grow Pals. Join us on social networks. Stay Safe and Happy Blogging!!

@@ -1,0 +1,92 @@
+---
+title: 'How To Customize Comments Avatar Image In Blogger'
+date: 2014-03-07
+excerpt: Blogger allows you to customize default comment avatar image with simple css. This article will guide you through that.
+slug: customize-comment-avatar-image-blogger
+featured: false
+published: true
+image: Customize comment avatar image in blogger.png
+author: Invictus
+tags : [Blog Customize]
+---
+
+Today I am going to show how to customize the comment's avatar image which appears in the left side of every comment. The default style of it is little dull so we will make it more stylish and eye catchy by use of CSS effects as we did for comment box earlier and by using our own image for default avatar image which makes it more professional. So let us begin with the tutorial step by step.  
+  
+  
+
+## Steps To Customize Comments Avatar Image In Blogger
+
+
+  
+If You Are Using [Custom Template](https://www.twistblogg.com/2019/09/best-premium-blogger-templates.html),
+
+**Step 1)** As always, go to Blogger Template > Edit HTML.  
+  
+**Step 2)** Now you need to find a piece of CSS code (Whole CSS code of your template goes between **<b:skin> Your CSS Codes </b:skin>**). So press ctrl+f or cmd+f and search for the code `.avatar-image-container {` and select whole CSS of this class and replace it with the below CSS code.   
+
+```css
+.avatar-image-container {  
+background: url(http://1.bp.blogspot.com/_7wsQzULWIwo/SxL-DRXzmWI/AAAAAAAACY0/d1g3ymxGLEQ/s400/avatar.gif);  
+width: 36px;  
+height: 36px;  
+box-shadow: 0px 1px 9px #666;  
+border-radius: 50px;  
+border: 1px solid #fff;  
+}  
+
+```
+
+In above CSS code, I have highlighted the image URL which is the default avatar image used by blogger if the commentator has no avatar image.  
+  
+You can replace this image URL with your own image URL to which you want to make default avatar image.  
+  
+**Recommended:** [Change "0 Comment" or "Post a Comment" Message in Blogger](https://www.twistblogg.com/2015/03/change-0-comments-post-comment-message-blogger.html)  
+  
+You will see this **.avatar-image-container** class highlighted several times in group or alone if you searched for it using ctrl+f or cmd+f.  
+  
+Now check other highlighted classes' CSS code where height and width will be 36px in most of the cases but in one class usually `.avatar-image-container img {` , you will find that max-height, max-width or height or width is 32px. If that is the case then change those values to 36px and save your template. You are done.  
+
+
+**Recommended:** [How to Customize Comment Box In Blogger](https://www.twistblogg.com/2018/08/how-to-customize-comment-box-in-blogger.html)  
+  
+
+If You Are Using **Default Template** From Blogger's Gallery, 
+
+In case you are using default template or any other template from blogger's template gallery itself then you just need to find this piece of code given below:  
+
+```css
+#comments .avatar-image-container img {  
+  border: 1px solid $(image.border.color);  
+}
+```
+
+And replace it with the CSS code given below. Now save your template and you are done!
+
+```css
+.avatar-image-container {  
+background: url(http://1.bp.blogspot.com/_7wsQzULWIwo/SxL-DRXzmWI/AAAAAAAACY0/d1g3ymxGLEQ/s400/avatar.gif);  
+width: 36px;  
+height: 36px;  
+box-shadow: 0px 1px 9px #666;  
+border-radius: 50px;  
+border: 1px solid #fff;  
+}  
+.comments .avatar-image-container img {  
+width: 36px;  
+box-shadow: 2px 2px 0px rgba(0,0,0,0.13);  
+}  
+.comments .avatar-image-container img {  
+max-width: 36px;  
+}  
+.avatar-image-container img {  
+border: none;  
+}
+```
+
+In above CSS code, just replace the highlighted image URL with your own image URL to change the default comment avatar image.  
+  
+So this is how you can customize comment avatar image and I hope this tutorial was helpful for you. If you liked it then please do share as sharing is caring :) and also let me know if you are facing any problem or you have any other question!  
+  
+**Recommended:** [Completely Remove Blogger Commenting System and Fresh Install Disqus System(Load On Demand)](https://www.twistblogg.com/2019/09/fix-disqus-commenting-system-issues.html)  
+  
+Stay safe and happy blogging pals!

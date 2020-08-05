@@ -1,0 +1,242 @@
+---
+title: 'Add Stylish Popular Posts Widget With Star Rating In Blogger'
+date: 2019-09-21
+excerpt: Today I will be sharing this stylish popular posts widget with star rating for blogger. It is easy to install and looks totally professional with the design.
+slug: popular-post-widget-with-rating-blogger
+featured: false
+published: true
+image: Popular post widget with rating for blogger.jpg
+author: Invictus
+tags : [Popular Post Widget, Blog Widgets]
+---
+
+For showing the most popular posts of your blog, either weekly, monthly or yearly based, one needs to add popular posts widget plugin from the gadget section. The default widget looks obsolete and may not fit perfectly with your [blogger design](https://www.twistblogg.com/2019/09/best-premium-blogger-templates.html). So, I have attempted to re-design it to give a professional look by adding a star rating feature. 
+
+I have named this beautiful plugin: **Stylish Popular Posts Widget for blogger with Star Rating**.  
+  
+
+  
+
+### Features of Popular Post Widget For Blogger With Star Rating
+
+
+*   Pure CSS.
+*   Default Thumbnail used (in case you want to show).
+*   Easy Customization.
+*   Font Awesome 5.8.2 Icons used.
+*   Add/Remove Stars .
+*   Beautifully crafted.
+*   No need to add extra Google Fonts.
+*   And It's free !
+
+  
+So, here is the demo screenshot of this popular posts widget without and with image thumbnails.  
+
+
+<Image src="stylish popular post widget for blogger with star rating.jpg" alt="stylish popular post widget for blogger with star rating" />
+
+  
+
+## How to add stylish popular posts widget with star rating for blogger?
+
+
+Below I'll share step by step tutorial to add this beautiful blogging widget to your website. It is easy to follow and takes only a minute. Let's get started.  
+
+
+_An Important Note: If you are using any other popular posts widget already, then you need to remove that CSS code first otherwise it will not work and you will mess up everything._  
+  
+
+*   Go to **Layout** > **Add A Gadget** > **Popular Posts** > **Unclick Snippet** > **Save**. 
+
+
+<Image src="popular-posts-configuration-settings.png" alt="popular-posts-configuration-settings" />
+  
+
+*   <ins>Optional:</ins> In this step, we will add Font Awesome 5.8.2 to blogger blog because I have used its icons in this plugin. 
+
+You can skip this, in case you have already [installed font awesome icons to blogger](https://www.twistblogg.com/2014/01/How-To-Use-FontAwesome-Icons-In-Blogger.html). Go to **Theme** > **Edit HTML** > Search for `/head` and paste the following code just above it.
+
+
+```js
+<script type='text/javascript'>  
+//<![CDATA[  
+function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet"; i.href = e; i.media = "only x"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }  
+loadCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css");  
+//]]>  
+</script>  
+<noscript>  
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css' rel='stylesheet'/>  
+</noscript> 
+```  
+
+
+*   Go to **Theme** > **Edit HTML** > Search for `]]:</b:skin>` and add the following code just above it.  
+
+
+```css
+/* Popular Post Widget With Star Rating By TwistBlogg.com*/
+.PopularPosts .item-snippet {
+    display: none
+}
+.PopularPosts .item-title {
+    padding: 0 5px;
+    font-weight: bold;
+    padding-bottom: .2em;
+}
+.PopularPosts .item-thumbnail {
+    margin: 0;
+}
+.PopularPosts ul {
+    overflow: hidden;
+    list-style: none;
+    background: #fff;
+    padding: 5px 5px 0;
+    margin: 0;
+    border-top: none
+}
+.PopularPosts ul {
+    list-style: none;
+    margin: 0;
+    color: #64707a
+}
+.PopularPosts li,.PopularPosts li img,.PopularPosts li a,.PopularPosts li a img {
+    background: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    outline: none
+}
+.PopularPosts ul li img {
+    display: block;
+    float: left;
+    background: #fafafa;
+    margin: 0 10px 0 0;
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+}
+.PopularPosts ul li {
+    position: relative;
+    background-color: #fff;
+    margin: 0;
+    padding: .7em 0!important;
+    border: 0;
+    position: relative;
+    border-bottom: 1px solid #F1F1F1
+}
+.PopularPosts ul li:before {
+    font-family: &#39;Font Awesome 5 Free&#39;;
+    content: &quot;\f005\f005\f005\f005\f005&quot;;
+    display: inline-block;
+    position: absolute;
+    color: #F29B10; 
+    text-align: center;
+    bottom: 0;
+    right: 0;
+    margin: 9px 0;
+    font-size: 11px;
+    padding: 0;
+    font-weight: 900;
+    line-height: normal;
+    transition: all .3s
+}
+.PopularPosts ul li:hover:before {
+    opacity: 1
+}
+.PopularPosts ul li:first-child {
+    border-top: none
+}
+.PopularPosts ul li:last-child {
+    border-bottom: none
+}
+.PopularPosts ul li .item-title a,
+.PopularPosts ul li a {
+    color: #000;
+    font-size: 15.5px;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+.PopularPosts ul li a:hover {
+    color: #2476e0;
+}
+.PopularPosts ul li:nth-child(1):before {
+    font-family: &#39;Font Awesome 5 Free&#39;;
+    font-weight: 900;
+    content: &quot;\f005\f005\f005\f005\f005&quot;;
+}
+.PopularPosts ul li:nth-child(2):before {
+    font-family: &#39;Font Awesome 5 Free&#39;;
+    font-weight: 900;
+    content: &quot;\f005\f005\f005\f005\f5c0&quot;;
+    opacity: .9
+}
+.PopularPosts ul li:nth-child(3):before {
+    font-family: &#39;Font Awesome 5 Free&#39;;
+    font-weight: 900;
+    content: &quot;\f005\f005\f005\f005\f5c0&quot;;
+    opacity: .85
+}
+.PopularPosts ul li:nth-child(4):before {
+    font-family: &#39;Font Awesome 5 Free&#39;;
+    font-weight: 900;
+    content: &quot;\f005\f005\f005\f005\f089&quot;;
+    opacity: .8
+}
+.PopularPosts ul li:nth-child(5):before {
+    font-family: &#39;Font Awesome 5 Free&#39;;
+    font-weight: 900;
+    content: &quot;\f005\f005\f005\f005\f005&quot;;
+    opacity: .75
+}
+.PopularPosts ul li:nth-child(6):before {
+    font-family: &#39;Font Awesome 5 Free&#39;;
+    font-weight: 900;
+    content: &quot;\f005\f005\f005\f005\f005&quot;;
+    opacity: .7
+}
+.PopularPosts ul li:nth-child(7):before {
+    font-family: &#39;Font Awesome 5 Free&#39;;
+    font-weight: 900;
+    content: &quot;\f005\f005\f005\f005\f5c0&quot;;
+    opacity: .75
+}
+.PopularPosts ul li:nth-child(8):before {
+    font-family: &#39;Font Awesome 5 Free&#39;;
+    font-weight: 900;
+    content: &quot;\f005\f005\f005\f005\f089&quot;;
+    opacity: .7
+}
+.PopularPosts ul li:nth-child(9):before {
+    font-family: &#39;Font Awesome 5 Free&#39;;
+    font-weight: 900;
+    content: &quot;\f005\f005\f005\f005&quot;;
+    opacity: .75
+}
+.PopularPosts ul li:nth-child(10):before {
+    font-family: &#39;Font Awesome 5 Free&#39;;
+    font-weight: 900;
+    content: &quot;\f005\f005\f005\f005\f5c0&quot;;
+    opacity: .7
+}
+```  
+
+
+#### Why can't I see the stars in popular posts widget?  
+
+
+You need to add font awesome 5 and above. Two simple solutions to this issue are:  
+
+1.  Follow the optional step (explained above) to add font awesome 5.8.2 and it should work smoothly.
+2.  Or, modify the "**content**" based on your font awesome version. See below on how to get unicode for font awesome icons.
+
+  
+
+#### How to get Unicode for font awesome icons?
+
+*   Go to <a href="https://fontawesome.com/v4.7.0/icons/" rel="nofollow noopener noreferrer" target="_blank">this link</a>.
+*   Search for icon "star".
+*   You'll see some value: **unicode:some_val**.
+*   Copy that value and paste it in `content:&quot;\here\here\here\here&quot;`
+
+  
+That's all folks. Here you have **working stylish popular posts widget for blogger with stars rating**. That was easy, right? In case, this widget does not function properly, leave a comment and I'll endeavor to help you fix popular posts widget not working. Happy Blogging ! 😀💪💥

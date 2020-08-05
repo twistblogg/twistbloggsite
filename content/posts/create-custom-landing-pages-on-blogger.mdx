@@ -1,0 +1,243 @@
+---
+title: 'How To Create A Landing Page/Squeeze Page On Blogger'
+date: 2015-05-23
+excerpt: Did you ever wonder how to create a Professional landing page on Blogger blog? Follow this ultimate tutorial to create WordPress like landing pages on blogspot blog. 
+slug: landing-page-in-blogger
+featured: false
+published: true
+image: create a professional landing page in blogger.jpg
+author: Invictus
+tags : [Blog Customize, Blog Widgets]
+---
+
+Creating a Landing page on blogger remains a back-breaking task as we have no one click solution like as the other popular Content Management Systems, for example, WordPress or Joomla.  
+  
+We need to handle everything manually from a to z to make our custom landing page on blogger where there are numerous plugins and templates available to create stunning landing pages on other CMS platforms such as WordPress or Joomla. Click Click and there you go with your highly dedicated professional landing page on these platforms.  
+  
+
+So in this post, I am going to deal with it and make it easier for everyone to create landing pages on your existing blogger blog.  
+
+
+By the end of this post, you'll have your own landing page ready, I hope so. :)  
+  
+  
+
+### Wait! Why Do You Even Need A Landing Page?
+
+
+Landing pages are designed to focus only on one particular goal you want to achieve – whether you want to capture emails to grow your email list, promote your own products or anything else. On a landing page, everything else which can distract the visitors attention like as sidebar, footer, header or navigation area is hidden except your landing page content.  
+
+Below are a few types of landing pages you can create on your blog to get the maximum user engagement and ROI.  
+  
+
+#### 1. Coming Soon Landing Page
+
+Coming soon page is designed to let your audience know that we are launching our blog/website/service soon. So you just put an email opt-in form and let your visitors subscribe to get notified when your blog/website/service is launched.  
+  
+
+#### 2. Thank You Landing Page
+
+A Thank you page is what you might have seen most of the time on other blogs. How and when did you land on a thank you page last time? Probably either you had commented on a blog post or downloaded a digital product.  
+  
+
+#### 3. Start Here Landing Page
+
+A Start Here page is designed specially for the first-time landing visitors on your blog and link to it is included in the main navigation bar. On a Start Here page, you can offer your all the relevant information and links they need to get started. Include your call to action buttons above the fold so that they know what is the next step to do.  
+  
+
+#### 4. Promotion-Specific Landing Page
+
+Do you promote some affiliate products or your own? Then you need to have a special dedicated promotion-specific landing page for that particular product to get the maximum conversion rate on it. You don't have any other choice. :)  
+  
+
+#### 5. Other
+
+You can create your landing pages according to your purpose. Like as for the visitors landing on your blog from your social network profile links, you can create a special landing page welcoming the visitor, telling about yourself and what you have to offer with a strong call to action button.  
+  
+So now you want to create your first landing page on your blogger blog? Curious enough to know how? Keep your curiosity alive and let's begin. :)  
+  
+
+<Block src="singlebutton" icon="link" variant="primary" text="Live Demo 1" href="https://demoinvictus.blogspot.com/p/hire-me.html"/>
+
+    
+The below demos are not hosted on blogger, but they can be added as a landing page in blogspot for completely free. I'll be sharing tutorials very soon. Leave a comment to get notified.  
+  
+
+<Block src="singlebutton" icon="terminal"  variant="accent" text="Live Demo 2" href="https://twistblogg.netlify.app/"/>
+
+
+
+<Block src="singlebutton" icon="folder-plus"  variant="secondary" text="Live Demo 3" href="https://subscribe-twistblogg.netlify.app/"/>
+  
+  
+ 
+So did it impress you? You can achieve the same results on your existing blogspot blog whether you're using a custom domain name or a free blogspot sub-domain name. Although you need to to take care of some things on a free sub-domain name so please read carefully all the steps given below.  
+  
+
+
+## Ready To Design Your First Landing Page On Blogger?
+
+
+Before we start the process, let's have a bird's-eye view on creating our landing page in a separate page of our blogger blog.  
+  
+
+<Image src="Create-a-landing-page-on-blogger-layout.png" alt="Create-a-landing-page-on-blogger-layout"/>
+
+
+  
+#### Step 1. Create a new Page
+
+
+First of all you need to create a new page so just **Login to Blogger** account > **Select your blog** > Go to **Pages section** and on top of it, you'll see a link **"New Page"** so click on it.  
+  
+Now enter your _Page Name_ in the title area (be careful about the title text because you'll get the same Permalink address for your page) and publish it. See the screen shot below to create a new page.  
+  
+
+<Image src="Create-a-New-Page-on-Blogger-Blog.png" alt="Create-a-New-Page-on-Blogger-Blog" />
+  
+  
+Now visit your new page and copy the URL of page from the address bar of your browser.  
+
+
+**Note:** 
+
+If you are using a custom domain name then copy your page URL as it is but, if you're using a free blogspot sub-domain name then you need to make few changes as given below:  
+
+
+**Changing the country specific extension to .com** 
+
+For example: If you're from India, then your sub-domain name will be **http://example.blogspot.in** , so you need to change the `.in` to `.com` at the end of the URL (do not add **www** after **https://**). Got it? Good. :)  
+
+
+
+#### Step 2. Add The CSS to Style Your Landing Page Using Conditional Tag
+
+
+Now we will add a conditional tag to our template code and inside it, we will put our CSS code to hide the other unwanted wrappers except the content area. This CSS style will override the main CSS style of our template and it will be applied to the new page only.  
+  
+Go to **Template section** > Click on **Edit HTML** (backup your template code first) now click inside the code box and press Ctrl+F to open up a search box.  
+  
+Now find out this code line `</b:skin>` and just below it, paste the code given below after making the required changes (required changes to make are given below the code in **Editing** step so read them carefully). After adding the code just save your template and visit your page again to see the results you have accomplished. Don't expect too much at this stage. :p  
+
+
+```css
+<b:if cond='data:blog.url == &quot;YOUR-BLOG-PAGE-URL&quot;'>
+<style type='text/css'>
+/*--- Find out all the ids or classes of the main wrappers and add them in below code to hide them---*/
+.sidebar-wrapper, .header-wrapper, .post-title, #blog-pager, .post-footer, #footer-wrapper, .comments {
+display: none !important; /*-- This will hide those main wrappers--*/
+}
+/*---If you're using one of the default blogger templates---*/
+.header-outer, .column-right-outer, .tabs-outer, .footer-outer {
+display: none !important; /*-- This will hide header, footer, navbar and sidebar--*/
+}
+/*---Changing the Content Width to 100%---*/
+#content {
+width: 100% !important; /*---This will change the content area width to 100%--*/
+}
+/*---Changing The Body Background Image And Color---*/
+body {
+background: #FFF url('YOUR-IMAGE-URL') no-repeat scroll top center !important;
+margin:0;
+padding:0;
+}
+</style>
+</b:if>
+```  
+
+**Editing:** Change `YOUR-BLOG-PAGE-URL` with the page URL you had copied earlier. I have added the detailed comments in the above code to make things easier. If you're using a custom third party template then you need to find out all the classes or ids of the wrappers like as Header, Navigation Bar, Sidebar, Footer etc. to which you want to hide on your landing page.  
+  
+These ids or class names may be different used by their respected developers so please don't expect my above CSS code to work for you completely. Take it as a reference and a quick head start.  
+  
+  
+<Div bg="muted" borderRadius="10px" p="2" pl="6" pb="4">
+
+**Last Updated: Nov 2019**  
+
+
+We have shared [landing page templates in our website](https://www.twistblogg.com/2019/11/landing-pages-templates-for-blogger.html). Feel Free to use them anywhere. Enjoy!  
+
+
+<Block src="singlebutton" icon="coffee"  variant="secondary" text="Grab Them" href="https://www.twistblogg.com/2019/11/landing-pages-templates-for-blogger.html"/>
+
+
+</Div>  
+  
+
+#### Finding The Class/Id Names Using Developers Mode in Your browser
+
+
+You can find all these ids or classes simply by visiting any existing page of your blog then start the developer mode (Ctrl+Shift+I for Chrome) and inspect the elements in your browser. For example, after starting the developers mode just right click on sidebar then choose **inspect element** and you will see the id or class name of the inspected element into right side under **Styles** tab.  
+  
+Now to make sure that you found the right class or id to hide, just add one code line `display: none;` to the style of particular inspected element. If it ceases to appear then pat your shoulder, you just did a great job. :)  
+  
+Replace YOUR-IMAGE-URL with the URL of the image you want to use in the background and change the color code `#FFF` to your choice of color code.  
+
+
+**Changing the Content area width** to 100% part may work or may not just because of the Id name of it. My template code uses this `#content` id name for the content wrapper and yours may be totally different. So you gotta find it out in the same way I explained above.  
+
+
+So If you have successfully figured out all the ids or class names to hide and they are working perfectly, just add them to the CSS code above to hide them. By now your landing page is ready. After hiding all the unwanted distractions just go back to edit your page the way you want.  
+  
+Now what you can do with HTML and CSS inside your post editor is totally depends upon you. I have done the same on my Landing Page. Sky is the limit!  
+  
+
+
+#### How to use HTML and CSS inside Post Editor?
+
+
+Switch to the HTML mode and change the page settings from the right side as shown in the screenshot below.  (This is a sample image) 
+  
+
+<Image src="Contact-Page-Settings.png" alt="Contact-Page-Settings" />
+  
+
+
+Now to use the CSS then just put your CSS code using the _style_ tag.
+
+Now you can call the above CSS style in HTML to apply it. For example -  
+  
+```html
+<style>
+.my-demo{
+     width: 100%;
+    background: #000;
+    font-size: 20px;
+    padding: 20px 0px;
+    color: #FFF
+}
+</style>
+<div class='my-demo'> Hello World! This is my First Landing Page</div>
+```  
+
+Result is this:-  
+
+<Image src="hello world result - landing page.png" alt="hello world result - landing page.png" />
+
+  
+Wondering if we could use the CSS code we have added to our template code using a conditional tag inside the post editor itself? I did the same while designing my landing page and the result was totally unpleasant.  
+  
+It worked for sure but the template code is loaded form the root directory first and then it is rendered in the browser immediately. So when you'll use the CSS code inside the post editor to hide the wrappers, they will end up showing for a fraction of second before your CSS code inside the post editor will take effect to override it. Isn't it a bad user experience?  
+  
+How would you call it a professional looking if it will happen to my landing page I have designed awaking hours late night? :)  
+  
+So this is how you can design your own custom landing pages on blogspot. All those bloggers who are familiar with the CSS and HTML will find this tutorial super easy and those who are new to it, please feel free to poke me anytime. I'll personally visit your blog and help you out to make things super easy for you. :)  
+
+
+**You can also shoot me an email using the contact page.**  
+  
+ 
+Right now there is no one click solution for creating your landing page but in future, I'll design my own template and a Landing page will be the integral part of it. Then you'll need not to inspect the elements and mess-up with the code.  
+  
+Soon I'll design my different landing page templates and share with you if you guys need (let me know in comments :p). You can use them with a simple copy & paste function inside the post editor. Then make a few changes here and there and voila, your landing page is ready so please don't forget to subscribe. :)  
+  
+Finally I want to thank my best buddies +ROHAN CHAUBEY and +Naveen Kumar for the immediate feedback on my landing page design. :)  
+  
+Stay Blessed!
+
+Here are a few must read articles from TwistBlogg: 
+ 
+[Add Custom Social Media Responsive Share buttons below blogger posts.](https://www.twistblogg.com/2015/08/add-custom-social-media-share-buttons-to-blogger-posts.html)  
+[Show last updated date in blogger blog posts](https://www.twistblogg.com/2019/09/show-published-and-last-updated-date-in-blogger-post.html)  
+[Insert Estimated Post Reading Time in blogger posts with simple jquery.](https://www.twistblogg.com/2019/09/display-estimated-post-reading-time-in-blogger-posts.html)  
+[How to add beautiful HTML Sitemap Page For Blogger blog?](https://www.twistblogg.com/2019/09/add-beautiful-html-sitemap-page-in-blogger.html)

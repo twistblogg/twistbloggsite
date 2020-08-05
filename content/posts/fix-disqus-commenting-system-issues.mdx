@@ -1,0 +1,185 @@
+---
+title: 'Fix Disqus Comments Not showing in mobile [OnClick Event]'
+date: 2019-09-12
+excerpt: Disqus commenting system allows readers to leave comments with ease. However, performance and comment not visible on mobile devices are commonly faced issues by disqus implemented blogs. Here, we will lazy load disqus and synchronize desktop and mobile comments.
+slug: disqus-comment-blogger
+featured: false
+published: true
+image: fix disqus comments not showing in mobile.png
+author: Invictus
+tags : [Blog Customize]
+---
+
+Disqus.com is one of the popular third party commenting system that can be embedded on your website. It is easy to integrate and eliminates the burden of [customizing default comment-system](https://www.twistblogg.com/2015/03/change-0-comments-post-comment-message-blogger.html) and dealing with spams. A lot of popular sites including CNN, Bloomberg, The Next Web, and now TwistBlogg are using disqus. 
+
+There are two common issues faced by many bloggers' when implementing Disqus comment system: 
+
+_Firstly_, the comments made on desktop version are not visible in mobile version and vice versa. That means disqus comments are not showing properly in mobile and desktop. 
+
+_Secondly_, the website performance reduces drastically because a huge file ( ~2.49MB ) needs to be loaded.  
+  
+
+In this article, we will discuss why disqus commenting system is so popular and work on to fix disqus comments not showing in mobile and to improve web performance by loading disqus comments on demand.  
+
+
+#### Features Of Disqus Commenting System
+
+*   Highly interactive.
+*   Pre-moderation feature to prevent spam comments.
+*   Flag the users, and block them from commenting.
+*   Embed images and gif.
+*   Highlighter included.
+*   [Beautiful Comment Box](https://www.twistblogg.com/2018/08/how-to-customize-comment-box-in-blogger.html)
+*   Keyboards shortcuts installed.
+*   Add a guest moderation for an individual discussion.
+*   Moderate display names with Restricted Word-filter.
+*   Embed comments in your content.
+*   [Customize Comment Avatar](https://www.twistblogg.com/2014/03/how-to-customize-comments-avatar-image-in-blogger.html)
+
+  
+
+### Fix Disqus Comments not showing in mobile version
+
+This is a commonly faced issue when users implement disqus on their website. The comments made in desktop version are not visible in mobile version and comments made in mobile version are not visible in desktop. This issue arises because the web address differs in desktop and mobile.  
+  
+**Desktop Version:** https://www.twistblogg.com/2019/08/fix-blogger-contact-form-not-working.html  
+**Mobile Version:** https://www.twistblogg.com/2019/08/fix-blogger-contact-form-not-working.html?m=1  
+  
+The extra tag  `?m=1`  results in two version of the same page, making disqus system to read them as different pages. The fix is easy. We will configure the disqus file (<a href="https://help.disqus.com/en/articles/1717084-javascript-configuration-variables" rel="nofollow noopener noreferrer" target="_blank">Read how to config `disqus_config`</a>) . Add the following file in your already present disqus code.  
+
+```js 
+var disqus_config = function () {  
+this.page.url = 'a unique URL for each page where Disqus is present';  
+this.page.identifier = 'a unique identifier for each page where Disqus is present';  
+this.page.title = 'a unique title for each page where Disqus is present';  
+};
+```  
+
+**For Blogger.com,**  
+
+```js
+var disqus_config = function () {  
+this.page.url = '<data:post.url/>';  
+this.page.identifier = '<data:post.url/>';  
+this.page.title = '<data:post.title/>';  
+};
+```  
+
+[Recommended: Add Sticky Floating Bar With Show/Hide Option In Blogger](https://www.twistblogg.com/2015/05/add-notification-bar-to-blogger.html)  
+  
+
+### Improve Web Performance By Loading Disqus Comments on demand
+
+Disqus Commenting System loads a file `username.disqus.com/embed.js` which affects web performance when inserted in [template](https://www.twistblogg.com/2016/01/premium-seo-optimized-blogger-template.html) because it is a huge file (~2.49MB) and takes a lot of time to load. There are two solutions:  
+  
+1) Load Disqus Comments On Demand (Load On Demand) : Explained Below  
+2) Lazy Load Disqus Comments ( Article Coming Soon )  
+  
+**This is the default disqus code:**  
+
+```js title=default.js
+<div id="disqus_thread"></div>  
+<script>  
+   /**  
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.  
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables  
+     */   
+    var disqus_config = function () {  
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable 
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable  
+    };   
+    (function() {  // DON'T EDIT BELOW THIS LINE  
+        var d = document, s = d.createElement('script');  
+        s.src = 'https://shortname.disqus.com/embed.js';  
+        s.setAttribute('data-timestamp', +new Date());  
+        (d.head || d.body).appendChild(s);  
+    })();  
+</script>  
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+```  
+
+The above piece of code loads automatically by default. In the improvised code, we will create a button and when a user clicks that button, we will call disqus function. Further, we will remove the problem of disqus comments not showing in mobile version.  
+  
+[Recommended: New Elegant Popular Posts Widget For Blogger](https://www.twistblogg.com/2015/04/new-elegant-popular-posts-widget-for-blogger.html)  
+  
+Go To Template Editor & Search for `<b:includable id='comments' var='post'>` , click on the number present at the left and remove all piece of code.  
+  
+
+<Image src="install disqus and load on demand in blogger.png" alt="install disqus and load on demand in blogger" />
+  
+  
+In the same location, insert the following:  
+  
+
+ ```js 
+<b:includable id='comments' var='post'>  
+    <div class='comments' id='comments'>  
+        <b:if cond='data:view.isPost'>  
+            <div id='disqus_thread' ></div>  
+              <div class='comments-blocks'>
+                <button id='show-comments' onclick='disqus();return false;' tabindex='0'>
+                  <i class='far fa-comments' id='stylefa'></i> Read and Post Comments</button></div>
+                         
+ <script type="text/javascript">   
+    var disqus_loaded = false;  
+    var disqus_shortname = "place_your_shortname"; 
+
+    var disqus_config = function () {  
+       this.page.url = '<data:post.url/>';  
+       this.page.identifier = '<data:post.url/>';  
+       this.page.title = '<data:post.title/>';  
+     };  
+
+    function disqus() {  
+        if (!disqus_loaded) {  
+            disqus_loaded = true;  
+           var e = document.createElement("script");
+               e.type = "text/javascript";
+               e.async = true;
+               e.src = "//" + disqus_shortname + ".disqus.com/embed.js";  
+          (document.getElementsByTagName("head")[0] ||document.getElementsByTagName("body")[0]).appendChild(e);   
+  
+     //Hide the button after opening  
+    document.getElementById("show-comments").style.display = "none";  
+    document.getElementById("comments-block").style.display = "block";  
+        }  
+    }  
+    //Opens comments when linked to directly  
+   var hash = window.location.hash.substr(1);  
+    if (hash.length > 8) {  
+        if (hash.substring(0, 8) == "comment-") {  
+            disqus();  
+        }  
+    }  
+//Remove this if you don't want to load comments for search engines 
+if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {  
+    disqus();  
+}   
+        </script> 
+     </b:if>  
+    </div>  
+ </b:includable>   
+```
+
+In the above code, we have configured var `disqus_config` and it fixes disqus comment issue. Also, we have created a button and called it to load the disqus function. Find More on <a href="https://gist.github.com/robwent/e9c321b5c200370da0cadb69e40379b7" rel="nofollow noopener noreferrer" target="_blank">Github</a>.  
+
+
+**Here is the CSS code for the button.**  
+
+```css
+/* Disqus comment onclick load button */
+#comments{display:none;} .post-comment-link {visibility:hidden;}   
+.comments-blocks button{position:relative;border:3px;text-align:center;margin:-5px 0px -30px -40px; padding:10 0 0 0; text-transform:uppercase;font-weight:700;height:55px;line-height:55px;cursor:pointer;background: #7e7e7e;box-shadow:inset 0 3px 15px rgba(0,0,0,.6)!important;border-bottom:4px solid #5b5a5a;font-size:23px;color:#fff;outline:none!important;display:block;width:120%;}  
+.comments-blocks button:hover{background: #3b3a3a;box-shadow:inset 0 3px 15px rgba(0,0,0,.6)!important;border-bottom:4px solid #5b5a5a;}.comments-blocks #stylefa{font-size:23px;}
+```  
+
+[Recommended: Feedburner Email Subscription Popup Blogger Plugin](https://www.twistblogg.com/2015/04/email-subscription-popup-blogger-plugin.html)  
+  
+
+The Output of the above code will look something like this: (Adjust the CSS according to your template)  
+
+
+<Image src="disqus load on demand.png" alt="disqus load on demand" />
+
+
+That was it my dear readers. I highly recommend you to [backup the whole template](https://www.twistblogg.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html) before installing or try it in a demo site. If you're facing any issue while solving disqus comments not showing in mobile and loading disqus commenting system on click, leave a comment. I assure to help you. Happy Blogging ! 😀😇⌚

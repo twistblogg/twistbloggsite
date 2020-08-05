@@ -1,0 +1,220 @@
+---
+title: 'Customize Default Label List Gadget in Blogger [100% Stylish]'
+date: 2018-08-21
+excerpt: Blogger allows you to add a label list widget from Gadget Library. However, the design is obsolete. In this tutorial, we will customize and make default label list type stylish.
+slug: customize-label-list-blogger
+featured: false
+published: true
+image: customize default label list gadget blogger.png
+author: Invictus
+tags : [Blog Customize, Label Style]
+---
+
+Good afternoon Bloggers, today I'll be writing on **how to customize blogger default label list gadget into a stylish and attractive label list**. Original Blogger label list view isn't that cool and the design is very simple. There are many cool looking label list style for blogger on Internet but most of them are for Label Cloud option. Then I thought why only cloud , why not the Label List option itself. So I did some research and got idea on how I can start. Below I'll share all steps you need to perform so as to customize label style.  
+  
+
+
+_Note: This article makes use of Font Awesome v4.7.0 not the latest one. Panic? Don't worry you can use latest version by doing some customization._  
+
+
+<Div textAlign="center">
+<ButtonLink href="https://hdmoviesyard.blogspot.com" rel="nofollow noopener noreferrer external" variant="primary" target="_blank"><Icon name="link" size="6" mr="2"/>Live Demo</ButtonLink>
+</Div>  
+  
+
+#### Features of Stylish Label List Gadget Blogger
+
+By now you might have seen the demo. Doesn't that look cool? Are you excited to know the features? Below are some features of this customized label list widget.  
+
+*   No images are used.
+*   Font Awesome added.
+*   100% Professional and Stylish.
+*   Cool Hover Effect.
+*   Select/Deselect the labels.
+*   Premium design.
+*   Easily fits in Sidebar.
+*   Support for font awesome unicode.
+
+  
+Special Thanks to <a href="https://georgialoustudios.com/customize-blogger-label-gadget/" rel="nofollow noreferrer noopener external">GeorgialouStudios</a> for sharing the reference code for this article.  
+  
+
+
+### How to modify Bloggers' default label List Widget/Gadget?
+
+
+I've divided the section into two parts: Adding of Label Widget and Installation of Code.  
+  
+
+#### Step 1: Add Label Gadget to Blogger
+
+Go to **Blogger Dashboard** → **Layout** → **Add a Gadget** → **Select Label Gadget**.  Now a Label Gadget will pop up. Edit it as,  
+
+> Title: Give your title  
+> Show: All Labels/Selected Labels [Any one option]  
+> Sorting: Alphabetically/By Frequency [Any one option]  
+> Display: List
+
+_Note: You must select the LIST option else this trick won't work. Also I prefer Selected Labels option \[In some time you'll also know why\]_  
+  
+
+#### Step 2: Adding CSS Code to Blogger
+
+Before adding the codes,a good habit is to [Backup the blog](http://twistblogg.blogspot.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html). Once done, Go to **Theme** → **Edit HTML**. Search for `<head>` and paste the code below it.  
+
+```html
+<link href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'/>
+```  
+
+Also Search for `]]></b:skin>` and paste the code just above it.  
+
+```css title=main.css
+/*Customize Default Label List Style : TwistBlogg.com*/  
+.Label ul li {  
+        display: inline-block;  
+        width: calc(50% - 5px);  
+        box-sizing: border-box;  
+        float: left;        
+}  
+.Label ul li:nth-child(odd) {  
+        margin-right: 10px;  
+}  
+.Label ul li a:before {  
+       display: block;  
+       text-align: center;  
+       margin-bottom: 8px;  
+       font-family:'FontAwesome';  
+       font-size: 18px;   /* Icon size */  
+}  
+.Label ul li a {  
+        box-sizing: border-box;  
+        display: block;  
+        width: 100%;  
+        text-align: center;    /* center aligns text in sidebar */ 
+        margin: 5px 0;    /* White space between links */ 
+        padding: 10px 10px;    /* Padding for colored background */ 
+        font-family: "Open Sans";     /* Link Font */  
+        text-transform: uppercase;  
+        font-style: normal;    /* Font Style. Options are normal and italics. */ 
+        font-weight: normal;    /* Font weight. Options include: light, normal, bold, */  
+        letter-spacing: 1px;    /* Space between letters */  
+        font-size: 12px;   /* Font Size. */  
+        color:#fff;  
+}  
+  
+/* ICON CODES */ 
+/* First Icon */  
+.Label ul li:nth-child(6n+1) a:before {  
+    content:"\f040";  
+}  
+/* Second Icon */ 
+.Label ul li:nth-child(6n+2) a:before {  
+    content:"\f15a";  
+}  
+/* Third Icon */  
+.Label ul li:nth-child(6n+3) a:before {  
+    content:"\f09a";  
+}  
+/* Fourth Icon */  
+.Label ul li:nth-child(6n+4) a:before {  
+    content:"\f1a0";  
+}  
+  
+/* LABEL COLORS */ 
+/* First Label Colors */  
+.Label ul li:nth-child(6n+1) a{  
+background:#4d90fe;  
+}  
+/* Second Label Colors */  
+.Label ul li:nth-child(6n+2) a {  
+   background:#5db427;  
+}  
+/* Third Label Colors */  
+.Label ul li:nth-child(6n+3) a {  
+    background-color: #9b59b6;  
+}  
+/* Fourth Label Colors */  
+.Label ul li:nth-child(6n+4) a {  
+    background-color: #e74c3c;  
+}  
+  
+/* On Hover */  
+.Label ul li a:hover {  
+    color: #ffffff;    
+    background-color:#272727;   
+} 
+```  
+
+_**Important Note:** In the code I've shown styles for only 4 labels but you might have many. That's the reason I told to Select SELECTED LABELS options in Step 1. I hope you got me. I'll also be explaining how to add styles for more labels._  
+  
+
+**Note:** I've published article on [how to Customize Default Label Cloud Gadget in Blogger](https://twistblogg.blogspot.com/2018/09/customize-default-label-cloud-in-blogger.html)
+
+  
+  
+**Editing section,**  
+In the CSS Code itself, I've given comments to make it easier for you to edit. See below to make more changes.  
+  
+➤ Change `background-color:#Hex_val`  for different backgrounds.  
+  
+➤ Change `content:"\with_your_unicode"` to modify font awesome icons. _Check at the End to know how to find unicode._  
+  
+➤ Change #272727 to change the Hover Effect. You can even set different hover effects for different labels. Just add the below codes.  
+
+```css 
+/*Change Hover Effect on Different Labels: TwistBlogg.com*/ 
+/* First Label Hover Colors */  
+.Label ul li:nth-child(6n+1) a:hover {  
+  color: #ffffff;    /* Link Hover Color */  
+  background-color: #272727;    /* Background Hover Color */  
+ }  
+   
+ /* Second Label Hover Colors */  
+ .Label ul li:nth-child(6n+2) a:hover {  
+     color: #ffffff;    /* Link Hover Color */  
+    background-color: #272727;    /* Background Hover Color */  
+ }
+```
+
+
+#### How to Add Styles for More Labels?
+
+To Add styles for more labels, add the below codes.  
+  
+```css
+/*Add Styles for More Labels: TwistBlogg.com*/ 
+/* Fifth Icon */  
+.Label ul li:**nth-child(6n+5)** a:before {  
+  content:"\f100 ";  
+}  
+/* Sixth Icon */  
+.Label ul li:**nth-child(6n+6)** a:before {  
+content:"\f120";  
+}  
+/* Fifth Label Colors */  
+.Label ul li:**nth-child(6n+5)** a {  
+   color: #ffffff;    /* Link Color */  
+    background-color: #eeeeee;    /* Background Color */  
+}  
+/* Sixth Label Colors */  
+.Label ul li:**nth-child(6n+6)** a {  
+  color: #ffffff;    /* Link Color */  
+  background-color: #ff0000;    /* Background Color */  
+}
+```
+  
+**_Make 6n+7 for 7th label , 6n+8 for 8th label and so on.._**  
+  
+[Recommended: How to Use font awesome icons in blogger?](http://twistblogg.blogspot.com/2014/01/How-To-Use-FontAwesome-Icons-In-Blogger.html)  
+  
+
+#### How to get Unicode for font Awesome icons?
+
+1] Go to <a href="https://fontawesome.com/v4.7.0/icons/" rel="nofollow noopener noreferrer external" target="_blank">this link</a>.  
+2] Search the icon you want.  
+3] A new Page will open and you can see `unicode:some_val`.  
+4] Just Add that value.  
+  
+_Personal Advice: The customized Label List style will look professional when you have few labels. As I mentioned before, trim the labels by selecting SELECTED LABELS option while adding the Label Gadget._  
+  
+That's all! That was lengthy but also easy. I hope you are now able to add customized label list widget in blogger. If you are facing any problem, leave a comment or mail me.I've also published tutorial on [how to customize default label cloud style in blogger](https://twistblogg.blogspot.com/2018/09/customize-default-label-cloud-in-blogger.html). Do check it ! Stay tuned and happy Blogging.😋 **\[tchau tchau : Bye Bye in Portuguese\]**

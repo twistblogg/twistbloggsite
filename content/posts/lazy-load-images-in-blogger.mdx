@@ -1,0 +1,162 @@
+---
+title: 'How to Defer Offscreen images: Lazy load images in blogger'
+date: 2019-11-07
+excerpt: Lazy loading of images is a technique of preventing off-fold imagess from loading initially and it helps in achieving better page speed. Learn how you can defer offscreen images in blogger.
+slug: lazy-loading-in-blogger
+featured: false
+published: true
+image: defer offscreen images in blogger.jpg
+author: Invictus
+tags : [Page Speed, Blog Customize, Blogging Tips]
+---
+
+Recently I was trying to optimize my blogger’s pagespeed by implementing the recommendations from <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank" rel="noreferrer nofollow noopener external">Pagespeed Insight</a>, and I noticed the term “**Defer OffScreen Images**” or lazy-loading of images.  This article will highlight this section.  
+  
+Offscreen images are those which are present below the fond or those images that do not lie in the screen when a page loads. Since users can't see offscreen images when they load a page, a good mechanism to improvise pagespeed can be to load those images after a page is loaded. Do browsers follow this mechanism by default? Sadly No!  
+  
+Browsers download and load all image files at once, causing a huge usage of bandwidth and slow page performance. So, how to overcome this? A single solution: Lazy loading of Images.  
+  
+Lazy loading of images means to load image files on demands dynamically. In this tutorial, I will explain on how to lazy load images in blogger and how these impacts page speed.  
+
+
+  
+
+### Comparison of Same Page without Lazy Loading Of Images and With lazy loading
+
+I will take a sample page from this website:
+
+`https://www.twistblogg.com/2019/09/best-premium-blogger-templates.html`. 
+
+I tested this page on <a href="https://gtmetrix.com/" rel="nofollow noopener noreferrer external" target="_blank">GTMetrix</a> and Pagespeed Insight and the results were stunning.  
+  
+**Before Lazy Loading of Blogger Images on GTMetrix**  
+
+
+<Image src="Lazy loading of blogger images-before-GTMetrix.png" alt="Lazy loading of blogger images-before-GTMetrix" />
+
+
+**After Lazy Loading of Blogger Images on GTMetrix**  
+
+
+<Image src="Lazy loading of blogger images-after-GTMetrix.png" alt="Lazy loading of blogger images-after-GTMetrix" />
+  
+
+**Before Lazy Loading of Blogger images : PageSpeed Insight**  
+
+
+<Image src="lazy loading images - Pagespeed mobile before optimization.png" alt="lazy loading images - Pagespeed mobile before optimization"/>
+
+  
+**After Lazy Loading Of Blogger Images: PageSpeed Insight**  
+
+
+<Image src="lazy loading images - Pagespeed mobile after optimization.png" alt="lazy loading images - Pagespeed mobile after optimization" />
+
+  
+Isn't that cool ?  
+  
+
+## How to lazy load images in blogger: Defer Offscreen Images?
+
+
+Now you know lazy loading of images drastically improves web performance, let us add it to your website. Don't forget to [backup your whole blog and its contents](https://www.twistblogg.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html).  
+  
+Go to **Theme** > **Edit HTML** and Search for `</body>` or `/body` and add the following  code above it.  
+
+```js title=lazy-load.js
+<script type='text/javascript'>//<![CDATA[  
+function ignielLazyLoad(){
+    eval(function(p,a,c,k,e,d){
+        e=function(c){
+            return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('u B(){Y(v e=o.1r("B"),t=0;t<e.1q;t++)Q(e[t])&&(e[t].N=e[t].1p("1n-N"))}u Q(e){v t=e.1t();Z t.1x>=0&&t.1w>=0&&t.1v<=(y.1u||o.T.1m)&&t.1k<=(y.1c||o.T.1b)}v b=["\\r\\m\\m\\D\\G\\a\\f\\c\\M\\n\\p\\c\\a\\f\\a\\k","\\h\\f","\\r\\c\\c\\r\\l\\A\\D\\G\\a\\f\\c","\\g\\h\\r\\m","\\p\\l\\k\\h\\g\\g","\\V\\1a\\1e\\R\\h\\f\\c\\a\\f\\c\\M\\h\\r\\m\\a\\m","\\w\\p\\a\\1l\\p\\c\\k\\n\\l\\c","\\r","\\1f\\w\\a\\k\\L\\1j\\a\\g\\a\\l\\c\\h\\k\\W\\g\\g","\\g\\a\\f\\q\\c\\A","\\w\\p\\a\\k\\W\\q\\a\\f\\c","\\c\\a\\p\\c","\\m\\h\\l\\w\\F\\a\\f\\c\\D\\g\\a\\F\\a\\f\\c","\\1i\\h\\m\\L","\\l\\g\\n\\l\\1g","\\p\\l\\k\\h\\g\\g\\1h\\h\\J","\\c\\h\\J","\\q\\a\\c\\S\\h\\w\\f\\m\\n\\f\\q\\R\\g\\n\\a\\f\\c\\1z\\a\\l\\c","\\A\\k\\a\\X","\\a\\1y\\a\\l","\\q\\a\\c\\D\\g\\a\\F\\a\\f\\c\\S\\L\\1F\\m","\\p\\l\\k\\h\\g\\g\\U\\a\\n\\q\\A\\c","\\n\\f\\f\\a\\k\\U\\a\\n\\q\\A\\c","\\J\\k\\a\\G\\a\\f\\c\\V\\a\\X\\r\\w\\g\\c","\\n\\c\\a\\F"];u I(d,j){y[b[0]]?y[b[0]](d,j):y[b[2]](b[1]+d,j)}I(b[3],B),I(b[4],B),o[b[0]](b[5],u(){b[6];Y(v d=o[b[8]](b[7]),j=d[b[9]],s=/1D|1B/i[b[11]](1G[b[10]])?o[b[12]]:o[b[13]],C=u(d,j,s,C){Z(d/=C/2)<1?s/2*d*d*d+j:s/2*((d-=2)*d*d+2)+j};j--;){d[b[1C]](j)[b[0]](b[14],u(d){v j,E=s[b[15]],x=o[b[1A]](/[^#]+$/[b[19]](1H[b[18]])[0])[b[17]]()[b[16]],z=s[b[1d]]-y[b[1s]],O=z>E+x?x:z-E,K=1o,H=u(d){j=j||d;v x=d-j,z=C(x,E,O,K);s[b[15]]=z,K>x&&P(H)};P(H),d[b[1E]]()})}});',62,106,'||||||||||x65|_0x1b5d|x74|_0xdd48x2||x6E|x6C|x6F||_0xdd48x3|x72|x63|x64|x69|document|x73|x67|x61|_0xdd48x4||function|var|x75|_0xdd48x7|window|_0xdd48x8|x68|lazy|_0xdd48x5|x45|_0xdd48x6|x6D|x76|_0xdd48xb|registerListener|x70|_0xdd48xa|x79|x4C|src|_0xdd48x9|requestAnimationFrame|isInViewport|x43|x42|documentElement|x48|x44|x41|x66|for|return|||||||||||x4F|clientWidth|innerWidth|21|x4D|x71|x6B|x54|x62|x53|left|x20|clientHeight|data|900|getAttribute|length|getElementsByClassName|22|getBoundingClientRect|innerHeight|top|right|bottom|x78|x52|20|trident|24|firefox|23|x49|navigator|this'.split('|'),0,{}));} eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('j 4=["\\7\\9\\9\\e\\d\\a\\b\\8\\i\\g\\h\\8\\a\\b\\a\\k","\\f\\c\\7\\9","\\7\\8\\8\\7\\m\\l\\e\\d\\a\\b\\8","\\c\\b\\f\\c\\7\\9"];5[4[0]]?5[4[0]](4[1],6,!1):5[4[2]]?5[4[2]](4[1],6):5[4[3]]=6;5[4[0]]?5[4[0]](4[1],6,!1):5[4[2]]?5[4[2]](4[1],6):5[4[3]]=6;',23,23,'||||_0xdfb4|window|ignielLazyLoad|x61|x74|x64|x65|x6E|x6F|x76|x45|x6C|x69|x73|x4C|var|x72|x68|x63'.split('|'),0,{}));  
+//]]></script>
+```  
+
+Hey, I forgot to mention this plugin is based on Jquery. Search for `</head>` and add following Jquery file above it.  
+
+```js
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'/>
+```  
+
+**To lazy load images on blogger homepage (for thumbnail images)**, search for code similar to following:  
+
+```html
+<img expr:alt='data:post.title' expr:title='data:post.title' expr:src='resizeImage(data:post.firstImageUrl, 225, "225:170")'/>
+```  
+
+Now make some changes as mentioned below:  
+
+* Append `class="lazy"` to `<img>` tag.  
+
+* Change `expr:src` to `expr:data-src`.
+    
+* Now, we will add a super small size image in src attribute:
+
+```js
+src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
+```
+
+_It is a good practice to add src attribute in `<img>` tag as browsers substitute src attribute with data-src attribute once the image is in viewing region. Here is an information clarifying <a href="https://stackoverflow.com/questions/15320052/what-are-all-the-differences-between-src-and-data-src-attributes/15320346" rel="nofollow external noopener noreferrer" target="_blank">what are src and data-src attributes</a>._  
+
+
+Here is the updated code:  
+
+```html
+<img class='lazy' expr:alt='data:post.title' expr:title='data:post.title' expr:data-src='resizeImage(data:post.firstImageUrl, 225, "225:170")' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'  />
+```  
+
+### How to lazy load post body images in blogger?
+
+By far, we have implemented lazy loading effect to images on blogger homepage. Now, it is time for deferring offscreen images on post body.  
+  
+Unlike Wordpress, Blogger doesn't support implementing lazy loading to all post body images. One need to make changes manually.  
+  
+Here is a sample of image tag in blogger(without anchor tag), 
+
+```html
+<img alt="Lazy loading images" border="0" data-original-height="483" data-original-width="800" src="https://1.bp.blogspot.com/-WuPnaglqSDU/XX94-Vu0OrI/AAAAAAAAMFw/xPc6DOvLI5kvi3uULG9VvertcRhYkR8NgCLcBGAsYHQ/s640/simpleup-clean-blogger-template.jpg" height="386" title="Lazy loading images" width="640" />
+```  
+
+The modified image tag code will look something like this:  
+
+```html
+<img alt="Lazy loading images" border="0" class="lazy" data-original-height="483" data-original-width="800" data-src="https://1.bp.blogspot.com/-WuPnaglqSDU/XX94-Vu0OrI/AAAAAAAAMFw/xPc6DOvLI5kvi3uULG9VvertcRhYkR8NgCLcBGAsYHQ/s640/simpleup-clean-blogger-template.jpg" height="386" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" title="Lazy loading images" width="640" />
+```  
+
+You have to do make this changes manually for each and every images present that you want to defer. In case, you have any dynamic method, please leave the code in the comment section.  
+  
+**Also Read:** [21 Tested Ways To Speed Blog Loading Time](https://www.twistblogg.com/2020/01/speed-up-page-loading-time.html)  
+  
+
+### Verifying Lazy Loading of Blogger Images
+
+It is necessary to confirm whether lazy loading of blogger images is working or not.  There are many ways to do so. Either you can compare the page performance on GTMetrix with/without lazy loading or you can take the support of Inspect Element Feature present in web browsers.  
+  
+
+*   Navigate to the page where you have implemented lazy loading.
+*   Right click on empty space and select "**Inspect Element**".
+*   Select the **Network** Tab and _Refresh the page_.
+*   Scroll down and you should be able to see images getting loaded one after another as soon as you reach their viewport. Here is a small sample on how it looks:
+
+
+<Image src="inspect elements in chrome.png" alt="inspect elements in chrome" />
+
+  
+The images are loaded once they are in the viewing region. This is called lazy loading of images.  
+  
+You can also use <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en" rel="nofollow noopener noreferrer external" target="_blank">LightHouse Chrome Extension</a> to test if lazy loading is working efficiently or not.  
+
+*   Add the lighthouse extension to your chrome browser.
+*   It will be added to the right of address bar. 
+*   Navigate to the page you want to verify.
+*   Run the Light house test and you should be able to pass "Defer Offscreen Images" test.
+
+Here is a detailed article on <a href="https://medium.com/pixboost/step-by-step-guide-to-test-your-off-screen-image-performance-lazy-loading-with-pixboost-js-ca4ce8f54f86" rel="nofollow noopener noreferrer external" target="_blank">how to use chrome Lighthouse extension</a>.  
+  
+That's all. You have successfully implemented **lazy loading of images in blogger** and verified if it is working or not. Lazy loading of images improved our pagescore drastically. Now, its your turn. Happy blogging.  
+  
+Here are a few handpicked tutorials for you to read next:  
+[Show last Updated date in blogger posts along with published date ](https://www.twistblogg.com/2019/09/show-published-and-last-updated-date-in-blogger-post.html)  
+[How to know if a website is on Wordpress or not](https://www.twistblogg.com/2018/09/know-if-website-is-using-wordpress.html)  
+[Killer SEO Guides to follow in 2019 for higher ranking](https://www.twistblogg.com/2015/10/killer-seo-guides-for-newbie-blogger.html)  
+[Attractive 404 Error Page Design For Blogger](https://www.twistblogg.com/2019/10/attractive-custom-error-page-design-for-blogger.html)

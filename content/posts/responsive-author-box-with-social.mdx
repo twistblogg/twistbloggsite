@@ -1,0 +1,290 @@
+---
+title: 'Responsive Multi Author Box Widget With Social Buttons for Blogger'
+date: 2015-03-13
+excerpt: A Responsive multi author box is a must have widget for blogger. We have released a pro version with social buttons embedded. Get it for free.
+slug: responsive-multi-author-box-blogger
+featured: false
+published: true
+image: stylish Author Box Widget With Social Buttons for Blogger.jpg
+author: Invictus
+tags : [Blog Widgets]
+---
+
+An author box below every blog post is one of the must have widgets for blogger which shows the author bio to blog readers. This little author box does amazing things to one's blog. It increases the credibility and trust of an article and people are always curious to know who on the earth has written this article I am reading right now.  
+
+  
+You might have seen this author box appearing below every post on every other popular blog. If you're not using it, you're really missing something important. It's never too late so in this tutorial, I have designed a new responsive author box with ~~three~~ two major social buttons to which I was using on this blog itself. 
+
+  
+**Note:** You can share this code on your blog **ONLY** if you provide a working link back to this original post from your blog post on which you shared my code. Fair deal, right? We should respect copyrights and hard work of others'. Play safe.  
+
+
+**Below is the demo of this social multi-author plugin:**  
+  
+If you liked it, then let us proceed toward its installation on your blog.
+
+
+<Image src="Demo of Responsive Multi Author Box Widget With Social Buttons for Blogger.png" alt="Demo of Responsive Multi Author Box Widget With Social Buttons for Blogger" />
+
+
+## Installation Process For Author Box CSS | Part-1
+
+
+Let us begin with boring steps as usual :) and you can't skip any one of them lol.  
+
+**Step 1)** Just go and login to your blogger account  
+
+**Step 2)** Your Blog >> Template >> Edit HTML  
+
+**Step 3)** Let the template code box load and after loading, click anywhere inside the template code box  >> Have [backup of your blog](https://www.twistblogg.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html) template first  
+
+**Step 4)** Press Ctrl+f on Windows OS and Cmd on Mac OS to open a search box inside  
+
+**Step 5)** Find this little piece of code `]]></b:skin>` .  
+
+**Step 6)** Now paste the whole CSS code given below just before this code  
+  
+```css
+/*****  Author-Box CSS By TwistBlogg.com*****/
+#Author-box-outer {
+    background: #FFFFFF;   /*----- background color code -----*/
+    border-top: 10px solid #00bdff; /*----- top border -----*/
+    padding: 16px 10px 16px 10px;
+    overflow: hidden;
+    margin: 20px 0px 15px;
+    box-shadow: 0px 7px 14px -12px #000;
+}
+
+.author-box span2 {
+    color: #000000;
+    border-bottom: 4px solid #00bdff;
+    font-weight: normal;
+}
+
+.author-box {
+    float: left;
+    overflow: hidden;
+    padding: 0px 15px 5px 0px;
+    font-weight: 100;
+    width: 54%;
+    display: block;
+    border-right: 1px solid #ddd;
+}
+
+.author-box img {  /*----- Author Image Style ------*/
+    border: 2px solid #000;
+    background: #000000;
+    float: left;
+    margin: 5px 10px 0px 0px;
+    border-radius: 50px;
+    padding: 2px;
+}
+
+.author-box-social {
+    float: right;
+    text-align: left;
+    width: 40%;
+    overflow: hidden;
+    padding: 0px;
+}
+
+.intro-style { /*---- Author bio text Style -----*/
+    text-align: left;
+    font-family: sans-serif;
+    color: #333;
+    font-size: 13px !important;
+    margin-top: 5px;
+    margin-left: 0px;
+}
+
+.author-box p {   /*---- Author Name Style ----*/
+    margin: 0;
+    padding: 0px 0px 2px 0px;
+    color: #3F3F3F;
+}
+
+.author-box span { 
+    border-bottom: 4px solid #000000; /*--- border below author name ---*/
+    color: #000000;
+    text-shadow: none !important;
+}
+
+
+/**Twitter BTN Box For Admin**/
+.twitter-btn {
+    height: 25px;
+    border-radius: 2px;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #00acee!important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dedede));
+    background-image: -moz-linear-gradient(top, #fff, #dedede);
+    background-image: -o-linear-gradient(top, #fff, #dedede);
+    background-image: -ms-linear-gradient(top, #fff, #dedede);
+    background-image: linear-gradient(top, #fff, #dedede);
+    border: #ccc solid 1px;
+    color: #333;
+    font-weight: 700;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    text-decoration: none
+}
+
+.twitter-btn:hover {
+    text-decoration: none
+}
+
+.twitter-btn i {
+    width: 21px;
+    height: 16px;
+    left: 4px;
+    margin-top: -6px;
+    position: absolute;
+    top: 50%;
+    background: rgba(0, 0, 0, 0) url(data:image/png;base64,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) 0 0 no-repeat;
+    background-position: -24px 0
+}
+
+.twitter-btn .label {
+    padding: 0 7px 0 29px;
+    white-space: nowrap
+}
+```
+
+**Editing:** To edit the CSS code and change its colors, I have provided proper comments so that you know what you're editing while doing it. You can almost change anything like text size, color, background, width, image style etc.  
+  
+
+## Installation Process For Author Box HTML | Part-2
+
+
+I have done all the major work for you so that you do not have to visit Facebook Developers Page, Google Developers Page, and Twitter Developers Page. Why? Simple, to get the social buttons for your blog. I worked on these codes and made them simple where if you will try to get them manually and copying and pasting, as they say, you will get a major error saying unable to save, an error occurred while parsing XML code of your template. :) 
+
+All you need to do is just replace my social pages URLs, Image, Author bio, and name etc. with your own. I have highlighted these all the URLs in above HTML so it is easier to you. Follow the steps given below the HTML for better understanding.  
+  
+Find out this code line `<div class='post-footer-line post-footer-line-3'>` and paste this HTML code given below after editing it as needed just after this code line.  
+
+**Note:**  If you're unable to get me then please do comment and I'll help you manually.  
+
+```html
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+    <div id='Author-box-outer'>
+        <div class='author-box'>
+            <b:if cond='data:post.author == &quot;Aman Bhattarai&quot;'> <!-- Multiple author option -->
+                <img alt='Author' class='avatar avatar-78 photo' src='https://1.bp.blogspot.com/-qFTadagNzPI/XWEDD2Mc1tI/AAAAAAAAL3Y/KptA0uNsBmoS4QPqD3caRqzbCqp7caVkACLcBGAs/s1600/aman-bhattarai.jpg' />
+                <p><span>Article By: <span2>Aman Bhattarai</span2></span></p>
+                <div class='intro-style'>
+                    I manage this blog and post tutorials related to Blogger, SEO, Plugins, Widgets, Software Tools, CSS/HTML and Social Media. Did you find this blog helpful? Would You Please Socialize? Thanks for Your Support Buddy :)
+                </div>
+            </b:if>
+        </div>
+        <div class='author-box-social'>
+            <div style='padding-bottom:0px !important; font-size: 11px !important;'>
+                <a class='twitter-btn' href='https://twitter.com/intent/follow?screen_name=twistblogg' target='_blank' title='Follow @AmanBhattarai on Twitter'>
+                    <i/>
+                    <span class='label'>@AmanBhattarai</span>
+                </a>
+            </div>
+            <br/>
+            <div style='padding-bottom:0px !important;'>
+                <div class='fb-like' data-action='like' data-href='https://www.facebook.com/twistblogg' data-layout='button_count' data-share='true' data-show-faces='false' rel='nofollow'>
+                </div>
+            </div>
+            <br/>
+            <div style='padding-bottom:0px !important;'>
+                <!-- Add More Social Networks Here (Optional). -->
+
+            </div>
+        </div>
+    </div>
+</b:if>
+```
+
+**Editing:** 
+
+In the above HTML code, I have highlighted everything you need to change before saving your template so do the changes step by step :) Here is the list of things you need to change so make sure you did it.  
+
+1) Author Name  
+2) Author Image  
+3) Again Author Name  
+4) Author Bio  
+5) Twitter User Name  
+6) Facebook Page URL  
+  
+
+### Making It Responsive - Optional Step
+
+
+Are you using a responsive blogger template? Then this step becomes necessary lol. Don't worry, I have done all the work for you and if you're not sure, just re-size your browser window and see the author box on this blog. It changes accordingly to the screen sizes.
+
+  
+What you need to do is just add the responsive styles to **CSS3 @media Query** in our template. So just add these styles accordingly.
+
+  
+```css
+@media only screen and (min-width:980px) and (max-width:1089px) {  
+    .intro-style {  
+        margin-left: 92px;  
+    }  
+}  
+  
+@media only screen and (min-width:768px) and (max-width:979px) {  
+    .author-box {  
+        padding: 0px 0px 0px 0px;  
+        width: 52%;  
+    }  
+    .author-box img {  
+        margin: 5px 5px 0px 0px;  
+        padding: 2px;  
+    }  
+    .intro-style {  
+        margin-left: 0px;  
+    }  
+    .author-box-social {  
+        width: 47%;  
+        padding: 0px;  
+    }  
+}  
+  
+@media only screen and (min-width:480px) and (max-width:767px) {  
+    .author-box {  
+        padding: 0px 0px 10px 0px;  
+        width: 100%;  
+        margin-bottom: 10px;  
+        border-bottom: 1px solid #ddd;  
+        border-right: 0px;  
+    }  
+    .author-box-social {  
+        width: 79%;  
+        padding: 0px;  
+    }  
+}  
+  
+@media only screen and (max-width:479px) {  
+    .author-box {  
+        padding: 0px 0px 10px 0px;  
+        width: 100%;  
+        margin-bottom: 10px;  
+        border-bottom: 1px solid #ddd;  
+        border-right: 0px;  
+    }  
+    .author-box-social {  
+        width: 100%;  
+        padding: 0px;  
+    }  
+}  
+
+```
+
+**Final Note:** If you're not using a Responsive Blogger Template, you do not have to do that. Your responsive template might be using different sizes so add these styles accordingly or else you can just copy and paste. That is it in this tutorial.
+  
+
+Did you face any problem? Just ask me in comments for any help, I'll assist you as soon as you ask or contact me via the contact us page. Stay safe, stay blessed.

@@ -1,0 +1,137 @@
+---
+title: 'How To Add Meta Tags To Blogger Posts'
+date: 2014-01-27
+excerpt: Meta tags carry information about your posts and google loves blogs carrying these tags. Learn how to add meta tags to blogger posts.
+slug: meta-tags-in-blogger-posts
+featured: false
+published: true
+image: Meta description Tags For Blogger.jpg
+author: Invictus
+tags : [SEO, Blogging Tips]
+---
+
+Meta tags play an extremely important role in your [blog's SEO](https://www.twistblogg.com/2015/10/killer-seo-guides-for-newbie-blogger.html). If you are new to this part of SEO then you may have faced the problem of, "Very Low Click Through Rate from SERPs" even when you have written so good, long, keywords optimized and informative article.  
+  
+
+This is not the fault of search engine crawlers but you have made it bound to happen because of not using the META tags for your articles. SO take it as serious step and move on to the implementation of META tags Step By Step while understanding "?" about META tags.
+
+  
+  
+
+#### What are meta Tags?
+
+
+Meta tags are the precise explanations of the HTML document. Meta data means data about data. These tags provide the structured data about a web page such as Description, Title, Date, Keywords, Author Name etc.
+
+
+
+#### Where are these tags placed?
+
+
+These Tags are placed in the Header section of HTML document at top of the page.  
+
+  
+[Recommended: 7 Things To Do After Publishing A New Post](https://www.twistblogg.com/2014/04/7-things-to-do-after-publishing-new-blog-post.html)
+
+  
+
+#### Who read these Meta Tags?
+
+
+Search Engine Meta Spiders use META tags to index the HTML document in appropriate way. These tags are not visible to the visitors.
+
+  
+
+#### Why Meta tags are important?
+
+  
+
+**1. Click Through rate**
+
+While These tags are not important for Search Engine Rankings but they play an important role in Click-Through Rate from Search Engine Result Pages. Because when you do not use Meta Description Tag for a web document/article/post, search engines will pick some random words from the the article to display as description in search results which may seem awkward to person searching and chances are that he will not click on your link and move on to other. Below is the example of our blog URL when Meta Description tag is used.
+
+  
+
+<Image src="Meta Description in Search Results-google.PNG" alt="Meta Description in Search Results-google"/>
+
+
+
+**2. Relevant Ads By Ads Network**  
+
+When you will use the meta keywords tags, your adsense ads will be relevant to the content on the web page because ads are displayed on the basis of keywords found on web page.
+
+  
+[Recommended: 6 Must Do SEO Guides for bloggers for high ranking](https://www.twistblogg.com/2015/10/killer-seo-guides-for-newbie-blogger.html)  
+  
+
+
+## How To Add Meta Tags In Blogger?
+
+So now you are ready to add meta tags to your blog then let us implement these tags in every area we should step by step.  
+  
+
+#### Add Meta Description Tags For Main Blog URL  
+
+
+Go to **Blogger → Settings → Search Preferences → Meta Tags → Click On Edit → Click On Yes.** Now add your meta description about your blog and click save.
+
+**Note:-** The description meta tag should be equal to 150 characters or less (including spaces). see image below.
+
+
+<Image src="Add Meta Description.PNG" alt="Add Meta Description" />
+
+
+Note:- If after adding the meta description, it does not work/show up in SERPs then you need to insert a code inside your template HTML and everything will work fine. Use <a href="https://www.heymeta.com/" rel="nofollow noopener noreferrer">this free tool</a> to check whether these tags are working or not. Use This Code After `<head>` if your meta description tags are not working/showing up in SERPs. Go to **Blogger** →  **Template** →  **Edit HTML** , then click inside template code. Now press **Ctrl+f** or **Cmd+f** and a search box will appear. Then search for `<head>` and paste the code given below.
+
+```html
+<b:if cond='data:blog.metaDescription != &quot;&quot;'>  
+<meta expr:content='data:blog.metaDescription' name='description'/>  
+</b:if>
+```
+  
+[Recommended: Top 10 Things To know before buying a domain name](https://www.twistblogg.com/2014/03/things-to-know-before-you-buy-domain.html)  
+  
+
+#### Add Meta Description Tag For Each Post In Blogger
+
+
+You  should add separate eye catchy and relevant meta description for each post to increase the CTR from SERPs. You do not have to edit your HTML code of template for that. This function is available in let side of blogger post editor. See Below:-  
+  
+
+<Image src="Meta Description To Each Post On Blogger.PNG" alt="Meta Description To Each Post On Blogger"/>
+
+  
+
+#### Add Separate Meta Keywords Tag To Each Post In Blogger
+
+
+Now this time you have to edit the template to add the Meta Keywords tag because blogger have no option of adding Meta Keywords in dashboard. Again go to **Blogger** →  **Template** →  **Edit Html**. Now click anywhere inside the template code and press **Ctrl+A → Copy → Paste in Notepad** (You Just Did The [Backup of Template Code](https://www.twistblogg.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html) ;).  
+  
+It is better to have backup to restore if anything went wrong. Just copy the code given below, replace **YOUR-PAGE-URL** with the URL of the post you are adding keywords to and YOUR-PAGE-KEYWORDS with the relevant keywords people will use to search along with the main Keyword you have used in Title of the post.  
+  
+[Recommended: Blogger Search Preferences Setting For Better SEO](https://www.twistblogg.com/2014/03/blogger-search-preferences-settings-seo.html)  
+  
+Paste it before the `<b:skin><![CDATA[` and save your template.
+
+**Note:-** The keywords Meta Tag should be equal to 256 characters or less (including spaces) and you have to repeat this code for every post your want to add separate Keywords Tag.
+
+```html
+<b:if cond='data:blog.url == &quot;YOUR-PAGE-URL&quot;'>
+<meta content='YOUR-PAGE-KEYWORDS' name='keywords'/>
+</b:if>
+```
+  
+
+#### Meta Author Tag
+
+
+Meta Author tag is also useful which describes about the author of a web document. Use this tag after the `<head>` tag. Just replace **McDonald** with your name.
+
+```html
+<meta content='McDonald' name='author'/>
+```
+
+[Recommended: What are nofollow and dofollow tags? | A Complete Study](https://www.twistblogg.com/2014/03/understanding-nofollow-and-dofollow-tag.html)  
+
+  
+**Final Words:-** This is the simple yet effective way to use these meta tags and will surely help in your blog SEO. If we missed anything or you are facing problem while implementing these tags, let us know and help you in more better way. Thank You.

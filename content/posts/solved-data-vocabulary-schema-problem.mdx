@@ -1,0 +1,128 @@
+---
+title: '[Solved] data-vocabulary.org schema deprecated - Google Search Console Warning'
+date: 2020-01-22
+excerpt: There is a new warning in google search console, data-vocabulary.org schema deprecated. In this article, I will be explaining how to solve this problem. You just need to change data-vocabulary.org to schema.org  
+slug: solve-data-vocabulay-deprecated
+featured: false
+published: true
+image: data-vocabulary.org schema deprecated solved.jpg
+author: Invictus
+tags : [Blogging Tips]
+---
+
+Yesterday I opened Google Search Console to check my [site performance](https://www.twistblogg.com/2020/01/speed-up-page-loading-time.html) and there was a new warning : data-vocabulary.org schema deprecated. So what is this warning? How to fix/solve data-vocabulary schema problem? Will this affect my blog? All these queries will be explained in this article.  
+  
+The warning is to notify Google Webmasters that Google is preferring schema.org Structured Data over data-vocabulary.org SD and we need to update our blogs with schema.org SD. <a href="https://webmasters.googleblog.com/2020/01/data-vocabulary.html" rel="nofollow noopener noreferrer">According to Google,</a>  
+  
+
+> Structured data schemas such as schema.org and data-vocabulary.org are used to define shared meaningful structures for markup-based applications on the Web. With the increasing usage and popularity of schema.org we decided to focus our development on a single SD scheme. **As of April 6, 2020, data-vocabulary.org markup will no longer be eligible for Google rich result features.**
+
+
+  
+In short, websites and blogs with data-vocabulary.org schema markup will not be eligible for Google rich result features in future. SEO ranking and other factors won't be affected. Anyway, it is best to go with latest trends gigantic companies are following. You can learn more on what a rich result feature is <a rel="nofollow noopener noreferrer" target="_blank" href="https://econsultancy.com/what-are-rich-search-results-and-how-can-you-get-them/">from here</a>.  
+
+
+To confirm whether you're facing this issue, go to Search console and you should be getting a warning. If not, relax ! :)  
+  
+
+## How to solve data-vocabulary.org schema deprecated issue?
+
+
+It is an easy task. You need to change data-vocabulary.org schema with <a rel="nofollow noopener noreferrer" target="_blank" href="https://schema.org/BreadcrumbList">schema.org</a> structured data. For example,  
+  
+Here is a sample code from my theme,  
+  
+
+<Image src="solve schema error data-vocabulary.org.png" alt="solve schema error data-vocabulary.org" />
+
+  
+I modified data-vocabulary.org with schema.org and the problem was fixed.  
+  
+
+
+<Image src="data-vocabulary schema deprecated fix.png" alt="data-vocabulary schema deprecated fix" />
+
+
+  
+**Step 1:** Go to Blogger.com and search for `<b:includable id='breadcrumb' var='posts'>` .  
+  
+
+<Image src="breadcrumb issue fixed.png" alt="breadcrumb issue fixed" />
+
+  
+**Step 2:** Paste the following code in place of `<b:includable id='breadcrumb' var='posts'>… </b:includable>` . Delete the existing one and place the following:  
+
+```html
+<b:includable id='breadcrumb' var='posts'>  
+<b:if cond='data:view.isSingleItem'>  
+<b:loop values='data:posts' var='post'>  
+<b:if cond='data:post.labels'>  
+<div class='breadcrumbs' itemscope='itemscope' itemtype='https://schema.org/BreadcrumbList'>  
+<svg class='homesvg' viewBox='0 0 24 24'><path d='M12,3L20,9V21H15V14H9V21H4V9L12,3Z'/></svg>  
+<span itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'>  
+<a class='breadhome' expr:href='data:blog.homepageUrl' itemprop='item' title='Home'>  
+<span itemprop='name'>Home</span></a>  
+<meta content='1' itemprop='position'/>  
+</span>  
+<svg viewBox='0 0 24 24'><path d='M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z'/></svg>  
+<b:loop index='num' values='data:post.labels' var='label'>  
+<span itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'>  
+<a expr:href='data:label.url + &quot;?&amp;max-results=10&quot;' expr:title='data:label.name' itemprop='item'>  
+<span itemprop='name'><data:label.name/></span>  
+</a>  
+<meta expr:content='data:num+2' itemprop='position'/>  
+</span>  
+<svg viewBox='0 0 24 24'><path d='M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z'/></svg>  
+</b:loop>  
+<span><data:post.title/></span>  
+</div>  
+</b:if>  
+</b:loop>  
+</b:if>  
+</b:includable>  
+
+```  
+
+**Step 3:** The next step is styling the new breadcrumb. Paste the below CSS code in the template. Hit Save once done.  
+
+```css
+/* CSS Breadcrumbs By TwistBlogg.com*/  
+.breadcrumbs{line- height:1.2em;width:auto;overflow:hidden;padding:0;margin:0 auto 20px;font-size:90%;color:#888;font-weight:400;text-overflow:ellipsis;-webkit-text-overflow:ellipsis;white-space:nowrap}  
+.breadcrumbs a{display:inline-block;text-decoration:none;transition:all .3s ease-in-out;color:#777;font-weight:400}  
+.breadcrumbs a:hover{color:blue}  
+.breadcrumbs svg{width:20px;height:20px;vertical-align:-5px;margin:0 -3px}  
+.breadcrumbs svg.homesvg{width:22px;height:22px;margin-right:0}  
+.breadcrumbs svg path{fill:#c8c8c8}  
+.breadcrumbs svg.homesvg path{fill:#999}
+```  
+
+### How to verify if data-vocabulary.org issue is fixed or not?  
+
+
+Once you have made the changes, save the theme and go back to your search console platform. Click on the warning and press Validate Fix Button. It will take some time to validate and you're all good to go.  
+
+
+<Image src="fix data vocabulary warning from google search console.png" alt="fix data vocabulary warning from google search console" />
+
+  
+Further, you can also test any address live on <a href="https://search.google.com/test/rich-results" rel="nofollow noopener noreferrer" target="_blank">Rich Results Test tool</a> by pasting in the search box. Either you'll pass and get a result like this:  
+
+
+<Image src="how to pass rich result test.png" alt="how to pass rich result test" />
+
+  
+  
+Or you might not pass and unfortunately will be provided with a result like this:  
+
+
+<Image src="rich result live testing not supported fix.png" alt="rich result live testing not supported fix" />
+
+
+That's all and I hope you're able to solve/fix data-vocabulary.org schema deprecated warning from Google search console. Happy Blogging !!!  
+  
+
+Here are a few must read articles from TwistBlogg:  
+[Add Custom Social Media Responsive Share buttons below blogger posts.](https://www.twistblogg.com/2015/08/add-custom-social-media-share-buttons-to-blogger-posts.html)  
+[Show last updated date in blogger blog posts](https://www.twistblogg.com/2019/09/show-published-and-last-updated-date-in-blogger-post.html)  
+[Insert Estimated Post Reading Time in blogger posts with simple jquery.](https://www.twistblogg.com/2019/09/display-estimated-post-reading-time-in-blogger-posts.html)  
+[How to add beautiful HTML Sitemap Page For Blogger blog?](https://www.twistblogg.com/2019/09/add-beautiful-html-sitemap-page-in-blogger.html)

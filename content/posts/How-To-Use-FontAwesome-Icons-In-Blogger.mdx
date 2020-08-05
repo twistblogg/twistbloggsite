@@ -1,0 +1,115 @@
+---
+title: 'How To Use FontAwesome Icons In Blogger Template'
+date: 2014-01-24
+excerpt: Font awesome allows you to easily integrate icons in blog. Learn how to start using font awesome icons in blogger template. 
+slug: install-fontawesome-in-blogger
+featured: false
+published: true
+image: add font awesome icons in blog.png
+author: Invictus
+tags : [Blog Customize, Blogging Tips, Blog Widgets]
+---
+
+FontAwesome icons as name suggests, are awesome and piece of cake for all designers. You can use these icons on your blog, web apps, graphic designs and much more. These icons are extremely useful and that is why these icons are being used by many people day by day. 
+
+By now most of the popular bloggers are using these icons on their blogs and apps. These icons are getting more popular every next day. So what are these FontAwesome icons, how you can use and what will be the benefit of using these icons to you is what we are going to explain in this tutorial.  
+  
+
+
+#### 1. What are these FontAwesome Icons?
+
+
+FontAwesome Icons are vector icons means these icons are scalable to any size and display perfect in high resolutions.  
+  
+[Recommended: Show Last updated date in blogger post](https://www.twistblogg.com/2019/09/show-published-and-last-updated-date-in-blogger-post.html)  
+  
+
+
+#### 2. Can we customize these icons on our template?
+
+
+These icons can be customized in size, shadow, color and everything which can be achieved via using CSS font style. All you have to do is add these styles to your blog template CSS stylesheet using class "i".
+
+  
+
+#### 3. Is any JavaScript required to get these icons work on my blog?
+
+
+That is the beauty of these icons that you need No JavaScript code to get these icons work on your blog. No more load time and works on all devices perfectly  
+
+
+[Recommended: Add Google Analytics On Blogger](https://www.twistblogg.com/2014/04/how-to-add-google-analytics-on-blogger.html)
+
+  
+
+#### 4. Are these icons free or premium?
+
+
+These icons are totally free for use in any way (personal or commercial use). Good deal, no?  
+  
+
+
+#### 5. Why should I use these icons? Why not PNG or other images?
+
+
+This is the excellent question and answer is Awesome. These icons load with 10x speed than your PNG or other image files and minimize the number of HTTP requests of loading images on your blog. These icons load as other text/fonts of your blog. Ultimately they boost the loading speed of your blog, gains more visitors, gives awesome look to your blog and help you in blog SEO in a way or other.
+
+  
+
+### How To Use These Icons On My Blog?
+
+
+To use these icons on your blogger blog, you need to edit template just a little. Go to **Blogger → Template → Edit Template → Click Inside Code** ([backup your template code](https://www.twistblogg.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html) before editing by copying code to notepad). Now press Ctrl+f or Cmd+f then search for `<head>` tag and paste the given code below it.  
+
+```js  
+<script type='text/javascript'>  
+//<![CDATA[  
+function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet"; i.href = e; i.media = "only x"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }  
+loadCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css");  
+//]]>  
+</script>  
+<noscript>  
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css' rel='stylesheet'/>  
+</noscript>
+```  
+
+Above code is the CSS stylesheet of FontAawesome icons. Now you can place any icon to appear anywhere with simple `<i>` tag in your HTML e.g. inside `<div>`, `<a>`, `<li>` or `<p>`. See the example below how we used icons in our navigation menu links.  
+
+```html
+<li><a href='https://www.twistblogg.com'><i class="fas fa-home"></i>Home</a></li>
+<li><a href='https://www.twistblogg.com/contact'><i class="fas fa-envelope"></i>Contact Us</a></li>
+```
+
+To change/use another icon just replace the icon name in yellow color `<i class='fas fa-home'>` and icon's name are given above every icon here at <a href="https://fortawesome.github.io/Font-Awesome/icons/" rel="nofollow noopener noreferrer">FontAwesome Icons Page</a>. Just replace the icon name in yellow with your choice. 
+
+For example `<i class='fas fa-laptop'>`. See image of few icons with their name highlighted below. First fas remains same and second comes with icon name.  
+  
+
+<Image src="FontAwesom Icon Select.PNG" alt="FontAwesom Icon Select" />
+
+
+[Recommended: Prevent Auto Pagination in blogger](https://www.twistblogg.com/2015/04/know-how-to-prevent-auto-pagination.html)  
+
+
+### Customization of Icons With CSS
+
+
+To customize the color, size, shadow and background, just call the (i) tag in CSS and paint these icons with your creativity. CSS code is given below to simply copy paste and customize. Copy the above code and paste it just before the `]]></b:skin>` code line.  
+
+```css
+i {
+color:#E2FD18;
+font-size:15px;
+padding-right:5px;
+text-shadow: 1px 1px 1px #000;
+}
+```
+
+This above CSS effect will apply to every icon on your blog. But what if you want to give different color, size, shadow etc. to a specific icon? Do not worry, you know what? These are awesome icons so here is the another hack for you. If you want to give separate effect to a icon than others' then you need to apply style inside the HTML `<i>` tag. Here is example:  
+
+```html
+<i class='fas fa-heart' style='font-size:18px; color:red;'></i>
+```
+
+
+ After applying the above style inside the HTML (i) tag, your icon size would be 18px and color red while other remains same as per the effect you applied by CSS to (i) tag. Anytime if anything goes wrong, let us  help you. Thank You.

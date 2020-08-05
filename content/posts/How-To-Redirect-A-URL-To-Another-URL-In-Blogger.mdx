@@ -1,0 +1,69 @@
+---
+title: 'How To Redirect A URL To Another URL In Blogger'
+date: 2017-02-02
+excerpt: Create URL Redirection In Blogger To Any Other URL. You can Cloak URLs in Blogger With Simple Html Code. Step By Step Tutorial.  
+slug: address-redirection-in-blogger
+featured: false
+published: true
+image: How To Redirect A URL To Another URL In Blogger.jpg
+author: Invictus
+tags : [Blog Customize, Blog Widgets]
+---
+
+Now you can have the power of redirecting your existing blogger URLs to another URL means you can redirect any URL of your blog to any new URL whether inside your blog or to outside/external links. This technique will work like as an URL 301 Redirect/shortner or URL cloaking in WordPress. 
+
+We will be using a simple HTML code to redirect the URLs of our blog to any other specific URLs of your choice. Now you may be thinking that what is the benefit of it to you? The answer is very simple:-
+
+*   You can hide your affiliate links behind your own blog URLs.
+*   You can redirect any blogger URL to any other URL.
+*   In place of long and odd URLs, you can create short and simple URLs.
+
+So isn't it beneficial to you? If you are promoting any affiliate products on your blog then this technique is extremely useful to you because most of the readers/visitors do not click links when they see long and odd affiliate URLs. Instead of letting them see the original URLs before clicking, just hide them with simple and smooth URLs of your own blog URLs.  
+
+  
+
+### How To Create A URL Redirect To Another URL In Bogger- 301  
+
+
+To redirect a URL to another URL, you need to create a **New Blank Page** and do not create a new post because if you create a new post then it will appear in your published posts. 
+
+If you are using a custom template with the custom navigation bar then your New Blank Page will not appear as it is hidden because you have your custom navigation bar and pages are hidden. So by now you will have a new page with link address ready to be redirected.  
+
+Now without any delay just get into action. Go to **Blogger → Template → Edit Template → Backup Your Template Before Editing**.
+
+Now Search For `]]></b:skin>` and copy paste the code given below it.
+
+```html
+<!--TB 301 Redirect--> 
+<b:if cond='data:blog.url == &quot;https://www.twistblogg.com/p/sitemap.html&quot;'>  
+<meta content='0;url=https://www.twistblogg.com' http-equiv='refresh'/>  
+</b:if>  
+
+```
+
+**Important Note: -**  This is the only piece of code you need to copy paste and you are done. You need to edit the above code to make it work for you so replace the `https://www.twistblogg.com/p/sitemap.html` with the URL of your **New Blank Page** you created earlier. 
+
+Then replace the `https://www.twistblogg.com` with any Url of your wish where you want to make a redirect. It can be an affiliate link or any other link, internal or external.  
+  
+This way the visitors will not know the exact URL behind it until they visit it so this is the good trick to hide your main URL.
+
+  
+Now add your redirected URL to custom robots.txt file to Disallow the redirected link so that search engines will not index and rank this URL (For Safe SEO). Also while sharing/adding this URL in your post, add `rel='nofollow'` attribute to it. 
+
+The example about how to add the link to custom robots.text file. Go to **Blogger → Settings → Search Preferences → Custom Robots.txt**. Now click on **Edit** link then **Yes** and enter the following code. 
+
+> User-agent: *  
+> Disallow: /search  
+> Disallow: /p/sitemap.html  
+> Allow: /
+
+**PS:** This redirect will not work if you will use the old deleted URL of your blog or any URL which does not exist on your blog as redirecting URL. 
+
+If you want to make redirects from your old deleted posts to your homepage or to any other new posts then go to **Blogger → Settings → Search Preferences → Custom Redirects**. Now click on edit then follow the instructions as shown in the image.
+
+  
+
+<Image src="Custom Redirect.PNG" alt="Custom Redirect" />
+  
+
+As shown in the image, you only need to enter the links after https://www.yourdomain.com means if you had deleted a post with URL `https://www.yourdomain.com/2012/01/Deleted-Post.html` then you need to enter link **/2012/01/Deleted-Post.html** only not the full URL. I hope you got it but if anything creating any problem then do not hesitate to ask in the comments. We will serve you best. Thank You.

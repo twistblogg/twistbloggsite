@@ -1,0 +1,136 @@
+---
+title: 'An Introduction to SVG & Comparison of different Image Formats'
+date: 2019-11-19
+excerpt: SVG are a new trend in web designing. Originally developed in late 90s, SVG files gain popularity recently. In this tutorial, I will explain what a svg is, advantages and downsides of using svg files in blogger and which image format is best to use
+slug: an-intro-to-svg
+featured: false
+published: true
+image: svg files in blogger.jpg
+author: Invictus
+tags : [Page Speed]
+---
+
+SVG (Scalable Vector Graphics) is a vector graphic format that is used to define vector-based graphics for the Web in XML format. Though it was conceived back in late 1990s, SVG gained its popularity recently because of [modern browsers support](https://www.twistblogg.com/2019/09/best-premium-blogger-templates.html) and most vector drawing programs could export it.  
+  
+In this tutorial, I'm going to introduce **various advantages of using SVG image files, browser support for SVG files and point out some drawbacks**.  
+  
+Under the hood, SVG files are nothing more than simple plain text documents that describes lines, circles, shapes, colors, curves and texts. Every element and every attributes in SVG files can be animated, giving them a wider range of flexibility for web designing. Also, these files can be easily modified and customized via CSS and/or javascript, making them more versatile compared to traditional PNG and JPEG files. <a href="https://vecta.io/blog/comparing-svg-and-png-file-sizes" rel="nofollow noopener noreferrer" target="_blank">Here is a good comparison of SVG and PNG files</a>.  
+  
+
+  
+
+### What are the advantages of SVG in web designing?
+
+  
+
+*   **SVG Images are Scalable:**  
+
+    Traditional image formats like PNGs and JPEGs are raster based, meaning they have fixed dimensions & are pixelated on scaling whereas SVG images are based on points, numbers and co-ordinates, making them infinitely scalable and resolution-independent. Isn't that cool?
+
+
+<Image src="svg images are scalable.png" alt="svg images are scalable" />
+
+  
+Image source: <a href="https://pngimage.net/svg-vs-png-6/" rel="nofollow noopener noreferrer" target="_blank">pngimage.net</a>  
+  
+
+
+*   **SVG Images are Zoomable:**  
+
+    Since SVG files are infinitely scalable, they do not lose quailty even if they are zoomed or resized.
+
+
+<Image src="svg images - zoomable.png" alt="svg images - zoomable" />
+
+
+  
+
+*   **SVG Images support Animation.**  
+
+    SVG graphics can be animated by using [different animation elements](https://www.twistblogg.com/2019/10/attractive-custom-error-page-design-for-blogger.html) like `<animate>` , `<set>` , `<animateMotion>` , `<animateColor>` and many more easily.
+
+  
+Here is a sample SVG image with animation effect: 
+
+  
+**Animation 1(Infinite Color Changing):**  
+
+```html
+<animate dur="2s" values="#cc2b5e; #25b9d0; #cc2b5e" keyTimes="0; 0.5; 1" attributeName="fill" repeatCount="indefinite"/>  
+
+```  
+
+  
+**Animation 2 (Hover Me):** 
+
+```html
+<animate fill="freeze" dur="0.1s" to="#4e86b1" from="#cc2b5e" attributeName="fill" begin="mouseover"/>  
+<animate fill="freeze" dur="0.1s" to="#cc2b5e" from="#4e86b1" attributeName="fill" begin="mouseout"/>  
+
+```  
+
+  
+*   **Easy to Customize:**  
+    
+    SVG images can be easily edited and customized with normal text editor, making them more flexible compared to traditional image files. Also, they can be exported via any vector graphic designing tools.
+
+  
+
+*   **Web Performance:**  
+
+    SVG Images are comparatively smaller than their raster based files, hence providing a [better web performance](https://www.twistblogg.com/2019/11/lazy-load-images-in-blogger.html) and flexibility. Also, these images are based on XML, so no image calls need to be made (remember other image files like PNG, JPG were located in some locations like `1.blogspot.com` and a connection was made to display them).
+
+  
+  
+
+### Browser Support For SVG graphics  
+
+
+Here is a good news: Almost all modern browsers can render SVG files and support fundamental SVG features. You can check browser support at <a rel="nofollow noopener noreferrer" target="_blank" href="https://caniuse.com/#search=svg">caniuse.com</a>.
+
+
+<Image src="browser support for svg images.png" alt="browser support for svg images" />
+
+  
+
+### Downside Of SVG Graphics  
+
+
+*   SVG graphics might **not support as much details** compared to standard image formats as they are based on points and paths instead of pixels. Also, if an object consists of a large number of small elements, the file size increases very fast. Though the following graph from <a href="https://graphicdesign.stackexchange.com/questions/61624/svg-file-size-more-than-a-png-image" rel="nofollow noopener noreferrer" target="_blank">stackexchange</a> suggests the other.
+
+
+<Image src="Vector Vs Raster Size.png" alt="Vector Vs Raster Size" />
+  
+
+*   To create a complicated SVG files, it takes **a lot of effort** compared to legacy formats. Though it depends on individual: if you're enthusiast and want to learn new things, it is a must-go format.
+
+  
+
+*   **OpenGraph does not support SVG Images:** It is one of the reason, I had to go for base64 image format for Favicon instead of SVG file while trying to [overcome browser leverage caching issue](https://www.twistblogg.com/2019/11/overcome-leverage-browser-caching-blogger-favicon.html). Platforms like facebook and twitter do not support SVG Images.
+
+  
+**For instance**, if you include  
+
+```html
+<meta property="og:image" content="https://www.example.com/logo.svg" />
+```
+
+The Open Graph Object Debugger will say it is not an image.  
+  
+
+
+### SVG vs PNG vs GIF vs JPG  
+
+
+You might be in a situation when some suggest to go for SVG as they are scalable and resolute independent while other prefer standard image formats for their wide range. So, which image format to choose? A simple answer: All of them based on their usage. Here is a short comparison of different image format by <a href="https://www.pagecloud.com/blog/web-images-png-vs-jpg-vs-gif-vs-svg" target="_blank" rel="nofollow noopener noreferrer">PageCloud</a>.  
+
+
+<Image src="image formats comparison.jpg" alt="image formats comparison" />
+  
+
+<Div bg="postblock" p="3" pl="9" pr="9"> 
+If you are posting a family photo in Facebook , use JPG. If you're creating a short animated funny video, choose GIF. If you want a detailed image and need to preserve transparency, go for PNG. If you need shapes with less details than normal photographic images, use SVG.
+</Div>
+  
+
+**In TwistBlogg**, we use SVG images for logo, [icons](https://www.twistblogg.com/2019/11/optimize-font-awesome-icons-for-better-web-performance.html) (trying to implement for all icons), header background and footer background.  Default images for posts are either PNG or JPG (because OpenGraph does not support SVG files as images). We haven't added any animation images, so no GIF file currently present. Moreover, GIF images impact a lot in web performance.  That is a topic for another post. Happy Blogging !

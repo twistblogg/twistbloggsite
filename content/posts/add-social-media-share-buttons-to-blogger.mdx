@@ -1,0 +1,225 @@
+---
+title: 'Add Social Media Share Buttons to Blogger Posts'
+date: 2015-04-02
+excerpt: Getting shared on social networks can bring exposure to your contents. Add our simple social media share buttons to blogger posts and help readers share your contents with ease.
+slug: simple-social-share-buttons-blogger
+featured: false
+published: true
+image: social media icons for blogger.jpg
+author: Invictus
+tags : [Blog Widgets]
+---
+
+
+Beautiful and simple Social media share buttons help us to get our well-written content shared on different social media platforms easily. When a piece of content get shared more and more times on different social media platforms, it helps our content to get more links, free traffic and social signals which increase the value of our content in search engines and ultimately it ranks well too.  
+  
+Today I am going to share a horizontal social media share buttons bar I designed for blogger and currently using it below the post title. However, you can use it in the post footer too if you do not like it appearing below the post title.  
+  
+  
+I have added a little twist to the default social share buttons and used different colors in the background of each button which makes these buttons colorful, pretty and eye catchy compared to default boring design. :) So I hope you like the design and your visitors would love to click on them to get you more shares, likes, and tweets.  
+
+
+**Recommended:-**  Add Custom [Social Media Share Buttons to Blogger Posts Below Title or in Post Footer](https://www.twistblogg.com/2015/08/add-custom-social-media-share-buttons-to-blogger-posts.html) Fully responsive along with total shares count.  
+
+
+I have used four different social media share buttons which are as follow:  
+**-Twitter**  
+**-Facebook**  
+**-Google Plus**  
+**-Stumble Upon**  
+  
+**Note: New version available  - [Super Light Weight Social Sharing buttons](https://www.twistblogg.com/2020/05/social-sharing-buttons-blogger.html)**  
+
+
+I have used only four buttons because the space is limited, but you can add more if you like or remove the one you do not want and add yours. All you need to have is fair knowledge of HTML and CSS. You can grab the code of any social media share button from the respected social media platform's website.  
+  
+
+## Adding Social Media Share Buttons to Blogger - Below the Post Title
+
+
+**Step 1)** Go to **Blogger** → **Template** → **Edit HTML**  
+
+**Step 2)** Click inside the **Template code box**  → **Press Ctrl+A** and copy your template code to a notepad file and [have a Backup of it](http://twistblogg.blogspot.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html) in case you did something wrong, you can revert it back to original.  
+  
+**Step 3)** Ok, so now you have the backup so again click inside the template code box, Press Ctrl+F or Cmd+F (for mac) and find out this closing tag  `</head>`.
+  
+**Step 4)** Now just before it, paste the whole CSS code given below .  
+  
+```css
+<b:if cond='data:blog.pageType == &quot;item&quot;'>  
+<style type='text/css'>  
+/*----Social Share Buttons Bar Coded By TwistBlogg.com----*/  
+#twistBloggerSocialbar {  
+  float: left;  
+  width: 100%;  
+  padding-bottom: 7px;  
+  margin-top: 15px;  
+  padding: 5px 0px 5px 0px;  
+  border-bottom: 1px solid #F2F2F2;  
+  border-top: 1px solid #F2F2F2;  
+  margin-bottom: 15px;  
+  height: 28px;  
+  background: #FFF9F9;  
+  position: relative;  
+  z-index: 9999;  
+  overflow: hidden!Important;  
+}  
+.shareBox {  
+  float: left;  
+  padding: 0px;  
+  margin-right: 10px;  
+  height: 20px;  
+}  
+.titleBox {  
+  background: #5F5F5F;  
+  border: 1px solid #000000;  
+  height: 100%;  
+  text-transform: uppercase;  
+  padding: 3px 10px;  
+  margin-right: 5px;  
+  font-size: 15px;  
+  font-family: sans-serif;  
+  line-height: 1.4em;  
+  font-weight: bold;  
+  color: #EFF9FD;  
+  border-radius: 0px 2px 2px 0px;  
+}  
+.titleBox:before, .titleBox:after {  
+  left: 74px;  
+  top: 50%;  
+  border: solid transparent;  
+  content: &quot; &quot;;  
+  height: 0;  
+  width: 0;  
+  position: absolute;  
+  pointer-events: none;  
+}  
+.titleBox:before {  
+  border-color: rgba(245,0,0,0);  
+  border-left-color: #000000;  
+  border-width: 6px;  
+  margin-top: -5px;  
+}  
+.titleBox:after {  
+  border-color: rgba(245,0,0,0);  
+  border-left-color: #5F5F5F;  
+  border-width: 5px;  
+  margin-top: -4px;  
+}  
+.twitterBox {  
+  width: 77px;  
+  background: #00A8E8;  
+  height: 100%;  
+  padding: 4px 10px;  
+  border: 0;  
+}  
+.googlePlusBox {  
+  width: 57px;  
+  background: #E06352;  
+  height: 100%;  
+  padding: 4px 10px;  
+  border: 0;  
+}  
+.stumblupon {  
+  width: 75px;  
+  background: #5F5F5F;  
+  height: 100%;  
+  padding: 5px 10px 3px 10px;  
+  border: 0;  
+}  
+</style>  
+<script type='text/javascript'>  
+//Stumble Upon Script  
+(function (){var a=document.createElement("script");a.type="text/javascript";a.async=true;a.src="https://platform.stumbleupon.com/1/widgets.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a, b)})();  
+_// Twitter Script_  
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));  
+</script>  
+<script src='http://connect.facebook.net/en_US/all.js#xfbml=1'/>  
+</b:if>  
+
+```  
+Did you complete the above steps? Let's move on to next step which is adding HTML part of social media share buttons below the post title.  
+  
+**Step 5)** Now Search for this code line  `<div class='post-header-line-1'/>` and paste the HTML code just below it.  
+
+
+**Note:** You may find this code line appearing more than once (usually twice) so you have to paste the HTML code after its second appearance in your template code.  
+
+
+```html
+<b:if cond='data:blog.pageType == &quot;item&quot;'>  
+<div id='twistBloggerSocialbar'>  
+<div class='shareBox'><div class='titleBox'>SHARE</div></div>  
+  <div class='shareBox'> <div class='twitterBox'><a class='twitter-share-button' expr:data-text='data:post.title' data-via='TwistBlogg' expr:data-url='data:post.url' href='https://twitter.com/share'>Tweet</a></div></div>  
+<div class='shareBox'>  
+   <div class='fb-like' data-action='like' data-layout='button_count' data-share='false' data-show-faces='false' style='background: #4965B4; width:80px; height: 100%; padding: 4px 10px; border: 0;'/>  
+  </div>  
+<div class='shareBox'>  
+   <div class='googlePlusBox'><div class='g-plusone' data-size='medium' expr:data-href='data:post.url'/></div>  
+  </div>  
+ <div class='shareBox'>  
+   <div class='stumblupon'>  
+<su:badge expr:location='data:post.url' layout='1'/>  
+  </div>  
+  </div>  
+ </div>  
+</b:if>  
+```  
+
+**Important:** Change the text TwistBlogg with your Twitter **username**. It will be added to your tweets in the end and you'll be able to trace your tweets easily about who shared them.  
+  
+Ok so now we are done with it. **Save your template code and visit any 1 of your blog posts** to see the **cute social media share buttons** appearing just below the post title. :)  
+  
+So did it work for you? It should work if you haven't skipped any one of the steps I mentioned above. I am always free to help you BDW :) so you can ask me in the comment box if you need my help.  
+  
+
+### Making Social Media Share Buttons Responsive - Optional
+
+So you want to make these social media share buttons screen responsive? Well, it depends on your template code and your **@media screen queries** you have used in your template code (in case you're using a responsive template) so I can not make these buttons responsive according to my template code for you but I can give you an example so that you can work around to make them responsive according to your template.
+
+  
+
+I have made these buttons responsive for my blog and this code may not work for you perfectly the way you want, but It will give you a head start to make them work for you. Below is the responsive code I have made for my template where I disabled StumbleUpon Button, Share Title Text and Decreased the margin and padding of buttons accordingly.
+
+  
+```css
+@media only screen and (max-width: 979px) and (min-width: 768px) {  .shareBox {  
+    margin-right: 1px; }   /*---- Decreased the margin to 1px from 10px  ----*/  
+}  
+@media only screen and (max-width: 767px) and (min-width: 480px) { .titleBox {  
+display: none; /*---- Disabled The Share Text From Displaying ----*/  
+  }  
+  .shareBox {  
+    margin-right: 8px; /*---- Decreased the margin to 8px from 10px   ----*/  
+  }  
+}  
+@media only screen and (max-width: 479px) {  .titleBox {  
+    display: none;   /*---- Disabled The Share Text From Displaying ----*/  
+  }  
+  .shareBox {  
+    margin-right: 1px; /*---- Decreased the margin to 1px from 10px  ----*/  
+  }  
+  .stumblupon {  
+    display: none;   /*---- Disabled Stumble Upon Button ----*/  
+  }  
+  .twitterBox {  
+    padding: 4px 8px;  /*---- Decreased the padding  ----*/  
+  }  
+  .googlePlusBox {  
+    padding: 4px 5px; /*---- Decreased the padding  ----*/  
+  }  
+}  
+```  
+
+**Note:** You have to add the responsive CSS code with the CSS code given above.
+
+  
+
+Did you get it? Have some questions? Feel free to ask for help and I'll do my job. I hope you liked these **social media share buttons for blogger** and added successfully to your blogger blog.  
+
+  
+**Recommended:-** [Add Floating Social Media Share Buttons Bar to Blogger](https://www.twistblogg.com/2015/05/floating-social-share-bar-widget-for.html)
+
+  
+
+Did you like this post? Please do share and show me that you care. :) Stay blessed, peace upon all.

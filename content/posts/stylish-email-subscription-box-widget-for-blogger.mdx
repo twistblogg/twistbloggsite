@@ -1,0 +1,112 @@
+---
+title: 'Simple Horizontal Email Subscription Box Widget For Blogger'
+date: 2018-08-07
+excerpt: Want to get more subscribers? Add our simple horizontal email subscription box for blogger which appears below every post.
+slug: simple-email-box-for-blogger-pages
+featured: false
+published: true
+image: email subscription box below every blogger post.jpg
+author: Invictus
+tags : [Subscription Widgets, Blog Widgets]
+---
+
+We are sharing **stylish email subscription box widget below every post** which is more eye catchy, neat and clean plus more stylish. Basic idea of this widget is adapted from ShoutMeLoud, a popular blog by Harsh Agarwal. We hope that this widget will definitely increase the opt in rate and your visitors would love to enter their name and email address :) so let us begin with the step by step installation process of this email subscription widget into your blogger template.  
+  
+
+#### Live Demo 
+
+<Image src="Subscription Box below posts for blogger.png" alt="Subscription Box below posts for blogger" />
+
+  
+
+### Installation of Stylish Horizontal Subscription Box Widget For Blogger
+
+  
+**Step 1)** Go to **Blogger → Template → Edit Html →** then click inside the template code box. Now press ctrl+f or cmd+f then a search box inside template code box will appear. Find `]]></b:skin>` code line and just before it paste the CSS code given below.  
+  
+
+```css 
+ /*-----Horizontal Subscription Box by: TwistBlogg.Com-----*/  
+    #tbn-subscribe {  
+    width: 100%;  
+    height: 100px;  
+    padding:10px;  
+    border-radius:5px;  
+    margin:10px auto 0;  
+    background: #34A710 url('http://4.bp.blogspot.com/-2epnB4Ro7AY/Uw4ZJ6F6k5I/AAAAAAAAAdI/_zVzBhaeI-0/s1600/Enter+Email.png') no-repeat 98% center;  
+    box-shadow:0 0 30px #600 inset;  
+    }  
+    #tbn-subscribe .headline{ color: #FFF;  
+    font-size: 22px;  
+    font-family: cursive;  
+    font-weight: normal;  
+    margin: 5px 0 0 40px;  
+    text-shadow: 0px 1px 0px #FFFFFF, 0px 2px 0px #000000, 0px 3px 0px #000000;  
+    }  
+    #tbn-subscribe .arrow{  
+    background: url("http://1.bp.blogspot.com/-Frrg8w7IgCE/Uw4ZJZoorvI/AAAAAAAAAdE/R6V9GGo05vA/s1600/arrow-left.png") no-repeat;  
+    width:60px;  
+    height:60px;  
+    float:left;  
+    margin: 5px 0px 0 1px;  
+    }  
+    #tbn-subscribe form input.txt{  
+    background:#FFF;  
+    border: 1px solid #800;  
+    border-radius: 5px;  
+    box-shadow: 0 0 5px #600 inset;  
+    color: #333;  
+    float: left;  
+    margin: 25px 10px 0 0;  
+    padding: 5px 10px;  
+    width: 125px;  
+    }  
+    #tbn-subscribe form input.btn{  
+    background: #222;  
+    border: 0;  
+    cursor: pointer;  
+    border-radius: 10px;  
+    box-shadow: 0px 0px 30px #FF9696;  
+    color: #FFF;  
+    float: left;  
+    font-weight: bold;  
+    margin: 26px 0 0;  
+    padding: 5px 10px;  
+    width: 100px;  
+    }  
+    #tbn-subscribe form input.btn:hover{  
+    background:#111;  
+    }  
+    /*-----Horizontal Subscription Box by: TwistBlogg.Com Ends-----*/
+```
+
+The code can be customized easily like as Width 100% can be set in pixels e.g., "width:550px;" and "font-family:Arial;" etc.  
+  
+
+[Also Check : New Horizontal Email Subscription Box Widget For Blogger v.3](https://www.twistblogg.com/2014/04/horizontal-subscription-box-widget-for-blogger.html)  
+
+
+**Step 2)** After completing the step 1 above, now we need to insert the html in post footer so this time search for code line  `<div class="post-footer-line post-footer-line-1">` or `<div class='post-footer-line post-footer-line-1'>` (difference between 2 code lines above is of inverted commas which may not appear in search if code line is using single or double commas so search for second code line if you did not find the first code line) and just after that paste the HTML code given below after making the changes given in Step 3.  
+
+```html
+<b:if cond='data:blog.pageType == "item"'>  
+    <div id="tbn-subscribe">  
+        <p class="headline">Get Free Blogging updates in your Email</p><span class="arrow"></span>  
+        <form action='https://feedburner.google.com/fb/a/mailverify' method='post' onsubmit='window.open(&apos;https://feedburner.google.com/fb/a/mailverify?uri=TwistBlogg&apos;, &apos;popupwindow&apos;, &apos;scrollbars=yes,width=550,height=520&apos;);return true' target='popupwindow'>  
+            <input class='txt' name='name' onblur='if (this.value == &apos;&apos;) {this.value = &apos;Enter Your Name...&apos;;}' onfocus='if (this.value == &apos;Enter Your Name...&apos;) {this.value = &apos;&apos;;}' value='Enter Your Name...' />  
+            <input class='txt' name='email' onblur='if (this.value == &apos;&apos;) {this.value = &apos;Enter Your Email...&apos;;}' onfocus='if (this.value == &apos;Enter Your Email...&apos;) {this.value = &apos;&apos;;}' value='Enter Your Email...' />  
+            <input name='uri' type='hidden' value='TwistBlogg' />  
+            <input name='loc' type='hidden' value='en_US' />  
+            <input type="submit" class="btn" value="Subscribe" />  
+            <div class="clear"></div>  
+        </form>  
+        <div style="text-align: right;"> <span style="font-size: xx-small;"><a href="https://twistblogg.blogspot.com/2014/02/stylish-email-subscription-box-widget-for-blogger.html" target="_blank">get this widget</a></span></div>  
+    </div>  
+</b:if>  
+```
+
+**Step 3)** Before completing the step 2, just replace our feedburner address "TwistBlogg" with your blog's feedburner address. You can also change the main headline of subscription box "Get Free Blogging updates in your Email" as per your wish or remain as it is so this is optional.
+
+  
+
+Now you can visit your blog to see this widget live on your blog and we hope that you and your readers would love this widget. No widget will work magically until there is nothing worthy in your blog. The way you generate high quality content, provide superior information in your subject, you are going to rock and everything will work magically :) In the installation process, if anything goes wrong or codes are not working on your template, just leave us a comment and we will help you asap! HapPy BlogGing!!

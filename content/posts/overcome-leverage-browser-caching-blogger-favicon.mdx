@@ -1,0 +1,109 @@
+---
+title: 'Overcome Favicon Leverage Browser Caching in Blogger'
+date: 2019-11-16
+excerpt: Leverage Browser Caching is a commonly faced issue by many bloggers. Learn how to overcome and solve favicon caching problem in blogspot.
+slug: leverage-browser-caching-blogger
+featured: false
+published: true
+image: SOLVE FAVICON LEVERAGE CACHING PROBLEM IN BLOGGER - FAVICON.png
+author: Invictus
+tags : [Page Speed]
+---
+
+**A favicon** is a small image file that represents your website in an address tab or when users bookmark your page. For bloggers, the default address for favicon is : **webpageadress/favicon.ico** .  
+  
+You might have noticed favicon is a .ico format image file. Does that mean other image formats like png, jpeg, gif not supported for favicon? Most modern browsers support these formats, however browsers like internet explorer only supports .ico as favicon. Therefore, it is a [good practice to include all image formats](https://www.twistblogg.com/2014/02/top-5-must-do-seo-things-before-publishing-your-articles.html). 
+
+Do people still use IE? -- I'll leave that upto you.  
+  
+**At minimum, favicons need to be 16x16 pixels**. Though I strongly suggest to include 32x32 and 48x48 versions as well. That way, if users drag their bookmarks to desktop or bookmark from mobile, the favicon will stretch, giving it a clean look.  
+  
+Now, you have some information on favicon, let me go straight to the problem faced by bloggers with favicon. It was few days back, I was analyzing my blog in <a href="https://www.gtmetrix.com/" rel="nofollow noopener noreferrer">GTMetrix</a> and I saw leverage browser caching problem had some impact on my [blog Pagespeed](https://www.twistblogg.com/2019/11/lazy-load-images-in-blogger.html). When I clicked the tab, there was an issue: **Leverage Browser Caching For Favicon (1 Day)**.  
+  
+
+
+#### So, what is leveraging browser caching?
+
+
+To leverage browser caching means to inform browsers for how long to store images, css and js locally. A small caching time means the file is stored for short span of time locally. Also, small caching time ensures latest updates are visible quickly.  
+  
+In this tutorial, I'll help you to **overcome favicon leverage browser caching issue in blogger**. In case, you want to create a brand new favicon with different dimensions, stick with me, else you can skip this section.  
+
+  
+Recommended Read: [How to optimize font awesome icons to improve web performance?](https://www.twistblogg.com/2019/11/optimize-font-awesome-icons-for-better-web-performance.html)  
+
+
+
+#### How to create a beautiful favicon for my blog (different dimensions)?  
+
+
+First, I'll teach you on how to create beautiful favicons for your blogger blog. All steps are straight forward.  
+
+*   Go to <a href="https://favicon.io/" rel="nofollow noopener noreferrer">Favicon.io</a>.
+*   You'll see options like Generate from Text, Generate from Image, Generate from Emoji and others. I'll be selecting Generate from Text option.
+*   Type the text and you can see it on Preview as well. 
+*   Once done, Download the file and extract it in your system.
+
+
+<Image src="create favicons for blogger free.png" alt="create favicons for blogger free" />
+
+
+## How to solve favicon leverage browser caching issue in blogger?
+
+
+The solution is simple. We will convert favicon to Base64 format. Why base64? Because favicons are tiny image files and encoding with base64 formats  can reduce HTTP Request. There are downsides too: <a rel="nofollow noopener noreferrer" href="https://stackoverflow.com/questions/11736159/advantages-and-disadvantages-of-using-base64-encoded-images">Learn more here about base64 format</a>.  
+
+
+In this process, we will upload a .png format for supported browsers and .ico for unsupported ones. Be sure you have both formats with you.  
+  
+
+1.  Go to <a href="https://www.base64-image.de/" rel="nofollow noopener noreferrer" target="_blank">base64-image.de</a>.
+2.  Either **drag or drop** your _.png favicon_ or press "**Or Click Here**".
+3.  Once conversion is made, you can see a successful green color. Click on **Show code** and leave the browser tab open for sometime.
+
+
+<Image src="converting png favicon to base64.png" alt="converting png favicon to base64" />
+
+  
+4.  Now, go to Blogger.com > Theme > Edit HTML and Search for favicon.ico. If you found matching query, delete that otherwise skip this step. Don't forget to [backup your whole blog](https://www.twistblogg.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html) before proceeding.
+5.  Search for `<head>` and paste the following code below it.
+  
+```html
+<link href='replace_with_your_base64_address' rel='icon' type='image/x-icon'/>
+```
+
+  
+_Don't forget to change the address with your base64 code (step 3)._  
+
+   
+**Also Read:** [21 Tested Ways To Speed Blog Loading time](https://www.twistblogg.com/2020/01/speed-up-page-loading-time.html)  
+  
+
+
+### How to add favicon bookmark icon for apple users and mobile users?  
+
+
+_This is an optional step_. In the file you downloaded, while creating favicon for your website, there are different formats available in different dimensions. We will firstly upload them and call them later.  
+
+
+<Image src="favicon icons for website.png" alt="favicon icons for website" />
+
+
+To upload these files, go to **blogger.com** > **Post** > **New post** > upload all those images manually by hitting the image icon in blogger editor. Right click and **open all images in new tab**.  We will need the address later. Hit the "**Save**" button and press "**Close**". _Do not publish that post_.  
+
+
+<Image src="how to insert favicon icons in blogger.png" alt="how to insert favicon icons in blogger" />
+
+  
+Paste the following code below  `<head>`. Change the **image address** with respective addresses opened in new tabs earlier, and you're good to hit the Save button.  
+
+
+```html
+<link href='image_address_180*180' rel='apple-touch-icon' sizes='180x180'/>  
+<link href='image_address_192*192' rel='icon' sizes='192x192' type='image/png'/>  
+<link href='image_address_ico_format' rel='shortcut icon'/>  
+<link href='image_address_ico_format' rel='icon'/>  
+<link href='image_address_ico_format' rel='Shortcut Icon' type='image/x-icon'/>
+```  
+
+ It might take some time for google to fetch new favicon. Now, analyze your site in GTMetrix and notice leverage browser caching for favicon is gone.  Happy Blogging :)

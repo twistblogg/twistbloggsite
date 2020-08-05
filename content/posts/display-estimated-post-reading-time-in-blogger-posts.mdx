@@ -1,0 +1,111 @@
+---
+title: 'How to Display Estimated Post Reading Time in Blogger Posts?'
+date: 2019-09-22
+excerpt: Displaying how much time it takes to read a post can motivate users in going through content. Using this simple jquery plugin, you can show estimated post reading time in blogger posts.
+slug: estimated-reading-time-blogger
+featured: false
+published: true
+image: display estimated post reading time in blogger post.jpg
+author: Invictus
+tags : [Blog Customize]
+---
+
+You might know about Medium.com? Have you noticed one of its cool feature? - **Estimated Post Reading Time!** 
+
+An estimated reading time encourages users to read a blog post instead of carrying away. This time shows user engagement -- how long will it take to finish reading, builds loyalty, and [reduces your bounce rate](https://www.twistblogg.com/2015/10/killer-seo-guides-for-newbie-blogger.html).   
+
+In this article, we will show you how to **easily add and display estimated post reading time in your blogger posts**.  
+  
+
+
+  
+
+### Should you add estimated post reading time to blogger?
+
+This is a first question that hits the mind when we think of adding post reading time to blogger posts. A simple answer is - Yes. When we [start a new blog](https://www.twistblogg.com/2014/04/what-is-difference-between-blog-and-website.html), our target is to [increase audiences](https://www.twistblogg.com/2014/03/seo-top-5-link-building-methods.html) who read our posts. However, it is also important to gain trust and increase user interactions in our blog. For that estimated Reading time for blogger posts can play an important role. In a nutshell, reading time feature helps  
+
+*   To gain trust.
+*   To reduce bounce rate.
+*   To increase users engagement.
+
+  
+
+## How to Add Estimated Post Reading Time To Blogger?
+
+
+The concept of estimated post reading time is very simple. Let’s assume that an average person reads 200 words per minute. So, the reading time of a 1400-words article will be the number of words divided by 200 (1400/200), which is 7 minutes. Of course, you don’t have to manually calculate the read time of all your articles. There is a [simple jquery plugin](https://www.twistblogg.com/2015/04/email-subscription-popup-blogger-plugin.html) that will do this job efficiently.  
+  
+
+#### Step 1: Add JQuery file to Blogger
+
+Most of you might have this file installed in your [blogger template](https://www.twistblogg.com/2019/09/best-premium-blogger-templates.html). If not, go to **Theme** > **Edit HTML** > Search for `</head>` and add this following piece of code just above it. Do not forget to [backup your template](https://www.twistblogg.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html).  
+  
+```js title=Jquery
+<script type='text/javascript'>//<![CDATA[  
+    if (typeof(jQuery) == 'undefined') {  
+ //output the script (load it from google api)  
+ document.write("<scr" + "ipt type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js\"></scr" + "ipt>");}  
+       //]]>  
+       </script> 
+```
+
+_Note: This is a jquery plugin. It is a must to have this file._  
+  
+
+#### Step 2: Adding JQuery Plugin to Blogger
+
+Once you're done adding file, next step is very simple. We will add a script that displays estimated post reading time. Search for `</body>` and paste the following code above it.  
+  
+```js title=main.js
+<script type='text/javascript'>  
+/*!  
+Name: Reading Time  
+Dependencies: jQuery  
+Author: Michael Lynch  
+Author URL: http://michaelynch.com  
+Date Created: August 14, 2013  
+Date Updated: June 10, 2014  
+Licensed under the MIT license  
+*/  
+//<![CDATA[  
+;(function(a){a.fn.readingTime=function(r){if(!this.length){return this}var h={readingTimeTarget:".eta",wordCountTarget:null,wordsPerMinute:270,round:true,lang:"en",lessThanAMinuteString:"",prependTimeString:"",prependWordString:"",remotePath:null,remoteTarget:null};var i=this;var c=a(this);i.settings=a.extend({},h,r);var e=i.settings.readingTimeTarget;var d=i.settings.wordCountTarget;var k=i.settings.wordsPerMinute;var p=i.settings.round;var b=i.settings.lang;var l=i.settings.lessThanAMinuteString;var o=i.settings.prependTimeString;var f=i.settings.prependWordString;var g=i.settings.remotePath;var n=i.settings.remoteTarget;if(b=="it"){var m=l||"Meno di un minuto";var q="mins"}else{if(b=="fr"){var m=l||"Moins d'une minute";var q="mins"}else{if(b=="de"){var m=l||"Weniger als eine Minute";var q="mins"}else{if(b=="es"){var m=l||"Menos de un minuto";var q="mins"}else{if(b=="nl"){var m=l||"Minder dan een minuut";var q="mins"}else{var m=l||"< 1 Min";var q="mins"}}}}}var j=function(y){var v=y.trim().split(/\s+/g).length;var u=k/60;var s=v/u;if(p===true){var x=Math.round(s/60)}else{var x=Math.floor(s/60)}var w=Math.round(s-x*60);if(p===true){if(x>0){a(e).text(o+x+" "+q)}else{a(e).text(o+m)}}else{var t=x+":"+w;a(e).text(o+t)}if(d!==""&&d!==undefined){a(d).text(f+v)}};c.each(function(){if(g!=null&&n!=null){a.get(g,function(s){j(a("<div>").html(s).find(n).text())})}else{j(c.text())}})}})(jQuery);  
+//]]>  
+</script>  
+<script type='text/javascript'>  
+$(function() {  
+$(&#39;.post-body&#39;).readingTime();  
+});  
+</script>
+```
+
+_Source code taken from <a href="https://github.com/michael-lynch/reading-time" rel="nofollow noopener noreferrer" target="_blank">Github</a>._   
+  
+
+
+#### Step 3: Finding proper position to call the function that displays post reading time
+
+Now we need to locate where to show the reading time. In most cases, adding reading time feature just below the post title fits perfectly. Again, the location depends on your [template](https://www.twistblogg.com/2016/01/premium-seo-optimized-blogger-template.html). In my case, I added it just below `<div class='post-header-line-1'>`.
+
+```html
+<span id="etawrap" class='eta'/> 
+```  
+
+
+#### Step 4:  Customizing the reading time display
+
+
+The function call displays a plain text with reading time. You can customize it to [increase users' attention](https://www.twistblogg.com/2014/01/how-to-get-google-to-index-new-blog-site-articles-quickly.html). Search for `]]></b:skin>`and paste following css code just above it.
+
+```css
+#etawrap{font-weight:bold;color:#FF0000;}
+```  
+
+Done! That was just copy and paste, right? And I hope you can **display estimated post reading time in your blogger posts** now. Before saying good bye, I have a quick question : Do you think it will increase users engagement and help in reducing bounce rate? Please let me know your thoughts in the comment section. Happy Blogging !  
+  
+
+Here are a few hand-picked tutorials for you to read next:  
+
+*   [How to Show Last Updated date in blogger post?](https://www.twistblogg.com/2019/09/show-published-and-last-updated-date-in-blogger-post.html)
+*   [Fix Blogger Contact Form ( Send Button )  Not Working ](https://www.twistblogg.com/2019/08/fix-blogger-contact-form-not-working.html)
+*   [Make Embedded Videos Responsive in Blogger - Add Elegant Frames](https://www.twistblogg.com/2015/08/how-to-make-embedded-videos-responsive-and-display-inside-frame.html)
+*   [How to prevent auto pagination happening on Blogger?](https://www.twistblogg.com/2015/04/know-how-to-prevent-auto-pagination.html)

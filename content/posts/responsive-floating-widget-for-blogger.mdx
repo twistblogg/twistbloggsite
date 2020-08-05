@@ -1,0 +1,571 @@
+---
+title: 'Responsive Floating Social Share Widget For Blogger | Light-Weight Plugin'
+date: 2019-10-31
+excerpt: To boost traffic and promote content, floating social share buttons plays important role. In this tutorial, I am going to share light-weight floating social share widget for blogger that does not require API calls and is responsive.
+slug: responsive-floating-share-widget-blogger
+featured: false
+published: true
+image: responsive floating social media buttons for blogger.jpg
+author: Invictus
+tags : [Blog Widgets]
+---
+
+One of the best way to increase traffic is to promote contents on social medias and what can be better than adding a responsive floating social share widget that floats on the same position when scrolled, does not require API calls, is light-weight and perfectly customized to meet the [template design](https://www.twistblogg.com/2019/09/best-premium-blogger-templates.html).  
+  
+Floating social share plugin makes the task easier for readers to share your contents on different social platforms.  
+  
+In this tutorial, we are going to share **light-weight floating social buttons for blogger** that stays at the bottom of screen on mobile devices.  
+  
+It is easy to install floating social share plugins in [Wordpress](https://www.twistblogg.com/2018/09/know-if-website-is-using-wordpress.html), however same task takes little more effort in blogger platform. Panic? Relax, remember divide and conquer. Let's check out some features of this share widget for blogger.  
+  
+
+### Features Of Responsive Floating Share Buttons
+
+*   Clean and Elegant Design.
+*   Super light-weight JQuery plugin.
+*   Responsive Design -- plugin moves to the bottom of screen on mobile. 
+*   Floats on the same position when scrolled. 
+*   No external API calls.
+*   _No tracking and bloats._
+*   Supports 9 social channels.
+*   Super easy to install in blogger.
+*   Beautiful animation on hover.
+*   Appears on scroll & Disappears on reaching the end of post.
+*   Two versions available - Circle and Square.
+
+  
+
+#### Supported social media services 
+
+This floating share widget supports 9 different social networks. Choice is yours !  
+
+1.  Facebook
+2.  Twitter
+3.  Linkedin
+4.  Reddit
+5.  Tumblr
+6.  Mix (Stumbleupon)
+7.  Email
+8.  Pinterest
+9.  Whatsapp
+
+  
+_2 Versions available: Circle And Square (Check out the demo for details)_  
+
+  
+##### Live Demo of Responsive Floating Social Share Widget for blogger  
+
+
+<Image src="floating social widget for blogger - responsive.jpg" alt="demo of floating social widget for blogger" />
+
+  
+**Responsive Design Demo for floating bar** 
+
+  
+**Square Edition:**  
+
+
+<Image src="responsive floating social share widget for blogger .png" alt="Square Edition of responsive floating social share widget for blogger" />
+
+
+**Circle Edition:**  
+
+
+<Image src="light weight and responsive floating social bar for blogger .png" alt="Circle Edition of light weight and responsive floating social bar for blogger" />
+
+  
+
+<ins>_Other versions available:_</ins>  
+
+*   [Premium Floating Social Share Widget with counter for blogger](https://www.twistblogg.com/2015/05/floating-social-share-bar-widget-for.html)
+*   [Install Clean Floating Share Buttons in blogger with counter](https://www.twistblogg.com/2015/04/floating-social-media-share-buttons-bar-blogger-total-share-count.html)
+
+  
+
+#### Why you should add floating social share widget in blogger?  
+
+
+Below I've mentioned some points on why you should add social share widget in your blogger blog. _You can skip this section_.  
+
+
+**To give a glance of Professionalism**
+
+I remember searching for anatomy of professional websites while designing TwistBlogg, and social media buttons were one of them.  Social media buttons give a glance of professionalism in a website.  
+  
+  
+**Better chance to boost traffic** 
+
+When a link is shared on social medias like facebook,mix,twitter,linkedin,reddit and others, it is getting exposed to people, creating a chance to attract more traffics to your contents.  
+
+
+**SEO**  
+
+A link which is shared multiple times on social platforms has a better chance of ranking higher considerably than other links (ignoring other factors). You can check this video on how to use social media for ranking.
+
+
+<Block src="smallbutton" href="https://www.youtube.com/watch?v=nMx1TRTyKIM" variant="accent lg" icon="youtube" text="Watch On YouTube"/>
+
+
+
+#### Install Dependencies : JQuery & Font Awesome  
+
+
+Go to **Blogger.com** > **Theme** > **Edit HTML** and search for `</head>` and paste the following code above it.  
+
+
+<a href="https://jquery.com/" rel="nofollow noopener noreferrer" target="_blank">JQuery</a>
+
+```js
+<script type='text/javascript'>//<![CDATA[  
+ if (typeof(jQuery) == 'undefined') {  
+ document.write("<scr" + "ipt type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js\"></scr" + "ipt>");}       //]]>  
+       </script>
+```
+
+<a href="https://github.com/FortAwesome/Font-Awesome" rel="nofollow noopener noreferrer" target="_blank">FontAwesome</a>
+
+```js
+<!--Load CSS By TwistBlogg.Com-->  
+<script type='text/javascript'>  
+//<![CDATA[  
+function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet"; i.href = e; i.media = "only x"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }  
+loadCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css");  
+//]]>  
+</script>  
+<noscript>  
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css' rel='stylesheet'/>  
+</noscript>  
+<!--Load CSS Ends-->
+```  
+
+## How to install responsive floating social share widget in blogger?
+
+
+I've divided the task of adding responsive floating social widget into 4 steps -- adding CSS code, adding a container for the social bar, adding Jquery and  initializing the library.   
+  
+First of all, [backup your whole blog](https://www.twistblogg.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html) & go to **Blogger** > **Theme** > **Edit HTML**.  
+  
+
+### Step 1: Adding CSS Code To Blogger  
+
+
+Search for `]]></b:skin>` and paste the following code just above it.  
+  
+```css
+/*Share Buttons For Blogger By www.TwistBlogg.com*/  
+/** Keep this Credit In-tact **/  
+#share-bar {  
+  display: block;  
+  position: fixed;  
+  top: 50%;  
+  transform: translateY(-50%);  
+  z-index: 9999;  
+}  
+  
+.sharing-providers {  
+  list-style-type: none;  
+}  
+.sharing-providers {  
+  padding: 0;  
+  margin: 0;  
+}  
+.sharing-providers > li {  
+  display: block;  
+  text-align: center;  
+  width: 45px;  
+  height: 45px;  
+  padding: 0;  
+  margin: 0;  
+  background: #777777;  
+  transition: 0.5s all;  
+}  
+.sharing-providers.circle > li {  
+  border-radius:50%;  
+  margin: 2px;  
+}  
+#share-bar.left {  
+ left: 0;  
+}  
+#share-bar.left .sharing-providers > li {  
+ margin-left: 0;  
+}  
+#share-bar.right {  
+ right: 0;  
+}  
+#share-bar.right .sharing-providers > li {  
+ margin-right: 0;  
+}  
+  
+.sharing-providers > li > a {  
+  text-decoration: none !important;  
+  font-family: 'FontAwesome';  
+  width: 45px;  
+  height: 45px;  
+  line-height: 45px;  
+  display: block;  
+}  
+.sharing-providers.circle > li > a {  
+  border-radius: 50%;  
+}  
+.sharing-providers > li > a {  
+  color: white;  
+  font-size: 25px;  
+}  
+.sharing-providers > li > a {  
+  color: white;  
+  font-size: 25px;  
+  text-decoration: none;  
+}  
+.sharing-providers > li > a:hover {  
+  text-decoration: none;  
+  background: #777777;  
+}  
+  
+#share-bar.animate .sharing-providers > li:hover {  
+  transform: translateX(5px);  
+}  
+  
+#share-bar.right.animate .sharing-providers > li:hover {  
+  transform: translateX(-5px);  
+}  
+  
+.sharing-providers > li.facebook {  
+  background: #4267B2;    
+}  
+  
+.sharing-providers > li.twitter {  
+  background: #1DA1F2;  
+}  
+  
+.sharing-providers > li.linkedin {  
+  background: #0077B5;  
+}  
+  
+.sharing-providers > li.tumblr {  
+  background: #2c4762;  
+}  
+  
+.sharing-providers > li.reddit {  
+  background: #5f99cf;  
+}  
+  
+.sharing-providers > li.pinterest {  
+  background: #cb2027;  
+}  
+  
+.sharing-providers > li.stumbleupon {  
+  background: #EB4924;  
+}  
+  
+.sharing-providers > li.email {  
+  background: #E3A129;  
+}  
+  
+.sharing-providers >li.whatsapp{  
+background:#43d854  
+}  
+  
+@media (max-width: 1348px) {  
+  #share-bar {  
+    bottom: 0;  
+    top: auto;  
+    transform: translate(-50%, 0);  
+    left: 50% !important;  
+    right: auto;  
+    background: white;  
+    width: 100%;  
+    text-align: center;  
+    padding: 8px;  
+  }  
+  #share-bar .sharing-providers > li {  
+    display: inline-block;  
+  }  
+  #share-bar.animate .sharing-providers > li:hover {  
+    transform: translateX(0px) !important;  
+    transform: translateY(-5px) !important;  
+  }  
+}
+```  
+
+### Step 2: Adding a container for the floating bar  
+
+
+Search for `<data:post.body/>` (Look for second occurrence) or `<div class='post-footer'>` and paste the following code below it.  
+
+```html
+<div id='share-bar'/>
+```  
+
+### Step 3: Adding JQuery Function in Blogger  
+
+
+Search for `</body>` and paste the following code above it.
+
+  
+**V1: Circle Version: Add below code--** 
+
+```js
+<script type='text/javascript'>
+// <![CDATA[
+// Share Plugin By www.TwistBlogg.com
+// jquery-social-share-bar
+// Copyright: Jesse Nieminen, Viima Solutions Oy
+// License: MIT
+// Modified from https://github.com/Viima/jquery-social-share-bar
+// Developed from https://github.com/ewebdev/jquery-share
+// Show hide floating social buttons by mybloggertricks.com
+$(window).load(function() {
+var stickElement = $('#share-bar'),hideTrigger = $('.rrssb-buttons'),top = stickElement.offset().top; // highlight-line
+$(window).scroll(function () { // highlight-line
+  var y = $(this).scrollTop(); // highlight-line
+  var maxY = hideTrigger.offset().top; // highlight-line
+  if (y < maxY) {$('#share-bar').fadeIn(500);} // highlight-line
+  else {$('#share-bar').fadeOut();} // highlight-line
+   });}); 
+  (function ($, window, undefined) {
+  "use strict";
+  $.fn.share = function (method) {
+    var helpers = {
+      channels: {
+        facebook: {url: 'https://www.facebook.com/share.php?u=|u|'},
+        twitter: {url: 'https://twitter.com/share?url=|u|&text=|140|'},
+        linkedin: {url: 'https://www.linkedin.com/shareArticle?mini=true&url=|u|&title=|t|&summary=|d|'},
+        tumblr: {url: 'https://www.tumblr.com/share?v=3&u=|u|'},
+        whatsapp:{url:'https://api.whatsapp.com/send?text=|t|&url=|u|'},
+        reddit: {url: 'https://reddit.com/submit?url=|u|'},
+        pinterest: {url: 'https://pinterest.com/pin/create/button/?url=|u|&media=&description=|d|'},
+        stumbleupon: {url: 'https://www.stumbleupon.com/submit?url=|u|&title=|t|'},
+        email: {url: 'mailto:?subject=|t|&body=You might want to check this out: |u|'}
+      }
+    };
+    var methods = {
+      init: function (options) {
+        this.share.settings = $.extend({}, this.share.defaults, options);
+        var settings = this.share.settings,
+          pageTitle = settings.title || document.title || '',
+          pageUrl = settings.pageUrl || window.location.href,
+          pageDesc = settings.pageDesc || $('head > meta[name="description"]').attr("content") || '',
+          position = settings.position || 'left',
+          theme = settings.theme || 'circle',
+          animate = settings.animate === false ? false : true,
+          u = encodeURIComponent(pageUrl),
+          t = encodeURIComponent(pageTitle);
+        // Each instance of this plugin
+        return this.each(function () {
+          var $element = $(settings.containerTemplate(settings)).appendTo($(this)),
+            id = $element.attr("id"),
+            d = pageDesc.substring(0, 250),
+            href;
+          // Add class for positioning and animation of the widget
+          $(this).addClass(position);
+          if (animate) {
+            $(this).addClass('animate');
+          }
+          // Add class for theming the widget
+          $element.addClass(theme);
+          // Append HTML for each network button
+          for (var item in settings.channels) {
+            item = settings.channels[item];
+            href = helpers.channels[item].url;
+            href = href.replace('|u|', u).replace('|t|', t).replace('|d|', d)
+              .replace('|140|', t.substring(0, 130));
+            $(settings.itemTemplate({provider: item, href: href, itemTriggerClass: settings.itemTriggerClass})).appendTo($element);
+          }
+          // Bind click
+          $element.on('click', '.' + settings.itemTriggerClass, function (e) {
+            e.preventDefault();
+            var top = (screen.height / 2) - (settings.popupHeight / 2),
+              left = (screen.width / 2) - (settings.popupWidth / 2);
+            window.open($(this).data('href') || $(this).attr('href'), 't', 'toolbar=0,resizable=1,status=0,copyhistory=no,width=' + settings.popupWidth + ',height=' + settings.popupHeight + ',top=' + top + ',left=' + left);
+          });
+        });// End plugin instance
+      }
+    };
+    if (methods[method]) {
+      return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+    } else if (typeof method === 'object' || !method) {
+      return methods.init.apply(this, arguments);
+    } else {
+      $.error('Method "' + method + '" does not exist in social plugin');
+    }
+  };
+  $.fn.share.defaults = {
+    popupWidth: 640,
+    popupHeight: 528,
+    channels: ['facebook', 'twitter', 'linkedin','pinterest' , 'email','reddit','whatsapp','stumbleupon','tumblr'],
+    itemTriggerClass: 'js-share',
+    containerTemplate: function (props) {
+      return '<ul class="sharing-providers"></ul>';
+    },
+    itemTemplate: function (props) {
+      var iconClasses = {
+        'facebook': 'fab fa-facebook-f',
+        'twitter': 'fab fa-twitter',
+        'linkedin': 'fab fa-linkedin-in',
+        'pinterest': 'fab fa-pinterest-p',
+        'tumblr': 'fab fa-tumblr',
+        'stumbleupon': 'fab fa-stumbleupon',
+        'reddit': 'fab fa-reddit-alien',
+        'email': 'fas fa-envelope',
+        'whatsapp':'fab fa-whatsapp'
+      }
+      var providerName = props.provider === 'email' ? 'email' :props.provider.charAt(0).toUpperCase() + props.provider.slice(1);
+      return '<li class="' + props.provider + '">' +
+        '<a href="#" data-href="' + props.href + '" title="Share this page ' + (props.provider === 'email' ? 'via ' : 'on ') + providerName + '" class=' + props.itemTriggerClass + ' ' + props.provider + '">' +
+        '<i class="' + iconClasses[props.provider] + '"></i>' +
+        '</a>' +
+        '</li>';
+    }
+  };
+  $.fn.share.settings = {};
+})(jQuery, window);
+//]]>
+</script>
+```  
+
+**V2: Square Version: add below code--** 
+
+```js
+<script type='text/javascript'>
+// <![CDATA[
+// Share Plugin By www.TwistBlogg.com
+// jquery-social-share-bar
+// Copyright: Jesse Nieminen, Viima Solutions Oy
+// License: MIT
+// Modified from https://github.com/Viima/jquery-social-share-bar
+// Developed from https://github.com/ewebdev/jquery-share
+// Show hide floating social buttons by mybloggertricks.com
+$(window).load(function() {
+var stickElement = $('#share-bar'),hideTrigger = $('.rrssb-buttons'),top = stickElement.offset().top; // highlight-line
+$(window).scroll(function () { // highlight-line
+  var y = $(this).scrollTop(); // highlight-line
+  var maxY = hideTrigger.offset().top; // highlight-line
+  if (y < maxY) {$('#share-bar').fadeIn(500);} // highlight-line
+  else {$('#share-bar').fadeOut();} // highlight-line
+  });});  
+(function ($, window, undefined) {
+  "use strict";
+  $.fn.share = function (method) {
+    var helpers = {
+      channels: {
+        facebook: {url: 'https://www.facebook.com/share.php?u=|u|'},
+        twitter: {url: 'https://twitter.com/share?url=|u|&text=|140|'},
+        linkedin: {url: 'https://www.linkedin.com/shareArticle?mini=true&url=|u|&title=|t|&summary=|d|'},
+        tumblr: {url: 'https://www.tumblr.com/share?v=3&u=|u|'},
+        whatsapp:{url:'https://api.whatsapp.com/send?text=|t|&url=|u|'},
+        reddit: {url: 'https://reddit.com/submit?url=|u|'},
+        pinterest: {url: 'https://pinterest.com/pin/create/button/?url=|u|&media=&description=|d|'},
+        stumbleupon: {url: 'https://www.stumbleupon.com/submit?url=|u|&title=|t|'},
+        email: {url: 'mailto:?subject=|t|&body=You might want to check this out: |u|'}
+      }
+    };
+    var methods = {
+      init: function (options) {
+        this.share.settings = $.extend({}, this.share.defaults, options);
+        var settings = this.share.settings,
+          pageTitle = settings.title || document.title || '',
+          pageUrl = settings.pageUrl || window.location.href,
+          pageDesc = settings.pageDesc || $('head > meta[name="description"]').attr("content") || '',
+          position = settings.position || 'left',
+          theme = settings.theme || 'square',
+          animate = settings.animate === false ? false : true,
+          u = encodeURIComponent(pageUrl),
+          t = encodeURIComponent(pageTitle);
+        // Each instance of this plugin
+        return this.each(function () {
+          var $element = $(settings.containerTemplate(settings)).appendTo($(this)),
+            id = $element.attr("id"),
+            d = pageDesc.substring(0, 250),
+            href;
+          // Add class for positioning and animation of the widget
+          $(this).addClass(position);
+          if (animate) {
+            $(this).addClass('animate');
+          }
+          // Add class for theming the widget
+          $element.addClass(theme);
+          // Append HTML for each network button
+          for (var item in settings.channels) {
+            item = settings.channels[item];
+            href = helpers.channels[item].url;
+            href = href.replace('|u|', u).replace('|t|', t).replace('|d|', d)
+              .replace('|140|', t.substring(0, 130));
+            $(settings.itemTemplate({provider: item, href: href, itemTriggerClass: settings.itemTriggerClass})).appendTo($element);
+          }
+          // Bind click
+          $element.on('click', '.' + settings.itemTriggerClass, function (e) {
+            e.preventDefault();
+            var top = (screen.height / 2) - (settings.popupHeight / 2),
+              left = (screen.width / 2) - (settings.popupWidth / 2);
+            window.open($(this).data('href') || $(this).attr('href'), 't', 'toolbar=0,resizable=1,status=0,copyhistory=no,width=' + settings.popupWidth + ',height=' + settings.popupHeight + ',top=' + top + ',left=' + left);
+          });
+        });// End plugin instance
+      }
+    };
+    if (methods[method]) {
+      return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+    } else if (typeof method === 'object' || !method) {
+      return methods.init.apply(this, arguments);
+    } else {
+      $.error('Method "' + method + '" does not exist in social plugin');
+    }
+  };
+  $.fn.share.defaults = {
+    popupWidth: 640,
+    popupHeight: 528,
+    channels: ['facebook', 'twitter', 'linkedin','pinterest' , 'email','reddit','whatsapp','stumbleupon','tumblr'],
+    itemTriggerClass: 'js-share',
+    containerTemplate: function (props) {
+      return '<ul class="sharing-providers"></ul>';
+    },
+    itemTemplate: function (props) {
+      var iconClasses = {
+        'facebook': 'fab fa-facebook-f',
+        'twitter': 'fab fa-twitter',
+        'linkedin': 'fab fa-linkedin-in',
+        'pinterest': 'fab fa-pinterest-p',
+        'tumblr': 'fab fa-tumblr',
+        'stumbleupon': 'fab fa-stumbleupon',
+        'reddit': 'fab fa-reddit-alien',
+        'email': 'fas fa-envelope',
+        'whatsapp':'fab fa-whatsapp'
+      }
+      var providerName = props.provider === 'email' ? 'email' :props.provider.charAt(0).toUpperCase() + props.provider.slice(1);
+      return '<li class="' + props.provider + '">' +
+        '<a href="#" data-href="' + props.href + '" title="Share this page ' + (props.provider === 'email' ? 'via ' : 'on ') + providerName + '" class=' + props.itemTriggerClass + ' ' + props.provider + '">' +
+        '<i class="' + iconClasses[props.provider] + '"></i>' +
+        '</a>' +
+        '</li>';
+    }
+  };
+  $.fn.share.settings = {};
+})(jQuery, window);
+//]]>
+</script>
+```
+
+The red highlighted code is for making the floating widget appear on scroll and disappear on end of post.  Replace `.rrssb-buttons` with widget container after which you want to hide the floating bar.  
+  
+If you want to hide any social platforms from this widget, remove them from
+
+`channels: ['facebook', 'twitter', 'linkedin','pinterest' , 'email','reddit','whatsapp','stumbleupon','tumblr']`
+  
+Eg: `channels['facebook','twitter','pinterest']` will show only facebook,twitter and pinterest icons.  
+  
+
+### Step 4: Initialize Jquery library  
+
+
+Search for `</body>` and paste the following code just above it.  
+
+```js
+<script type='text/javascript'>$(function() {  
+$('#share-bar').share();  
+});</script>
+```  
+
+_**Note:** In case the floating widget is not positioned properly, change `top:50%` and/or `#share-bar.left {left: 0;}`_  
+
+
+That's all. You have successfully installed **responsive floating social share widget in blogger**. It is super light weight and does not contain any API calls or tracking service, hence will not impact web performance. I've taken the <a href="https://github.com/Viima/jquery-social-share-bar" rel="nofollow noopener noreferrer" target="_blank">reference code from Github</a>. Happy Blogging !  
+  

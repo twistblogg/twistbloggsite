@@ -1,0 +1,341 @@
+---
+title: 'Feedburner Email Subscription Popup Blogger Plugin'
+date: 2015-04-09
+excerpt: Add modern feedburner email subscription popup to blogger blogs and increase your conversion rate. Start Gaining new email subscribers from day 1.
+slug: feedburner-email-plugin-blogger
+featured: false
+published: true
+image: feedburner email subscribe box for blogger.jpg
+author: Invictus
+tags : [Subscription Widgets, Blog Widgets]
+---
+
+Feedburner is the only source for most of the bloggers to gain new email subscribers (which is free) so I just came up with another stylish widget for blogger platform and I hope you guys will love it.  
+
+This time I have designed a **Feedburner email subscription popup box for blogger** and its really stylish, professional looking and neat and clean widget.  
+  
+You might have seen this popup subscription box appearing in your favorite blogs many times. They use it because it tends to convert well and increases the conversion rate on any page of your blog.  
+
+It's Nothing like anything and you must use it if you already don't. :)  
+  
+
+
+### Features of Email Subscription Popup Blogger Plugin
+
+
+  
+Believe me, I don't want to preach about it and bore the hell out of you. :)  
+
+It has got really good features and you need to know them so that you can alter anything later the way you like to without getting confused.  
+
+  
+**1)** Maximum Width is 600px (when viewed on desktop or laptop display)  
+  
+**2)** The subscription box is **fully Responsive** (when screen width goes down below the 600 pixels, it reduces its size according to the maximum width of the screen).  
+  
+**3)** **Cookies enabled** and you can set any number of expiry days for cookies.  
+  
+**4)** Pops up in the center of window screen and **remains in the center.**  
+  
+**5)** Isn't boring at all. :)  
+  
+**6)** Using **Google font family** "Oswald"  
+  
+**7)** You can set **time delay** so that popup box will appear on certain time after loading of your blog like as 20 seconds after loading of your blog.  
+  
+**8)** Now it Automatically fades out after someone clicks on **"Add Me"** button. (Feature added after someone asked in comments). :)  
+  
+(**Note:** You don't have permission to copy and share my code on your blog.)  
+  
+  
+
+### Where is the DEMO Screenshot of Email Subscription Popup Box?  
+
+
+Wait!
+
+There it is.  
+  
+
+<Image src="feedburner email subscription popup blogger plugin.PNG" alt="demo of feedburner email subscription popup blogger plugin" />
+
+
+So did it impress you? Do you want to use it?
+
+  
+  
+
+## Adding Feedburner Email Subscription Popup to Blogger
+
+
+Let's follow some boring steps as usual:
+
+
+**1)** Login to your blogger account.
+
+
+**2)** Got to **Template** section - then click on **Edit HTML** button.
+
+
+**3)** Now please [take a backup](https://www.twistblogg.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html) of your template code first before doing anything with your template code because it's always good to be on safe side. It's [a good habit for blogger](https://www.twistblogg.com/2014/04/8-blogging-habits-of-successful-bloggers.html) users and you must develop it.
+
+  
+
+### Installing Google Font Family and JavaScript Codes
+
+  
+
+**4)** Look, now we need to install Google font family "Oswald" to your template but in case your blog is already using it, then just skip this step. Don't add same fonts multiple times as they will slow down the page load time.
+
+  
+
+Search for this opening tag `<head>` (found at the beginning of the template code)  and paste the Google font family link just **after** it.
+
+
+```html  
+<link href='http://fonts.googleapis.com/css?family=Oswald|Open+Sans:300italic,400italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'/>
+```
+  
+
+**5)** Now just find out this closing tag `</head>` and paste these JavaScript links given below just **before** this closing tag.
+
+
+(**Note:** If you have previously installed my widget, "[Facebook Popup Page Like Box for Blogger](https://www.twistblogg.com/2015/03/facebook-popup-like-box-to-blogger-cookies-enabled.html)" then you need not to complete this step because these codes were installed into sidebar HTML gadget then and you will be adding them twice. This time I am installing these codes into your blogger template, not into the sidebar so you can remove them from sidebar HTML widget. These are the same codes so make it sure, its your part :)
+
+
+```js
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js' type='text/javascript'></script>
+```  
+
+**And this script before** `</body>`
+
+  
+```js
+<script type='text/javascript'>
+//<![CDATA[
+jQuery.cookie = function (key, value, options) {
+// key and at least value given, set cookie...
+if (arguments.length > 1 && String(value) !== "[object Object]") {
+options = jQuery.extend({}, options);
+if (value === null || value === undefined) {
+options.expires = -1;
+}
+if (typeof options.expires === 'number') {
+var days = options.expires, t = options.expires = new Date();
+t.setDate(t.getDate() + days);
+}
+value = String(value);
+return (document.cookie = [
+encodeURIComponent(key), '=',
+options.raw ? value : encodeURIComponent(value),
+options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+options.path ? '; path=' + options.path : '',
+options.domain ? '; domain=' + options.domain : '',
+options.secure ? '; secure' : ''
+].join(''));
+}
+// key and possibly options given, get cookie...
+options = value || {};
+var result, decode = options.raw ? function (s) { return s; } : decodeURIComponent;
+return (result = new RegExp('(?:^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? decode(result[1]) : null;
+};
+//]]>
+</script>
+```  
+
+
+### Add CSS Code to Your Template
+
+  
+**6)** Now you need to add the CSS code to your template. Find out this code `]]></b:skin>` and just **before** this code, paste the whole CSS code given below.  
+
+
+```css
+/*----- Email Subscription Popup Box Coded by TwistBlogg.com -----*/
+#twist-blogger-subbox {
+  display: none;
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  height:100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index:99999999;
+}
+#twist-blogger-subbox .popup-box {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  border-radius: 1px;
+  border: 2px solid #F5F500;
+  background: #3A3939 url('http://3.bp.blogspot.com/-7TLWGdsIYRg/VSYZtpMVpgI/AAAAAAAAA7A/eTPibGVJ4Mg/s1600/64.png');
+  background-repeat: no-repeat;
+  background-position: 100% 45%;
+  position:relative;
+  top:25%;
+  z-index:0;
+}
+#twist-blogger-subbox .popup-box .exit-button-subbox {
+  float: right;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin-top: 2px;
+  margin-right: -2px;
+}
+#twist-blogger-subbox .popup-box .exit-button-subbox:before {
+  content: "X";
+  padding: 5px 8px;
+  background: #FFFFFF;
+  color: #000000;
+  font-weight: normal;
+  font-size: 12px;
+  text-shadow: 0px -1px #000;
+  font-family: sans-serif;
+  border: 4px solid #F5F500;
+  border-radius: 50px 0px 50px 50px;
+}
+/*--Main Headline Style - twistblogg.blogspot.com--*/
+#twist-blogger-subbox .popup-box .tagline {
+  padding: 0;
+  line-height: 2em;
+  font-size: 26px;
+  height: 50px;
+  font-weight: normal;
+  font-family: "Oswald",sans-serif;
+  text-shadow: 0px -1px 0px #F5F500;
+  color: #3A3939;
+  text-align: center;
+  background: #FFFF00;
+  border-right: 7px solid #F5F500;
+  border-left: 7px solid #F5F500;
+  border-bottom: 15px solid #3A3939;
+}
+/*--Paragraph Style - twistblogg.blogspot.com--*/
+#twist-blogger-subbox .popup-box p {
+  font-family: "Oswald",sans-serif;
+  font-size: 15px;
+  color: #EFEFEF;
+  text-shadow: 1px -1px 0px #000;
+  line-height: 35px;
+  padding: 10px 110px 0px 20px;
+  text-align: left;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+#twist-blogger-subbox .popup-box .rssform {
+  padding: 15px 20px;
+  margin: 15px 0px 0px 0px;
+}
+/*-- Button Style - twistblogg.blogspot.com --*/ 
+#twist-blogger-subbox .popup-box .rssform .button {
+  cursor: pointer;
+  margin: 0px 0px 0px 5px;
+  border: none;
+  overflow: hidden;
+  width: 35%;
+  height: 37px;
+  background-color: #FF0;
+  font-size: 14px;
+  font-weight: normal;
+  color: #121212;
+  letter-spacing: 0.5px;
+  text-transform: uppercase!important;
+  font-family: "Oswald";
+  float: right;
+}
+#twist-blogger-subbox .popup-box .rssform .button:hover {
+  background: #FFE800;
+  padding: 7px;
+  border: 1px solid #fff;
+}
+#twist-blogger-subbox .popup-box .rssform .email-bg {
+  background: #FFE url('http://1.bp.blogspot.com/-h7L136qj408/VSYZtr7vDNI/AAAAAAAAA7E/F3W4M51n1mk/s1600/1envelope.png') no-repeat 5px 8px !important;
+  padding-left: 30px;
+}
+#twist-blogger-subbox .popup-box .rssform input {
+  padding: 8px;
+  font-size: 13px;
+  font-family: Oswald;
+  font-weight: normal;
+  display: inline-block;
+  width: 60%;
+  height: 37px;
+  text-transform: uppercase;
+  outline: none !important;
+  border: none;
+  border-radius: 1px;
+  box-sizing: border-box !important;
+}
+```  
+Ok so now we're done with adding CSS code and only remaining step is to add HTML part of email subscription popup box to your blog template.  
+
+
+
+### Add HTML Code of Subscription Popup to Your Template
+
+  
+
+**7)** Now just find out this closing `</body>` tag which is at the end of your template code and paste the HTML code just before this closing tag after making required changes.
+
+
+```html
+<div id='twist-blogger-subbox'>
+            <div class='popup-box'>
+   <div class='exit-button-subbox'></div>
+            <div class='tagline'>
+            Wait! Leech off my best
+            </div>
+                 <p>Get latest Blogger Widgets, Plugins and much more straight into your INBOX for free. Just Enter your email address, Verify and join our Newsletter!</p>
+            <div class='rssform'>
+            <form action='https://feedburner.google.com/fb/a/mailverify' method='post' target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TwistBlogg', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+            <input type='text' class='email-bg' name='email' placeholder='Enter your email address... :)' />
+            <input type="hidden" value="TwistBlogg" name="uri"/>
+            <input type="hidden" name="loc" value="en_US"/>
+            <input value="Add Me" class="button" type="submit" />
+            </form>
+            </div>
+   </div>
+   </div>
+<script type='text/javascript'>
+jQuery(document).ready(function($){
+if($.cookie('feedburner_popup_box') != 'yes'){
+$('#twist-blogger-subbox').delay(25000).fadeIn('medium');
+$('.exit-button-subbox, .button').click(function(){
+$('#twist-blogger-subbox').stop().fadeOut('medium');
+});
+}
+$.cookie('feedburner_popup_box', 'yes', { path: '/', expires: 15 });
+});
+</script>
+```  
+
+  
+**Required Changes:** 
+
+Now you need to make few changes to the above HTML (you don't have to code anything).  
+  
+1. Change the Main Headline text "**Wait! Leech of my best**" to whatever you want.  
+  
+2. Change the Paragraph text to your own text and that is what where you describe why visitors should become subscribers.  
+  
+3. Change my Feedburner address **TwistBlogg** to your blog's address (twice).  
+  
+4. You can change **Add Me** button text to your own like as boring as Subscribe.  
+  
+5. Change the delay time which is 25 seconds by default (I made it default :p) to your own. To change it, just modify the value of 25000 where 1000 value = 1 second.  
+  
+6. Set the expiry date for cookies which is 15 days by default. To change it, just modify the value 15 to any number where 1 number = 1 day.  
+  
+That is it!  
+  
+Visit your blog now and be the first to see it live. :)  
+
+It must be working fine if you did not miss any step. The process is little long but well worth the time.  
+  
+If you're unable to get it working then you can leave a comment with your blog URL and I'll surely check it.  
+  
+Give me a favor, do share if it really helped you and you liked my Feedburner email subscription popup blogger widget. Stay blessed!

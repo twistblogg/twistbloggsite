@@ -1,0 +1,557 @@
+---
+title: 'Design A Professional Contact Page For Blogger [Stylish]'
+date: 2019-07-31
+excerpt: Back in 2013, blogger.com added a feature that allowed users to add contact widget in sidebar and footer section. Today I will redesign and create a fully responsive and professional contact page widget for blogger. 
+slug: professional-contact-page-blogger
+featured: false
+published: true
+image: stylish blogger contact page.jpg
+author: Invictus
+tags : [Blog Customize, Blog Widgets, Contact Page Design]
+---
+
+Back in 2013, blogger.com added a feature that allowed users to add contact widget in sidebar and footer section. After that, many developers have been striving to add it on static pages by amending the codes. And today I am doing the same: attempting to redesign and **create a fully responsive and professional contact page widget for blogger**.  
+   
+This article follows step by step procedure on adding the contact page, and later upgrading the overall design.  
+
+**Note:**
+
+> _We have a detailed post on [how to add stylish blogger contact form to any static page](https://www.twistblogg.com/2015/03/add-blogger-contact-form-to-static-pages.html) describing every steps, and solutions to the problems that normally arise on first installation._
+
+> _Also, we have shared modified version of the above contact form and named it:  [A responsive and Pro Contact Page For Blogger - v2](https://www.twistblogg.com/2015/08/add-contact-form-to-blogger-pages.html). The new contact page, which I am going to share is based on this version._
+
+  
+  
+
+#### Why I redesigned the new stylish contact page for blogger?  
+
+
+✔ Whenever I surf some popular websites, I find their contact page enthralling, and I get captivated with the designs and looks.   
+
+✔ And, I receive a plethora of demands from our visitors every next day stating that they want a professional looking contact page for their websites.  
+  
+Keeping everyone's concern and my own satisfaction, I endeavored to re-modify already existing contact form, and somehow I managed to complete it in such a short span of time, and present among you guys a full-width contact page.  
+  
+
+### Features of this beautiful Contact Page
+
+*   Designed with Pure CSS.
+*   Fully Responsive.
+*   Full Width Layout - No header, no sidebar and no footer. 
+*   Font Awesome Icons Integrated.
+*   Sliding Texts.
+*   Professional And Stylish Looking.
+*   Facility to upload an avatar.
+*   Able to change the background image.
+*   Notifies if message was sent or not.
+
+
+#### Demo Designs
+
+
+The featured image is one version, here are view more:  
+
+
+<Image src="contact_page_for_blogger.jpg" alt="contact page for blogger" />
+
+
+<Image src="design an attractive contact page for blogger.jpg" alt="design an attractive contact page for blogger" />
+
+  
+
+## How to make Contact Page look professional?
+
+
+I have divided the whole task into three sections: First section deals with adding contact page to blogger, and hiding it from appearing in the footer or sidebar. Similarly, second section focuses on how to create a contact page, and add the codes. And third section emphasizes on modifying the code to fit it perfectly on your blog.  
+  
+
+
+### Section I : Add Contact Form Widget From Blogger Gadget Library
+
+
+
+This section is for those who have not added contact form from blogger gadget library. I am assuming you are logged into your google accounts and have blogger.com opened in a tab.  
+
+
+1) Go to **Layout** > Click on **Add A Gadget**.  
+2) A popup will appear. Click on **More Gadgets** -> **Add** the widget.  
+  
+
+<Image src="Blogger-Template-Layout-sidebar.png" alt="Blogger-Template-Layout-sidebar" />
+
+
+  
+**_Hiding Blogger Contact Widget from Sidebar and footer_**  
+
+
+✔ Go to **Template** > Click on **Edit HTML**.  
+
+✔ Press anywhere inside the HTML code and Search for `]]></b:skin>` .
+  
+✔ Paste the following CSS code before the above piece of line.  
+  
+```css
+div#ContactForm1 {  
+  display: none !important;  
+}
+```  
+
+
+### Section II :Create A Static Contact Page And Add Codes  
+
+
+
+Now we need to create a separate contact page and name it Contact Me or Contact us to get the same permalink. Follow this steps: 
+
+  
+1) Go to **Pages** > Click on **New Page**.  
+  
+
+<Image src="Create-a-New-Page-on-Blogger-Blog.png" alt="Create-a-New-Page-on-Blogger-Blog" />
+
+
+  
+2) A blank page will appear, now you need to add a title such as Contact Page or Contact Me to get an equivalent permalink. 
+
+_Note: You cannot change the permalink unless you again create another page._  
+  
+[A quick update: We have launched our own Custom Landing Page for Blogger](https://www.twistblogg.com/2015/05/create-custom-landing-pages-on-blogger.html)   
+
+
+3) Now turn into **HTML Editor** located to the right of Compose Editor, and _change the page settings accordingly as shown below_.  
+  
+
+<Image src="Contact-Page-Settings.png" alt="Contact-Page-Settings" />
+
+  
+  
+4) **Remove already existing HTML code** by pressing CTRL + A and hit the backspace key from keyboard.
+
+  
+5) **Paste** the below CSS and HTML code, and hit that Save Button.  
+
+  
+_NOTE: You don't have permission to copy and share my codes on your blog in any way. Respect the hard work of others'. I have put a lot of efforts into designing it and you can see that by looking at the CSS Code itself._ 😀  
+
+```css
+<div dir="ltr" style="text-align: left;" trbidi="on">
+<style>
+/* ----------------------------------------------------
+Professional Contact Page Full Width
+Designed by :: https://www.TwistBlogg.com
+Keep These Credits Intact, Do Not Remove
+-----------------------------------------------------*/
+/*** Background image ***/  
+.mainimg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+/*** user profile image ***/
+.userimg
+{
+    width:100px !important;
+    height:100px !important;
+    padding: 0;
+    overflow:hidden;
+    position:absolute;
+    margin-top:-30px;
+    left:calc(50% - 55px);
+    border-radius:50%;
+}
+/*** Text rolling at the top ***/
+.textbox .innerbox {
+ width: 350px;
+ height: 40px;
+ line-height: 40px;
+ font-size: 40px;
+ font-family:  verdana;
+ white-space: nowrap;
+ overflow: hidden;
+}
+.textbox .innerbox span {
+ position: absolute;
+ animation: marquee 10s linear infinite;  /* Control the rolling speed*/
+}
+
+@keyframes marquee {
+ from {
+  left: 100%;
+ }
+ to {
+  left: -100%;
+ }
+}
+span#text{                           /* Change Text color*/ 
+  color:rgba(10,87,67,0.8);
+ text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
+
+/* Contact Box*/
+div#twist_blogger_cntct_form {
+    padding: 20px 0px -30px;
+    margin-top: 10px;
+    border-radius: 2px;
+    color: #1D1D1D;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    font-family: sans-serif;
+}
+div#twist_blogger_cntct_form .wrap-me {
+    margin: 0 auto;
+    display: block;
+    padding: 30px 20px;
+    background:rgba(1,0,0,0.5) ;
+    max-width: 440px;
+    width: 100% !important;
+    border-top: 50px solid rgba(0.5,255,254,0.2) !important;
+    box-sizing: border-box;
+}
+input#ContactForm1_contact-form-name, #ContactForm1_contact-form-email, #ContactForm1_contact-form-email:hover, #ContactForm1_contact-form-email:active {
+    padding: 5px;
+    margin-top: 4px !important;
+    box-shadow: none!Important;
+    max-width: 300px;
+    width: 100%;
+    border: 1px solid #D2D2D2;
+    line-height: 1em;
+    min-height: 31px;
+    background: rgba(254,254,254,0.5);
+    font-family: sans-serif;
+    margin-bottom: 15px;
+    border-radius: 0px;
+}
+.contact-form-email-message, .contact-form-email-message:active, .contact-form-email-message:hover {
+    padding: 5px;
+    margin-top: 4px !important;
+    box-shadow: none!Important;
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid #D2D2D2;
+    line-height: 1em;
+    min-height: 80px;
+    background: rgba(254,254,254,0.5);
+    font-family: sans-serif;
+    margin-bottom: 10px;
+    border-radius: 0px;
+}
+/***** Focus *****/
+#ContactForm1_contact-form-name:focus, #ContactForm1_contact-form-email:focus, #ContactForm1_contact-form-email-message:focus {
+    outline: none;
+    background: #FFFFFF !important;
+    color: #444;
+    border-color: rgb(236, 235, 235) !important;
+    box-shadow: 0 0 5px rgba(241, 241, 241, 0.7) !important;
+    transition: all 0.3s ease-in-out !important;
+}
+/**** Submit button style ****/
+.contact-form-button-submit:hover {
+    color: #FFFFFF;
+    background: #0083FF !important;
+}
+.contact-form-button-submit {
+    background: rgba(25,179,234,0.7);
+    display: table;
+    font-size: 17px;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    max-width: 100%;
+    width: 100%;
+    min-width: 100%;
+    height: 32px;
+    line-height: 0.5em;
+    letter-spacing: 0.5px;
+    font-family: sans-serif;
+    font-weight: normal;
+    cursor: pointer;
+    outline: none!important;
+    color: #FFFFFF;
+    border: 1px solid #fff !important;
+    text-align: center;
+    padding: 0px 0px 0px 15px;
+    text-transform: capitalize;
+    transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+}
+/**** Submit button on Focus ****/
+.contact-form-button-submit:focus, .contact-form-button-submit.focus {
+  border-color: #FFFFFF;
+  box-shadow: none !important;
+}
+/**** Error message ****/
+.contact-form-error-message-with-border .contact-form-success-message {
+  background: #f9edbe;
+  border: 1px solid #f0c36d;
+  bottom: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+  color: #666;
+  font-size: 12px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  line-height: 19px;
+  margin-left: 0;
+  opacity: 1;
+  position: static;
+  text-align: center;
+}
+/**** Submit Button On Success Message ****/
+.contact-form-button-submit.disabled, .contact-form-button-submit.disabled:hover, .contact-form-button-submit.disabled:active {
+    opacity: 0.9;
+}
+/****** Success Message *****/
+.contact-form-error-message-with-border {
+    background: #000000;
+    border: 1px solid #5A5A5A;
+    bottom: 0;
+    box-shadow: none;
+    color: #FDFDFD;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 35px;
+    margin-left: 0;
+    opacity: 1;
+    position: static;
+    text-align: center;
+    height: 35px;
+    margin-top: 45px;
+}
+.contact-form-cross {
+    height: 14px;
+    margin: 5px;
+    vertical-align: -8.5%;
+    float: right;
+    width: 14px;
+    border-radius: 50px;
+    border: 0 !important;
+    cursor: pointer;
+}
+.contact-form-success-message-with-border {
+    font-weight: normal;
+    background-color: #000;
+    border: 1px solid #FFF;
+    color: #FFF;
+    line-height: 35px;
+    margin-left: 0;
+    font-size: 13px;
+    opacity: 1;
+    position: static;
+    text-align: center;
+    height: 35px;
+    margin-top: 45px;
+}
+/* Extra Stuff */
+div#twist_blogger_cntct_form span.name-bg {
+    background-color: #E8F2FF;
+ }
+div#twist_blogger_cntct_form span.email-bg {
+    background-color: #FFE8E8;
+}
+div#twist_blogger_cntct_form span.name-bg, div#twist_blogger_cntct_form span.email-bg {
+    display: inline-block;
+    max-width: 300px;
+    line-height: 21px;
+    width: 100%;
+    color: #696969;
+    padding: 3px 5px;
+    margin: 0px 0px 4px;
+    box-sizing: border-box;
+    height: 30px;
+    border: 1px solid #E4E0E0;
+    padding-left: 39px;
+}
+div#twist_blogger_cntct_form span.name-bg:before {
+    content: '\f007';
+    background-color: rgba(96,162,255,0.5);
+ }
+div#twist_blogger_cntct_form span.email-bg:before {
+    content: '\f1fa ';
+    background-color: rgba(255,83,11,0.5);
+}
+div#twist_blogger_cntct_form span.name-bg:before, div#twist_blogger_cntct_form span.email-bg:before, div#twist_blogger_cntct_form span.message-bg:before {
+    font-family: 'Font Awesome 5 Free';
+    text-align: center;
+    margin: -4px 0 0px 0px;
+    font-weight: 900;
+    padding: 0;
+    line-height: 27px;
+    width: 28px;
+    height: 28px;
+    display: table;
+    position: absolute;
+    margin-left: -40px !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 0 !important;
+    color: #FFFFFF;
+}
+div#twist_blogger_cntct_form span.message-bg {
+    background-color: #EBFFE8;
+    display: inline-block;
+    max-width: 400px;
+    line-height: 21px;
+    width: 100%;
+    color: #696969;
+    padding: 3px 5px;
+    box-sizing: border-box;
+    height: 30px;
+    border: 1px solid #E4E0E0;
+    padding-left: 39px;
+    margin: 0px 0px 4px;
+}
+div#twist_blogger_cntct_form span.message-bg:before {
+    content: '\f0e0';
+    background-color: rgba(32,204,0,0.5);
+}
+div#twist_blogger_cntct_form span.send-bg {
+    height: 32px;
+    display: inline-block;
+    float: left;
+    max-width: 45%;
+    width: 100%;
+    margin-top: 15px;
+    transition: all 0.4s ease-in-out !important;
+}
+div#twist_blogger_cntct_form span.send-bg:before {
+    content: '\f1d8';
+ }
+div#twist_blogger_cntct_form span.send-bg:before, div#twist_blogger_cntct_form span.clear-bg:before {
+    font-family: 'Font Awesome 5 Free';
+    text-align: center;
+    font-weight: 900;
+    margin: 0;
+    background-color: rgba(0,0,0,0.5);
+    padding: 0;
+    line-height: 27px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    border: 1px solid #fff;
+    border-right: 0 !important;
+    color: #FFFFFF;
+}
+div#twist_blogger_cntct_form span.clear-bg {
+    display: inline-block;
+    float: right;
+    margin-top: 15px;
+    max-width: 45%;
+    width: 100%;
+}
+div#twist_blogger_cntct_form span.clear-bg:before {
+    content: '\f021';
+ }
+
+input.contact-form-button.contact-form-button-submit.clear-button:hover {
+    background-color: #E83434 !important;
+}
+div#twist_blogger_cntct_form .clear-button {
+    color: #FFFFFF;
+    border: 1px solid #FFF !important;
+    background-color: rgba(255,44,44,0.5);
+    float: right;
+    display: table;
+    height: 32px;
+}
+/*** Hide Everything From Contact Page ***/
+.sidebar, #footer-wrapper, #blog-pager, h2.post-title, .comments, .header,.tbn_nav_menu,.bloginner-wrapper {
+display: none !important;
+}
+/*** Make the page responsive ***/
+#content { width: 100% !Important; }
+@media only screen and (max-width: 1089px) and (min-width: 980px) { #content { width: 100% !Important; } }  @media only screen and (max-width: 979px) and (min-width: 768px) { #content { width: 100% !Important; } } @media only screen and (max-width: 767px) and (min-width: 480px) { #content { width: 100% !Important; } }  @media only screen and (max-width: 479px) { #content { width: 100% !Important; } }
+</style>
+
+<img alt="" height="100%" class="mainimg" src="https://i.postimg.cc/63JpTDLX/img-20.jpg" width="100%" />
+<div class="textbox">
+<div class="innerbox"><span id="text">Contact Page: Mail Your Queries And Feedbacks. </span>
+  </div>
+</div>
+<br />
+<div id="twist_blogger_cntct_form">
+<img class="userimg" src="https://i.postimg.cc/2SS4dVPz/user.png" />
+<br />
+<div class="wrap-me">
+<form name="contact-form">
+<span class="name-bg">Enter Your Name</span><br />
+<input class="contact-form-name" id="ContactForm1_contact-form-name" name="name" placeholder="Enter your name here..." size="30" type="text" value="" /><br />
+<br />
+<span class="email-bg">Enter Your Email*</span><br />
+<input class="contact-form-email" id="ContactForm1_contact-form-email" name="email" placeholder="Enter your email here..." size="30" type="text" value="" /><br />
+<br />
+<span class="message-bg">Enter The Message*</span><br />
+<textarea class="contact-form-email-message" cols="25" id="ContactForm1_contact-form-email-message" name="email-message" placeholder="Write your message here..." rows="5"></textarea><br />
+<span class="send-bg"><input class="contact-form-button contact-form-button-submit" id="ContactForm1_contact-form-submit" type="button" value="Send" /></span>
+<span class="clear-bg"><input class="contact-form-button contact-form-button-submit clear-button" type="reset" value="Clear" /></span>
+<br />
+<div style="max-width: 100%; text-align: center; width: 100%;">
+<div class="contact-form-error-message" id="ContactForm1_contact-form-error-message">
+</div>
+<div class="contact-form-success-message" id="ContactForm1_contact-form-success-message">
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+```  
+
+
+
+### SECTION III: Editing the Code And Some FAQs  
+
+
+
+  
+**Q No. 1) Why are the icons not showing up?** 
+
+⇛ I have installed Font Awesome 5.8.2 and it uses following two tags:  
+
+> font-family: 'Font Awesome 5 Free';  
+> font-weight: 900;
+
+ Change them to:  
+
+> font-family: 'FontAwesome';  
+> font-weight: normal;
+
+
+[**Recommended: How to install font awesome in your blog?**](https://www.twistblogg.com/2014/01/How-To-Use-FontAwesome-Icons-In-Blogger.html)  
+
+
+**Q No 2)  Why is the page not responsive when I implement the code?**  
+
+⇛ TwistBlogg uses `#content` as the main body tag. You need to identify your own. If you need any assistance, leave a comment or a message.  
+
+
+**Q. No 3) Can I install my own background image and my own profile?**  
+
+⇛ Yes, you can. Modify the following addresses with yours.  
+
+```html
+<img alt="" height="100%" class="mainimg" src="https://i.postimg.cc/63JpTDLX/img-20.jpg" width="100%" />  
+<img class="userimg" src="https://i.postimg.cc/2SS4dVPz/user.png" />
+```
+  
+**Q. No 4) Why is the page not appearing in a f****ull width size?**   
+
+⇛ Change the following : `_.sidebar`, `#footer-wrapper`, `#blog-pager`, `h2.post-title`, `.comments`, `.header`,`.tbn_nav_menu`, `.bloginner-wrapper` with your blogger tags. 
+
+  
+That was it folks! Now, you have a **fully responsive and premium contact page** for your blog. If you are facing any issues, do let me know. Also, I'll try to append more FAQs in this article. Good bye! Happy Blogging 😃

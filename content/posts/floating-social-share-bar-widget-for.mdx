@@ -1,0 +1,439 @@
+---
+title: 'Add Floating Social Media Share Widget For Blogger'
+date: 2015-05-12T01:36:00.003+05:45
+excerpt: Increase your social share count with our floating Social Share Buttons Bar to Blogger with Total Shares Count and Custom Buttons.
+slug: floating-social-plugin-for-blogger
+featured: false
+published: true
+image: Add Floating Social Media Share Widget For Blogger.jpg
+author: Invictus
+tags : [Blog Widgets]
+---
+
+Releasing the second version of the **floating social media buttons bar for blogger** with the total shares count and custom buttons.  
+  
+This version is totally different from the previous version because this time I did not use the official buttons of social networks and instead I used **own custom social buttons**.  
+  
+Along with Total shares count box, every button shows the number of total shares on that particular social media platform.  
+
+  
+**Previous Version:** [Floating Social Media Buttons Bar For Blogger With Total Shares Count](https://www.twistblogg.com/2015/04/floating-social-media-share-buttons-bar-blogger-total-share-count.html)  
+  
+
+<Span bg="accent">**Please Read This Note Carefully Given Below!**</Span>   
+
+  
+**Important Update (Must Read) :-** I am using FREE hosting provided by OpenShift.com for hosting my PHP scripts which are liable to fetch the total shares count on different social media platforms.  
+
+  
+So there is monthly bandwidth limit on free packages and whenever it will cross the limit of free bandwidth, it will stop working. I can not upgrade from free hosting package to premium because I earn nothing from this blog. That is all to it.
+
+  
+_One more thing -_ Free package is enough for one blog and you can upload these PHP files yourself on their server but it works on Git and Ruby. You have to install them on your computer then use the command mode to create your PHP application and upload those files. Please for more info create your account on OpenShift.com and learn from there.
+
+  
+If you need my services then you can contact me using contact form page. I'll create a separate domain name for you and upload these scripts so they will not stop working.  
+  
+
+
+**Update: 8/17/2016**  
+Just updated the sharecount API URL and it'll be working now for everyone.
+
+
+
+### Features with Demo Screenshot  
+
+
+I tried my best to give it the look of other leading free and premium share buttons like as SumoMe. I have disabled it on mobile devices with CSS, but you can make it appear on mobile too simply by deleting the little CSS code.
+
+
+However, this is not recommended because there is really little space on mobile screens and users will be not be able to read your content properly as buttons bar will be covering around 50px space on the left side of screen.  
+  
+
+Of course, it includes a show hide button but it's always good to be on the safe side rather than losing visitors.  
+  
+
+But you can install the [social share buttons below the post titles](https://www.twistblogg.com/2015/04/add-social-media-share-buttons-to-blogger.html) I have released before and I use on this blog itself.  
+  
+
+I could have made it mobile compatible like as SumoMe too, but this is really too much work for a one man army. ;) I wish I had someone to do it, but still I got no one lol.
+
+  
+Overall I am happy with it because it includes no forced button for branding, only what we need. All other major industry leading plugins like SumoMe are really great and packed with amazing features, but you have to go with pro version otherwise there will always be one button of their own in the end for branding.
+
+  
+
+**Note:** You **do NOT have Permission** to copy and share my code on your blog.
+
+  
+
+<Image src="demo for floating social share bar blogger.PNG" alt="demo for floating social share bar blogger" />
+
+
+So, are you impressed? Want to use it?
+
+  
+
+## Adding Floating Social Share Buttons Bar to Blogger  
+
+
+
+**Step 1)** As always, **login to your blogger account** - **Select your blog** - go to** Template** area and download your template backup first. You'll find a Backup/Restore link on the top right side in Template area.
+
+  
+
+**Step 2)** Now click on **Edit HTML** and wait for your template code box to load.
+
+  
+**Step 3)**  For icons, I have used FontAwesome 4.2.0 so just find out opening `<head>` tag and just after it, paste the FontAwesome icons Link given below.  
+  
+```html
+<link href='http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css' rel='stylesheet'/>
+```
+
+  
+Also, add Google JavaScript Library Link also if not already added to your template.  
+  
+```html
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'/>
+```
+
+**Step 4)** Click inside the code box, press **Ctrl+f** or **Cmd+f** and find out this closing tag `</head>`, then just before it paste the whole CSS code given below. 
+
+  
+
+```css
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<style type='text/css'>
+/*------------------------------------------------------------
+Floating Social Share Button Bar Version 2.0
+Designed by:: https://Twistblogg.Com
+Shares Count Code by:: http://donreach.com/social-share-count
+issued under GNU GPL Licence
+Icons:: FontAwesome 4.2.0
+**************** Do Not Remove These Credits *****************
+------------------------------------------------------------*/
+.twistBlogger_SocialBar {
+  position: fixed;
+  bottom: 30%;
+  padding: 0;
+  left:0;
+  background: none;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 99999999;
+}
+.twistBlogger_SocialBar label:hover {
+  cursor: pointer;
+  opacity:1;
+}
+.twistBlogger_SocialBar label {
+  text-align: center;
+  opacity: 0.4;
+  width: 50px;
+  background: #3A3939;
+  color: #FFF;
+  border: 0;
+  font-family: FontAwesome;
+  display: block;
+  font-size: 12px;
+  padding: 0px 0px;
+  border-radius: 0;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  position: absolute;
+  line-height: 1.5em;
+  margin-top: 346px;
+}
+input.ShowHide_Button:checked + label {
+  transform-origin: 50% 0%!important;
+  -webkit-transform-origin: 50% 0%!important;
+  -moz-transform-origin: 50% 0%!important;
+  -ms-transform-origin: 50% 0%!important;
+  -o-transform-origin: 50% 0%!important;
+  opacity: 1;
+  -webkit-transform: translateX(0px) rotateY(-180deg);
+  -moz-transform: translateX(0px) rotateY(-180deg);
+  -ms-transform: translateX(0px) rotateY(-180deg);
+  -o-transform: translateX(0px) rotateY(-180deg);
+  transform: translateX(0px) rotateY(-180deg);
+  -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -ms-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  border: 1px solid #3A3939;
+  border-radius: 50px 0px 0px 50px;
+  width: 30px;
+  max-width: 30px;
+}
+input.ShowHide_Button ~ .ShowHideMe {
+  -webkit-transition: .6s all cubic-bezier(0.730, -0.485, 0.145, 1.620);
+  -moz-transition: .6s all cubic-bezier(0.730, -0.485, 0.145, 1.620);
+  -ms-transition: .6s all cubic-bezier(0.730, -0.485, 0.145, 1.620);
+  -o-transition: .6s all cubic-bezier(0.730, -0.485, 0.145, 1.620);
+  transition: .6s all cubic-bezier(0.730, -0.485, 0.145, 1.620);
+}
+input.ShowHide_Button:checked ~ .ShowHideMe {
+  margin-left: -75px !important;
+}
+input.ShowHide_Button {
+  display: none;
+}
+.twistBlogger_SocialBar .social_menu {
+  display: inline-block;
+  float: left;
+  list-style:none;
+  max-width:50px;
+  margin: 0;
+  padding: 0;
+}
+.twistBlogger_SocialBar .social_menu .button_facebook {
+  background: #3a579a;
+}
+.twistBlogger_SocialBar .social_menu .button_facebook:hover {
+  background: #314a83;
+}
+.twistBlogger_SocialBar .social_menu .button_twitter {
+  background: #00abf0;
+}
+.twistBlogger_SocialBar .social_menu .button_twitter:hover {
+  background: #0092cc;
+}
+.twistBlogger_SocialBar .social_menu .button_googleplus {
+  background: #df4a32;
+}
+.twistBlogger_SocialBar .social_menu .button_googleplus:hover {
+  background: #be3f2b;
+}
+.twistBlogger_SocialBar .social_menu .button_pinterest {
+  background: #cd1c1f;
+}
+.twistBlogger_SocialBar .social_menu .button_pinterest:hover {
+  background: #ae181a;
+}
+.twistBlogger_SocialBar .social_menu .button_stumbleupon {
+  background: #ea4b24;
+}
+.twistBlogger_SocialBar .social_menu .button_stumbleupon:hover {
+  background: #c7401f;
+}
+.twistBlogger_SocialBar .social_menu .button_linkedin {
+  background: #2554BF;
+}
+.twistBlogger_SocialBar .social_menu .button_linkedin:hover {
+  background: #224EB4;
+}
+.twistBlogger_SocialBar .social_menu .button_facebook .count,
+.twistBlogger_SocialBar .social_menu .button_twitter .count,
+.twistBlogger_SocialBar .social_menu .button_googleplus .count,
+.twistBlogger_SocialBar .social_menu .button_pinterest .count,
+.twistBlogger_SocialBar .social_menu .button_stumbleupon .count,
+.twistBlogger_SocialBar .social_menu .button_linkedin .count {
+  color: #fff!important;
+  padding-top: 4px;
+  font-size: 13px !important;
+  line-height: 1.2em;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.twistBlogger_SocialBar .social_menu > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.twistBlogger_SocialBar .social_menu .share {
+  background: #FFF;
+  color: #807F7F;
+  font-size: 11px;
+  height: 45px !important;
+}
+.twistBlogger_SocialBar .social_menu .share .count.h4 {
+  font-size: 18px;
+  font-family: sans-serif;
+  color: #424242;
+  height: 25px !important;
+  line-height: 1.5em;
+  font-weight: bold;
+  margin: 0px !important;
+}
+.twistBlogger_SocialBar .social_menu .share .h6 {
+  padding-bottom: 3px;
+  font-family: sans-serif;
+  margin: 0px !important;
+  line-height: 1.5em;
+  font-size: 11px;
+}
+.twistBlogger_SocialBar .social_menu > ul > li {
+  margin: 0px 0px 0px 0px;
+  position: relative;
+  text-align: center;
+  list-style: none;
+  list-style-type: none;
+  padding: 0px;
+  border: 0px;
+  border-left: 0 solid rgba( 0,0,0,.4);
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  display: block;
+  box-sizing: border-box;
+  background: none;
+  box-sizing: content-box;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.twistBlogger_SocialBar .social_menu > ul > li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 5px 0px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.twistBlogger_SocialBar .social_menu > ul > li:hover {
+  border-left: 5px solid rgba( 0,0,0,.3);
+  width: 40px;
+}
+.twistBlogger_SocialBar .social_menu > ul > li i {
+  color: #fff !important;
+  font-family: FontAwesome;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1em;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.twistBlogger_SocialBar .social_menu > ul > li:hover i {
+  opacity: 0.9;
+}
+@media only screen and (min-width:768px) and (max-width:979px) {
+.twistBlogger_SocialBar {
+  bottom: 20% !important;
+}
+}
+@media only screen and (min-width:480px) and (max-width:767px) {
+.twistBlogger_SocialBar {
+  bottom: 15% !important;
+}
+}
+ @media only screen and (max-width:479px) {
+.twistBlogger_SocialBar {
+  bottom: 10% !important;
+  display: none !important; /*---delete this code line to make it appear on mobile--*/
+}
+}
+</style>
+</b:if>
+```
+
+  
+
+  
+
+**Step 5)** Now you need to add the **HTML  and JavaScript API** part so find out this code line  `<div class='post-footer-line post-footer-line-3'>` and just below that, paste the whole HTML code given below as it is.
+
+  
+
+**Note:** You will find the above code line two times in your template, but you have to paste the HTML code and JavaScript API of share counts just after the 2nd appearance of this code line.
+  
+
+```html
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+<div class='twistBlogger_SocialBar'>
+  <input class='ShowHide_Button' id='twiSter' type='checkbox'/>
+  <label for='twiSter'><i class='fa fa-arrow-left'/></label>
+  <div class='ShowHideMe'>
+  <div class='social_menu'>
+<div class='share'>
+    <div class='share-btn' data-service='total'>
+        <div class='count h4'/>
+        <div class='h6'>SHARES</div>
+  </div></div>
+<ul>
+<li class='button_facebook'>
+<a expr:href='&quot;   http://www.facebook.com/share.php?v=4&amp;   src=bm&amp;   u=&quot;   + data:post.url + &quot;   &amp;   t=&quot;   + data:post.title' onclick='window.open(this.href,&quot;   sharer&quot;   ,&quot;   toolbar=0,status=0,width=626,height=436&quot;   );   return false;' rel='nofollow'><strong><i class='fa fa-facebook'/>
+<div class='share-btn' data-service='facebook'>
+        <div class='count'/></div></strong>
+</a>
+</li>
+<li class='button_twitter'>
+<a expr:href='&quot;https://twitter.com/intent/tweet?url=&quot; + data:blog.url + &quot;&amp;text=&quot; + data:post.title + &quot; via @TwistBlogg - &quot;' onclick='window.open(this.href,&quot; sharer&quot; ,&quot; toolbar=0,status=0,width=626,height=436&quot; ); return false;' rel='nofollow'><strong><i class='fa fa-twitter'/>
+<div class='share-btn' data-service='twitter'>
+        <div class='count'/></div></strong>
+</a>
+</li>
+<li class='button_googleplus'>
+<a expr:href='&quot;   https://plus.google.com/share?url=&quot; + data:post.url' onclick='javascript:window.open(this.href,&quot;   &quot;   ,&quot;   menubar=no,toolbar=no,resizbutton_le=yes,scrollbars=yes,height=600,width=600&quot;   );   return false;   ' rel='nofollow'><strong><i class='fa fa-google-plus'/>
+<div class='share-btn' data-service='google'>
+        <div class='count'/></div></strong>
+</a>
+</li>
+<li class='button_pinterest'>
+<a data-pin-config='beside' expr:href='&quot;   http://pinterest.com/pin/create/button/?url=&quot; + data:post.url + &quot;   &amp;media=&quot; + data:blog.postImageUrl + &quot;&amp;description=&quot; + data:post.title' onclick='window.open(this.href,&quot;   sharer&quot;   ,&quot;   toolbar=0,status=0,width=626,height=500&quot;   );   return false;' rel='nofollow'><strong><i class='fa fa-pinterest'/>
+<div class='share-btn' data-service='pinterest'>
+        <div class='count'/></div></strong>
+</a>
+</li>
+<li class='button_stumbleupon'>
+<a expr:href='&quot;   http://www.stumbleupon.com/submit?url=&quot; + data:post.url + &quot;   &amp;   title=&quot;   + data:post.title' onclick='window.open(this.href,&quot;   sharer&quot;   ,&quot;   toolbar=0,status=0,width=626,height=500&quot;   );   return false;' rel='nofollow'><strong><i class='fa fa-stumbleupon-circle'/>
+<div class='share-btn' data-service='stumbleupon'>
+        <div class='count'/></div></strong>
+</a>
+</li>
+<li class='button_linkedin'>
+<a expr:href='&quot;   http://www.linkedin.com/shareArticle?mini=true&amp;   url=&quot; + data:post.url + &quot;   &amp;   title=&quot; + data:post.title + &quot;   &amp;   summary=&amp;   source=&quot;   ' onclick='window.open(this.href,&quot;   sharer&quot;   ,&quot;   toolbar=0,status=0,width=626,height=500&quot;   );   return false;' rel='nofollow'><strong><i class='fa fa-linkedin'/>
+<div class='share-btn' data-service='linkedin'>
+        <div class='count'/></div></strong>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<script type='text/javascript'>//<![CDATA[
+$(document).ready(function () {
+  var shareUrl = $("link[rel=canonical]").attr("href");
+    $.getJSON('https://count.donreach.com/?url=' + encodeURIComponent(shareUrl) + "&callback=?", function (data) {
+        shares = data.shares;
+        $(".count").each(function (index, el) {
+            service = $(el).parents(".share-btn").attr("data-service");
+            count = shares[service];
+            if (count > 1000) {
+                count = (count / 1000).toFixed(1);
+                if (count > 1000) count = (count / 1000).toFixed(1) + "M";
+                else count = count + "k";
+            }
+            $(el).html(count);
+        });
+    });
+});
+//]]></script>
+</b:if>
+</b:if>
+```
+
+  
+
+**Editing:** One thing you need to change in above HTML code is my Twitter Username _TwistBlogg_ with your twitter username.  
+
+
+If you want to remove a button then just delete the HTML of that button including **<li> </li>** plus you need to adjust the margin of show hide button accordingly otherwise show hide button will be 50px below the share buttons with every removal of one button. That means you need to decrease the margin of show hide button by 50px after you remove one social button.
+
+
+Now save your template code and visit any post on your blog to see it live. If you found any bug or you could not make it work for you, just leave your comment or contact me via the contact us page.
+
+
+Do you have any improvement suggestion? Your opinions are always welcome. Stay Blessed!

@@ -1,0 +1,59 @@
+---
+title: 'How To Customize The Comment Box in Blogger'
+date: 2018-08-05
+excerpt: Blogger allows you to customize default comment box design with simple css. This article will guide you through that.
+slug: customize-comment-box-blogger
+featured: false
+published: true
+image: How To Customize The Comment Box in Blogger.jpg
+author: Invictus
+tags : [Blog Customize]
+---
+
+Blogger platform is more flexible and versatile than free WordPress platform as we have almost no limitation in customizing our blog theme/template codes (as long as we follow the blogger TOS) where there is almost no way to edit the theme of our blog or use our own custom theme on WordPress. Did you ever think of customizing the blogger comment box? If yes, then lets begin because we can customize the comment box's width, height or background etc.  
+  
+
+
+  
+## Steps To Customize The Comment Box in Blogger
+
+
+As usual again we have to edit the template code :)
+
+  
+
+**Step 1)** Go to Blogger → Template → Edit HTML and click anywhere inside the template code box. After that press Ctrl+f (windows) or Cmd+f (mac). You will see, a search box inside template code box appears so search for `]]></b:skin>` code line and just before that paste the CSS code given below after customizing it as you think fits best. The customization process is given below the CSS code.
+
+  
+```css 
+ #TB-cbox iframe {  
+     background: #ffffff url('Your-Image-URL');  
+     border: 1px solid #ddd;  
+     -moz-border-radius: 6px;  
+     -webkit-border-radius: 6px;  
+     box-shadow: 5px 5px 5px #CCCCCC;  
+     padding: 5px;  
+     font: normal 12pt "ms sans serif", Arial;  
+     color: #2F97FF;  
+     width: 574px;  
+     height: 240px !important;  
+ }
+```
+
+**Changing Background:** If you want to use the image in the background then just replace Your-Image-URL with the URL of any image you want to use in your comment box background. We suggest you not to use the image because it will cause your comment box load slowly or use very **low in size** image (below 50kb). If you want to change the background color then replace #ffffff color value with your desired color value.
+
+  
+**Changing Comment Box Width:** If you want to adjust the comment box width with your post area width then change the `574px` to the width of your blog post area like as 600px or 550px etc.
+
+  
+**Changing "Comment as" Text:** In every comment box, you will see "comment as" text where we choose the profile we want to comment as for example as Anonymous, as Google Profile or Name URL and so on. If you want to change the color of this text then change `#2F97FF` color value and if you want to change font size then change `12pt` to any other size like as 13pt or 14pt. You can also use `px` instead pt for e.g. 12px or 15px.
+
+  
+
+**Step 2)** If you have customized the comment box ever before or you are using a custom template whose comment box may already have been customized, you will not find the code, so we are going to search for `<div id='comment-form'>` and replace it with `<div class='TB-cbox'>` and save.
+
+In case you did not find this code then just leave your comments below and I will manually help you the things you need to change. Our next post is all about customizing the comments avatar like as you can see on this blog so till then stay safe and Happy Blogging :)  
+  
+**Update:**  
+[How To Customize Comments Avatar Image](https://www.twistblogg.com/2014/03/how-to-customize-comments-avatar-image-in-blogger.html)  
+[Change "0 Comment" or "Post a Comment" Message in Blogger](https://www.twistblogg.com/2015/03/change-0-comments-post-comment-message-blogger.html)

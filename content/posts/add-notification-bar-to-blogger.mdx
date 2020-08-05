@@ -1,0 +1,325 @@
+---
+title: 'Add Sticky Notification Bar to Blogger With Show Hide Button'
+date: 2015-05-05
+excerpt: Do you want to make sure your visitors don't miss important contents or announcements? If yes, add a sticky notification bar in blogger with hide/show option and no watermark.
+slug: sticky-notification-bar-blogger
+featured: false
+published: true
+image: add sticky notification bar in blogger with no watermark.jpg
+author: Invictus
+tags : [Blog Widgets]
+---
+
+A notification bar is used to highlight the important things on a blog toward we want to attract the visitors' attention most. You put some links there in it to showcase them to your visitors and the notification bar scrolls down to the page as a sticky bar on the top of the page so that any visitor of your blog can't really miss it.  
+
+
+  
+You might have seen some pro bloggers using Hello Bar on their blog where they showcase some links of upcoming events or to download some ebooks or even a simple [subscription box](https://www.twistblogg.com/2015/03/stylish-sidebar-subscription-box-widget-for-blogger.html).  
+  
+They use it because it makes sure that no visitor of their blog has really missed these important things.  
+
+The **Hello-Bar** comes with a bunch full of great features and includes a show hide button which lets users hide the notification bar if it irritates or simply if they are already aware of those important things.  
+  
+The major downfall of Hello Bar for a blogger is it includes the link back to their website on the top leftt side which will distract the visitors' attention.  
+  
+  
+The well-known pro blogger +Mohammad Mustafa Ahmedzai  of <a href="https://www.mybloggertricks.com/" rel="nofollow noopener noreferrer">MyBloggerTricks</a> has changed the way blogger platform used to be and left a benchmark by developing the amazing widgets, plugins, ShortCode for blogger and various SEO Optimized Templates. 
+
+  
+Notification bar with show hide button for blogger is one of those amazing widgets **Mohammad** bro has released so far. Although the only downfall of it was a **mbt** watermark with a link back to the blog.  
+
+
+**You have two choices**, one to go with it as it is and second if you want to remove the watermark, go with the pro version.  
+  
+Today I am releasing my light weight notification bar I designed with the help of CSS3 and HTML. I have used the JavaScript code too, but its purpose is just to make it sticky on the page. I need no backlink so it's totally yours as it is, no backlink included. :)  
+  
+
+##### First Things are First
+
+I have used a third-party JavaScript code so I am providing the credits here. 
+
+**Sticky JavaScript Code by:** <a href="https://www.bloggersentral.com/" rel="nofollow noopener noreferrer">BloggerSentral.com</a>  
+  
+**Note:** You do **NOT have Permission** to copy and share my code on your blog or changing the class names and bragging about you did it. I have not included any backlink, but you're required to keep the credits given to developers in CSS comments as it is. They do not harm in any case. Respect the copyrights and hard work of developers.  
+  
+
+### Features of Our Sticky Notification Bar
+
+
+Let me preach about it first. :)
+
+
+**1)** Integration of FontAwesome Icons.  
+**2)** Neat and clean professional looking design.  
+**3)** Show Hide Button on the right side of the notification bar.  
+**4)** Easy customization of colors.  
+**5)** Easy to setup.  
+**6)** Super Lightweight and loads very fast.  
+**7)** Stays on top of the page even if the user scrolls the page down.  
+**8)** Responsive design and it does not appear on mobile devices.  
+
+
+That's it! See the screenshot given below or watch the live demo here on my <a href="https://zindex-999.blogspot.com/" rel="nofollow noopener noreferrer">Test blog</a>.  
+  
+
+<Image src="scrolling Notification bar for blogger with show hide button.png" alt="scrolling Notification bar for blogger with show hide button" />
+  
+  
+
+## Adding The Notification Bar to Blogger
+
+
+So finally if you're interested in adding it to your blogger blog then just follow these steps given below, it would not take much of your time.  
+  
+
+**1)** Login to your blogger account.  
+**2)** select your blog.  
+**3)** Go to Template - Edit HTML.  
+**4)** Click inside the template code box and save a backup first.  
+  
+
+### Integrate FontAwesome Icons to your blog
+
+Search for the code line `<head>` and just below it paste the FontAwesome icons CSS link given below.  
+
+```html
+<link href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'/>
+```
+  
+Also add the **Google JavaScript Library** link just below it if not already added to your blog (rare case) so please check it first and avoid adding same links again.  
+  
+```html
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'/>
+```
+  
+
+### Add The CSS Part to Your Template Code  
+
+
+Now search for the `]]></b:skin>` code line and just before that, paste the whole CSS code given below.  
+  
+
+```css
+/*--------------------------------------------------------------  
+  Sticky Notification Bar For Blogger  
+  Designed by: https://www.twistblogg.com/  
+  Sticky Code By: http://www.bloggersentral.com/  
+--------------------------------------------------------------*/  
+#twistBlogger_NotificationBar_wrap {  
+  margin:0;  
+  padding:0;  
+  position:relative;  
+  width:100%;  
+  z-index:9999999;  
+}  
+.twistBlogger_NotificationBar {  
+  color: #fff;  
+  position: relative;  
+  background: #595959; /*--Change Background Color Here--*/  
+  width: 100%;  
+  padding: 0;  
+  text-align: center;  
+  font-family: Arial Black, sans-serif;  
+  text-shadow: 0px -1px 0px #000;  
+  margin: 0px auto;  
+  height: 40px;  
+  box-shadow: 0px 1px 5px #616161;  
+}  
+.twistBlogger_NotificationBar label:hover {  
+  cursor: pointer;  
+}  
+.twistBlogger_NotificationBar label {  
+  text-align: center;  
+  background: #FF5353; /*--Change Button Background Color Here--*/  
+  color: #FFF;  
+  border: 0;  
+  font-family: fontawesome;  
+  text-shadow: 0px -1px 0px #EC0000;  
+  font-size: 26px;  
+  -webkit-transition: 0.3s all ease-in-out;  
+  -moz-transition: 0.3s all ease-in-out;  
+  -ms-transition: 0.3s all ease-in-out;  
+  -o-transition: 0.3s all ease-in-out;  
+  transition: 0.3s all ease-in-out;  
+  position: relative;  
+  transition-delay: 0s;  
+  margin-top: 0;  
+  float: right;  
+  height: 35px !important;  
+  width: 30px;  
+  overflow: hidden !important;  
+  z-index: 9999;  
+  padding-top: 5px;  
+}  
+input.TwistBlogger_ShowHideButtonBar:checked + label {  
+  transform-origin: 12% 50% !important;  
+  transform: translateY(0px) rotateX(190deg);  
+  -webkit-transform: translateY(0px) rotateX(190deg);  
+  -moz-transform: translateY(0px) rotateX(190deg);  
+  -ms-transform: translateY(0px) rotateX(190deg);  
+  -o-transform: translateY(0px) rotateX(190deg);  
+  -webkit-transition-delay: 0.3s;  
+  -moz-transition-delay: 0.3s;  
+  -ms-transition-delay: 0.3s;  
+  -o-transition-delay: 0.3s;  
+  transition-delay: 0.3s;  
+  margin-top: 47px;  
+  border: 0;  
+}  
+input.TwistBlogger_ShowHideButtonBar ~ .twisteBlogger_ContentArea {  
+  position: relative;  
+  overflow: hidden;  
+  height: 40px;  
+  -webkit-transition: 0.5s all ease-in-out;  
+  -moz-transition: 0.5s all ease-in-out;  
+  -ms-transition: 0.5s all ease-in-out;  
+  -o-transition: 0.5s all ease-in-out;  
+  transition: 0.5s all ease-in-out;  
+}  
+input.TwistBlogger_ShowHideButtonBar:checked ~ .twisteBlogger_ContentArea {  
+  margin-top: -50px;  
+}  
+input.TwistBlogger_ShowHideButtonBar {  
+  display: none;  
+}  
+/*--Change FontAwesome Icons Style Here--*/  
+.twisteBlogger_ContentArea .fa {  
+  font-size: 16px;  
+  font-weight: normal;  
+  color: #FFFFFF;  
+  font-family: FontAwesome;  
+  border-bottom: 1px solid #FFFFFF;  
+  margin-right: 5px;  
+}  
+.twisteBlogger_ContentArea ul {  
+  margin: 0;  
+  padding: 0;  
+  list-style: none;  
+  list-style-type: none;  
+  height: 100%;  
+}  
+.twisteBlogger_ContentArea ul > li {  
+  list-style: none;  
+  font-size: 14px;  
+  font-weight: bold;  
+  font-family: sans-serif;  
+  text-decoration: none;  
+  padding-top: 10px;  
+  margin-right: 10px;  
+  display: inline-block;  
+}  
+.twisteBlogger_ContentArea ul > li > a {  
+  color: #FFD946;   /*--Change Links Color Here--*/  
+  text-decoration: none;  
+  font-family: cursive;  
+  font-weight: normal;  
+  -webkit-transition: all 0.4s ease-in-out;  
+  -moz-transition: all 0.4s ease-in-out;  
+  -ms-transition: all 0.4s ease-in-out;  
+  -o-transition: all 0.4s ease-in-out;  
+  transition: all 0.4s ease-in-out;  
+}  
+.twisteBlogger_ContentArea ul > li > a:hover {  
+  color: #EFCB41 !important;  /*--Change Links Hover Color Here--*/  
+}  
+.bs_sticking {  
+  position:fixed !important;  
+  width: 100% !important;  
+}  
+@media only screen and (max-width:479px) {  
+#twistBlogger_NotificationBar_wrap, .twistBlogger_NotificationBar {  
+  display: none !important;  
+}  
+}  
+
+```  
+
+### Add The HTML Part  
+
+
+Ok so now the next step is to add the HTML part of Notification Bar to your blogger template.  
+This time search for opening tag `<body>` and just below it paste the whole HTML code given below after making the required changes (changes to make are given below the HTML code in Editing Step).  
+  
+
+```html
+<div id='twistBlogger_NotificationBar_wrap'>
+<div class='twistBlogger_NotificationBar'>
+  <input class='TwistBlogger_ShowHideButtonBar' id='tbn' type='checkbox'/>
+  <label for='tbn'><i class='fa fa-chevron-circle-up'/></label>
+  <div class='twisteBlogger_ContentArea'>
+  <ul>
+  <li>
+<i class='fa fa-signal'/> Trending: <a href='#Your-Link1'>Floating Social Media Buttons Bar</a>
+</li>
+  <li>
+<i class='fa fa-fire'/> Hot: <a href='#Your-Link2'>TwistBlogg | Blogger Tutorisls</a>
+</li>
+  <li>
+<i class='fa fa-rss'/> Rss: <a href='#Your-Link3'>Subscribe to RSS</a>
+</li>
+</ul>
+  </div>
+</div>
+</div>
+```
+
+   
+  
+**How to Add More Links to Notification Bar **
+
+```html
+<li> <Font Awesome Icon Code/> Text String: <a href='Your-Link'>Anchor Text For Link</a></li>
+```
+  
+
+### Final Step to Add The JavaScript Code
+
+This is the last step which is compulsory otherwise your Notification bar would not be sticky and it will not scroll down to the page.
+
+  
+
+Now for last time, search for the ending `</body>` tag and just before that paste the JavaScript Code given below as it is.
+
+```js
+<script type='text/javascript'>  
+// Sticky widget by Bloggersentral.com  
+// Tutorial at http://www.bloggersentral.com/2013/04/how-to-make-any-widget-sticky.html  
+// Shared By TwistBlogg.com  
+// Free to use or share, but please keep this notice intact.  
+//<![CDATA[  
+bs_makeSticky("twistBlogger_NotificationBar_wrap"); // enter your widget ID here  
+function bs_makeSticky(elem) {  
+    var bs_sticky = document.getElementById(elem);  
+    var scrollee = document.createElement("div");  
+    bs_sticky.parentNode.insertBefore(scrollee, bs_sticky);  
+    var iniClass = bs_sticky.className + ' bs_sticky';  
+    window.addEventListener('scroll', bs_sticking, false);  
+    function bs_sticking() {  
+        var rect = scrollee.getBoundingClientRect();  
+        if (rect.top < 0) {  
+            bs_sticky.className = iniClass + ' bs_sticking';  
+            bs_sticky.style.width = "100%";  
+        } else {  
+            bs_sticky.className = iniClass;  
+        }  
+    }  
+}  
+//]]>  
+</script>  
+
+```
+
+  
+
+Finally save your template and visit your blog to see it live hanging on the top of the page. If you're facing any kind of problem or found any bug then please feel free to poke me and I'll do my best.
+
+  
+Also, you can host the script in your GitHub account. Learn [how to host CSS, Javascripts and other files in GitHub](https://www.twistblogg.com/2020/06/use-github-for-hosting-files.html).
+
+  
+
+Do you have any suggestion for its improvement? Do you want any other feature to be added? Your opinions are always welcome.
+
+  
+
+You can share, subscribe and like my Facebook page if you liked this tutorial, just reminding. :) Stay Blessed!

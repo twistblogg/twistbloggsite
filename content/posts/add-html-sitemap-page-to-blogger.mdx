@@ -1,0 +1,348 @@
+---
+title: 'Add An Elegant HTML Sitemap Page to Blogger Blog'
+date: 2015-06-11
+excerpt: Sitemap page lists all published posts of a blog. Learn how to add beautiful and elegant HTML sitemap page to your blogger website. 
+slug: elegant-sitemap-design-blogger
+featured: false
+published: true
+image: Add elegant Sitemap page to blogger - demo.png
+author: Invictus
+tags : [Blog Widgets]
+---
+
+A sitemap page is one of the must have pages on every blog. It helps in a number of ways to increase the user engagement on our blog and makes it more user friendly.  
+  
+By using the sitemap page, visitors of our blog can easily navigate through the all of our published content under different categories they are interested in.  
+  
+Ultimately our blog's page-views increase and bounce rate decrease. Good for SEO, no? :)  
+  
+After using the sitemap page on my blog for a long time now, I can say it is one of the most visited pages on my blog. When visitors find out the content on your blog more useful, they hunt for more content like this on your blog and if a sitemap page is available on your blog, what else do they need more?  
+  
+This tutorial has been requested multiple times and I could not come up with it on time due to some personal reasons. Today I am sharing the exact code I am using on my blog for sitemap.  
+  
+**UPDATE: 27/7/2018**  
+Google Drive has Stopped Hosting so I have updated JavaScript file to Github.  
+  
+
+**New Version Available:-** [Add Stylish CSS Based Sitemap To Blogger Blog](https://www.twistblogg.com/2018/08/add-stylish-sitemap-to-blogspot.html)
+
+  
+  
+**Credits-**  
+
+The code I am going to share is issued by +Taufik Nurrohman. He is from Indonesia and he has done so much for blogger platform users by releasing the amazing scripts for free. We owe to him.  
+  
+Most of the template designers who are selling blogger templates on ThemeForest.com use his scripts to add amazing functionalities and awesome features to their templates.  
+  
+Visit DTE Project on Googlecode to find out all of his creations including the Tabbed Table of Content code I am about to share today.  
+  
+
+##### Demo of Sitemap Page We Are Going To Add
+
+  
+<Div textAlign="center">
+<ButtonLink href="https://demo.twistblogg.com/p/sitemap.html" rel="nofollow noopener noreferrer" borderRadius="5px" variant="primary" ><Icon name="link" size="7" pr="2"/>Live Demo</ButtonLink>
+</Div>
+
+
+**Please note** that I did not add any new functionalities or modified this sitemap code but I just played with the CSS code to give it an elegant look and to match the color theme of my blog.  
+  
+You can do the same and I'll explain it in detailed steps. Lets begin the process. 
+
+
+**Recommended:** [Create Professional Looking Landing Pages On Blogger Blog](https://www.twistblogg.com/2015/05/create-custom-landing-pages-on-blogger.html)
+
+  
+
+### Step 1. Create A New Page On Your Blog  
+
+
+First of all just create a new page on your blog then **change the page settings and switch to HTML mode**. Enter the name of the page as **"Sitemap"** in the Title area to get the same permalink for your new page. See the screenshot below.  
+  
+
+<Image src="create a new page on blogger.png" alt="create a new page on blogger" />
+  
+
+  
+
+### Step 2. Copy And Paste The Whole JavaScript and CSS Code  
+
+
+When you'll switch to the HTML mode, you'll see the few lines of HTML code inside the post editor already added by default so just select those all and remove them. Now paste the whole code given below in the post editor. For further customization and to match the color scheme of your blog, read the Editing step given below the code.
+
+  
+
+```js
+// Designed and Shared By TwistBlogg.com   
+<div id="tabbed-toc"> <span class="loading">Loading,  
+please wait for a moment...</span></div> <br /> <script type="text/javascript"> var tabbedTOC= {  
+    blogUrl: "https://www.twistblogg.com", // Enter your blog URL  
+    containerId: "tabbed-toc", 
+    activeTab: 1,   
+    showDates: false, 
+    showSummaries: false, 
+    numChars: 200, // Number of summary chars  
+    showThumbnails: false, 
+    thumbSize: 40,  
+    noThumb: "", 
+    monthNames: [ 
+    "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], newTabLink: true,   
+    maxResults: 99999,   
+    preload: 0,  
+    sortAlphabetically: true, // `false` to sort posts by published date  
+    showNew: 7,   
+    newText: " - <em style='color: white;padding: 1px 5px;border-radius: 20px;background-color:  #F00;'>New!</em>"   
+}  
+;  
+</script> 
+<script src="https://amanbhattarai4400.github.io/csshosting//sitemap_javascript.js" type="text/javascript"></script> 
+<style type="text/css">  
+/*Sitemap  */ 
+#tabbed-toc {  
+    width: 99%;  
+    margin: 0 auto;  
+    overflow: hidden !important;  
+    position: relative;  
+    color: #222;  
+    border: 0;  
+    border-top: 5px solid #FC0204;  
+    background-color: #1D1D1D;  
+    -webkit-transition: all 0.4s ease-in-out;  
+}  
+  
+#tabbed-toc .loading {  
+    display: block;  
+    padding: 5px 15px;  
+    font: normal bold 11px Arial, Sans-Serif;  
+    color: #FFF;  
+}  
+  
+#tabbed-toc ul,  
+#tabbed-toc ol,  
+#tabbed-toc li {  
+    margin: 0;  
+    padding: 0;  
+    list-style: none;  
+}  
+  
+#tabbed-toc .toc-tabs {  
+    width: 24.8%;  
+    float: left !important;  
+}  
+  
+#tabbed-toc .toc-tabs li a {  
+    display: block;  
+    font: normal bold 10px/28px Arial, Sans-Serif;  
+    height: 28px;  
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    color: #ccc;  
+    text-transform: uppercase;  
+    text-decoration: none;  
+    padding: 0 12px;  
+    cursor: pointer;  
+    -webkit-transition: all 0.3s ease-in-out;  
+}  
+  
+#tabbed-toc .toc-tabs li a:hover {  
+    background-color: #515050;  
+    color: #FFF;  
+}  
+  
+#tabbed-toc .toc-tabs li a.active-tab {  
+    background-color: #FFFC03;  
+    color: #222;  
+    position: relative;  
+    z-index: 5;  
+    margin: 0 -2px 0 0;  
+}  
+  
+#tabbed-toc .toc-content,  
+#tabbed-toc .divider-layer {  
+    width: 75%;  
+    float: right !important;  
+    background-color: #F5F5F5;  
+    border-left: 5px solid #FFFC03;  
+    -webkit-box-sizing: border-box;  
+    -moz-box-sizing: border-box;  
+    box-sizing: border-box;  
+    -webkit-transition: all 0.3s ease-in-out;  
+}  
+  
+#tabbed-toc .divider-layer {  
+    float: none;  
+    display: block;  
+    position: absolute;  
+    top: 0;  
+    right: 0;  
+    bottom: 0;  
+}  
+  
+#tabbed-toc .panel {  
+    position: relative;  
+    z-index: 5;  
+    font: normal normal 10px Arial, Sans-Serif;  
+}  
+  
+#tabbed-toc .panel li a {  
+    display: block;  
+    position: relative;  
+    font-weight: bold;  
+    font-size: 11px;  
+    color: #222;  
+    line-height: 2.8em;  
+    height: 30px;  
+    padding: 0 10px;  
+    text-decoration: none;  
+    outline: none;  
+    overflow: hidden;  
+    -webkit-transition: all 0.3s ease-in-out;  
+}  
+  
+#tabbed-toc .panel li time {  
+    display: block;  
+    font-style: italic;  
+    font-weight: 400;  
+    font-size: 10px;  
+    color: #666;  
+    float: right;  
+}  
+  
+#tabbed-toc .panel li .summary {  
+    display: block;  
+    padding: 10px 12px;  
+    font-style: italic;  
+    border-bottom: 4px solid #275827;  
+    overflow: hidden;  
+}  
+  
+#tabbed-toc .panel li .summary img.thumbnail {  
+    float: left;  
+    display: block;  
+    margin: 0 8px 0 0;  
+    padding: 4px;  
+    width: 72px;  
+    height: 72px;  
+    border: 1px solid #dcdcdc;  
+    background-color: #fafafa;  
+}  
+  
+#tabbed-toc .panel li:nth-child(even) {  
+    background-color: #DBDBDB;  
+    font-size: 10px;  
+}  
+  
+#tabbed-toc .panel li a:hover,  
+#tabbed-toc .panel li a:focus,  
+#tabbed-toc .panel li a:hover time,  
+#tabbed-toc .panel li.bold a {  
+    background-color: #222;  
+    color: #FFF;  
+    outline: none;  
+    -webkit-transition: all 0.3s ease-in-out;  
+}  
+  
+#tabbed-toc .panel li.bold a:hover,  
+#tabbed-toc .panel li.bold a:hover time {  
+    background-color: #222;  
+}  
+  
+@media (max-width:700px) {  
+    #tabbed-toc {  
+        background-color: #fff;  
+        border: 0 solid #888;  
+    }  
+    #tabbed-toc .toc-tabs,  
+    #tabbed-toc .toc-content {  
+        overflow: hidden;  
+        width: auto;  
+        float: none !important;  
+        display: block;  
+    }  
+    #tabbed-toc .toc-tabs li {  
+        display: inline;  
+        float: left !important;  
+    }  
+    #tabbed-toc .toc-tabs li a,  
+    #tabbed-toc .toc-tabs li a.active-tab {  
+        background-color: #222;  
+        color: #ccc;  
+    }  
+    #tabbed-toc .toc-tabs li a.active-tab {  
+        color: #000;  
+    }  
+    #tabbed-toc .toc-content {  
+        border: none;  
+    }  
+    #tabbed-toc .divider-layer,  
+    #tabbed-toc .panel li time {  
+        display: none;  
+    }  
+}  
+  
+</style>  
+
+```  
+
+**Editing:-**  
+
+1) To change the message which appears before the sitemap is loaded, change this "Loading, please wait for a moment..." line to your own.  
+  
+2) Replace my blog URL with your blog URL by replacing https://www.twistblogg.com and **those who are using the free blogspot domain name**, change your country specific extension to **.com** at the end of the URL.  
+
+For example, change **http://yourblog.blogspot.in** to **http://yourblog.blogspot.com** where **.in** is a country specific TLDN for Indian users, got it?  
+  
+3) Color scheme is yellow and you may like to change it to your blog's color scheme. To change the yellow color just replace this `#FFFC03` color code to your own which appears two times in the CSS code above.  
+  
+4)Also, you can host the script in your GitHub account. Learn [how to host CSS, Javascripts and other files in GitHub](https://www.twistblogg.com/2020/06/use-github-for-hosting-files.html).  
+  
+Finally hit Publish button and visit your sitemap page to check if it is working or not. It should be 100% working for everyone.  
+  
+
+**Recommended:** [Add Blogger Contact Form to Any Static Page](https://www.twistblogg.com/2015/08/add-contact-form-to-blogger-pages.html)
+
+  
+
+### Hide The Specific Labels And Show Selected Labels Only
+
+
+What if you have a huge list of labels and you only want to show the selected labels on your sitemap page? This script automatically fetches all the labels and shows them all in the sitemap. We can't stop appearing unwanted labels or show the selected labels only with the script. It will generate and show all the labels of your blog in your sitemap.  
+  
+Many of you guys may don't like to show all of your labels if they are above 100+ so in that case, I have a simple solution to hide the unwanted labels from appearing and show only the selected ones.  
+  
+This is possible with simple CSS code so please read the steps carefully and be ready to follow a boring task. :)  
+  
+
+
+#### Step 1. Selecting The Labels To Hide  
+
+
+First of all just visit your newly published sitemap page and let the sitemap load. You will see all the labels listed and sorted alphabetically on left side (if you did not change the settings from JavaScript).  
+  
+Now start counting your labels. Yes you heard it right. :p  
+  
+Because you need to note down the number of the label you want to hide. **Usually counting starts from 1 but you have count from ZERO**. It means **your very first label is on number ZERO in the list** and second label is on number one. Same goes on till the end.  
+  
+
+
+#### Step 2. Add The Number of The Label To The Class Name  
+
+
+Finally if you have noted down all the numbers of labels you want to hide then now add the numbers to this class name **.toc-tab-item-ADD-NUMBER** and add those all the classes together just like the example code given below:-  
+  
+```css
+<style>  
+.toc-tab-item-0, .toc-tab-item-1, .toc-tab-item-5, .toc-tab-item-7 {  
+display: none !important;  
+}  
+</style>
+```
+  
+In the above CSS code, I have selected the label number 1, 2, 4 and 6 to hide (Remember to count from ZERO=1). Use the above code as a reference and add all of the numbers of the labels like as I did in the example code above. Ask me in comments if  you did not get it.  
+  
+After adding all those classes, go back to edit the sitemap page then just add this CSS code inside your sitemap page like as you have added the previous codes. Now update your page and see the results if they are as expected or not.  
+  
+Finally this is all I could do in this tut and I hope it is simple enough to understand for newbies too.  
+If you're facing any kind of problem or need any help regarding further customization of your sitemap page then just leave your message in the comments or shoot me an email. Your feedback is much appreciated.  
+  
+I'll definitely get back to support you. Support me by sharing this post and socializing with me. :) Stay Blessed! 

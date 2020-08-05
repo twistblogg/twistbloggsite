@@ -1,0 +1,122 @@
+---
+title: 'Simple Yet Powerful Email Subscription Box For Blogger Sidebar'
+date: 2019-10-05
+excerpt: Blogger supports feedburner email subscription box in sidebar. We are going to customize it and create a super light weight email subscription box plugin.
+slug: elegant-email-subscription-box-blogger
+featured: false
+published: true
+image: Simple yet powerful email subscription box for blogger sidebar.jpg
+author: Invictus
+tags : [Subscription Widgets, Blog Widgets]
+---
+
+Good afternoon fellow blogger (GMT +5:45 hrs), I have a good news for you all: Here in TwistBlogg, we have launched a series named " [**Premium Blogger Plugins Series**](https://www.twistblogg.com/2019/10/premium-blogger-plugins-series.html)" wherein we are publishing fresh blogger widgets such as email subscription box, author box, social share buttons, [contact page designs](https://www.twistblogg.com/2015/08/add-contact-form-to-blogger-pages.html) and many more. We have already shared a lot of these plugins and will be updating them frequently. Today we will start with Email Subscription Box for blogger sidebar.  
+  
+**Email subscription box** is a must have blogger widget that allows readers to subscribe to blog and receive fresh contents delivered right into their inbox mail, without having to visit back the website.  
+Allowing your readers to subscribe to your blog keeps them updated with recent updates published in your blog.  
+  
+Similarly, most of the visitors who have subscribed via email are interested in your contents, and delivering them right into their mail, helps a blog grow and receive targeted audiences. Isn't that cool?   
+  
+Compared to WordPress, Blogger does not come in hand with premium and stylish email subscription box. Therefore, it becomes necessary to customize and re-design [subscription box](https://www.twistblogg.com/2018/08/wordpress-like-email-subscription-box-for-blogger.html) in blogger.  
+  
+Today I'm going to share a beautiful email subscription box for blogger sidebar. It looks simple, but lures audiences into clicking the Subscribe button. I have named this widget " **Simple Yet Powerful Email Subscription Box For Blogger Sidebar**."  
+  
+  
+
+### Features of this Email Subscription Box For Blogger
+
+*   Made with Pure CSS and HTML to make it load faster.
+*   Font Awesome 5.8 icons used.
+*   Fits Perfectly In Sidebar
+*   Clean Layout
+*   Super Easy To customize
+*   Beautiful Design
+
+  
+
+### Live Demo of Simple Yet Powerful Email Subscription Box For Blogger
+
+<Image src="Live Demo of Simple Yet Powerful Email Subscription Box For Blogger.png" alt="Live Demo of Simple Yet Powerful Email Subscription Box For Blogger"/>
+
+
+## How to add email subscription Box in Blogger Sidebar?
+
+
+In first step, we will add font awesome to blogger blog, then add CSS and HTML Codes and later on customize this email subscription box widget for blogger sidebar.  
+  
+
+#### Step 1: Installing Font Awesome Icons
+
+Most of you might have installed font awesome in your blog, if not go to **Template** > **Edit HTML** > Search for `</head>` or `/head` and paste the following code above it.  
+  
+_\*Font Awesome 5.8 Icons Are used for this widget_  
+
+```html 
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css' rel='stylesheet'/>
+```
+
+**Recommended:** [How to use Font Awesome Icons In Blog?](https://www.twistblogg.com/2014/01/How-To-Use-FontAwesome-Icons-In-Blogger.html)  
+  
+
+#### Step 2: Inserting The Code
+
+Go to **Blogger Dashboard** > **Layout** > **Add a Gadget** (In Sidebar) > **HTML/Javascript** & paste the following piece of code, change _XXXXX_ with your feedburner ID and hit the save button.  
+
+```css title=main.html
+<style>  
+/* ------------------------------------------------------------  
+Simple Yet Powerful Email Subscription Box Widget  
+Designed by :: https://www.TwistBlogg.com  
+Keep These Credits Intact, Do Not Remove  
+-------------------------------------------------------------*/  
+@keyframes change-background-2 {0% {background: #32A7BD;}50% {background: #32bd97;}75% {background: #327ebd;}100% {background: #32A7BD;}}  
+#tb-text-box {max-width:360px;text-align:center;font-size:22px;font-weight:400;color:#fff;padding:10px 15px;display:block;animation: change-background-2 6s linear infinite;}  
+#tb-text-box:before {font-family:&amp;#39;Font Awesome 5 Free&amp;#39;;font-weight:900;content:&amp;#39;\f2b6&amp;#39;!important;margin-right:10px;font-size:20px;}  
+#tb-subscribe-wrapper{color:#aaa;font-size:14px;position:relative;max-width:360px;text-align:center;text-transform:none;font-weight:400;border:1px solid #dedede;margin:0px auto 15px}  
+#tb-subscribe-limit{background:#F9F9F9;position:relative;width:100%;max-width:1050px;padding:15px 15px 20px;margin:0 auto;display:block;overflow:hidden}  
+#tb-subscribe-limit .fa-envelope-open{font-size:5em;padding:0 0 30px}  
+#tb-subscribe-limit,.subs-field,.subs-form{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}  
+.subs-form{clear:both;display:block;margin:0 auto;width:100%;padding:0;overflow:hidden;position:relative}  
+input.subs-field[type=&amp;quot;text&amp;quot;]{color:#777;border:1px solid #fff;}  
+.subs-field{background:#fff;margin:0 auto;padding:0 46px 0 15px;height:46px;line-height:46px;width:100%;outline:none;text-align:left;border:1px solid rgba(0,0,0,0.1)}  
+.subs-field[type=&amp;quot;text&amp;quot;]:focus{border-color:rgba(0,0,0,0.6)}  
+.subs-button{cursor:pointer;font-weight:400;padding:0;width:46px;width:46px;line-height:46px;text-align:center;font-size:15px;border:1px solid rgba(0,0,0,0.1) !important;transition:all .3s;margin:0 auto;text-align:center;display:block;animation: change-background-2 6s linear infinite;color:#fff;position:absolute;right:0;top:0}  
+#tb-subscribe-wrapper .tb-subscribe-text{margin:0 auto;padding:0;position:relative}  
+#tb-subscribe-wrapper .tb-subscribe-text{background:#e3f5f5;color:#8a8a8a;margin:0;padding:15px;display:block;font-size:14.6px;font-weight:400;line-height:1.4em;text-align:left;border-top:1px solid #dedede}  
+</style>  
+<div id="tb-text-box">  
+Subscribe To Our NewsLetter</div>  
+<div id="tb-subscribe-wrapper">  
+<div id="tb-subscribe-limit">  
+<i class="far fa-envelope-open"></i>  
+<form action="//feedburner.google.com/fb/a/mailverify?uri=XXXXX" class="subs-form" method="post" onsubmit="window.open ('//feedburner.google.com/fb/a/mailverify?uri=XXXXX', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" target="popupwindow">  
+<input name="uri" type="hidden" value="XXXXX" /><input name="loc" type="hidden" value="en_US" /><input autocomplete="off" class="subs-field" name="email" placeholder="Your email address...." required="required" type="text" /><button class="subs-button" title="Subscribe" type="submit"><i aria-hidden="true" class="fa fa-paper-plane"></i></button></form>  
+</div>  
+<span class="tb-subscribe-text">Enter your email address to subscribe this blog and receive notifications of new posts by email.</span>  
+</div>
+```  
+
+#### Step 3: Customizing the Email Subscription Box For Blogger
+
+This is an optional step wherein I'll teach you how to change the color scheme of this amazing widget.  
+  
+⏩ To remove the animation in text box and subscribe button, find this code `animation: change-background-2 6s linear infinite;` and delete it.
+    
+⏩ To Change the background color of box(upper part), search for `background:#F9F9F9` and modify it accordingly.  
+  
+⏩ To Change the background color of lower box, search for `background:#e3f5f5` and update it accordingly.  
+  
+⏩ To Change the Email Icon, search for `.fa-envelope-open` and `<i class="far fa-envelope-open"></i>` and paste new icon code in their place.  
+  
+
+Done !  If you have followed all steps correctly, you should have a _simple yet powerful email subscription box for blogger sidebar_. In case, you want help in customization, feel free to contact us or leave a comment below.  
+  
+This blogger widget is a part of "[**Premium Blogger Plugins Series**](https://www.twistblogg.com/2019/10/premium-blogger-plugins-series.html)". Stay tuned for more updates.  
+  
+Here are a handpicked tutorials for you to read next:  
+
+*   [How to show last updated date in blogger posts?](https://www.twistblogg.com/2019/09/show-published-and-last-updated-date-in-blogger-post.html)
+*   [Light-weight Social Share Widgets For Blogger Blog](https://www.twistblogg.com/2015/08/add-custom-social-media-share-buttons-to-blogger-posts.html)
+*   [Add Sticky Notification Bar For Blogger(with no watermark)](https://www.twistblogg.com/2015/05/add-notification-bar-to-blogger.html)
+*   [Email Subscription Popup Box For Blogger With Cookie Enabled](https://www.twistblogg.com/2015/04/email-subscription-popup-blogger-plugin.html)
+*   [How to display estimated post reading time in blogger posts? ](https://www.twistblogg.com/2019/09/display-estimated-post-reading-time-in-blogger-posts.html)

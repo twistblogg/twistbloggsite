@@ -1,0 +1,110 @@
+---
+title: 'Optimize FontAwesome Icons To Improve Web Performance - Blogger'
+date: 2019-11-10
+excerpt: Font Awesome icons help web designing easier, however, they impact page load time. Learn how to optimize font awesome icons for better web performance. 
+slug: optimize-font-awesome
+featured: false
+published: true
+image: how to optimize font awesome icons - blogger.jpg
+author: Invictus
+tags : [Page Speed]
+---
+
+Icons are an integral part of web designing. They make [designing process](https://www.twistblogg.com/2016/01/premium-seo-optimized-blogger-template.html) a lot easier and quicker. Long gone are those days where individual icons were represented via an image. Now, its time for web fonts.  
+  
+One such web font is <a href="https://github.com/FortAwesome/Font-Awesome" rel="nofollow noopener noreferrer">Font Awesome</a>, which was initially released back in 2012 by Dave Gandy. Font awesome icons gained a huge popularity in short span of time because they are easy to use and are infinitely scalable, so you do not need to worry about device size. Also, all kinds of icons are readily available for use.  
+  
+How do you add Font Awesome Icons in your website? It is super easy. Add a css file and call them on demand. [You can check here for the process](https://www.twistblogg.com/2014/01/How-To-Use-FontAwesome-Icons-In-Blogger.html). However, this is not the subject of our article. We are trying to optimize font awesome icons to a very small size.  
+  
+
+### Why you need to optimize font awesome icons?
+
+
+_A straightforward answer: <a href="https://www.twistblogg.com/blog/tags/page-speed" rel="nofollow noopener noreferrer">Web Performance.</a>_ With the addition of font awesome icons set, we have the flexibility to use more than 1500 icons. However, most of us never use more than 20 to 30 icons. There is no benefit in loading all icons when we need only 1 or 2 percent of them.  
+  
+Moreover, Font Awesome is a **huge file (>120KB)**. It includes web fonts (90KB) and minimized CSS version (30KB). That is sure to hurt web performance during pageload.  
+  
+Though font awesome icons are cached by web browsers since many website use it, we need to think of new first-time visitors who do not have font awesome cached in their browsers.  
+
+
+  
+In this tutorial, I'm going to share a simple trick on **how to optimize font awesome icons and improve web performance** by reducing its size from 120 KB to ridiculously less than 12KB.  
+
+With this technique, I achieved following merits:  
+  
+
+*   Pagespeed Improved from 72% to 90%.
+*   Lessen DNS Lookup (though web fonts need to be called)
+*   Lessen HTML Request.
+
+  
+There was a method to <a rel="nofollow noopener noreferrer" href="https://blog.webjeda.com/lazy-load-css/">lazy loading CSS</a>, however it seems not to have much impact. The code looked something like this:  
+
+
+```js
+<script type='text/javascript'>  
+//<![CDATA[  
+function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet"; i.href = e; i.media = "only x"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }  
+loadCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css");  
+//]]>  
+</script>  
+<noscript>  
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css' rel='stylesheet'/>  
+</noscript>  
+```  
+
+
+## How to optimize Font awesome icons for better web performance?
+
+
+Basic idea is to remove unwanted web fonts and css files. Since most modern browsers support _.woff2_ files, we will be using .woff2 format. Just to be in safe side, I'll also recommend to add .woff format as some of our visitors might be using old versions(I don't know why). We will also remove unwanted icons and choose to add only those that are needed. It is important to know that with the addition of icons, the file size also increases.  
+  
+This method takes some effort and patience to reduce font awesome size. For this method, I'll be taking font awesome 5.8 version as an example. The default call will look something like this-  
+
+```html
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet"/>
+```
+
+_Copy the link and open it in new tab._ 
+
+**Delete the above code from your template.** Now, we will add web fonts and rendering values. Later on add the required icons code.  
+  
+Go to Blogger.com > Theme > Edit HTML and search for `</head>` and paste the following code just above it. 
+
+
+```css
+<style type="text/css">  
+@font-face{font-family:&quot;Font Awesome 5 Brands&quot;;font-style:normal;font-weight:normal;font-display: swap;src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-brands-400.woff2) format(&quot;woff2&quot;),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-brands-400.woff) format(&quot;woff&quot;)}.fab{font-family:&quot;Font Awesome 5 Brands&quot;}@font-face{font-family:&quot;Font Awesome 5 Free&quot;;font-style:normal;font-weight:400;font-display: swap;src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-regular-400.woff2) format(&quot;woff2&quot;),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-regular-400.woff) format(&quot;woff&quot;)}.far{font-weight:400}@font-face{font-family:&quot;Font Awesome 5 Free&quot;;font-style:normal;font-weight:900;font-display: swap;src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-solid-900.woff2) format(&quot;woff2&quot;),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-solid-900.woff) format(&quot;woff&quot;)}.fa,.far,.fas{font-family:&quot;Font Awesome 5 Free&quot;}.fa,.fas{font-weight:900}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}  
+.fa,.fab,.fal,.far,.fas{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1}.fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul&gt;li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:.08em solid #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{animation:fa-spin 2s infinite linear}.fa-pulse{animation:fa-spin 1s infinite steps(8)}@keyframes fa-spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.fa-rotate-90{-ms-filter:&quot;progid:DXImageTransform.Microsoft.BasicImage(rotation=1)&quot;;transform:rotate(90deg)}.fa-rotate-180{-ms-filter:&quot;progid:DXImageTransform.Microsoft.BasicImage(rotation=2)&quot;;transform:rotate(180deg)}.fa-rotate-270{-ms-filter:&quot;progid:DXImageTransform.Microsoft.BasicImage(rotation=3)&quot;;transform:rotate(270deg)}.fa-flip-horizontal{-ms-filter:&quot;progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)&quot;;transform:scaleX(-1)}.fa-flip-vertical{transform:scaleY(-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical,.fa-flip-vertical{-ms-filter:&quot;progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)&quot;}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{transform:scale(-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-90,:root .fa-rotate-180,:root .fa-rotate-270{filter:none}.fa-stack{display:inline-block;height:2em;line-height:2em;position:relative;vertical-align:middle;width:2.5em}.fa-stack-1x,.fa-stack-2x{left:0;position:absolute;text-align:center;width:100%}.fa-stack-1x{line-height:inherit}.fa-stack-2x{font-size:2em}.fa-inverse{color:#fff}.fa-500px:before{content:&quot;\f26e&quot;}  
+</style>
+```
+
+**Adding Necessary Icons:** 
+
+This takes some time as you need to know what all icons you've used in your [template](https://www.twistblogg.com/2019/09/best-premium-blogger-templates.html). A short and quick method can be to search for `<i` and take a note of all icons.  
+  
+**For instance**, I want to use reddit icon,and there are many versions available. So, I'll go to <a rel="nofollow noopener noreferrer" href="https://fontawesome.com/icons?d=gallery">font awesome icon set</a> and type reddit.  
+
+
+<Image src="searching reddit in font awesome.png" alt="searching reddit in font awesome" />
+
+
+Now select the one you need and **notice the content value and class**. Now append the following code just above `</style>` and hit the save button to see reddit icon working.  
+
+```css
+ .fa-reddit-alien:before{content:"\f281"}
+```
+
+
+<Image src="identifying content value of font awesome icons for optimization.png" alt="identifying content value of font awesome icons for optimization" />
+
+
+  
+Another way to easily do this is to search for reddit-alien in the link opened earlier (`https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css`), copy the code and paste it before `</style>`.  
+
+
+Isn't that easy? You've successfully _optimized font awesome icons_ and improved your website performance. In case, you're stuck, leave a comment so we can work together to solve the issue.  
+
+  
+**Last Article:** [How to defer Offscreen Images in blogger - Lazy Loading Images](https://www.twistblogg.com/2019/11/lazy-load-images-in-blogger.html)  
+**Also Read :** [21 Tested Ways To Speed Blog Loading Time](https://www.twistblogg.com/2020/01/speed-up-page-loading-time.html)

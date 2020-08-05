@@ -1,0 +1,339 @@
+---
+title: 'Make Embedded Videos Responsive in Blogger - Add Elegant Frames'
+date: 2015-08-02
+excerpt: Make your Embedded YouTube or Vimeo Videos Fully Responsive and Display Embedded Videos Inside Elegant Frames.  
+slug: embed-videos-beautifully-blogger
+featured: false
+published: true
+image: Make Embedded Videos Responsive in Blogger - Add Elegant Frames.jpg
+author: Invictus
+tags : [Blog Widgets]
+---
+
+Videos are used widely along with text content in blog posts and today's article is all about how to make those embedded videos responsive plus display them inside elegant frames of your choice.  
+  
+Making videos responsive is the easy task to accomplish but along with that, displaying those videos inside beautiful frames was little tedious for me.  
+  
+
+I am going to share two different frames where first one is a image frame of blank MacBook so it appears as if video is playing inside it.  
+  
+Second frame is what I have designed with pure CSS and added some cool shadows effect in the bottom using pseudo elements. I hope you'll like it.  
+  
+**So what will you get in this post?**  
+
+**1)** Making Embedded Videos Responsive without adding any frame.  
+**2)** Display Video Inside Responsive Frame Made of Pure CSS.  
+**3)** Display Video Inside Responsive Image Frame of a Blank MacBook.  
+  
+So choice is yours, they all are responsive. :) 
+
+(**Note:-** You don't have permission to copy and share my code on your blog)  
+  
+  
+
+## 1) Make Embedded YouTube Videos or Vimeo Videos Responsive
+
+
+When you get the code to Embed your video from YouTube or any other video hosting site, your code will contain a fixed height and width properties. So when someone visits your site from small resolution devices like as mobile or a tablet, then your embedded video will not re-size itself according to the screen size.  
+  
+It will always contain its height and width to the original values despite the screen size. So it will either make a scrolling bar on small screen sizes or else it will hide the video part which is overflowing (If overflow: hidden; property is used for the content wrapper). You can not make them responsive like the way you can do with images.  
+  
+If the scrolling bar is appearing then that particular page will also show an error in your webmaster tools account if you will check it for responsive design (Bad for SEO?).  
+  
+I wrote that all just because I wanted to to tell you about how important is it to make your embedded videos responsive.  
+  
+
+#### So how to do it?  
+
+
+It is simple enough to do with the help of CSS. So follow the steps given below and be responsive. :D  
+  
+
+#### CSS Part
+
+```css
+<style> .video_outer_wrap {  
+         width: 100%;  
+         max-width: 560px;  
+         margin: 15px auto;  
+     }  
+       
+     .video_wrap {  
+         position: relative;  
+         padding-bottom: 56%;  
+         padding-top: 0px;  
+         height: 0;  
+         background-color: #000 !important;  
+     }  
+       
+     .video_wrap iframe,  
+     .video_wrap object,  
+     .video_wrap embed {  
+         position: absolute;  
+         top: 0;  
+         width: 100%;  
+         height: 100%;  
+     }  
+       
+     </style>  
+
+```  
+
+#### HTML Part
+
+  
+```html
+<div class="video_outer_wrap">  
+    <div class="video_wrap bottomshadows">  
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/LxuVerR2lFU" frameborder="0" allowfullscreen></iframe>  
+    </div>  
+</div>  
+
+```
+
+
+#### How to use it?  
+
+
+**CSS:-** Copy the above CSS Part first then switch to HTML Mode of your blogger post editor and paste the the whole CSS code as it is  (Will work for WordPress too).  
+  
+(**Note:** You can also paste the CSS code inside your blogger template skin so that you don't have to paste the CSS code every time in any of your blogger post. If you want to paste the code inside your template then copy the CSS code without the  `<style>` tag and paste it just before  `]]></b:skin>` and save your template.  
+
+
+**HTML:-** Copy the HTML code and Paste inside your post editor after switching to HTML mode. You have to paste the HTML where you want your video to be appeared in  your content. Now for adding your video, just replace the embedded code you got from your YouTube or Vimeo video.  
+  
+(**Note:-** To get the embed code for your video on YouTube, just right click on the video player and select Get embed code. You will get your code in the middle of your video screen so copy it from there.)  
+  
+If you followed all the steps correctly then you will have your video which is fully responsive. You can check it live by re-sizing your browser window easily.  
+  
+Now I am going to share those two other ways along with live demo for adding cool frames and the **process of using the code will be same** as explained above so I am not going to re-write it again (except few changes).  
+  
+
+## 2) Add A Beautiful Frame to Embedded Videos Using Pure CSS
+
+
+I love this one because it is made with pure CSS and loads as fast as you know. :) It has got really cool design and shadows effect in the bottom.  
+  
+I have also disabled the Video title Info which appears on the top of it and the related videos which appear in the end of video.  
+  
+A static demo given below :
+
+
+<Image src="embed videos on blogger with frames.png" alt="embed videos on blogger with frames"/>
+
+  
+
+
+#### CSS Part for it  
+
+
+```css
+<style> .tbn_css_frame_wrap {  
+         width: 100%;  
+         max-width: 560px;  
+         margin: 30px auto;  
+     }  
+       
+     .tbn_css_frame_wrap_inner {  
+         position: relative;  
+         padding-bottom: 53%;  
+         height: 0;  
+         background-color: #000 !important;  
+         border: 15px solid #CACACA;  
+     }  
+       
+     .tbn_css_frame_wrap_inner iframe,  
+     .tbn_css_frame_wrap_inner object,  
+     .tbn_css_frame_wrap_inner embed {  
+         position: absolute;  
+         top: 0;  
+         width: 100%;  
+         height: 100%;  
+     }  
+       
+     .bottomshadows {  
+         position: relative;  
+     }  
+       
+     .bottomshadows:before,  
+     .bottomshadows:after {  
+         z-index: -1;  
+         position: absolute;  
+         content: "";  
+         bottom: 0px;  
+         left: 10px;  
+         width: 50%;  
+         top: 80%;  
+         max-width: 300px;  
+         background: #777;  
+         -webkit-box-shadow: 0 15px 10px #777;  
+         -moz-box-shadow: 0 15px 10px #777;  
+         box-shadow: 0 15px 10px #777;  
+         -webkit-transform: rotate(-4deg);  
+         -moz-transform: rotate(-4deg);  
+         -o-transform: rotate(-4deg);  
+         -ms-transform: rotate(-4deg);  
+         transform: rotate(-4deg);  
+     }  
+       
+     .bottomshadows:after {  
+         -webkit-transform: rotate(4deg);  
+         -moz-transform: rotate(4deg);  
+         -o-transform: rotate(4deg);  
+         -ms-transform: rotate(4deg);  
+         transform: rotate(4deg);  
+         right: 10px;  
+         left: auto;  
+     }  
+       
+     @media all and (max-width: 400px) {  
+         .tbn_css_frame_wrap_inner {  
+             border: 7px solid #CACACA !important;  
+         }  
+         .bottomshadows:before,  
+         .bottomshadows:after {  
+             bottom: 9px !important;  
+         }  
+     }  
+       
+     </style>  
+
+```  
+
+#### HTML Part for it  
+
+
+```html
+<div class="tbn_css_frame_wrap">  
+    <div class="tbn_css_frame_wrap_inner bottomshadows">  
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/LxuVerR2lFU?rel=0&theme=light&hd=1&showinfo=0" frameborder="0" allowfullscreen></iframe>  
+    </div>  
+</div>  
+
+```
+
+  
+
+**Editing Step:-** Please take note that this time you need not to paste your embedding code from YouTube as it is so instead just replace the Video id. You can easily get this id from the address bar of your browser. See the example:
+
+
+> https://www.youtube.com/watch?v=LxuVerR2lFU
+
+
+This is the web address of my intro video on YouTube I have uploaded and `LxuVerR2lFU` is my video id. Copy it in the same way for your video and replace in the above HTML. Ask me in comments if you did not get it.
+
+  
+
+For Vimeo videos, just replace the whole code starting with  `<iframe>` code.
+
+  
+
+**Common Problem -** Shadows are not appearing as shown in the live demo? Just add this little CSS code to your template skin or inside your blog post with along with above CSS code given below:
+
+  
+```css
+.post-body {  
+position: relative;  
+z-index: 1;  
+}
+```
+  
+So did it work for you? Let me know if it worked or not. I will definitely help you. So moving on to the image frame.  
+  
+
+
+## 3) Displaying Embedded Video Inside a Responsive Image Frame
+
+
+This is the frame of a blank MacBook. I used the `border-image:` property to display the image frame instead of adding the image frame with `background-image:` property.  
+
+  
+This is all because I wanted to make it fully responsive. When I used the image with `background-image:` property then I could not make it fully responsive.  
+
+Video appeared to be overlapping the frame between different screen resolutions and I did not like it at all.  
+
+So I decided to go with `border-image:` property instead which makes it neat and clean. You can use your any other image but you need to adjust the border width and border image values accordingly.  
+  
+(**Note:-**  No Browser support for IE10 and below, works well with others browsers, even with old versions with browser specific prefix. I just hate IE)  
+  
+See the static demo given below.  
+  
+ 
+<Image src="Displaying Embedded Video Inside a Responsive Image Frame.png" alt="Displaying Embedded Video Inside a Responsive Image Frame" />
+
+
+#### CSS Part  
+
+
+```css
+<style> .tb_outer_wrap {  
+         width: 100%;  
+         max-width: 650px;  
+         margin: 15px auto;  
+     }  
+       
+     .tb_video_wrap_macbook {  
+         position: relative;  
+         padding-bottom: 43%;  
+         padding-top: 0;  
+         height: 0;  
+         overflow: hidden;  
+         -webkit-border-image: url('http://4.bp.blogspot.com/-9SlILeH9ikA/VboLX1JtwsI/AAAAAAAABUM/M5vmGSMXzBc/s1600/macbook%2Blaptop%2Bframe.png') 50 233 112 228 stretch stretch;  
+         -moz-border-image: url('http://4.bp.blogspot.com/-9SlILeH9ikA/VboLX1JtwsI/AAAAAAAABUM/M5vmGSMXzBc/s1600/macbook%2Blaptop%2Bframe.png') 50 233 112 228 stretch stretch;  
+         -o-border-image: url('http://4.bp.blogspot.com/-9SlILeH9ikA/VboLX1JtwsI/AAAAAAAABUM/M5vmGSMXzBc/s1600/macbook%2Blaptop%2Bframe.png') 50 233 112 228 stretch stretch;  
+         border-image: url('http://4.bp.blogspot.com/-9SlILeH9ikA/VboLX1JtwsI/AAAAAAAABUM/M5vmGSMXzBc/s1600/macbook%2Blaptop%2Bframe.png') 50 233 112 228 stretch stretch;  
+         border-color: rgba(0, 0, 0, 0);  
+         border-width: 27px 76px 55px 76px;  
+         border-style: inset;  
+     }  
+       
+     .tb_video_wrap_macbook iframe,  
+     .tb_video_wrap_macbook object,  
+     .tb_video_wrap_macbook embed {  
+         position: absolute;  
+         top: 0;  
+         width: 100%;  
+         height: 100%;  
+         background-color: #ddd;  
+     }  
+       
+     @media (max-width: 500px) {  
+         .tb_video_wrap_macbook {  
+             border-width: 20px 62px 40px 62px;  
+         }  
+         @media all and (max-width: 400px) {  
+             .tb_video_wrap_macbook {  
+                 border: none !important;  
+             }  
+         }  
+         </style>  
+
+```
+
+#### HTML Part  
+
+
+```html
+<div class="tb_outer_wrap">  
+    <div class="tb_video_wrap_macbook">  
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/LxuVerR2lFU?rel=0&amp;theme=dark&amp;controls=1&amp;showinfo=0&amp;autohide=0" frameborder="0" allowfullscreen=""></iframe>  
+    </div>  
+</div>  
+
+```
+
+**Editing Step:-**  
+
+Replace the video ID for YouTube and for Vimeo videos, just replace the full `<iframe>` code.  
+  
+So this is it for now and I hope you guys like it. Please let me know your feedback via comments whether your liked it or not.  
+
+
+**Recommended:-** [How to Create Landing Pages or Squeeze Pages on Blogger/Blogspot](https://www.twistblogg.com/2015/05/create-custom-landing-pages-on-blogger.html)
+
+  
+If you're facing any kind of problem or I could not make things clear then please let me know. I will try my best to help you out.  
+  
+You can help me too by sharing this post or connecting with me on social networks. :D  
+
+Thanks and stay blessed! 

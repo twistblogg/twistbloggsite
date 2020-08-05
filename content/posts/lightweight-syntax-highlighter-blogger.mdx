@@ -1,0 +1,219 @@
+---
+title: 'Add Super LightWeight Syntax Highlighter Plugin In Blogger'
+date: 2020-06-02
+excerpt: Syntax highlighter represents codes in a proper color sequence , making your page more engaging and lively. In this tutorial, I am going to share a super lightweight syntax highlighter or beautifier widget for blogger.
+slug: lightweight-syntax-highlighter-blogger
+featured: false
+published: true
+image: Add Super LightWeight Syntax Highlighter Plugin In Blogger.jpg
+author: Invictus
+tags : [Blog Customize]
+---
+
+  
+When I started my blog, my priorities were to write about blogging tips and SEO guides. With time, I gained interest in coding and designing plugins and themes.  
+  
+It was then necessary for me to find a way to represent my codes in a systematic manner. At that moment, <a rel="nofollow noopener noreferrer" target="_blank" href="https://gist.github.com/">Github Gist</a> was an easy approach. Paste your coding in Gist and embed them in blog articles.  
+  
+Although it was easy to manage and update codes with Github, the time required to perform it was significant. Also, opening Github for just one or two line of codes was not fruitful.  
+  
+Then, I started searching for good syntax highlighter for blogger. There were plethora of options to choose from. I loved <a rel="nofollow noopener noreferrer" target="_blank" href="https://prismjs.com/">Prism syntax highlighter</a>. It was elegant, beautiful, easy to install and use. 
+
+However, there was a catch: The file size to load a simple syntax highlighter -- it was huge. Although, with Prism, you can select only required languages, it was around 16KB for a simple HTML, CSS and Javascript highlighter.  
+  
+So, was there any other lightweight syntax highlighter/beautifier for my blog? The answer was - Yes. There was a **super lightweight syntax highlighter plugin for blogger** by Larsjung that beautifies your code and they named it "_lolight_".  
+  
+  
+
+#### What is Lolight syntax highlighter?  
+
+
+Lolight is a lightweight tokenizer and syntax highlighter plugin available for free. The minified script is less than 3KB in size. It works on a simple principle : Find the tokens and colorize them accordingly. For instance, if the script finds "comment" tags, it will set "ll-com" class CSS values to that comment statement.  
+  
+It is important to know that this plugin provides no language specific syntax support. It is just a CSS stylable breakdown into tokens. Find more information <a rel="nofollow noopener noreferrer" target="_blank" href="https://larsjung.de/lolight/">here</a>.    
+  
+
+### Demo of LightWeight Syntax Highlighter for Blogger  
+
+
+<Image src="Demo demonstrating Syntax Highlighter.png" alt="Demo demonstrating Syntax Highlighter" />
+
+
+This plugin is language independent. So, it will work for almost all languages. Find more demo examples <a rel="nofollow noopener noreferrer" target="_blank" href="https://larsjung.de/lolight/latest/demo.html">from here</a>.  
+  
+
+
+## How to add lightweight syntax highlighter in blogger?  
+
+
+  
+The first step is to add Javascript to your blog. It is less than 3KB in size, so it won't hamper loading time much. Here's the full code.  
+
+
+```js
+<script type='text/javascript'>//<![CDATA[  
+/*! lolight v1.3.0 - https://larsjung.de/lolight/ */  
+/*!  Shared By TwistBlogg.com */  
+!(function (e, t) {  
+    "object" == typeof exports && "object" == typeof module ? (module.exports = t()) : "function" == typeof define && define.amd ? define([], t) : (e.lolight = t());  
+})(this, function () {  
+    function t(e) {  
+        if ("string" != typeof e) throw new Error("tok: no string");  
+        for (var t = [], n = u.length, o = !1; e; )  
+            for (var r = 0; r < n; r += 1) {  
+                var i = u[r][1].exec(e);  
+                if (i && 0 === i.index) {  
+                    var a = u[r][0];  
+                    if ("rex" !== a || !o) {  
+                        var l = i[0];  
+                        a === s && c.test(l) && (a = "key"), "spc" === a ? 0 <= l.indexOf("\n") && (o = !1) : (o = a === f || a === s), (e = e.slice(l.length)), t.push([a, l]);  
+                        break;  
+                    }  
+                }  
+            }  
+        return t;  
+    }  
+    function e(e, t) {  
+        if ("undefined" != typeof document) t(document);  
+        else if (e) throw new Error("no doc");  
+    }  
+    function n(o) {  
+        e(!0, function (n) {  
+            var e = t(o.textContent);  
+            (o.innerHTML = ""),  
+                e.forEach(function (e) {  
+                    var t = n.createElement("span");  
+                    (t.className = "ll-" + e[0]), (t.textContent = e[1]), o.appendChild(t);  
+                });  
+        });  
+    }  
+    function o(t) {  
+        e(!0, function (e) {  
+            [].forEach.call(e.querySelectorAll(t || ".lolight"), function (e) {  
+                n(e);  
+            });  
+        });  
+    }  
+    var r = "_nam#2196f3}_num#ec407a}_str#43a047}_rex#ef6c00}_pct#666}_key#555;font-weight:bold}_com#aaa;font-style:italic}".replace(/_/g, ".ll-").replace(/#/g, "{color:#"),  
+        c = /^(a(bstract|lias|nd|rguments|rray|s(m|sert)?|uto)|b(ase|egin|ool(ean)?|reak|yte)|c(ase|atch|har|hecked|lass|lone|ompl|onst|ontinue)|de(bugger|cimal|clare|f(ault|er)?|init|l(egate|ete)?)|do|double|e(cho|ls?if|lse(if)?|nd|nsure|num|vent|x(cept|ec|p(licit|ort)|te(nds|nsion|rn)))|f(allthrough|alse|inal(ly)?|ixed|loat|or(each)?|riend|rom|unc(tion)?)|global|goto|guard|i(f|mp(lements|licit|ort)|n(it|clude(_once)?|line|out|stanceof|t(erface|ernal)?)?|s)|l(ambda|et|ock|ong)|m(odule|utable)|NaN|n(amespace|ative|ext|ew|il|ot|ull)|o(bject|perator|r|ut|verride)|p(ackage|arams|rivate|rotected|rotocol|ublic)|r(aise|e(adonly|do|f|gister|peat|quire(_once)?|scue|strict|try|turn))|s(byte|ealed|elf|hort|igned|izeof|tatic|tring|truct|ubscript|uper|ynchronized|witch)|t(emplate|hen|his|hrows?|ransient|rue|ry|ype(alias|def|id|name|of))|u(n(checked|def(ined)?|ion|less|signed|til)|se|sing)|v(ar|irtual|oid|olatile)|w(char_t|hen|here|hile|ith)|xor|yield)$/,  
+        i = "com",  
+        s = "nam",  
+        f = "num",  
+        u = [  
+            [f, /#([0-9a-f]{6}|[0-9a-f]{3})\b/],  
+            [i, /(\/\/|#).*?(?=\n|$)/],  
+            [i, /\/\*[\s\S]*?\*\//],  
+            [i, /<!--[\s\S]*?-->/],  
+            ["rex", /\/(\\\/|[^\n])*?\//],  
+            ["str", /(['"`])(\\\1|[\s\S])*?\1/],  
+            [f, /[+-]?([0-9]*\.?[0-9]+|[0-9]+\.?[0-9]*)([eE][+-]?[0-9]+)?/],  
+            ["pct", /[\\.,:;+\-*\/=<>()[\]{}|?!&@~]/],  
+            ["spc", /\s+/],  
+            [s, /[\w$]+/],  
+            ["unk", /./],  
+        ];  
+    return (  
+        e(!1, function (e) {  
+            var t = e.querySelector("head"),  
+                n = e.createElement("style");  
+            (n.textContent = r),  
+                t.insertBefore(n, t.firstChild),  
+                /^(i|c|loade)/.test(e.readyState)  
+                    ? o()  
+                    : e.addEventListener("DOMContentLoaded", function () {  
+                          o();  
+                      });  
+        }),  
+        (o.tok = t),  
+        (o.el = n),  
+        o  
+    );  
+});  
+  
+//]]></script>
+
+```  
+
+Here's the minified code. Open Edit HTML and paste the below code before closing body tag.  
+
+
+```js title=minified.js
+<script type='text/javascript'>//<![CDATA[  
+/*! lolight v1.3.0 - https://larsjung.de/lolight/ */  
+/*! Shared by TwistBlogg.com */  
+!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):e.lolight=t()}(this,function(){function t(e){if("string"!=typeof e)throw new Error("tok: no string");for(var t=[],n=u.length,o=!1;e;)for(var r=0;r<n;r+=1){var i=u[r][1].exec(e);if(i&&0===i.index){var a=u[r][0];if("rex"!==a||!o){var l=i[0];a===s&&c.test(l)&&(a="key"),"spc"===a?0<=l.indexOf("\n")&&(o=!1):o=a===f||a===s,e=e.slice(l.length),t.push([a,l]);break}}}return t}function e(e,t){if("undefined"!=typeof document)t(document);else if(e)throw new Error("no doc")}function n(o){e(!0,function(n){var e=t(o.textContent);o.innerHTML="",e.forEach(function(e){var t=n.createElement("span");t.className="ll-"+e[0],t.textContent=e[1],o.appendChild(t)})})}function o(t){e(!0,function(e){[].forEach.call(e.querySelectorAll(t||".lolight"),function(e){n(e)})})}var r="_nam#2196f3}_num#ec407a}_str#43a047}_rex#ef6c00}_pct#666}_key#555;font-weight:bold}_com#aaa;font-style:italic}".replace(/_/g,".ll-").replace(/#/g,"{color:#"),c=/^(a(bstract|lias|nd|rguments|rray|s(m|sert)?|uto)|b(ase|egin|ool(ean)?|reak|yte)|c(ase|atch|har|hecked|lass|lone|ompl|onst|ontinue)|de(bugger|cimal|clare|f(ault|er)?|init|l(egate|ete)?)|do|double|e(cho|ls?if|lse(if)?|nd|nsure|num|vent|x(cept|ec|p(licit|ort)|te(nds|nsion|rn)))|f(allthrough|alse|inal(ly)?|ixed|loat|or(each)?|riend|rom|unc(tion)?)|global|goto|guard|i(f|mp(lements|licit|ort)|n(it|clude(_once)?|line|out|stanceof|t(erface|ernal)?)?|s)|l(ambda|et|ock|ong)|m(odule|utable)|NaN|n(amespace|ative|ext|ew|il|ot|ull)|o(bject|perator|r|ut|verride)|p(ackage|arams|rivate|rotected|rotocol|ublic)|r(aise|e(adonly|do|f|gister|peat|quire(_once)?|scue|strict|try|turn))|s(byte|ealed|elf|hort|igned|izeof|tatic|tring|truct|ubscript|uper|ynchronized|witch)|t(emplate|hen|his|hrows?|ransient|rue|ry|ype(alias|def|id|name|of))|u(n(checked|def(ined)?|ion|less|signed|til)|se|sing)|v(ar|irtual|oid|olatile)|w(char_t|hen|here|hile|ith)|xor|yield)$/,i="com",s="nam",f="num",u=[[f,/#([0-9a-f]{6}|[0-9a-f]{3})\b/],[i,/(\/\/|#).*?(?=\n|$)/],[i,/\/\*[\s\S]*?\*\//],[i,/<!--[\s\S]*?-->/],["rex",/\/(\\\/|[^\n])*?\//],["str",/(['"`])(\\\1|[\s\S])*?\1/],[f,/[+-]?([0-9]*\.?[0-9]+|[0-9]+\.?[0-9]*)([eE][+-]?[0-9]+)?/],["pct",/[\\.,:;+\-*\/=<>()[\]{}|?!&@~]/],["spc",/\s+/],[s,/[\w$]+/],["unk",/./]];return e(!1,function(e){var t=e.querySelector("head"),n=e.createElement("style");n.textContent=r,t.insertBefore(n,t.firstChild),/^(i|c|loade)/.test(e.readyState)?o():e.addEventListener("DOMContentLoaded",function(){o()})}),o.tok=t,o.el=n,o});  
+//]]></script>
+```  
+
+To customize the code background, set some values to pre and code tags. Here's what we are using in our blog: Paste it before `</style>` tag or `/b:skin` tag.  
+
+```css
+pre {  
+    position: relative;  
+    width: 100%;  
+    background-color: #f2f2f2;  
+    border-left: 2px solid #cdcdcd;  
+    padding: 0;  
+    margin: 0.8em auto;  
+    -moz-tab-size: 2;  
+    -o-tab-size: 2;  
+    tab-size: 2;  
+    -webkit-hyphens: none;  
+    -moz-hyphens: none;  
+    -ms-hyphens: none;  
+    hyphens: none;  
+    transition: all 0.2s ease;  
+    overflow: hidden;  
+}  
+pre code {  
+    font-size: 13px;  
+    line-height: 1.6em;  
+    padding: 15px 20px;  
+    display: block;  
+    font-family: "source code pro", menlo, consolas, monaco, monospace;  
+    overflow: auto;  
+    white-space: pre;  
+    scrollbar-width: thin !important;  
+}
+```  
+
+To customize scrollbar colors and width, [read this article](https://www.twistblogg.com/2015/03/how-to-customize-blogger-scrollbar-and.html).  
+
+
+In order to implement highlighter in articles, paste your code inside pre and code tags with `class="lolight"`. Please note: It is important to parse the code before inserting. Also, don't forget to switch to HTML Mode from Compose Mode and paste in following format.  
+
+```html
+<pre><code class="lolight">  
+    ... /* Parsed Codes Here */  
+</code></pre>  
+```
+
+You can even further customize the syntax colors of this super lightweight syntax highlighter widget for blogger. This is an optional step. If you want to set some different CSS values, change the code accordingly.  
+
+```css
+.ll-nam { /* words */  
+    color: #2196f3;  
+}  
+.ll-num { /* numbers */  
+    color: #ec407a;  
+}  
+.ll-str { /* strings */  
+    color: #43a047;  
+}  
+.ll-rex { /* regular expressions */  
+    color: #ef6c00;  
+}  
+.ll-pct { /* operators, punctation */  
+    color: #666;  
+}  
+.ll-key { /* keywords */  
+    color: #555;  
+    font-weight: bold;  
+}  
+.ll-com { /* comments */  
+    color: #aaa;  
+    font-style:italic;  
+}
+```  
+
+That's all! You have successfully installed a simple automatic light weight syntax highlighter in your blogger blog. What are your thoughts? Do you like this simple code highlighting widget? So, what's next? Are you interested to [add estimated post reading time in blog](https://www.twistblogg.com/2019/09/display-estimated-post-reading-time-in-blogger-posts.html)? Or, [last updated date](https://www.twistblogg.com/2019/09/show-published-and-last-updated-date-in-blogger-post.html)? You can start learning more on how to customizing your blog <a rel="nofollow noopener noreferrer" href="https://www.twistblogg.com/blog/tags/blog-customize">from here</a>.

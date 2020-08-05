@@ -1,0 +1,191 @@
+---
+title: 'Attractive Eye-Catching Email Subscription Box For Blogger Sidebar'
+date: 2019-10-14
+excerpt: Email Subscription box allows readers to subscribe your blog contents. Learn how to add attractive and eye catching email subscription box in blogger sidebar. 
+slug: attractive-email-subscription-box-blogger
+featured: false
+published: true
+image: attractive email subscription box for blogger sidebar.jpg
+author: Invictus
+tags : [Subscription Widgets, Blog Widgets]
+---
+
+Hey, I'm back to continue Premium Blogger Plugins Series with this _attractive eye catching email subscription box for blogger sidebar_. Few days ago, I had published simple yet powerful email subscription box and I got mails requesting for colorful version and here it is. Be sure to subscribe TwistBlogg for latest updates with our premium blogger plugins.  
+  
+Email subscription helps a blog to grow by providing a mechanism that allows readers to receive latest published contents right into their box.  
+  
+Blogger provides a <a href="https://www.feedburner.com/" rel="nofollow noreferrer noopener" target="_blank">Feedburner service</a> via which readers can subscribe a blog. You need to activate Email subscription option before installing this blogger widget.  
+  
+Let's check out why this email box widget is a must have plugin for blogger blogs.  
+  
+
+### Features of our attractive email subscription box
+
+*   Pure CSS and HTML.
+*   SuperLight Weight.
+*   Animation added.
+*   CSS Based Animation.
+*   Easy to Customize.
+*   Fit perfectly in Sidebar.
+*   Beautifully Crafted to match with blog design.
+
+  
+
+#### Live Demo of Attractive Eye Catching Email Subscription Box
+
+Sorry, this is a static version. There's some animation implemented as well.
+
+
+<Image src="live demo of attractive email box for blogger.png" alt="live demo of attractive email box for blogger" />
+
+  
+
+## How to add email subscription box for blogger sidebar?
+
+
+Loved it, right? Now, I'll guide you via steps to be followed for adding this beautiful email subscription box for blogger sidebar. First of all, [backup your template](https://www.twistblogg.com/2014/05/how-to-backup-all-blogger-blogs-with-google-takeout.html).  
+  
+
+**Step 1:** 
+
+Go to **Blogger.com** -> **Template** -> **Edit HTML** -> Search For `</head>` & paste the following code above it. Don't Forget to hit the Save button.  
+
+```css
+<style type="text/css">  
+/* ------------------------------------------------------------  
+Attractive Eye Catching Email Subscription Box Widget  
+Designed by :: https://www.TwistBlogg.com  
+Platform:: Blogger.com  
+_Keep These Credits Intact, Do Not Remove_  
+-------------------------------------------------------------*/  
+@keyframes rotate{100%{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}  
+@keyframes change-background {0% {background: #2ecc71;}50% {background: #e74c3c;}75% {background: #3498db;}100% {background: #2ecc71;}}  
+.rainbow{  
+ position:relative;  
+ z-index:0;  
+ overflow:hidden;  
+ padding:3px  
+}  
+.rainbow::before{  
+ content:&#39;&#39;;  
+ position:absolute;  
+ z-index:-2;  
+ left:-50%;  
+ top:-50%;  
+ width:200%;  
+ height:200%;  
+ background-color:#2ecc71;  
+ background-repeat:no-repeat;  
+ background-size:50% 50%,50% 50%;  
+ background-position:0 0,100% 0,100% 100%,0 100%;  
+ background-image:linear-gradient(#2ecc71,#2ecc71),linear-gradient(#fbb300,#fbb300),linear-gradient(#e74c3c,#e74c3c),linear-gradient(#3498db,#3498db);  
+ animation:rotate 8s linear infinite  
+}  
+.rainbow::after{  
+ content:&#39;&#39;;  
+ position:absolute;  
+ z-index:-1;  
+ left:5px;  
+ top:5px;  
+ width:calc(100% - 10px);  
+ height:calc(100% - 10px);  
+ background:#fff  
+}  
+.tb-subscribe-wrapper{  
+ color:#222;  
+ line-height:20px;  
+ margin:0;  
+ padding:20px  
+}  
+.tb-subscribe-wrapper-head{  
+ padding-bottom:15px;  
+ margin-bottom:2px;  
+ text-align:center;  
+ font-size:25px;  
+ color:#64707A!important;  
+ border-bottom:1px dashed #64707A;  
+}  
+.tb-subscribe-form{  
+ clear:both;  
+ display:block;  
+ margin:10px auto;  
+ overflow:hidden  
+}  
+.tb-subscribe-wrapper p{  
+ color:#64707A!important;  
+ margin-top:10px;  
+ font-size:14px  
+}  
+form.tb-subscribe-form{  
+ clear:both;  
+ display:block;  
+ margin:10px 0 0;  
+ width:auto;  
+ overflow:hidden  
+}  
+.tb-subscribe-css-email-field{  
+ background:#fff;  
+ color:#222;  
+ margin:0 0 18px;  
+ padding:12px;  
+ width:90%;  
+ border:1px solid rgba(0,0,0,0.1);  
+ outline:0;  
+ font-size:14px;  
+ text-indent:10px;  
+ line-height:20px;  
+ border-radius:3px;  
+ transition:all .6s  
+}  
+.tb-subscribe-css-email-field:hover,.tb-subscribe-css-email-field:focus{  
+ border-color:rgba(0,0,0,0.3)  
+}  
+.tb-subscribe-css-button{  
+ animation: change-background 8s linear infinite;  
+ color:#fff;  
+ cursor:pointer;  
+ font-weight:500;  
+ padding:7px;  
+ text-transform:none;  
+ width:100%;  
+ border:none;  
+ font-size:16px;  
+ border-radius:3px;  
+ transition:all .3s  
+}</style>
+```  
+
+**Step 2:** 
+
+Go to **Blogger.com** > **Layout** > **Add A Gadget** > **HTML/Javascript** & paste the following code.Don't forget to change XXXX with your feedburner ID.  
+
+```html
+<div class="rainbow">  
+<div id="tb-subscribe-css">  
+<div class="tb-subscribe-wrapper">  
+<div class="tb-subscribe-wrapper-head">  
+Join Our Newsletter</div>  
+Subscribe to our mailing list and get fresh high quality updates for lifetime.<br />  
+<div class="tb-subscribe-form">  
+<form action="https://feedburner.google.com/fb/a/mailverify?uri=XXXXX" class="tb-subscribe-form" method="post" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=XXXXX', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" target="popupwindow">  
+<input name="uri" type="hidden" value="XXXXX" />  
+<input name="loc" type="hidden" value="en_US" />  
+<input autocomplete="off" class="tb-subscribe-css-email-field" name="email" placeholder="Enter your email address" />  
+<input class="tb-subscribe-css-button" title="" type="submit" value="Submit" />  
+</form>  
+</div>  
+</div>  
+</div>  
+</div>
+```  
+Hit save button. Bang ! Done. That was super easy, right? Refresh your page to see this **eye catching email subscription box** live in action. You can customize it to fit perfectly with blogger design.  
+    
+That's all. Hope you liked our new email subscription widget for blogger sidebar.  
+  
+Here are a few handpicked tutorials for you to read next:  
+
+*   [Top 7 Adsense Ready Premium Blogger Templates](https://www.twistblogg.com/2019/08/adsense-ready-premium-blogger-templates.html)
+*   [Light-weight Social Share Widgets For Blogger Blog](https://www.twistblogg.com/2015/08/add-custom-social-media-share-buttons-to-blogger-posts.html)
+*   [Add Sticky Notification Bar For Blogger(with no watermark)](https://www.twistblogg.com/2015/05/add-notification-bar-to-blogger.html)
+*   [Email Subscription Popup Box For Blogger With Cookie Enabled](https://www.twistblogg.com/2015/04/email-subscription-popup-blogger-plugin.html)
+*   [How to disable copy function in blogger with CSS? ](https://www.twistblogg.com/2014/01/Disable-Copy-Text-Selection-On-Blogger.html)

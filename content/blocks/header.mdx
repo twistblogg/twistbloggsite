@@ -9,17 +9,14 @@ export const HeaderBlock = ({ ...props }) => {
       top="0"
       bg="background"
       zIndex="1000"
+      borderBottomWidth={1}
       {...props}
     >
       <Container>
         <Flexbox d={["none", "flex"]} justifyContent="space-between" py="1">
           <Branding />
-          <NavMenu
-            name={navName}
-            gap={[0, 8, 14]}
-            ml={["auto", "auto"]}
-            mr="null|10"
-          />
+          <NavMenu name={navName} gap={[0, 8, 14]} ml={["auto", "auto"]} />
+          <SocialLinks ml="auto" mr="4" borderRightWidth="1px" pr="4" />
           <ModeToggle ml="0" />
         </Flexbox>
       </Container>
@@ -43,6 +40,7 @@ export const HeaderBlock = ({ ...props }) => {
             onClick={() => setShowMenu(true)}
           >
             <Icon name="menu" size="7" />
+            <VisuallyHidden>Show Menu</VisuallyHidden>
           </Button>
         </Flexbox>
         <Div
@@ -69,10 +67,12 @@ export const HeaderBlock = ({ ...props }) => {
             <Branding />
             <Button variant="link" onClick={() => setShowMenu(false)} mr={-3}>
               <Icon name="x" size="6" />
+              <VisuallyHidden>Hide Menu</VisuallyHidden>
             </Button>
           </Flexbox>
           <NavMenu name={navName} gap={[0, 8]} borderTopWidth="1px" />
           <Flexbox py="4" justifyContent="space-between">
+            <SocialLinks />
             <ModeToggle ml="auto" />
           </Flexbox>
         </Div>
@@ -84,7 +84,7 @@ export const HeaderBlock = ({ ...props }) => {
 export const Branding = () => {
   const { title } = useSiteMetadata()
   return (
-    <A href="/" fontSize="3xl" fontWeight="semibold" color="text">
+    <A href="/" fontSize="xl" fontWeight="bold" color="text">
       {title}
     </A>
   )
@@ -106,3 +106,22 @@ export const ModeToggle = ({ ...props }) => {
     </Button>
   )
 }
+
+export const SocialLinks = ({ ...props }) => (
+  <Grid col="repeat(2, auto)" gap="5" {...props}>
+    <A href="https://twitter.com/arshadcn" target="_blank" rel="noreferrer noopener external nofollow">
+      <Icon name="twitter" size="5" /> 
+      <VisuallyHidden>Follow on Twitter</VisuallyHidden>
+    </A>
+    <A
+      href="https://github.com/reflexjs/reflex"
+      target="_blank"
+      color="text"
+      hoverColor="primary"
+      rel="noreferrer noopener external nofollow"
+    >
+      <Icon name="facebook" size="5" />
+      <VisuallyHidden>Follow on Instagram</VisuallyHidden>
+    </A>
+  </Grid>
+)

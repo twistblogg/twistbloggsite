@@ -1,0 +1,112 @@
+---
+title: 'Add Horizontal Subscription Box Below The Post in Blogger'
+date: 2014-04-18
+excerpt: Stylish Horizontal Subscription Box Widget For Blogger Which Is More Eye Catchy And Professional Looking With Cool Background Image.
+slug: cute-horizontal-email-box-blogger
+featured: false
+published: true
+image: wordpress like email box for blogger.jpg
+author: Invictus
+tags : [Subscription Widgets, Blog Widgets]
+---
+
+
+A **Subscription box below the post** works like a magnet. This is simple and flat horizontal subscription box which occupies little space on your post footer. This widget would appear in post footer so that your readers can subscribe right after reading your blog post which is the right time for call to action. 
+
+So without any delay, we should move forward to the installation steps. Our widgets contain no crap backlinks. Just what you need. Respect copyrights. If you are willing to share this widget code on your blog with your readers, just link back to this original post as a credit.  
+  
+### Demo of Horizontal Email Box Below Blogger Posts
+
+
+<Image src="demo-New Horizontal Subscription Box Widget For Blogger.PNG" alt="demo-New Horizontal Subscription Box Widget For Blogger" />
+
+
+## Installation Process of Horizontal Subscription Box Widget  
+
+
+**Step 1)** As usual, we have to edit out template html code so go to  **Blogger → Template → Edit HTML →** and after that just click anywhere inside the code box. Now press Ctrl+f (Windows) or Cmd+f (Mac), a search box will appear. Now find `]]></b:skin>` code line and just before that code line, paste the whole CSS code given below.
+
+```css
+<style>
+/*  Subscription Box by:   TwistBlogg.Com  */
+.TBN-Sub-Box {
+background: #000 url('http://1.bp.blogspot.com/-FzCdLYOA4ms/U1DnVwbvYGI/AAAAAAAAAnY/M-EpS75hQNA/s1600/header_bg1.png' )no-repeat 0px 0px;
+padding: 12px 0px 1px 0px;
+clear: both;
+text-align: center;
+width: 100%;
+display: block;
+margin: 10px 0;
+height: 120px;
+}
+.TBN-Enter-Email {
+color: #444242;
+width: 160px;
+background: #fff url(https://lh4.googleusercontent.com/-dPJx9mWYWPw/UtV5aN-6mRI/AAAAAAAAAJs/ibo7iZsN4nw/h120/MAIL.png) no-repeat 10px 5px;
+padding: 5px 0px 5px 38px;
+border-radius: 2px;
+border: 1px solid #000;
+margin-top: 22px;
+}
+.TBN-Button:hover {
+background: #059ACA;
+border: 2px solid #289EB6;
+}
+.TBN-Button {
+background: #1BC414;
+cursor: pointer;
+color: #FFF;
+font-weight: bold;
+text-shadow: 1px 0px 1px #3F3F3F;
+border: 2px solid #15AD08;
+border-radius: 2px;
+font-size: 15px;
+padding: 3px 19px 3px 19px;
+margin-left: 24px;
+}
+ .TBN-Headline {
+text-shadow: 2px 2px 2px #444343;
+text-align: center;
+color: #CAFFFD;
+font-size: 17px;
+line-height: 1.5em;
+margin-top: 7px;
+margin-bottom: 4px;
+font-weight: bold;
+font-family: sans-serif;
+}
+</style>
+
+```
+
+To adjust the width and height of subscription box, just change the highlighted code line values and you are good to go with. If you know CSS then you can play with CSS code to make this widget more professional.  
+  
+
+**Step 2)** In above step, we have inserted the CSS code and now we need to insert the HTML code of this widget. This time search for `<div class='post-footer-line post-footer-line-1'>` code line and just after that paste the HTML code given below. (Before that see the step 3 to make compulsory changes).
+
+  
+```html
+<b:if cond='data:blog.pageType == "item"'>
+	<div class='TBN-Sub-Box'>
+		<div class='TBN-Headline'>Subscribe Us by Email and Get Free Updates On Hot Topics!</div>
+		<form action='https://feedburner.google.com/fb/a/mailverify' class='btntEmailform' method='post' onsubmit='window.open(&#39;https://feedburner.google.com/fb/a/mailverify?uri=TwistBlogg&#39;, &#39;popupwindow&#39;, &#39;scrollbars=yes,width=550,height=520&#39;);return true' target='popupwindow'>
+			<input name='uri' type='hidden' value='TwistBlogg' />
+			<input name='loc' type='hidden' value='en_US' />
+			<input class='TBN-Enter-Email' name='email' onblur='if (this.value == "") {this.value = "Enter your email...";}' onfocus='if (this.value == "Enter your email...") {this.value = ""}' required='' type='text' value='Enter your email...' />
+			<input class='TBN-Button' title='' type='submit' value='Sign Up' />
+		</form>
+		<div class='clr'></div>
+	</div>
+</b:if>
+```
+
+  
+
+**Step 3)** You need to edit the HTML code given above before pasting it because it contains our blog's FeedBurner address. Just replace _TwistBlogg_ with your blog's feed address. Now save your template code by clicking the orange color button on top of the template code box.
+
+  
+
+**Finally** visit any post on your blog and see the results. If any time anything goes wrong or you need to adjust its width, height or background image just ask in comments and I will help you with its complete installation. Did you like this subscription box? You can subscribe us for free future updates. Do share if you care :)  
+
+
+**Recommended: [Stylish Sidebar Subscription Box For Blogger](https://www.twistblogg.com/2015/03/stylish-sidebar-subscription-box-widget-for-blogger.html)**
