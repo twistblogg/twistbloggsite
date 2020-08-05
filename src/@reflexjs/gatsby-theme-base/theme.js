@@ -8,16 +8,24 @@ export default {
     border: "#DADADA",
     codeblock: "#EAEAEF",
     postblock: "#EAEAEE",
+    scrollbarColor: "#0066FF",
     modes: {
       dark: {
         codeblock: "#2A2A3C",
         postblock: "#1D252C",
+        scrollbarColor: "#F78699",
       },
     },
   },
   styles: {
     root: {
       fontSize: ["lg", "xl"],
+      "::-webkit-scrollbar": {
+        width: "10px",
+      },
+      "::-webkit-scrollbar-thumb": {
+        backgroundColor: "scrollbarColor",
+      },
     },
     inlineCode: {
       fontFamily: "monospace",

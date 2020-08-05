@@ -43,8 +43,8 @@ module.exports = {
           image: "social media.webp",
         },
         types: [
-          `Page`,
-          `Post`,
+          `MdxPage`,
+          `MdxPost`,
           {
             type: `PostTag`,
             defaults: {
