@@ -36,7 +36,6 @@ module.exports = {
     {
       resolve: "@reflexjs/gatsby-plugin-metatags",
       options: {
-        debug:true,
         global: {
           title: "TwistBlogg - Get Premium Blogger Tutorials",
           description: "TwistBlogg is an information resource site focused on SEO, Blogging, Themes, Widgets, Guides related to Social Media and Web Apps.",
