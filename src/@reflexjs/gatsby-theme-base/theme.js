@@ -7,13 +7,11 @@ export default {
     muted: "#FFFFFF",
     border: "#DADADA",
     codeblock: "#EAEAEF",
-    postblock: "#EAEAEE",
-    scrollbarColor: "#0066FF",
+    postblock: "#E1E9F2",
     modes: {
       dark: {
         codeblock: "#2A2A3C",
         postblock: "#1D252C",
-        scrollbarColor: "#F78699",
       },
     },
   },
@@ -22,9 +20,11 @@ export default {
       fontSize: ["lg", "xl"],
       "::-webkit-scrollbar": {
         width: "10px",
+        backgroundColor: "postblock",
       },
       "::-webkit-scrollbar-thumb": {
-        backgroundColor: "scrollbarColor",
+        backgroundColor: "primary",
+        borderRadius: "10px",
       },
     },
     inlineCode: {

@@ -1,20 +1,20 @@
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import React from "react"
-import { Flexbox, P, Form, Label, Input, Button, VisuallyHidden } from "@reflexjs/components"
+import { Flexbox, P, Form, Label, Input, Button, VisuallyHidden, H4, Div } from "@reflexjs/components"
 
 
 export default class Subscribe extends React.Component {
   constructor() {
     super()
-    this.state = { email: '', result: null }
+    this.state = { name: '', email: '', result: null }
   }
 
   handleSubmit = async (e) => {
-    const result = await addToMailchimp(this.state.email)
+    const result = await addToMailchimp(this.state.email, { FNAME: this.state.name })
     if (result.result === 'error') {
-      alert(`Whoops, ${this.state.email} you're already subscribed!`)
+      alert(`Whoops, ${this.state.name} you're already subscribed!`)
     } else {
-      alert(`Thank you for subscribing ${this.state.email}!`)
+      alert(`Thank you for subscribing ${this.state.name}!`)
     }
     this.setState({ result: result })
   }
@@ -22,34 +22,50 @@ export default class Subscribe extends React.Component {
   handleEmailChange = (event) => {
     this.setState({ email: event.target.value })
   }
+
+  handleNameChange = (event) => {
+    this.setState({ name: event.target.value })
+  }
+
 render() {
     return (
     <Flexbox flexDirection="column" textAlign="center">
-      <P fontSize="xl|2xl" mt="2" textAlign="center">
-      Like the article? Subscribe to get notified whenever a new article gets published!
+      <Div p="7" mb="7" mt="7" borderRadius="2xl" boxShadow="3xl" bg="postblock"> 
+      <H4>Sign up for The Best Bits</H4>
+      <P fontSize="xl" mt="2" textAlign="center">
+      A weekly round up of the best content from In Plain English, handpicked by our Founder
       </P>
-      <Form d="grid" col="1|auto auto" gap="4" w="full|auto" onSubmit={this._handleSubmit}>
-          <VisuallyHidden>
+      <Form d="grid" col="2|auto auto" gap="4" onFinish={this.handleSubmit}>
+      <VisuallyHidden>
           <Label htmlFor="form-04-email">Email</Label>
-          
+          <Label htmlFor="form-04-name">Name</Label>
         </VisuallyHidden>
         <Input
           type="email"
           id="form-04-email"
           name="email"
           placeholder="Type your email"
-          variant="lg"
+          variant="md"
           onChange={this.handleEmailChange}
           rules={[{ required: true, message: 'Please input your email.' }]}
         />
-        <br />
+        <Input
+          type="name"
+          id="form-04-name"
+          name="name"
+          placeholder="Type your name"
+          variant="md"
+          onChange={this.handleNameChange}
+          rules={[{ required: true, message: 'Please input your name.' }]}
+        />
         <Button
-          variant="primary lg"
+          variant="primary md"
           label="Submit"
           type="submit"
         > Join
         </Button>
       </Form>
+      </Div>
       </Flexbox>
     )
   }

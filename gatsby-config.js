@@ -3,8 +3,8 @@ require(`dotenv`).config()
 module.exports = {
   siteMetadata: {
     title: "TwistBlogg",
-    description: "TwistBlogg is an information resource site for Bloggers and Geeks.Here we focus on SEO, Blogging, Blogging Widgets, Tips and Tricks related to Social Media and Web Apps.",
-    siteUrl: process.env.SITE_URL || "https://www.twistblogg.com",
+    description: "TwistBlogg is an information resource site focused on SEO, Blogging, Themes, Widgets, Guides related to Social Media and Web Apps.",
+    siteUrl: process.env.SITE_URL || "https://twistbloggsite.netlify.app",
   },
   plugins: [
     "@reflexjs/gatsby-theme-base",
@@ -39,7 +39,7 @@ module.exports = {
         debug:true,
         global: {
           title: "TwistBlogg - Get Premium Blogger Tutorials",
-          description: "TwistBlogg is an information resource site for Bloggers and Geeks.Here we focus on SEO, Blogging, Blogging Widgets, Tips and Tricks related to Social Media and Web Apps.",
+          description: "TwistBlogg is an information resource site focused on SEO, Blogging, Themes, Widgets, Guides related to Social Media and Web Apps.",
           image: "social media.webp",
         },
         types: [
@@ -72,6 +72,12 @@ module.exports = {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
         endpoint: 'https://twistblogg.us10.list-manage.com/subscribe/post?u=9f84c170908a49a7d8e261c3f&amp;id=1180d030e2',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/users/*`],
       },
     },
    "gatsby-plugin-netlify"

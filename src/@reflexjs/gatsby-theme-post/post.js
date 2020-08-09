@@ -104,61 +104,50 @@ export const Post = ({
           ))}
         </Flexbox>
       )}
-      <P>Did you enjoy reading? Sing it loud and proud. </P>
-      <Div mb="1" bg="postblock" w="full" textAlign="center" borderRadius="5px" alignItems="center" pt="2" pb="2"><A href={'https://twitter.com/intent/tweet/?text='+ title + 
+      <Div borderTop="1px solid #e6e6e6" pt="10" mb="7" mt="10" d="grid" col="repeat(4, auto)" gap="4" w="full|auto">
+      <A href={'https://twitter.com/intent/tweet/?text='+ title + 
         '&url=' + baseURL + slug + '%2F&via=twistblogg'}
            target="_blank" 
            rel="nofollow noreferrer noopener external">
-          <Icon size={7} name="twitter"/> 
-          <VisuallyHidden>Share on Twitter</VisuallyHidden>
-          </A></Div>
-
-      <Div mt="3" d="grid" col="repeat(4, auto)" gap="4" w="full|auto">
-           <Span bg="postblock" w="full" textAlign="center" borderRadius="5px" alignItems="center" pt="2">
+          <Span bg="#444444" w="full" textAlign="center" borderRadius="5px" alignItems="center" pt="2">
+           <Icon color="white" size={8} pr="2" name="mail"/>
+            <VisuallyHidden>Mail This</VisuallyHidden>
+          </Span>
+         </A>  
         <A href={'https://www.facebook.com/sharer/sharer.php?u=' 
            + baseURL 
            + slug }
            target="_blank" 
            rel="nofollow noreferrer noopener external">
-              <Icon size={6} name="facebook"/>
-              <VisuallyHidden>Follow on Facebook</VisuallyHidden>
-             </A>
-           </Span>
-        <Span bg="postblock" w="full" textAlign="center" borderRadius="5px" alignItems="center" pt="2">
+              <Span bg="#3b5998" w="full" textAlign="center" borderRadius="5px" alignItems="center" pt="2">
+                <Icon color="white" size={8} pr="2" name="facebook"/>
+                 <VisuallyHidden>Share on Facebook</VisuallyHidden>
+              </Span>
+             </A>      
         <A href={'https://twitter.com/intent/tweet/?text='+ title + 
         '&url=' + baseURL + slug + '%2F&via=twistblogg'}
            target="_blank" 
            rel="nofollow noreferrer noopener external">
-          <Icon hoverColor="primary" size={6} name="mail"/>
-          <VisuallyHidden>Follow on Twitter</VisuallyHidden>
+          <Span bg="#00acee" w="full" textAlign="center" borderRadius="5px" alignItems="center" pt="2">
+            <Icon color="white" size={8} pr="2" name="twitter"/>
+             <VisuallyHidden>Tweet on Twitter</VisuallyHidden>
+          </Span>
          </A>
-        </Span>
-        <Span bg="postblock" w="full" textAlign="center" borderRadius="5px" alignItems="center" pt="2">
-        <A href={'https://twitter.com/intent/tweet/?text='+ title + 
-        '&url=' + baseURL + slug + '%2F&via=twistblogg'}
-           target="_blank" 
-           rel="nofollow noreferrer noopener external">
-          <Icon hoverColor="primary" size={6} name="mail"/>
-          <VisuallyHidden>Follow on Twitter</VisuallyHidden>
-         </A>
-        </Span>
-        <Span bg="postblock" w="full" textAlign="center" borderRadius="5px" alignItems="center" pt="2">
         <A href={'https://www.linkedin.com/sharing/share-offsite/?url=' + baseURL + slug +
         '&title=' + title }
            target="_blank" 
            rel="nofollow noreferrer noopener external">
-             <Icon size={6} name="linkedin"/>
-             <VisuallyHidden>Follow on Linkedin</VisuallyHidden>
-            </A>
-          </Span>
+            <Span bg="#0e76a8" w="full" textAlign="center" borderRadius="5px" alignItems="center" pt="2">
+             <Icon color="white" size={8} pr="2" name="linkedin"/>
+              <VisuallyHidden>Follow on Linkedin</VisuallyHidden>
+           </Span>   
+         </A>
           </Div>
-          
-      <Flexbox
+          < Subscribe />  
+    <Flexbox
       alignItems="flex-start"
       py="6"
-      borderTop="1px solid #e6e6e6"
       mt="8"
-      borderBottom="1px solid #e6e6e6"
       mb="8"
     >
       <Image
@@ -188,7 +177,7 @@ export const Post = ({
       <Span pt="5" fontWeight="light" fontSize="xs">
       <Link href="#" p="2" borderRadius="5px" border="1px solid">View Profile</Link>
       </Span>
-    </Flexbox>
+    </Flexbox> 
     </Container>
     <Container maxW="900px" mt="20">
     <Div>
@@ -200,14 +189,8 @@ export const Post = ({
       ) : (
         <Button
           onClick={() => setShowComments(true)}
-          borderRadius="5px"
-          border="1px solid"
-          borderColor="primary"
-          color="primary"
-          bg="background"
-          hoverColor="white"
-          hoverBg="primary"
           w="full"
+          p="7" mb="7" mt="7" borderRadius="2xl" boxShadow="3xl" bg="codeblock"
           pt="5"
           pb="5"
         >
@@ -216,7 +199,6 @@ export const Post = ({
       )}
     </Div>
     </Container>
-    < Subscribe />
   </Article>
  )
 }
