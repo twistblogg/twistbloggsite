@@ -8,12 +8,37 @@ export default {
     border: "#DADADA",
     codeblock: "#EAEAEF",
     postblock: "#E1E9F2",
+    herobutton: "#07070A",
+    herobuttonHover: "#323247",
     modes: {
       dark: {
         codeblock: "#2A2A3C",
         postblock: "#1D252C",
       },
     },
+  },
+  fontSizes: {
+    "7xl": "5rem",
+    "8xl": "6rem",
+  },
+  table: {
+    mt:"7",
+    mb:"10",
+    width:"full",
+    overflow:"hidden",
+    boxShadow:"2xl",
+    borderRadius:"2xl",
+    th:{
+      bg:"primary",
+      p:"2",
+      color:"white",
+      textAlign:"left",
+    },
+    td: {
+        borderWidth: 1,
+        p:"2",
+        fontSize:"md",
+    }
   },
   styles: {
     root: {

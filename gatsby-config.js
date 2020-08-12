@@ -1,4 +1,15 @@
-require(`dotenv`).config()
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'https://www.twistblogg.com',
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV
+} = process.env;
+const isNetlifyProduction = NETLIFY_ENV === 'production';
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
 module.exports = {
   siteMetadata: {
@@ -67,17 +78,41 @@ module.exports = {
         precachePages: [``, `/blog`],
       },
     },
+    `gatsby-plugin-preact`,
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
-        endpoint: 'https://twistblogg.us10.list-manage.com/subscribe/post?u=9f84c170908a49a7d8e261c3f&amp;id=1180d030e2',
-      },
+        endpoint: process.env.MAILCHIMP_ENDPOINT
+      }
     },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: [`/users/*`],
+        exclude: [`/users/*,'/about','/contact','/thank-you','/disclaimer','/privacy-policy','/newsletter'`],
       },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        sitemap: 'https://www.twistblogg.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/', disallow: '/thank-you' }],
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*' }]
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          }
+        }
+      }
     },
    "gatsby-plugin-netlify"
   ],

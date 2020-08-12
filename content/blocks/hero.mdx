@@ -1,28 +1,27 @@
 <Section py="8|12|16|24">
   <Container>
-    <Grid col="1|2" gap="8|12|16" alignItems="center">
-      <Image
-        src="supercharge.svg"
-        colStart="null|2"
-        w="full"
-        rounded="lg"
-        overflow="hidden"
-      />
+    <Grid col="1" gap="8|12|16" alignItems="center">
       <Flexbox
         flexDirection="column"
         alignItems="center|flex-start"
         textAlign="center|left"
       >
-        <H1 m="0" fontWeight="extrabold"  lineHeight="tight">
-          <Span color="primary">Supercharge</Span> your blog.
+        <H1 m="0" fontSize="5xl|6xl|7xl|8xl" fontWeight="extrabold"  lineHeight="tight">
+          <Span color="primary">Supercharge</Span> your Blogger blog.
         </H1>
-        <P fontSize="xl|2xl" mt="2">
-          Build a blazing fast, optimized and premium blog with us.
+        <P fontSize="xl|2xl" mt="6">
+          Build a blazing fast, optimized and premium blog, everything for <B>FREE</B> with us.
         </P>
-        <ButtonLink href="/" variant="primary">
+        <Grid col="2" gap="4" mt="3">
+        <ButtonLink href="/blog" borderRadius="xl" boxShadow="3xl" variant="primary">
           Get Started
           <Icon name="arrow-right" ml="4" />
         </ButtonLink>
+        <ButtonLink href="/contact" borderRadius="xl" boxShadow="3xl" bg="herobutton" color="white">
+          Contact Us
+          <Icon name="phone-incoming" ml="4" />
+        </ButtonLink>
+        </Grid>
       </Flexbox>
     </Grid>
   </Container>

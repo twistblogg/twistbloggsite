@@ -11,9 +11,9 @@ export const RelatedPosts = ({ slug, tags, limit = 6 }) => {
   )
   if (!relatedPosts.length) return null  
   return (
-    <Section my="10" py="8|12|16" pl="5" pr="5">
-      <H3 textAlign="center" mb="8" fontSize="3xl">
-        You may also like
+    <Section mt="10" py="8" mb="10" pl="5" pr="5">
+      <H3 textAlign="center" mb="12" fontSize="3xl">
+        Navigate More Cool Stuffs
       </H3>
       <Grid col="1|2|2|3" maxW="1200" mx="auto" gap="10">
         {relatedPosts.slice(0, limit).map((post) => (

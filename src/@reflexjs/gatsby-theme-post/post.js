@@ -1,11 +1,10 @@
 import * as React from "react"
 import { MDXRenderer, Link } from "@reflexjs/gatsby-theme-core"
-import { Article, Container, H1, H4, Div, P, Button, Flexbox, Span, A, VisuallyHidden } from "@reflexjs/components"
+import { Article, Container, H1, Div, P, Button, Flexbox, Span, A, VisuallyHidden } from "@reflexjs/components"
 import { Image } from "@reflexjs/gatsby-plugin-image"
 import { PostMeta } from "@reflexjs/gatsby-theme-post"
-import { useProfile } from "@reflexjs/gatsby-theme-profile"
 import { Icon } from "@reflexjs/gatsby-theme-core"
-import Subscribe from "../components/Subscribe"
+import Subscribe from "../../Subscribe"
 import { DiscussionEmbed } from "disqus-react"
 import { useState } from 'react';
 
@@ -26,7 +25,6 @@ export const Post = ({
   tags,
 }) => {
   const [showComments, setShowComments] = useState(false);
-  const [authorProfile] = useProfile(author) 
   return (
   <Article py="8|12|14">
     <Container maxW="null|null|null|900px">
@@ -104,7 +102,7 @@ export const Post = ({
           ))}
         </Flexbox>
       )}
-      <Div borderTop="1px solid #e6e6e6" pt="10" mb="7" mt="10" d="grid" col="repeat(4, auto)" gap="4" w="full|auto">
+      <Div borderTop="1px solid #e6e6e6" pt="10" mb="10" mt="10" d="grid" col="repeat(4, auto)" gap="4" w="full|auto">
       <A href={'https://twitter.com/intent/tweet/?text='+ title + 
         '&url=' + baseURL + slug + '%2F&via=twistblogg'}
            target="_blank" 
@@ -144,42 +142,8 @@ export const Post = ({
          </A>
           </Div>
           < Subscribe />  
-    <Flexbox
-      alignItems="flex-start"
-      py="6"
-      mt="8"
-      mb="8"
-    >
-      <Image
-        src={authorProfile.picture}
-        w="80px"
-        aspectRatio={1 / 1}
-        rounded="full"
-        overflow="hidden"
-      />
-      <Div flex="1" pl="4">
-        <Span
-          color="#757575"
-          fontWeight="light"
-          fontSize="xs"
-          textTransform="uppercase"
-          letterSpacing="tight"
-        >
-          Written By
-        </Span>
-        <H4 my="0" fontSize="md">
-          {authorProfile.name}
-        </H4>
-        <P mt="2" pr="5" fontSize="xs" color="#757575">
-        {authorProfile.excerpt} 
-         </P>
-      </Div>
-      <Span pt="5" fontWeight="light" fontSize="xs">
-      <Link href="#" p="2" borderRadius="5px" border="1px solid">View Profile</Link>
-      </Span>
-    </Flexbox> 
     </Container>
-    <Container maxW="900px" mt="20">
+    <Container maxW="900px" mt="14">
     <Div>
       {showComments ? (
         <DiscussionEmbed
@@ -189,8 +153,12 @@ export const Post = ({
       ) : (
         <Button
           onClick={() => setShowComments(true)}
+          variant="primary"
           w="full"
-          p="7" mb="7" mt="7" borderRadius="2xl" boxShadow="3xl" bg="codeblock"
+          p="7" 
+          mb="2" 
+          mt="7" 
+          borderRadius="2xl"
           pt="5"
           pb="5"
         >
