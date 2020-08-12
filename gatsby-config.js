@@ -78,7 +78,6 @@ module.exports = {
         precachePages: [``, `/blog`],
       },
     },
-    `gatsby-plugin-preact`,
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
