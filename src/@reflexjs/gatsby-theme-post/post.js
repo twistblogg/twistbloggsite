@@ -4,7 +4,7 @@ import { Article, Container, H1, Div, P, Button, Flexbox, Span, A, VisuallyHidde
 import { Image } from "@reflexjs/gatsby-plugin-image"
 import { PostMeta } from "@reflexjs/gatsby-theme-post"
 import { Icon } from "@reflexjs/gatsby-theme-core"
-import Subscribe from "../../Subscribe"
+//import Subscribe from "../../Subscribe"
 import { DiscussionEmbed } from "disqus-react"
 import { useState } from 'react';
 
@@ -141,7 +141,6 @@ export const Post = ({
            </Span>   
          </A>
           </Div>
-          < Subscribe />  
     </Container>
     <Container maxW="900px" mt="14">
     <Div>

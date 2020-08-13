@@ -87,8 +87,31 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: [`/users/*,'/about','/contact','/thank-you','/disclaimer','/privacy-policy','/newsletter'`],
+        exclude: [`/users/**,'/about/*','/contact/**','/thank-you/','/disclaimer','/privacy-policy','/newsletter'`],
       },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        sitemap: 'https://www.twistblogg.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/', disallow: '/thank-you' }],
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*', disallow: ['/thank-you','/newsletter'] }]
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          }
+        }
+      }
     },
    "gatsby-plugin-netlify"
   ],
