@@ -18,6 +18,7 @@ module.exports = {
     siteUrl: process.env.SITE_URL || "https://twistbloggsite.netlify.app",
   },
   plugins: [
+    `gatsby-plugin-preact`,
     "@reflexjs/gatsby-theme-base",
     {
       resolve: `@reflexjs/gatsby-theme-post`,
