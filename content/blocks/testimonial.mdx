@@ -1,5 +1,5 @@
 export const Testimonials = ({ ...props }) => (
-  <Section py="8|12|16|24" {...props}>
+  <Section bg="muted" py="8|12|16|24" {...props}>
     <Container>
       <H2 m="0" fontSize="4xl|5xl" textAlign="center">
         They place their trust in us
@@ -24,7 +24,7 @@ export const Testimonials = ({ ...props }) => (
 )
 
 export const Testimonial = ({ author, description, message, ...props }) => (
-  <Div position="relative" bg="muted" rounded="lg" p="6" {...props}>
+  <Div position="relative" rounded="lg" p="6" {...props}>
     <P m="0">{message}</P>
     <P m="0" mt="4" fontSize="xl" fontWeight="semibold">
       {author}

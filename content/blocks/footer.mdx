@@ -2,7 +2,6 @@ import { useSiteMetadata } from "@reflexjs/gatsby-theme-core"
 
 export const FooterBlock = () => {
   const { title } = useSiteMetadata()
-  const navName = "footernav"
   return (
     <Section py={[8, 10, 12]}>
       <Container>
@@ -19,13 +18,6 @@ export const FooterBlock = () => {
           <P fontSize="sm" mt="0">
             © {new Date().getFullYear()} {title} - All Rights Reserved.
           </P>
-          <NavMenu
-            name={navName}
-            dropdown={false}
-            expand={false}
-            my="6|0"
-            gap="4|8"
-          />
           <Grid col="4" gap="4" mt={[4, 0]}>
             <A href="#" color="text">
               <Icon name="twitter" size={5} />
