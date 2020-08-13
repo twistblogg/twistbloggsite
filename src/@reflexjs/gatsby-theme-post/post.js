@@ -162,7 +162,7 @@ export const Post = ({
           pt="5"
           pb="5"
         >
-          Load Comments
+          Share your Thoughts <Icon color="white" size={8} pl="2" name="terminal"/>
         </Button>
       )}
     </Div>
