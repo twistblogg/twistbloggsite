@@ -93,8 +93,7 @@ module.exports = {
               `/404`,
               `/404.html`,
               `/offline-plugin-app-shell-fallback`,
-              `/my-excluded-page`,
-              `/users/*`,
+              `/users/amanbhattarai`,
               `/thank-you`,              
           ],
       },
@@ -120,6 +119,15 @@ module.exports = {
           }
         }
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+      },
     },
    "gatsby-plugin-netlify"
   ],
