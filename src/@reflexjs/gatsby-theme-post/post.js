@@ -101,10 +101,10 @@ export const Post = ({
             </Link>
           ))}
         </Flexbox>
-      )}
+      )} 
       <Div borderTop="1px solid #e6e6e6" pt="10" mb="10" mt="10" d="grid" col="repeat(4, auto)" gap="4" w="full|auto">
-      <A href={'https://twitter.com/intent/tweet/?text='+ title + 
-        '&url=' + baseURL + slug + '%2F&via=twistblogg'}
+      <A href={'mailto:?subject='+ title + 
+        '&body= Visit : ' + baseURL + slug }
            target="_blank" 
            rel="nofollow noreferrer noopener external">
           <Span bg="#444444" w="full" textAlign="center" borderRadius="5px" alignItems="center" pt="2">
