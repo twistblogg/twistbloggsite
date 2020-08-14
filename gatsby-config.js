@@ -39,7 +39,7 @@ module.exports = {
         background_color: `#191924`,
         theme_color: `#0066FF`,
         display: `standalone`,
-        icon: `content/images/favicon.png`,
+        icon: `content/images/favicon.webp`,
         icon_options: {
           purpose: `maskable`,
         },
@@ -86,11 +86,19 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
-        exclude: [`/users/*,'/about/','/contact/','/thank-you/','/disclaimer','/privacy-policy','/newsletter'`],
+          exclude: [
+              `/dev-404-page`,
+              `/404`,
+              `/404.html`,
+              `/offline-plugin-app-shell-fallback`,
+              `/my-excluded-page`,
+              `/users/*`,
+              `/thank-you`,              
+          ],
       },
-    },
+    },  
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
