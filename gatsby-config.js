@@ -15,7 +15,7 @@ module.exports = {
   siteMetadata: {
     title: "TwistBlogg",
     description: "TwistBlogg is an information resource site focused on SEO, Blogging, Themes, Widgets, Guides related to Social Media and Web Apps.",
-    siteUrl: process.env.SITE_URL || "https://twistbloggsite.netlify.app",
+    siteUrl: process.env.SITE_URL || "https://www.twistblogg.com",
   },
   plugins: [
     `gatsby-plugin-preact`,
