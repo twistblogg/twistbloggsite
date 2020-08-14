@@ -123,12 +123,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+        trackingId: "UA-49966030-3",
         head: false,
         anonymize: true,
         respectDNT: true,
       },
     },
-   "gatsby-plugin-netlify"
+   "gatsby-plugin-netlify",
   ],
 }

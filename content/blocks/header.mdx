@@ -108,7 +108,7 @@ export const ModeToggle = ({ ...props }) => {
 }
 
 export const SocialLinks = ({ ...props }) => (
-  <Grid col="repeat(2, auto)" gap="5" {...props}>
+  <Grid col="repeat(4, auto)" gap="5" {...props}>
     <A href="https://twitter.com/twistblogg" target="_blank" rel="noreferrer noopener external nofollow">
       <Icon name="twitter" size="5" /> 
       <VisuallyHidden>Follow on Twitter</VisuallyHidden>
@@ -122,6 +122,26 @@ export const SocialLinks = ({ ...props }) => (
     >
       <Icon name="facebook" size="5" />
       <VisuallyHidden>Follow on Facebook</VisuallyHidden>
+    </A>
+    <A
+      href="https://www.linkedin.com/in/amanbhattarai"
+      target="_blank"
+      color="text"
+      hoverColor="primary"
+      rel="noreferrer noopener external nofollow"
+    >
+      <Icon name="linkedin" size="5" />
+      <VisuallyHidden>Follow on Linkedin</VisuallyHidden>
+    </A>
+    <A
+      href="https://www.github.com/amanbhattarai4400"
+      target="_blank"
+      color="text"
+      hoverColor="primary"
+      rel="noreferrer noopener external nofollow"
+    >
+      <Icon name="github" size="5" />
+      <VisuallyHidden>Follow on Github</VisuallyHidden>
     </A>
   </Grid>
 )

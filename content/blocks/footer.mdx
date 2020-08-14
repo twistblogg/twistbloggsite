@@ -16,25 +16,12 @@ export const FooterBlock = () => {
           justifyContent="space-between"
         >
           <P fontSize="sm" mt="0">
-            © {new Date().getFullYear()} {title} - All Rights Reserved.
+            © 2019 - {new Date().getFullYear()} {title} / All Rights Reserved.
           </P>
-          <Grid col="4" gap="4" mt={[4, 0]}>
-            <A href="#" color="text">
-              <Icon name="twitter" size={5} />
-              <VisuallyHidden>Follow on Twitter</VisuallyHidden>
-            </A>
-            <A href="#" color="text">
-              <Icon name="github" size={5} />
-              <VisuallyHidden>Follow on Instagram</VisuallyHidden>
-            </A>
-            <A href="#" color="text">
-              <Icon name="facebook" size={5} />
-              <VisuallyHidden>Follow on Instagram</VisuallyHidden>
-            </A>
-            <A href="#" color="text">
-              <Icon name="linkedin" size={5} />
-              <VisuallyHidden>Follow on Instagram</VisuallyHidden>
-            </A>
+          <Grid col="1" gap="1" mt={[4, 0]}>
+            <P fontSize="sm" mt="0" color="primary">
+           <A href="/blog">Blog</A> / <A href="/privacy-policy">Privacy Policy</A> / <A href="/disclaimer">Disclaimer</A> / <A href="/newsletter">Newsletter</A>
+          </P>
           </Grid>
         </Flexbox>
         </Div>

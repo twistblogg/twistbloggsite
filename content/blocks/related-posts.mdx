@@ -1,6 +1,6 @@
 import { usePost } from "@reflexjs/gatsby-theme-post"
 
-export const RelatedPosts = ({ slug, tags, limit = 6 }) => {
+export const RelatedPosts = ({ slug, tags, limit = 3 }) => {
   const posts = usePost()
   if (!tags) return null
   const tagsName = tags.map(({ name }) => name)
