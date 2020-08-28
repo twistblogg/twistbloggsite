@@ -53,7 +53,7 @@ module.exports = {
           description: "TwistBlogg is an information resource site focused on SEO, Blogging, Themes, Widgets, Guides related to Social Media and Web Apps.",
           image: "social media.webp",
         },
-        types: [
+        types: [ 
           `MdxPage`,
           `MdxPost`,
           {
